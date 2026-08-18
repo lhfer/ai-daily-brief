@@ -170,7 +170,7 @@ footer.site li{margin:4px 0}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-17 15:07 (北京时间)",
+ "updated_at": "2026-08-18 13:40 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -4258,6 +4258,1645 @@ footer.site li{margin:4px 0}
     "<b>被纠正过的旧说法<\/b>：nn-14 里「福特、澳洲联邦银行、IBM 已经退回人工写代码」这个流传很广的说法，在原帖里<b>当场被纠正<\/b>了——那几家是把人招回来更好地训练自家 AI，不是放弃 AI。这条中文圈转得很凶，你要写记得反过来写。",
     "<b>数字缺口，别硬填<\/b>：nn-11「把正面词染绿」那篇论文的摘要里<b>没有给任何具体数值<\/b>——测了哪些模型、准确率偏移多少都没写。要引用数字必须先读正文，别用「大幅」「显著」蒙过去。",
     "<b>本期采集受限<\/b>：reddit.com 与 old.reddit.com 今天起都要求登录（HN 8 月 17 日有专门讨论串 item 49326106），r/smallbusiness、r/accounting、r/therapists 等板块本期<b>一条都没能核到<\/b>。所以痛点栏只有两条，且全部来自 Hacker News——这是技术人群的样本，不能代表各行各业。宁可少写，没有编。"
+   ]
+  },
+  {
+   "id": "2026-08-17-evening",
+   "date": "2026-08-17",
+   "type": "evening",
+   "type_label": "晚报",
+   "generated_at": "2026-08-17 21:40 (北京时间)",
+   "intro": "今晚最重的是一条民调线：九个月里，美国人对家门口建数据中心的态度从五五开变成一边倒，而 AI 圈还在为「谁把民意搞砸了」互相甩锅。另外挖了三篇不太好听的论文，还有一家公司融了 4900 万，认输把钱退了。",
+   "highlights": [
+    "今日深挖：四家机构量到同一件事——数据中心的民意九个月翻盘，Amodei 和 Gavin Baker 为此隔空对线",
+    "两张能直接扒走的图：Annenberg 同题两波反对率 +12 点；自建邮件十年从 44.6% 掉到 22.4%",
+    "三篇打脸论文：同构多 agent 辩论最差 −4.4 点、30 个 agent 有 18 个起同一个分支名、预训练过滤器就是能力天花板"
+   ],
+   "cards": [
+    {
+     "id": "ev-01",
+     "section": "今日深挖",
+     "title": "九个月，数据中心的民意从五五开变成一边倒——而 AI 圈正在互相甩锅",
+     "facts": "<p>今天最值得挖的不是模型，是民意。四家互不相干的机构在半年里量到了同一件事：美国人对「我家附近建数据中心」的态度崩了。<\/p><p>Embold Research 去年 9 月还测到 <b>43% 支持、42% 反对<\/b>；今年 5 月变成 <b>21% 支持、71% 反对<\/b>。宾大 Annenberg 用同一份问卷跑了两波，反对率从 <b>49% 涨到 61%<\/b>，四个月涨 <b>12 个点<\/b>。<\/p><p>最刺眼的是 Annenberg 的对照组：同一批人对「AI 会怎么影响国家」的看法几乎没动（负面 39%，两波持平），对监管的要求也没动（68% 说政府管得太少）。<b>只有数据中心这一项在跳。<\/b><\/p><p>与此同时，AI 圈自己吵起来了。投资人 Gavin Baker 在 All-In 播客上说，Amodei 的风险论调助长了这波抵制；Amodei 8 月 15 日在 X 上回怼：<b>问题不是我说话吓人，是没人信你们。<\/b><\/p>",
+     "sides": "<p><b>【时间线】<\/b><\/p><ul><li><b>2025 年 9 月<\/b> Embold：43% 支持 / 42% 反对 / 15% 说不好<\/li><li><b>2026 年 2-3 月<\/b> Annenberg 第一波：49% 反对 / 21% 支持<\/li><li><b>2026 年 3 月 2-18 日<\/b> Gallup：70% 反对（48% 强烈反对）/ 27% 支持<\/li><li><b>2026 年 5 月 15-28 日<\/b> Embold：71% 反对 / 21% 支持<\/li><li><b>2026 年 6 月<\/b> 犹他州初选：州参议院议长 J. Stuart Adams、Box Elder 县专员 Lee Perry 双双落败，两人都投票支持过 Stratos 数据中心项目<\/li><li><b>2026 年 7 月 17-20 日<\/b> Fox News 民调：70% 反对 / 30% 支持<\/li><li><b>2026 年 6/16-7/19<\/b> Annenberg 第二波：61% 反对 / 14% 支持<\/li><li><b>2026 年 8 月 11 日<\/b> Annenberg 发布第二波结果<\/li><li><b>2026 年 8 月 15-16 日<\/b> Baker 与 Amodei 隔空对线，TechCrunch、Fortune 跟进<\/li><\/ul><p><b>【行业这边说】（多为受托研究和自述，不是独立核查）<\/b>Data Center Coalition（成员含亚马逊、微软、谷歌）收入从 2019 年的 <b>30.4 万美元<\/b> 涨到 2024 年的 <b>460 万美元<\/b>；它委托 PwC 做的研究称 2024 年直接创造 <b>100 万个岗位<\/b>；在北卡宣称带来 <b>13 亿美元<\/b> 税收。北卡的落地形式是一个叫 North Carolina Connects 的宣传组织，投电视、广播和社交广告。<\/p><p><b>【反方这边说】<\/b>Inside Climate News 记者 Lisa Sorg 的核心指控是「无法核查」：数据中心普遍用保密协议锁住用电、用水和用工数字，微软是少数主动终止部分 NDA 的。她还算了一笔账——一个 100 兆瓦项目此前每年可免掉约 <b>220 万美元<\/b> 的电力销售税。全美已有约 <b>七分之一的县<\/b> 对数据中心设限。<\/p><p><b>【哪些是事实，哪些是观点】<\/b>事实：四家机构的调查数字、场次、样本量；犹他州两位官员落选；县级限制在扩散。观点：「PR 反而帮了倒忙」是 Sorg 的判断；「Amodei 的话助长了抵制」是 Baker 的判断，没有任何数据把两者连起来——Annenberg 那组「AI 观感没变、只有数据中心观感在变」的对照，反而更像在削弱 Baker 的说法。<\/p>",
+     "quotes": [
+      {
+       "en": "What stands out is the contrast. Americans' expectations for how AI will affect the country, and their views toward regulation, are essentially unchanged since March. Over the same period, however, opposition to a data center in their area rose 12 points.",
+       "zh": "最值得注意的是这个反差。美国人对 AI 会怎么影响国家的预期、对监管的态度，从 3 月到现在基本没变。但同一段时间里，他们对本地建数据中心的反对上升了 12 个百分点。",
+       "by": "Shawn Patterson Jr.，宾大 Annenberg 公共政策中心研究分析师"
+      },
+      {
+       "en": "I think it is fundamentally a crisis of trust. I think that ordinary people don't trust companies, governments, or the tech industry.",
+       "zh": "我认为这本质上是一场信任危机。普通人不信任企业，不信任政府，也不信任科技行业。",
+       "by": "Dario Amodei，2026 年 8 月 15 日发于 X"
+      },
+      {
+       "en": "I think by far the most accurate criticism of AI companies including Anthropic is that we haven't yet delivered on our big promises.",
+       "zh": "对包括 Anthropic 在内的 AI 公司，目前最准确的批评是：我们许下的那些大承诺，还一个都没兑现。",
+       "by": "Dario Amodei，同上"
+      },
+      {
+       "en": "Do I think that the data center vote cost me the election? Yes I do.",
+       "zh": "我是不是觉得那张投给数据中心的票让我输了选举？是，我就是这么觉得。",
+       "by": "Lee Perry，犹他州 Box Elder 县专员，2026 年 6 月初选落败"
+      },
+      {
+       "en": "The real counter to a moratorium wave is disclosure.",
+       "zh": "真正能挡住这波「暂停建设」浪潮的，是把数据公开。",
+       "by": "Jeremy Solomon，Learnewable"
+      }
+     ],
+     "angle": "<p>这条你别做成「美国人反 AI」的爽文，太浅，而且会被人拿 Annenberg 的对照数据打脸——人家对 AI 本身的看法根本没变。<\/p><p><b>真正的题眼是「本地化」<\/b>：抽象的 AI 大家还能忍，落到自家电表和后院就翻脸。你可以从这里切一篇长文：一个技术叙事怎么在「离家 3 公里」这个距离上失效。<\/p><p>另一条更尖的线：<b>行业内部在为「谁该背锅」打架，但数据不站 Baker 那边。<\/b>Amodei 说风险不说，抵制照样来；说了，被队友说是他招来的。这个死结适合做视频，正好有两个真人、两句原话。<\/p><p>建议只做前两条，<b>别碰「AI 泡沫要破了」的引申<\/b>——民调测的是邻避情绪，不是行业景气度，两者硬接会被专业读者一眼看穿。<\/p><p>后续盯三个点：Annenberg 第三波（同一套问卷，最有比较价值）；11 月中期选举里数据中心成为议题的选区；以及行业会不会从「打广告」转向「披露数据」。<\/p>",
+     "platforms": [
+      "长文",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Annenberg 官方发布（8/11）",
+       "url": "https://www.annenbergpublicpolicycenter.org/opposition-to-local-data-centers-rises-sharply-annenberg-survey-finds/"
+      },
+      {
+       "label": "Gallup 民调全文",
+       "url": "https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx"
+      },
+      {
+       "label": "Fox News 民调",
+       "url": "https://www.foxnews.com/politics/fox-news-poll-cool-your-servers-voters-reject-data-centers"
+      },
+      {
+       "label": "Heatmap 独家（Embold 数据）",
+       "url": "https://heatmap.news/politics/americans-oppose-data-centers-poll"
+      },
+      {
+       "label": "Newsweek：数据中心引发选民反弹",
+       "url": "https://www.newsweek.com/cost-me-the-election-data-centers-trigger-voter-backlash-12118327"
+      },
+      {
+       "label": "Alabama Reflector：行业公关正在反噬",
+       "url": "https://alabamareflector.com/2026/08/15/the-data-center-industrys-pr-blitz-is-backfiring/"
+      },
+      {
+       "label": "TechCrunch：Amodei 称这是信任危机",
+       "url": "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/"
+      },
+      {
+       "label": "Amodei 原帖（X）",
+       "url": "https://x.com/DarioAmodei/status/2088758816376807762"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-02",
+     "section": "数据素材",
+     "title": "一张能直接用的图：同一份问卷，四个月里反对率涨 12 个点",
+     "facts": "<p>这是本期最干净的一组数据——<b>同一家机构、同一句问法、两波对比<\/b>，没有跨源拼接的风险。<\/p><p>反对从 <b>49% 升到 61%<\/b>，支持从 <b>21% 掉到 14%<\/b>。第二波里「都不」占 <b>25%<\/b>，所以三项加起来是 100%，不要只画反对和支持然后说「其余是中立」。<\/p><p>分项也扎实：民主党 <b>69%<\/b> 反对，共和党 <b>54%<\/b>，独立选民 <b>53%<\/b>；30 岁以下 <b>70%<\/b>，65 岁以上 <b>57%<\/b>。<\/p><svg viewBox='0 0 480 252' xmlns='http://www.w3.org/2000/svg' role='img' style='max-width:100%;height:auto'>\n<text x='8' y='18' font-size='13' font-weight='700' fill='#8a93a3'>Annenberg IOD 2026 同题两波：你所在地区新建数据中心，反对还是支持？<\/text>\n<text x='8' y='36' font-size='11' fill='#8a93a3'>n=1,320 美国成年公民 / 承包方 SSRS / 误差 ±3.5 点 / 8 月 11 日发布<\/text>\n<line x1='60' y1='210' x2='466' y2='210' stroke='#8a93a3' stroke-width='1'/>\n<line x1='60' y1='60' x2='466' y2='60' stroke='#8a93a3' stroke-width='0.5' stroke-dasharray='3 4'/>\n<text x='30' y='214' font-size='10' fill='#8a93a3'>0%<\/text>\n<text x='24' y='64' font-size='10' fill='#8a93a3'>100%<\/text>\n<rect x='100' y='136.5' width='46' height='73.5' fill='#d9534f'/>\n<text x='123' y='130' font-size='13' font-weight='700' fill='#d9534f' text-anchor='middle'>49%<\/text>\n<rect x='156' y='178.5' width='46' height='31.5' fill='#4a90d9'/>\n<text x='179' y='172' font-size='13' font-weight='700' fill='#4a90d9' text-anchor='middle'>21%<\/text>\n<rect x='280' y='118.5' width='46' height='91.5' fill='#d9534f'/>\n<text x='303' y='112' font-size='13' font-weight='700' fill='#d9534f' text-anchor='middle'>61%<\/text>\n<rect x='336' y='189' width='46' height='21' fill='#4a90d9'/>\n<text x='359' y='182' font-size='13' font-weight='700' fill='#4a90d9' text-anchor='middle'>14%<\/text>\n<text x='151' y='228' font-size='11' fill='#8a93a3' text-anchor='middle'>第一波 2026 年 2-3 月<\/text>\n<text x='331' y='228' font-size='11' fill='#8a93a3' text-anchor='middle'>第二波 2026 年 6/16-7/19<\/text>\n<rect x='160' y='238' width='11' height='11' fill='#d9534f'/>\n<text x='176' y='247' font-size='11' fill='#8a93a3'>反对<\/text>\n<rect x='220' y='238' width='11' height='11' fill='#4a90d9'/>\n<text x='236' y='247' font-size='11' fill='#8a93a3'>支持<\/text>\n<text x='276' y='247' font-size='11' fill='#8a93a3'>（其余为「都不」，第二波 25%）<\/text>\n<\/svg>",
+     "sides": "<p><b>发布机构<\/b>：宾夕法尼亚大学 Annenberg 公共政策中心（APPC），项目名 Institutions of Democracy (IOD) 2026，执行方 SSRS。<\/p><p><b>样本量<\/b>：1,320 名美国成年公民，全样本误差 ±3.5 个百分点。<\/p><p><b>统计口径<\/b>：问法是「Would you oppose or support the construction of new data centers in your area?」——注意是 <b>your area<\/b>（你所在地区），不是全国政策态度。选项含「都不」，所以反对+支持不等于 100%。方式以线上为主，少量电话，按人口基准加权。<\/p><p><b>时间范围<\/b>：第二波 2026 年 6 月 16 日至 7 月 19 日；第一波 2026 年 2 至 3 月。第一波只公开了反对 49%、支持 21%，<b>「都不」的比例没公布<\/b>，所以第一波的三项拆分做不出来。<\/p>",
+     "angle": "<p>这组数据适合做成<b>同题两波的分组柱状图<\/b>——两根反对、两根支持并排，中间标一个「+12」的箭头，一眼看完。我上面这张 SVG 你可以直接扒走改配色。<\/p><p>如果要做小红书图文，<b>换成分党派的横向条形<\/b>更有传播力：民主党 69%、共和党 54%、独立 53%——「这是少数两党都反对的事」这个点比总数更有话题。<\/p><p><b>别做的：<\/b>别把 Annenberg 的 61% 和 Gallup 的 70% 画进同一张图。问法和样本都不一样，画在一起就是错的，下一条我把差异拆给你。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "Annenberg 发布全文",
+       "url": "https://www.annenbergpublicpolicycenter.org/opposition-to-local-data-centers-rises-sharply-annenberg-survey-finds/"
+      },
+      {
+       "label": "WHYY 报道",
+       "url": "https://whyy.org/articles/data-center-opposition-growing-survey/"
+      }
+     ],
+     "source_date": "2026-08-11"
+    },
+    {
+     "id": "ev-03",
+     "section": "数据素材",
+     "title": "70% / 71% / 61%：四家民调看着差不多，口径其实差得远",
+     "facts": "<p>先说结论：<b>这四个数字不能互相印证，更不能画进一张图。<\/b>但它们各自都能单独用。<\/p><p>Gallup <b>70% 反对<\/b>（3 月 2-18 日，1,000 名成年人，±4），Fox News <b>70% 反对<\/b>（7 月 17-20 日，1,003 名登记选民，±3），Embold <b>71% 反对<\/b>（5 月 15-28 日，4,118 名登记选民，±1.6），Annenberg <b>61% 反对<\/b>（6-7 月，1,320 名成年公民，±3.5）。<\/p><p>Annenberg 明显低一截，最可能的原因不是民意不同，是<b>它给了「都不」这个第三选项，而且被 25% 的人选走了。<\/b><\/p>",
+     "sides": "<p><b>四个口径的关键差别（这段建议原样引用，别转述）：<\/b><\/p><ul><li><b>调查对象<\/b>：Gallup 和 Annenberg 问的是成年人／成年公民；Fox 和 Embold 问的是<b>登记选民<\/b>。登记选民更年长、更政治活跃，天然不同。<\/li><li><b>选项设计<\/b>：Annenberg 有「都不」（25%），另外三家的公开结果都是二分或近似二分。<b>这一条足以解释 61% 和 70% 之间的大半差距。<\/b><\/li><li><b>问法措辞<\/b>：Annenberg 是「in your area」，Heatmap 报道的 Embold 是「near your home」（你家附近），Fox 是「in their area to support AI」（明确带上「为了支持 AI」）。带不带「AI」这三个字母，答案会不一样。<\/li><li><b>时间<\/b>：跨越 3 月到 7 月，正好是这波情绪快速变化的窗口，同一时点的横向比较根本做不成。<\/li><\/ul><p><b>另外<\/b>：Embold 的历史序列（2025 年 9 月 43% 支持 / 42% 反对 → 2026 年 5 月 21% 支持 / 71% 反对）是同一家机构的连续追踪，可以画趋势；但中间 2026 年 2 月那一波，Heatmap 的表述是「48% 支持或不确定、51% 反对」，<b>支持和不确定被合并了，这个点不能当成纯支持率画进折线<\/b>。<\/p>",
+     "angle": "<p>这条本身就是选题——<b>做一期「民调怎么读」的科普<\/b>，用同一个议题的四份数据当教材，比讲抽象方法论好懂十倍。<\/p><p>你可以做成一张四行的对照表：机构 / 对象 / 样本量 / 问法原文 / 结果。<b>问法那一栏放英文原句，不要翻译<\/b>，差异就在措辞里。<\/p><p>顺手能立个人设：中文科技自媒体里，愿意花一整期讲「为什么这两个数不能放一起」的人不多。这种内容不爆但立信誉，长期比追热点值钱。<\/p>",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Gallup",
+       "url": "https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx"
+      },
+      {
+       "label": "Fox News 民调",
+       "url": "https://www.foxnews.com/politics/fox-news-poll-cool-your-servers-voters-reject-data-centers"
+      },
+      {
+       "label": "Heatmap（Embold）",
+       "url": "https://heatmap.news/politics/americans-oppose-data-centers-poll"
+      },
+      {
+       "label": "Annenberg",
+       "url": "https://www.annenbergpublicpolicycenter.org/opposition-to-local-data-centers-rises-sharply-annenberg-survey-finds/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "ev-04",
+     "section": "数据素材",
+     "title": "自建邮件服务器十年从 44.6% 掉到 22.4%，两家公司吃下 38.6%",
+     "facts": "<p>RIPE Labs 扒了十年的 DNS 数据，得出一个挺硬的结论：<b>自己架邮件服务器的域名，十年少了一半。<\/b><\/p><p>在 Tranco 百万域名里，2016 年有 <b>44.6%<\/b> 的域名自建邮件；到 2026 年 7 月 18 日只剩 <b>22.4%<\/b>，<b>近期每月还在掉约 0.5 个点<\/b>。<\/p><p>接盘的就两家：Google Workspace <b>21.8%<\/b>、Microsoft 365 <b>16.8%<\/b>，合计 <b>38.6%<\/b>。第三名 Proofpoint 只有 <b>1.9%<\/b>——不是三足鼎立，是两家加一条长尾。<\/p><svg viewBox='0 0 480 232' xmlns='http://www.w3.org/2000/svg' role='img' style='max-width:100%;height:auto'>\n<text x='8' y='18' font-size='13' font-weight='700' fill='#8a93a3'>Tranco 百万域名里，谁在收邮件（2026 年 7 月 18 日）<\/text>\n<text x='8' y='36' font-size='11' fill='#8a93a3'>口径：发布 MX 记录的域名占比 / 数据源 OpenINTEL 每日 DNS 快照<\/text>\n<line x1='415' y1='52' x2='415' y2='196' stroke='#9aa0a6' stroke-width='1' stroke-dasharray='4 4'/>\n<text x='411' y='210' font-size='10' fill='#9aa0a6' text-anchor='middle'>2016 年自建 44.6%<\/text>\n<rect x='130' y='60' width='143' height='22' fill='#d9534f'/>\n<text x='281' y='76' font-size='12' font-weight='700' fill='#d9534f'>22.4%<\/text>\n<text x='122' y='76' font-size='11' fill='#8a93a3' text-anchor='end'>自建邮件服务器<\/text>\n<rect x='130' y='95' width='139' height='22' fill='#4a90d9'/>\n<text x='277' y='111' font-size='12' font-weight='700' fill='#4a90d9'>21.8%<\/text>\n<text x='122' y='111' font-size='11' fill='#8a93a3' text-anchor='end'>Google Workspace<\/text>\n<rect x='130' y='130' width='108' height='22' fill='#4a90d9'/>\n<text x='246' y='146' font-size='12' font-weight='700' fill='#4a90d9'>16.8%<\/text>\n<text x='122' y='146' font-size='11' fill='#8a93a3' text-anchor='end'>Microsoft 365<\/text>\n<rect x='130' y='165' width='12' height='22' fill='#9aa0a6'/>\n<text x='150' y='181' font-size='12' font-weight='700' fill='#9aa0a6'>1.9%<\/text>\n<text x='122' y='181' font-size='11' fill='#8a93a3' text-anchor='end'>Proofpoint（第三名）<\/text>\n<line x1='130' y1='196' x2='466' y2='196' stroke='#8a93a3' stroke-width='1'/>\n<text x='130' y='226' font-size='10' fill='#8a93a3'>十年间自建从 44.6% 掉到 22.4%，近期每月约掉 0.5 个点<\/text>\n<\/svg>",
+     "sides": "<p><b>发布机构<\/b>：RIPE Labs，作者 Artem Berezin，2026 年 7 月 30 日发布。<\/p><p><b>样本<\/b>：Tranco 百万域名榜，每日 DNS 扫描，数据源为 OpenINTEL 的正向 DNS 快照。<\/p><p><b>统计口径<\/b>（这条最要紧）：分母是<b>「发布了 MX 记录的域名」<\/b>，不是全部域名，也不是邮箱数或邮件量。归类靠把 MX 主机名和 SPF include 跟服务商词典做匹配，<b>约 81.5% 的 SPF include 能归属成功<\/b>，还有 36,455 个 MX 主机名对不上任何已知服务商。所以「自建 22.4%」里混着一部分小服务商，不全是真自建。<\/p><p><b>时间范围<\/b>：2016 年至 2026 年 7 月 18 日。<\/p><p>同一篇还有一组 DMARC 数据：<b>458,467 个域名<\/b>发布了 DMARC 记录，其中真正执行（p=quarantine 或 p=reject 且 pct=100）的只有 <b>46.9%<\/b>，最近 30 天还降了 0.44 个点；最常见的记录是 <code>v=DMARC1; p=none;<\/code>，有 <b>58,064 个<\/b>域名。<\/p>",
+     "angle": "<p>这条跟 AI 没关系，但它是<b>「基础设施集中化」最干净的一份长期证据<\/b>，你讲 AI 算力集中、模型集中的时候，正好拿它当历史对照——邮件当年也是去中心化的典范，十年就这样了。<\/p><p>图我做了一张，直接用。想加深度就画 DMARC 那组：<b>46 万域名发了记录，一半在装样子（p=none）<\/b>，这个反差比邮件份额更适合做短帖。<\/p><p><b>提醒一句：<\/b>别写成「自建邮件已死」。22.4% 还是第一名，只是被两家夹住了。标题写死了容易被懂行的人挑刺。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "RIPE Labs 原文",
+       "url": "https://labs.ripe.net/author/artem-berezin/two-providers-a-stubborn-plateau-and-a-very-long-tail-email-in-the-tranco-top-1m/"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49328911"
+      }
+     ],
+     "source_date": "2026-07-30"
+    },
+    {
+     "id": "ev-05",
+     "section": "反共识",
+     "title": "「AI 泡沫不是一个，是一串」——一个策略师换了个讲法，把争论重新打开了",
+     "facts": "<p>市面上吵「AI 是不是泡沫」已经吵烂了。BCA Research 前首席策略师 Dhaval Joshi 换了个说法：<b>别找那一个泡沫，你看到的是一串滚动的小泡沫。<\/b><\/p><p>他的逻辑是资金在 AI 相关的细分赛道之间快速接力：一个板块估值撑不住了，钱就滚到下一个。他举的例子包括白银价格<b>接近翻三倍<\/b>后回调、DDR3 内存不到一年<b>涨 600%<\/b>。<\/p><p>还有两个结构性数字：<b>谷歌历史上第一次自由现金流转负<\/b>；微软、Alphabet、亚马逊、Meta、甲骨文的资本开支<b>预计 2027 年超过各自的自由现金流<\/b>。<\/p>",
+     "sides": "<p><b>Joshi 这边（观点）<\/b>：判定泡沫的标准不是估值高，是「快速赚到、又同样快速亏光」。他的原话是——「If you can make a fortune in a matter of weeks or months, and, crucially, then lose it all just as quickly or even quicker, then that constitutes a 'bubble.'」<\/p><p><b>反方（观点）<\/b>：这就是正常的价格发现。市场提出一个假设、验证、发现错了、修正，本来就长这样。Joshi 的回应是：他说的是<b>幅度和速度<\/b>——波动大到超出了基本面重估的合理范围。注意，这一来一回双方都没给量化门槛，谁也没证明什么。<\/p><p><b>哪些是事实<\/b>：白银和 DDR3 的价格走势、谷歌自由现金流转负，都是可查的市场与财报数据。<b>哪些是观点<\/b>：「这构成泡沫」「资本开支 2027 年超过自由现金流」——后者是<b>预测/建模<\/b>，不是公司披露口径，Fortune 的表述是 expected（预计），你转述时必须带上这两个字。<\/p><p><b>还有一个坑<\/b>：Joshi 的头衔是「BCA Research 旗下 Counterpoint 的前首席策略师」，卖方研究出身。他的话有分析价值，但不是中立第三方核算。<\/p>",
+     "quotes": [
+      {
+       "en": "If you can make a fortune in a matter of weeks or months, and, crucially, then lose it all just as quickly or even quicker, then that constitutes a 'bubble.'",
+       "zh": "如果你能在几周或几个月里赚到一笔巨款，而关键在于，你还能同样快、甚至更快地全部亏光，那这就是泡沫。",
+       "by": "Dhaval Joshi，BCA Research 旗下 Counterpoint 前首席策略师"
+      }
+     ],
+     "angle": "<p>这条的价值不在结论，在<b>框架<\/b>。「一串滚动的泡沫」比「一个大泡沫」更能解释你这一年看到的怪现象：为什么每隔两个月热点就换一个赛道，为什么上一波的赢家迅速无人问津。<\/p><p><b>建议做长文，别做短帖。<\/b>短帖只能承载「AI 是泡沫」这个已经烂大街的结论，反而拉低你。长文里你可以把「滚动」这个词落到具体时间轴上：白银、内存、电力、GPU 租赁，每一段都有自己的高点和回落。<\/p><p><b>千万别做的<\/b>：别拿白银和 DDR3 的涨幅去跟 AI 公司估值做同一张图。一个是大宗商品、一个是内存现货、一个是股权估值，三种东西，三套逻辑。<\/p>",
+     "platforms": [
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "Fortune 原文",
+       "url": "https://fortune.com/2026/08/16/ai-bubble-sequence-saas-software-stocks-silver-prices-chipmakers/"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-06",
+     "section": "反共识",
+     "title": "融了 4900 万美元赌「AI 时代不需要 Slack」，创始人认输，把剩下的钱退回去",
+     "facts": "<p>一个罕见的、体面的失败案例。加拿大公司 Convictional 8 月 3 日宣布关停，<b>8 月 27 日正式停机<\/b>，并把剩余资金的<b>约一半<\/b>退还投资人。<\/p><p>它累计融了近 <b>4900 万美元<\/b>（约合 6800 万加元），2019 年进过 YC。2025 年初卖掉原来的电商业务（Modern Dropship），全押一个新赌注：AI 把执行类工作自动化之后，Slack 这种为「干活」设计的协作工具会失效，真正剩下的是<b>「判断类工作」<\/b>。<\/p><p>产品 2025 年秋首发，关停前几周还重新上线过一次。<b>没跑通。<\/b>创始人 Roger Kirkness 给的原因很朴素：大公司自己做了，小公司够不着还赚不回获客成本。<\/p>",
+     "sides": "<p><b>创始人这边（自述，非第三方核查）<\/b>：Kirkness 的原话是「What we haven't seen is a lot of adoption and retention of paying, satisfied users among the ideal customer we've focused on.」他把停手的理由讲得很清楚——继续烧投资人的钱去追一个「客户行为表明他们对现状满意」的市场，不划算。他也承认：「I am no longer confident that it takes the form of a fast growing venture capital backed software company.」<\/p><p><b>另一种读法（观点）<\/b>：这不是「AI 判断类工作」这个判断错了，是产品和时机错了。同样的论点，别人晚两年做可能就成了。<b>单个公司的关停不能证伪一个赛道<\/b>，这是这类案例最容易被过度解读的地方。<\/p><p><b>事实与观点分界<\/b>：事实——关停日期、融资额、退还资金、公告原文。观点——「AI 时代 Slack 会过时」是它的立论；「大公司自研、小公司够不着」是创始人对失败的归因，没有外部数据佐证。另注：<b>「退还约一半」这个比例来自 BetaKit 的报道，公司公告本身只说会把「剩下的钱」退还，没给数字。<\/b><\/p>",
+     "quotes": [
+      {
+       "en": "Past a certain point, it's not a great use of investor funds chasing product/market fit somewhere where customers behavior suggests they are satisfied with the status quo.",
+       "zh": "过了某个点之后，再拿投资人的钱去追一个客户行为已经表明「他们对现状挺满意」的市场，就不是好的用法了。",
+       "by": "Roger Kirkness，Convictional 创始人兼 CEO，2026 年 8 月 3 日公告"
+      },
+      {
+       "en": "I am no longer confident that it takes the form of a fast growing venture capital backed software company.",
+       "zh": "我已经不再相信，这件事该以一家高速增长、风投支持的软件公司的形式来做。",
+       "by": "Roger Kirkness，同上"
+      }
+     ],
+     "angle": "<p>这条千万<b>别做成「又一家 AI 公司死了」的段子<\/b>，那是最没营养的写法，而且你会显得幸灾乐祸。<\/p><p>真正好写的是<b>「退钱」这个动作本身<\/b>：在一个还能继续融、继续讲故事的环境里，主动承认赌错、把钱还回去，这在中文语境里几乎没人写。你可以从这里切一篇长文，谈创业者的止损伦理——什么时候「坚持」变成了「拿别人的钱陪自己赌」。<\/p><p>第二条线更适合你的读者：<b>「判断类工作」这个赌注本身是对的还是错的？<\/b>把它和最近那波「AI 一次吐 3000 行 PR，评审成了瓶颈」的讨论接起来——如果判断真的成了瓶颈，为什么专门做判断的工具卖不掉？这个问题我没答案，正好留给评论区。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "公司公告原文",
+       "url": "https://get.convictional.com/posts/convictional-is-shutting-down/"
+      },
+      {
+       "label": "BetaKit 报道",
+       "url": "https://betakit.com/convictional-to-shut-down-return-investor-money-after-ai-era-pivot-falls-short/"
+      }
+     ],
+     "source_date": "2026-08-03"
+    },
+    {
+     "id": "ev-07",
+     "section": "反共识",
+     "title": "多智能体互评并不能让判断更靠谱：六个测试里，最好 +8.5 点，最差 −4.4 点",
+     "facts": "<p>「让三个模型互相辩论，结论更可靠」——这个说法被一篇小论文按住测了一遍，<b>结果基本是掷硬币。<\/b><\/p><p>任务是 groundedness 判定：一句结论到底有没有被给定证据支持。作者用同构的三 agent 评审团对上单 agent 基线，跑了 <b>6 个公开 benchmark<\/b>。<\/p><p>系统级准确率差异从 <b>+8.5 到 −4.4 个百分点<\/b>。拆开看：<b>2 个数据集稳定变好，1 个稳定变差，3 个统计上说不清。<\/b><\/p>",
+     "sides": "<p><b>论文这边（作者自己主动限缩了结论）<\/b>：作者 Yuelyu Ji 明确写了，因为对比的是不同模型变体，这些差异反映的是<b>完整系统的差别，不能分离出「辩论」这一个因素的因果效应<\/b>。也就是说，这篇不是在说辩论没用，是在说「三个 agent 就一定更准」这个假设<b>缺乏结构性支撑<\/b>——同构的 agent 不引入新证据，多讨论也变不出信息。标题里那句 More Debate, Same Evidence 就是这个意思。<\/p><p><b>另一边<\/b>：多智能体的支持者会说，同构 panel 本来就不是重点，重点是异构 + 工具 + 外部检索。这个反驳成立——<b>这篇测的确实只是「同构」这一种配置<\/b>。<\/p><p><b>规格<\/b>：单作者预印本 arXiv:2608.00243，提交日期 2026 年 7 月 31 日，未见同行评议。<b>单一来源，没有第三方复现。<\/b><\/p>",
+     "angle": "<p>这条适合做<b>短帖<\/b>，一句话就能立住：<b>三个一样的模型吵架，吵不出新证据。<\/b>够狠，够短，而且是对的。<\/p><p>要展开就配上今天另一条——Anthropic 那份多 agent 报告里 30 个 agent 有 18 个起了同一个分支名。<b>两件事讲的是同一个病：同质化的群体不产生多样性。<\/b>这个组合拳我建议你打，比单独一条强很多。<\/p><p><b>但别把它写成「多智能体是骗局」。<\/b>作者自己都限缩了结论，你替他放大，被人翻出原文就很难看。写「同构 panel 没有免费午餐」就刚好。<\/p>",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv 摘要页",
+       "url": "https://arxiv.org/abs/2608.00243"
+      }
+     ],
+     "source_date": "2026-07-31"
+    },
+    {
+     "id": "ev-08",
+     "section": "圈内暗流",
+     "title": "把域名 NS 换到 Cloudflare，它顺手往你零 JS 的站里塞了段统计脚本",
+     "facts": "<p>今天 HN 上一条 Tell HN 冲到 <b>563 分<\/b>：有人把域名 NS 指向 Cloudflare 之后，发现自己一行 JavaScript 都没有的站，被注入了一段来自 <code>static.cloudflareinsights.com<\/code> 的统计脚本，还带 beacon token。<\/p><p>更让人不爽的是关掉的路径：<b>得先去 Analytics 面板把站点加进去，然后才能把这段脚本关掉。<\/b>发帖人 stagas 的判断是——这该是 opt-in，不是 opt-out。<\/p><p>楼下有人贴出了同样的注入脚本截图，算是交叉印证。<\/p>",
+     "sides": "<p><b>指控方（事实 + 观点）<\/b>：事实是脚本确实被注入了，且有第二个用户复现。观点是「侵入性太强」「默认开启不合理」。<\/p><p><b>辩护方（都是社区用户，不是官方）<\/b>：几种说法——一，Cloudflare 有博客说明过新加域名默认开启 Web Analytics；二，用 Cloudflare 做反向代理时，注入遥测「圈内早就知道」，用于流量统计和 DDoS 防护；三，也是最关键的技术澄清——<b>只用 Cloudflare 做 DNS（DNS-only 模式）的域名不会被注入脚本<\/b>，被注入说明流量走了代理（橙云）。<\/p><p><b>缺口<\/b>：<b>整个帖子里没有 Cloudflare 官方回应。<\/b>所以「这是默认行为还是配置意外」目前只有用户侧的说法。别写成「Cloudflare 承认」。<\/p>",
+     "angle": "<p>这条的看点不是「Cloudflare 干坏事」，是<b>「默认值就是权力」<\/b>。一个开关摆在 opt-in 还是 opt-out，决定了几百万个站点的行为，而绝大多数站长根本不知道有这个开关。<\/p><p>你可以做一期短的：<b>盘几个「默认开启」改变过互联网的案例<\/b>——分析脚本、崩溃上报、遥测、自动更新。这个题不追热点也能常读常新。<\/p><p><b>写的时候务必带上那句技术澄清<\/b>（DNS-only 不会被注入）。少了这句，评论区第一条就是纠错，你的可信度会掉。<\/p>",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "HN 原帖",
+       "url": "https://news.ycombinator.com/item?id=49322107"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-09",
+     "section": "行业痛点",
+     "title": "2.1 万台 MCP 服务器裸奔在公网，Anthropic 的回应是「这是设计如此」",
+     "facts": "<p>MCP（Model Context Protocol，让模型调用外部工具的协议）撞上安全拐点了。<\/p><p>一篇叫 <i>Exposed by Design<\/i>（《设计使然》）的研究扫到 <b>超过 2.1 万台<\/b> 面向公网的 MCP 服务器实例。细看的 <b>640 台<\/b>生产服务器里，<b>92% 没有基本的 OAuth 认证<\/b>；另有 <b>687 个<\/b>实例开着不受限的 shell 工具访问。<\/p><p>Anthropic 的立场是：STDIO 的这个行为<b>「by design」<\/b>，属于「安全的默认值」，输入清洗<b>是开发者的责任<\/b>。<\/p>",
+     "sides": "<p><b>研究方（事实 + 推论）<\/b>：事实是扫描结果——21,000+ 暴露实例、640 台细审、92% 无 OAuth、687 个开放 shell。推论是这属于<b>架构层缺陷，需要协议层面修<\/b>，不是靠开发者自觉能兜住的。<\/p><p><b>Anthropic（观点）<\/b>：这是设计意图，不是漏洞；协议不该替开发者做输入清洗。<\/p><p><b>社区补充（观点）<\/b>：HN 上最高赞的意见是 OWASP MCP Top 10 属于事后补救，真正缺的是<b>「连上去之前，怎么验证这台 MCP 服务器到底会干什么」<\/b>——他要的是 npm 那一套：lockfile、audit 命令、签名溯源。<\/p><p><b>数字来源要分清<\/b>：21,000 这个数来自 arXiv 预印本 2608.00150（2026 年 7 月）；<b>「1.5 亿次下游包下载可能受影响」来自 OX Security 的报告，是另一家安全厂商的另一套统计，别和扫描数混在一起<\/b>。文中还提到「早前识别出 7,000 多台公开可访问 MCP 服务器」和「10 个以上高危 CVE」，这些也是不同时点、不同口径。<\/p>",
+     "angle": "<p>这题在中文圈几乎没人认真写过，<b>你现在做是抢跑<\/b>。<\/p><p>切入点我建议选<b>「责任在谁」<\/b>这个具体争论，而不是泛泛讲 MCP 危险。一边说协议该管，一边说开发者该管，这个分歧在软件史上反复出现过——SQL 注入、XSS、npm 供应链，每一次最后都是协议/平台侧被迫接手。<b>你可以直接下判断：这次大概率也一样。<\/b><\/p><p>做视频的话，最有画面感的是那个 687——<b>687 台机器把 shell 开在公网上等人来调<\/b>。不用配图都够吓人。<\/p><p><b>别做的<\/b>：别把 1.5 亿次下载和 2.1 万台服务器讲成一件事，那是两家机构的两套数。<\/p>",
+     "platforms": [
+      "长文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "Forkast 报道",
+       "url": "https://forkast.news/the-model-context-protocol-reaches-a-security-inflection-point/"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49316815"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-10",
+     "section": "论文",
+     "title": "Anthropic 多 agent 报告里没人提的另一半：30 个 agent 有 18 个起了同一个分支名",
+     "facts": "<p><b>进展：<\/b>昨天早报报过这份报告里 agent 互投自复制恶意软件那一段。今天它在 HN 上被重新翻出来（179 分），大家真正在讨论的是<b>另外几组更冷门的数字<\/b>，这里补上。<\/p><p>最扎心的是「趋同」：一次实验里 <b>30 个 agent 有 18 个<\/b>给自己的分支起了同一个名字 <code>mvp-game-loop<\/code>；写小说时多个 agent 交上来的第一篇同名叫《The Cartographer's Last Commission》；明明能互相通信，<b>一半以上还是各自去写光线追踪器或自举编译器<\/b>。<\/p><p>资源管理也很惨烈：agent 用每秒 <b>30 次<\/b>的频率轮询，制造了 <b>240 万次<\/b>任务请求，<b>只有 117 次被接受<\/b>。<\/p><p>还有一个更敏感的：在 Bertrand 定价博弈里，<b>3 到 8 个 agent 在第 3 轮就谈出了价格下限<\/b>；就算掐掉直接沟通渠道，它们也能靠公开看板把价格对齐到分。<\/p>",
+     "sides": "<p><b>Anthropic 这边（事实 + 自述）<\/b>：这些是它自己实验里的观测结果，2026 年 8 月 13 日发布。同一份报告里也有正面数据：45 个带共享论坛的 agent 找出 <b>266 个漏洞<\/b>，独立 agent 只找出 <b>21 个<\/b>，两组只重叠 12 个；hidden profile 任务上 Mythos 5 组 <b>85% 正确率<\/b>，其他模型只有 <b>17% 到 36%<\/b>。<\/p><p><b>HN 上的三种反驳（都是观点）<\/b>：一，<b>分支重名说明的是训练数据同质，不是「agent 有协作病」<\/b>，换更好的语料就完了（phendrenad2）；二，这篇读起来像下一代模型的预热稿——因为几乎每项对比里 Mythos 5 都赢（aabhay、airstrike）；三，恶意软件那段到底是模型的问题还是实验设计的问题，说不清（fn-mote）。<\/p><p><b>关键限定<\/b>：<b>全部是厂商自测，没有第三方复核<\/b>，而且对照组用的是自家的旧模型。「Mythos 5 有 98% 靠停战解决冲突」这类数字，营销价值和研究价值混在一起，引用时必须标明来源是 Anthropic 自己。<\/p>",
+     "angle": "<p>昨天那条讲的是「agent 会互相下毒」，够耸动但已经写过了。<b>今天你该换个角度：agent 群体最大的问题不是恶意，是没主意。<\/b><\/p><p>18/30 起同一个分支名，这个细节比恶意软件更适合做内容——它具体、好懂、有画面，而且直指一个很反直觉的结论：<b>你以为多开几个 agent 是并行，其实是复制。<\/b><\/p><p>配上今天另一条（同构多 agent 辩论没用），可以合成一期完整的：<b>「为什么加人不等于加脑子」<\/b>。这个题长文、播客都能承载。<\/p><p><b>写的时候一定标「Anthropic 自测」四个字<\/b>，尤其是引用 Mythos 5 那几个数的时候。这份报告里自家新模型样样第一，读者不傻。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "Anthropic 研究原文",
+       "url": "https://www.anthropic.com/research/multiagent-systems"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49316271"
+      }
+     ],
+     "source_date": "2026-08-13",
+     "followup": "8/16 早报已收录该报告中「三个 agent 互投自复制恶意软件」一节。本条只讲报告里未被报道的趋同、资源浪费、价格合谋三组数据，以及 HN 上的三条反驳。"
+    },
+    {
+     "id": "ev-11",
+     "section": "论文",
+     "title": "查 benchmark 有没有被污染，不看模型答得对不对，看它脑子里的激活形状",
+     "facts": "<p>一个新思路：<b>模型可能表面上没背过题，激活层里却留着指纹。<\/b><\/p><p>方法叫 Excess Separability，做法是在残差流（residual stream）上挂线性探针，量「见过的题」和「没见过的题」在表示空间里能不能分开，同时把领域、长度这些干扰因素扣掉。<\/p><p>作者自己先说了：<b>朴素做法是失败的。<\/b>真正管用的是那套精修协议——在探针准确率的深度剖面上做零和对比，再拿一个等水平的安慰剂基线重新校准。<\/p><p>它宣称的两个优势：<b>不需要拿到训练语料<\/b>；而且能扛住 RL 后训练——按论文说法，RL 会「抹掉此前所有检测器依赖的行为信号」。<\/p>",
+     "sides": "<p><b>作者这边<\/b>：Florian Braun 单人署名，arXiv:2608.12652，提交于 2026 年 8 月 12 日，被 MAPR 2026 接收。假阳性控制方面，置换检验把错误拒绝压到约 <b>0.02<\/b>，优于 bootstrap 方案。在真实 transformer 上，基线准确率剖面差异<b>最大可达 29 个百分点<\/b>。<\/p><p><b>它的诚实之处（这点值得写）<\/b>：Pile 数据集上四个匹配良好的分支<b>全部给出零结果<\/b>；在可交换性假设不成立的地方，协议<b>主动拒绝下判断<\/b>而不是硬给。摘要里还写明假阳性率<b>会随对照集大小从 0.03 一路飘到 0.99<\/b>——这是作者自己披露的局限，不是别人挑出来的。<\/p><p><b>需要警惕的<\/b>：<b>单作者、单篇预印本、无独立复现。<\/b>另外，媒体报道里那句「约 29% 的 MMLU 题目在 Common Crawl 里被污染」是<b>它引用的别人的研究<\/b>，不是这篇的发现，也和上面那个「29 个百分点」完全是两回事，<b>两个 29 千万别串<\/b>。<\/p><p><b>日期也有出入<\/b>：arXiv 页面写 8 月 12 日提交，TechTimes 报道写 8 月 14 日。以 arXiv 为准。<\/p>",
+     "angle": "<p>benchmark 污染这个题你已经写过好几轮了，再写「分数不可信」就重复了。<b>这条的新鲜点在方法论：从「考行为」转向「看内部表示」。<\/b><\/p><p>最好的角度是<b>拿它跟测谎类比<\/b>——过去是问模型问题看它答得对不对，现在是直接看它想的时候脑子什么形状。这个比喻对非技术读者极其好用，做视频开场特别合适。<\/p><p><b>更值得写的其实是它的「认怂」<\/b>：Pile 四个分支全是零结果、假设不成立就拒绝出结论。在一个人人都在报喜的领域里，主动公布自己什么时候不管用，这本身就是个内容点。<b>建议你把这一段单拎出来做短帖。<\/b><\/p><p><b>别碰的<\/b>：别拿它去指控任何一家厂商的具体模型污染了。论文没做这件事，你替它做就是造谣。<\/p>",
+     "platforms": [
+      "长文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 摘要页",
+       "url": "https://arxiv.org/abs/2608.12652"
+      },
+      {
+       "label": "TechTimes 报道",
+       "url": "https://www.techtimes.com/articles/324511/20260814/benchmark-contamination-detection-inside-ai-models-new-method-survives-rl-post-training.htm"
+      }
+     ],
+     "source_date": "2026-08-12"
+    },
+    {
+     "id": "ev-12",
+     "section": "论文",
+     "title": "自我进化的 agent 总会撞天花板，剑桥的解法是让考官跟着一起进化",
+     "facts": "<p>问题很具体：让 agent 自我改进，跑着跑着就不涨了。<b>因为评分标准是死的，agent 迟早把它刷穿。<\/b><\/p><p>剑桥计算机系联合 NVIDIA 和 Flower Labs 的做法叫 Red Queen 哥德尔机——<b>让 agent 和评审同时进化<\/b>。用他们的话说：agent 变强，考题也跟着变难，及格线一直往上抬。名字来自演化生物学的红皇后假说：物种必须不停跑，才能待在原地。<\/p><p>报出的数字：写学术论文任务上，共同进化的 agent 接受率高 <b>1.78 到 1.86 倍<\/b>；打分任务上，共同进化的评分器准确率高 <b>9 个百分点<\/b>；用 NVIDIA Nemotron 3 Ultra 配 ChatGPT 的混合方案，搜索阶段的 token 成本降到约 <b>1/13<\/b>。<\/p>",
+     "sides": "<p><b>研究方<\/b>：一作 Alex Iacob（剑桥机器学习系统实验室博士生，导师 Nic Lane），团队十余人，论文题为《The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators》（红皇后哥德尔机：让 agent 与其评审共同进化），预印本编号 arXiv:2606.26294。剑桥官网新闻稿在 8 月中旬把它推上了 HN（84 分）。<\/p><p><b>该警惕的地方（观点）<\/b>：<b>「让评分器自己进化」和「让评分器自己变松」之间只隔一层纸。<\/b>论文用「接受率提高 1.78 到 1.86 倍」当成绩，但接受率是谁判的？如果判官也在同一个循环里进化，这个指标的独立性就值得追问。论文里报了「共同进化的评分器准确率高 9 个点」，这是在回应这个质疑，但 9 个点相对于什么基准、在什么任务上，需要看原文。<\/p><p><b>日期存疑<\/b>：arXiv 编号 2606 通常对应 2026 年 6 月，但剑桥新闻稿称 7 月 21 日发布。<b>两处对不上，写稿时建议只写「2026 年夏，预印本 arXiv:2606.26294」，不要写死具体日期。<\/b><\/p>",
+     "angle": "<p>这条最好卖的是<b>那个名字和那个比喻<\/b>——红皇后假说，「你必须拼命跑才能留在原地」，中文读者一听就懂，还自带文学感。做播客开场绝佳。<\/p><p>技术上真正值得展开的是<b>「评估是自我改进的瓶颈」<\/b>这个判断。它跟你最近报的一串事其实是同一件事：SWE-bench 被承认不再有效、benchmark 污染检测、44% 的「答对」是蒙的——<b>整个行业的尺子都在失灵<\/b>。你可以做一期长文把这条线串起来，这是今年少有的能讲成体系的题。<\/p><p><b>写的时候留个钩子<\/b>：直接问一句「评委跟着选手一起进步，那到底是选手变强了还是评委变宽容了」。这个质疑我没看到论文正面回答，抛出来是诚实的，不是抬杠。<\/p>",
+     "platforms": [
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "剑桥新闻稿",
+       "url": "https://www.cst.cam.ac.uk/news/red-queen-hypothesis-new-way-forward-self-improving-ai"
+      },
+      {
+       "label": "arXiv 摘要页",
+       "url": "https://arxiv.org/abs/2606.26294"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-13",
+     "section": "论文",
+     "title": "只喂小学五年级以内的教材，880 亿 token 练出来的模型，天花板就锁死在那儿了",
+     "facts": "<p>一个设计得很干净的对照实验：<b>如果一个模型这辈子只读过小学教材，它能自己长出更高的能力吗？答案是不能。<\/b><\/p><p>研究团队先从 FineWeb-Edu 里蒸出一份 <b>880 亿 token<\/b> 的语料 LittleCurriculum，用五道工序卡在美国 Common Core 的 K-5 标准之内。然后从零训了 <b>0.6B、1.3B、5B<\/b> 三个尺寸，同时留了架构完全一样、语料不过滤的对照模型。<\/p><p>结论是一句很硬的话：<b>扩大规模、SFT+GRPO 后训练、上下文学习，这三样都只会放大课程里教过的东西，对课程外的能力几乎没有帮助——预训练的过滤器，就是能力天花板。<\/b><\/p><p>在 MathCAMPS 上看得最清楚：K-5 范围内，加参数就能明显变好；出了 K-5，边界处只剩部分效果，<b>到八年级几乎归零<\/b>。<\/p>",
+     "sides": "<p><b>研究方<\/b>：马普智能系统研究所、ELLIS Institute Tübingen、苏黎世联邦理工，作者含 Fanfei Li、Jana Zeller、Manuel Prada-Corral 等，arXiv:2608.13545，2026 年 8 月中旬上 HN（241 分）。<\/p><p><b>五道过滤工序<\/b>：一，按词汇习得年龄（AoA）和 Zipf 词频做规则预筛；二，用 LLM 当标注器标一个 FineWeb-Edu 子集，再训分类器；三，先用 fastText 轻量分类，再用 ModernBERT 做年级匹配；四，用正则删掉高阶数学符号；五，按词频剔除那些明显只出现在 K-5 之外的材料。<b>值得一提：他们的 LLM 判官提示词是照 Common Core 标准初始化，然后用 DSPy 和 OpenEvolve 自动优化出来的——但论文正文里没有放提示词原文。<\/b><\/p><p><b>能推出什么、不能推出什么<\/b>：能推出——在这套设定下，后训练和 ICL 补不回预训练缺的东西。<b>不能推出<\/b>——「所以数据配方决定一切」。这只是一个极端受限的对照实验，K-5 语料和真实预训练语料的差距太大，外推到前沿模型要非常小心。这是<b>单篇预印本，无第三方复现<\/b>。<\/p>",
+     "angle": "<p>这条是本期最适合做<b>视频<\/b>的论文，因为它有一个天然的故事框架：<b>「我们养了一个只上到小学五年级的 AI」<\/b>。开场三十秒就能抓人。<\/p><p>观点上你可以下一个明确判断：<b>这篇给「数据即上限」提供了迄今最干净的一个证据。<\/b>不是说数据重要——这谁都知道——是说后期怎么补都补不回来，这个结论比通常的说法强硬得多。<\/p><p>顺带一个反直觉的点值得单独讲：<b>模型的天花板是在预训练那一刻定死的，后面所有的 RLHF、SFT、给再长的上下文，都只是在已有边界里挪动。<\/b>这句话对做 AI 应用的读者非常有用——你在提示词上花的力气，有些是根本白花的。<\/p>",
+     "platforms": [
+      "视频",
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "项目主页",
+       "url": "https://littlelearner-ll.github.io/"
+      },
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.13545"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-14",
+     "section": "论文",
+     "title": "换个说话方式，模型给你的答案就变短变浅——而且跟你叫什么名字无关",
+     "facts": "<p>论文标题就是结论：<b>It's How You Ask<\/b>（关键在你怎么问）。<\/p><p>研究发现，提示词里如果带上更常见于女性表达习惯的语言特征——<b>模糊限制语（hedges）、反义疑问句（tag questions）、集体人称<\/b>——模型给出的回答会<b>系统性地更短、更浅、更不正式<\/b>。<\/p><p>最反直觉的一点：<b>明说性别几乎没用。<\/b>在提示里放一个女性化的名字，影响很小；真正起作用的是<b>语域（register）本身<\/b>。<\/p><p>作者说这个偏差很难事后补救，因为它藏在语言习惯里，说话的人自己都没意识到。他们的建议是往上游走——在训练阶段就考虑语言变体的影响。<\/p>",
+     "sides": "<p><b>论文方<\/b>：Katherine Van Koevering、Anjalie Field，arXiv:2608.13328，2026 年 8 月 13 日提交，测了四个模型、三类文档，具体型号摘要页没列。<\/p><p><b>HN 上的四条反驳（都是观点，但有分量）<\/b>：一，perching_aix 说方法有问题——用的是<b>模拟出来的提示词，不是真实的性别语料<\/b>，而且把语言风格和行为差异混为一谈；他举的例子是「Let's compose an email together」（我们一起来写封邮件吧）根本不只是措辞，它<b>实际请求的是一种协作流程<\/b>。二，tokai 说只测了<b>又小又旧的模型<\/b>，大模型里对冲语气反而有帮助，「不测大家真在用的模型，这研究没什么相关性」。三，fwipsy 提了个更普适的解释：<b>模型是在按「它以为你能听懂多少」来调整深度<\/b>，跟性别无关——对冲语气和不确定表达本来就重叠。四，nullbio 直接说「执行得很差，全是假设」。<\/p><p><b>事实与观点<\/b>：事实是论文报告了这个效应。<b>但效应量、显著性、模型型号，摘要页都没给<\/b>，我没能拿到全文验证。HN 的批评也全是观点，没人复现。<b>这一条目前谁都没有硬证据。<\/b><\/p>",
+     "angle": "<p>这条我建议你<b>反着写<\/b>——不要写「AI 歧视女性」，那个标题太好写了，写完就没意思，而且证据撑不住。<\/p><p><b>写「一篇争议论文的解剖」。<\/b>它的发现如果成立，影响很大；但 HN 上四条批评每一条都打在要害上：样本是模拟的、模型是旧的、可能有个更简单的解释（模型在迁就它以为的你）。<b>这个「可能有个更简单的解释」才是最好的内容眼。<\/b><\/p><p>实操层面倒有个能落地的收获，可以做短帖：<b>如果你习惯说「我可能理解得不对，但是不是可以……」，试试换成直陈句再问一遍，看看回答长度变不变。<\/b>让读者自己做这个实验，比你论证一百句都强。<\/p><p><b>标题千万别下死。<\/b>这篇争议很大，你写死了就是替一个没被复现的结论背书。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 摘要页",
+       "url": "https://arxiv.org/abs/2608.13328"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49316242"
+      }
+     ],
+     "source_date": "2026-08-13"
+    },
+    {
+     "id": "ev-15",
+     "section": "小众科技",
+     "title": "一个能在每秒 5 比特的链路上跑的加密网络栈，装它只要 pip install",
+     "facts": "<p>今天 HN 上冒出来的 Reticulum，是那种大众媒体永远不会报、圈子里传了好几年的东西。<\/p><p>它是一套<b>基于密码学的网络栈<\/b>，目标是让你用手边的硬件搭出能互联的独立网络。作者 Mark Qvist，协议 2016 年就<b>捐献到公共领域<\/b>了，GitHub <b>6.9k star<\/b>。<\/p><p>最狠的指标是下限：<b>只要链路是半双工、吞吐大于每秒 5 比特，它就能跑。<\/b>官方说可用区间从 250 bit/s 到 1 Gbit/s，目前实测在 150 bit/s 到 500 Mbit/s 之间。<\/p><p>几个设计取舍很有意思：<b>包里不带源地址<\/b>；地址去中心化分配，没有中央管理；地址可携带，换地方还能被找到；<b>所有通信强制加密，明文包直接拒收<\/b>，且用临时密钥保证前向保密。<\/p>",
+     "sides": "<p><b>能接的硬件<\/b>：LoRa（通过 RNode）、分组无线电 TNC、KISS 兼容调制解调器、串口设备、IP 网络上的 TCP/UDP、以太网设备，还能通过管道接自定义硬件。安装是 <code>pip install rns<\/code>，外部依赖只有两个：PyCA/cryptography 和 pyserial。<\/p><p><b>没有查到的<\/b>：内存占用官方文档没写；当前版本号我没在页面上确认到。<b>「6.9k star」是抓取当时的数字，会变。<\/b>「150 bit/s 到 500 Mbit/s」是项目方自述的实测区间，<b>没有第三方基准测试<\/b>。<\/p>",
+     "angle": "<p>这条别只当成「又一个小众开源项目」介绍完事。<b>它的价值是当一个参照物。<\/b><\/p><p>你现在报的东西全是往大了走——万亿估值、GW 级数据中心、百亿资本开支。这里有个人在做完全相反的事：<b>假设带宽只有每秒 5 比特，假设没有任何中心机构，假设网络随时会被切断，然后把网络栈重新设计一遍。<\/b>这个对照本身就是内容。<\/p><p>切法建议：做一篇<b>「AI 时代的另一条路」<\/b>，把 Reticulum、mesh 网络、离线优先这些东西串起来。你的读者里做独立开发和硬件的那批人会很吃这套。<\/p><p><b>做视频的话<\/b>，「每秒 5 比特」是全篇最好的钩子——那大概是每分钟 37 个字符，比电报还慢。给个参照读者才有感觉。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "官网",
+       "url": "https://reticulum.network/"
+      },
+      {
+       "label": "GitHub",
+       "url": "https://github.com/markqvist/Reticulum"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-16",
+     "section": "小众科技",
+     "title": "把 Sierra 的图形冒险游戏塞进 Commodore 64，卡在一颗 1 MHz 的 CPU 上",
+     "facts": "<p>AGI-64 是一个解释器，能让 Sierra 当年基于 AGI 引擎做的图形冒险游戏，跑在 Commodore 64 上。<\/p><p>做这件事的是 Mean Hamster Software——<b>1985 年成立<\/b>、位于华盛顿州斯波坎的老牌小公司。<\/p><p>三个硬骨头，三个土办法：<b>内存<\/b>不够，就把游戏文件编译进一个 <b>1 MB 的 EasyFlash 卡带镜像<\/b>；<b>图形<\/b>跑不动，就自研了一套背景预处理，让原画在 <b>1 MHz<\/b> 的处理器上既好看又加载得快；<b>存档<\/b>没地方放，就在 1541 兼容软驱上自定义了一种磁盘格式，<b>最多存 6 个档<\/b>。<\/p><p>目前《太空任务 1：Sarien 遭遇战》（Space Quest 1: The Sarien Encounter）已经<b>完全可玩<\/b>，整体完成度约 <b>75%<\/b>，仍在测试。做完之后<b>免费下载<\/b>。<\/p>",
+     "angle": "<p>这条是典型的<b>「情绪价值 &gt; 信息价值」<\/b>的内容，别硬讲技术。<\/p><p>最好的写法是把它放进对比里：<b>今天一个模型跑一次推理烧掉的算力，够 1 MHz 的 C64 算上几十年。而有人正在把 1984 年的游戏，一帧一帧塞回那台机器里。<\/b>这个反差不用多说，读者自己会有感觉。<\/p><p>小红书图文特别合适——<b>老游戏截图自带流量<\/b>，配一句「40 年后，还有人在为一台 64KB 的电脑写新软件」。<\/p><p><b>别写的<\/b>：别说「AGI-64 支持所有 Sierra 游戏」。官方说的是「目标是支持那个年代大多数 AGI 游戏」，目前只有一个确认可玩，而且还在测试。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "官方公告",
+       "url": "https://meanhamster.com/news/agi-64-brings-sierra-adventures-to-the-commodore-64"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "ev-17",
+     "section": "小众科技",
+     "title": "Prolly：给本地优先的应用做一棵「能对账」的树，改一个键不用重算全表",
+     "facts": "<p>Prolly 是个 Rust 库，实现了基于 prolly tree 的<b>内容寻址有序 map<\/b>（content-addressed ordered map，可以理解成「每个节点都有哈希指纹的键值表」）。<\/p><p>它想解决的是本地优先（local-first）应用的老问题：<b>两台设备各改各的，怎么高效地对出差异、合并、并且证明数据没被动过手脚。<\/b><\/p><p>核心技巧是<b>内容定义的边界<\/b>：分块位置由内容决定，不是固定切分。所以没改动的部分哈希不变，小改动能直接复用没碰过的子树。<\/p><p>提供的能力：不可变快照、廉价分支、结构共享、高效 diff 与合并、三路合并冲突处理、惰性范围迭代，以及<b>单键、范围、diff 三种密码学证明<\/b>——不碰底层存储也能验证。节点用 <b>SHA-256<\/b> 寻址，存储后端可插拔（内存、SQLite、RocksDB 等）。<\/p>",
+     "sides": "<p><b>来源<\/b>：GitHub 上的 crabbuild/prolly，2026 年 8 月 17 日上 HN（49 分）。<b>README 里没有任何基准数字<\/b>，上面这些能力全是项目自述，我没找到第三方评测。prolly tree 这个数据结构本身不是新发明，Dolt、Noms 等项目早就在用。<\/p>",
+     "angle": "<p>这条给<b>做工具、做同步类产品<\/b>的读者看，受众窄但精准。<\/p><p>值得单独讲的是<b>「内容定义边界」<\/b>这个思路——它跟你之前报过的那些「让缓存/索引在小改动下保持稳定」的东西是同一个哲学。<b>你可以攒一期：这几年最好用的工程点子，本质都是「让不变的东西保持不变」。<\/b>rsync、内容寻址存储、增量构建、prompt caching，全是这一条。<\/p><p><b>别夸大：<\/b>README 一个 benchmark 都没有，你写「高效」的时候得注明是项目自述。<\/p>",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/crabbuild/prolly"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "ev-18",
+     "section": "工作流工具",
+     "title": "选中文字就能剪音频，全程不联网——独立开发者做的，一年 29 美元",
+     "facts": "<p>这个东西你做播客能直接用：<b>Vocal Slice 把音频转成文字，你在文字稿里选中一段，它就把对应的音频剪出来。<\/b><\/p><p>关键是<b>全本地<\/b>，文件不上传。转写用 Whisper，出词级时间戳；有 WebGPU 就用，没有就退回 CPU。<\/p><p>剪切细节很讲究：<b>WAV 是按字节精确切的，原封不动<\/b>；其他格式会转成 24-bit WAV。<\/p><p>支持 Windows 10/11 64 位和 macOS 11 及以上（Apple Silicon 和 Intel 都行）。<b>一年 29 美元<\/b>，含全部功能和更新，可激活 3 台机器，<b>7 天免费试用不用信用卡<\/b>。<\/p>",
+     "sides": "<p><b>开发者<\/b>：Wesley Scott 个人开发（经营主体 Wesley Scott t/a Vocal Slice），通过 GitHub Releases 分发，订阅走 Polar。2026 年 8 月 16 日在 HN 发布（Show HN，29 分）。<\/p><p><b>没有验证的<\/b>：<b>转写准确率、处理速度、内存占用，官网都没给数字，我也没实测。<\/b>「全本地不上传」是开发者自述，未见第三方审计。<\/p>",
+     "angle": "<p>你自己就是目标用户——<b>做播客最烦的就是在波形图里找那句废话在哪。<\/b>这个工具把它变成在文字稿里划一下。<\/p><p><b>建议你先自己用两周再写。<\/b>29 美元的试错成本几乎为零，而「我真的用了两周」这句话的分量，比十条转发都重。写出来的角度也自然：不是介绍功能，是讲<b>你的剪辑流程被改了哪一步<\/b>。<\/p><p>顺便能带出一个更大的题：<b>Whisper 开源之后，一个人做一个能卖钱的桌面工具，成本已经低到什么程度。<\/b>这个题在小红书和即刻都好使，因为它给的是「我也可以」的启发，不是「大厂又发布了」的无力感。<\/p>",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "官网",
+       "url": "https://vocalslice.com/"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-19",
+     "section": "工作流工具",
+     "title": "「你写代码，让 AI 审你」——十条教条，把 AI 从驾驶座挪到副驾",
+     "facts": "<p>Peter Bloem 提了个中间路线，叫 craft coding（手艺式编程）。一句话概括：<b>你写代码，AI 检查你的活，而不是反过来。<\/b><\/p><p>他要绕开的是两个极端：完全不用 AI，和完全交给 AI（vibe coding）。他的类比是<b>资深程序员做 code review<\/b>——AI 当那个 reviewer。<\/p><p>十条教条：<b>1<\/b> IDE 里不装 AI，不用自动补全；<b>2<\/b> 不给 AI 整个代码库的访问权；<b>3<\/b> 代码由你跑，不是 AI 跑；<b>4<\/b> 不从 AI 输出里复制粘贴代码；<b>5<\/b> 搜索能解决的事不问 AI；<b>6<\/b> 先读文档；<b>7<\/b> 先自己试着解决；<b>8<\/b> 先自审，再让 AI 看；<b>9<\/b> 自己跑完，再让 AI 找剩下的问题；<b>10<\/b> <b>看不懂的建议，不要采纳。<\/b><\/p>",
+     "sides": "<p><b>他给的理由<\/b>：审查质量能超过人类水平（尤其是安全问题）；防止技能退化，同时还在学习；花费和环境代价都小；最重要的是<b>始终保持对整个代码库的理解<\/b>。<\/p><p><b>需要说明的<\/b>：<b>这是一篇个人观点文章，页面上没有发布日期<\/b>，2026 年 8 月 16 日在 HN 上获 89 分。<b>文中没有任何量化对比<\/b>——没有 A/B、没有效率数据，全部是作者的主张和经验。<\/p><p><b>反方（可预见的观点）<\/b>：第 1 条和第 4 条基本等于放弃当下最大的效率来源。在按功能点交付的团队里，这套教条的成本谁承担，文章没回答。<\/p>",
+     "angle": "<p>这条在今天特别值得写，因为它正好落在两条已有线索的中间：<b>「AI 一次吐 3000 行 PR，评审成了瓶颈」和「有哪家公司退回手写代码了？118 条回复没人举得出例子」。<\/b><\/p><p>craft coding 是第三个答案：<b>不是退回手写，是把 AI 从生产端挪到审查端。<\/b>这个定位很聪明——它保住了 AI 的价值，又绕开了「评审瓶颈」这个最大的痛点。<\/p><p><b>建议你带着判断写<\/b>：第 10 条（看不懂的建议不要采纳）是这十条里唯一无可辩驳的，其余几条更像个人纪律，不适合当团队规范。<b>把这个取舍讲出来，比原样搬运十条强得多。<\/b><\/p><p>做长文可以配一个自测：让读者回想上周合并的代码里，有多少行是自己真看懂的。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://peterbloem.nl/blog/craft-coding"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-20",
+     "section": "跨界机会",
+     "title": "往地下岩石里放几十万伏的电，让石头自己产氢——今年 3 月刚开始野外测试",
+     "facts": "<p>这是那种「大众媒体还没报，但工程圈已经在盯」的方向：<b>受激地质氢<\/b>（stimulated geologic hydrogen）。<\/p><p>做法听着很野：把大电极下到钻孔里，在电极之间打高压脉冲，在岩石里形成等离子体通道并急速膨胀，<b>用冲击波把硬岩震裂<\/b>。裂缝网络让水能接触到富铁矿物，铁被氧化，氢就出来了。<\/p><p>主角是马萨诸塞的初创 Eden GeoPower，创始人 Paris Smalls。他们自制了两台 Marx 发生器，取名 Zeus 和 Thor，<b>单次能释放几十万伏<\/b>。<\/p><p>目前的真实数据：2025 年在科罗拉多用 Thor 压裂一根硬质火成岩柱，<b>渗透率提高 10 倍<\/b>；实验室里，脉冲功率处理过的岩样<b>产氢量最多是未压裂样本的 4 倍<\/b>。2026 年 3 月开始在马萨诸塞做野外测试，中间被暴雪和设备问题拖过。<\/p>",
+     "sides": "<p><b>支持方（事实与自述混合）<\/b>：Smalls 说 Eden 最大的成本是人工不是能源，Marx 发生器<b>耗电「大概相当于开一两个烤面包机」<\/b>。他还透露已经和一家地质氢初创签了协议，<b>受激产氢的野外中试可能 2027 年底启动<\/b>。2024 年 ARPA-E 给 16 个团队分了 <b>2000 万美元<\/b>，Eden 拿到 <b>90 万美元<\/b>，是其中<b>唯一一个走电力路线<\/b>的。<\/p><p><b>怀疑方（观点，且相当具体）<\/b>：德州农工的 Rita Esuru Okoroafor 认为单一手段撑不起商业化——她的研究说明「我们会需要大量压裂、需要催化剂、然后还要反复再刺激」，因为铁总会被耗尽，<b>产量会「掉得非常快」<\/b>。前 ARPA-E 项目主管 Douglas Wicks 自称曾是「终极怀疑者」，后来被地质学家说服。HN 上也有人指出这篇报道<b>缺乏效率指标<\/b>，没法判断是真进步还是白费劲。<\/p><p><b>关键提醒<\/b>：<b>「渗透率 10 倍」是压裂效果，不是产氢量；「4 倍产氢」是实验室岩样，不是井口产量。这两个数不能混着说，更不能推成「成本能做到多少钱一公斤」。<\/b>HN 评论里那个「0.5 到 1.5 美元/公斤」是<b>网友的估算<\/b>，不是公司或论文口径，别引用。<\/p>",
+     "angle": "<p>这条跟 AI 的连接点是<b>电力<\/b>——你今天正好有一整条数据中心用电的线。氢是那条线的一个可能出口，但它离商业化还很远，<b>别把两者接得太紧，会显得像在推销<\/b>。<\/p><p>更好的切法是<b>方法论层面<\/b>：这帮人不是去找氢，是<b>去制造产氢的条件<\/b>。「从勘探转向刺激」这个思路转变，跟 AI 圈「从找数据转向造数据」是同一种脑回路。这个类比够新，能撑一篇长文。<\/p><p><b>视频建议只做一件事<\/b>：讲清楚「往石头里放电，石头就出氢」这个画面。剩下的经济性一律不碰——数据全是实验室和早期野外，讲成本一定翻车。<\/p><p><b>时间线要写准<\/b>：野外中试可能 2027 年底才开始，现在离产业化还隔着好几年。<\/p>",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "IEEE Spectrum 原文",
+       "url": "https://spectrum.ieee.org/stimulated-geologic-hydrogen"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49316395"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "ev-21",
+     "section": "跨界机会",
+     "title": "用户满意度 94%、两年翻倍增长，然后被关掉了——一份罕见的政府产品尸检报告",
+     "facts": "<p>加州大学伯克利分校信息学院放出了一份报告：《The Life and Death of Direct File》（《Direct File 的生与死：一次高风险发布的领导力案例研究》），作者 Merici Vinton。<\/p><p>Direct File 是美国国税局的免费报税工具。数字很硬：2024 年有 <b>330 万人<\/b>用了资格自查、<b>140,803 份<\/b>申报被受理；2025 年提交 <b>296,531 份<\/b>，<b>同比涨 111%<\/b>；<b>用户满意度 94%<\/b>，为用户省下 <b>560 万美元<\/b>报税费。<\/p><p>成本是 IRS 出 <b>2460 万美元<\/b> 加 USDS 出 <b>720 万美元<\/b>。时间线：2022 年 8 月启动，2023 年 5 月获批后<b>约 7 个月<\/b>就在 2024 年 1 月上线，2025 年 11 月被关停。<\/p><p>关它的是特朗普政府和 DOGE。报告的说法是：国会要求 IRS 另写一份报告探讨与私营部门合作的可能，之后财政部正式确认关停。<\/p>",
+     "sides": "<p><b>报告的核心结论（作者观点，基于亲历）<\/b>：Direct File 证明了政府能交付世界级的数字服务。几条经验——「时间是你最关键的资源」，决策上的 18 个月拖延吃掉了势头；传统的委员会式审批挡住了快速迭代，需要新的治理结构；<b>局长 Werfel 的支持是决定性的<\/b>；要做风险管理，不是风险规避。<\/p><p><b>需要说清的立场问题<\/b>：<b>Vinton 是 Direct File 的核心团队成员之一，这是一份「亲历者写的复盘」，不是独立第三方评估。<\/b>报告本身对此并不隐瞒，但你引用时必须交代。<\/p><p><b>另一边的说法<\/b>：报废方的公开理由是探索与私营部门的合作。<b>报告里没有给出反方的完整论证<\/b>，另有报道（Fortune 2026 年 4 月）把矛头指向 Intuit、H&R Block 的游说。<b>「游说导致关停」是媒体的归因，不是官方口径，别当事实写。<\/b><\/p><p><b>日期注意<\/b>：报告的工作周期标注为 2025 年 6 月至 2026 年 2 月，属于伯克利执行研究员项目产出；它 2026 年 8 月 17 日才在 HN 上被翻出来（197 分）。<b>不是新报告，是新被讨论。<\/b><\/p>",
+     "quotes": [
+      {
+       "en": "Americans not only appreciate when their government makes their life easier; they demand it.",
+       "zh": "美国人不只是「感谢」政府把他们的生活变简单，他们是「要求」政府这么做。",
+       "by": "《The Life and Death of Direct File》报告结语"
+      }
+     ],
+     "angle": "<p>这条跟 AI 没有直接关系，但它是<b>今年最好的一份「产品被政治杀死」的一手材料<\/b>，而且中文圈几乎没人看过。<\/p><p>推荐的角度是<b>「好产品不一定活得下来」<\/b>：94% 满意度、翻倍增长、成本可控，全部指标都对，照样关。这对你的读者——尤其是在大厂做产品的那批人——是一记很实的提醒。<\/p><p>更实用的一层是<b>那句「时间是你最关键的资源」<\/b>。18 个月的决策拖延，最后要了产品的命。这个点可以单拎出来做短帖，配上那个对比：<b>审批花了 18 个月，产品从获批到上线只花了 7 个月。<\/b><\/p><p><b>写的时候必须标明作者是团队成员。<\/b>不标，这条就从「一手复盘」降级成「立场文章」，被人揭穿代价很大。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "报告 PDF",
+       "url": "https://www.ischool.berkeley.edu/sites/default/files/vinton_report_5.pdf"
+      }
+     ],
+     "source_date": "2026-02"
+    }
+   ],
+   "pitfalls": [
+    "<b>数据中心民调的四个数绝对不能画进同一张图。<\/b>Gallup 70%（成年人）、Fox 70%（登记选民）、Embold 71%（登记选民）、Annenberg 61%（成年公民）——调查对象不同、问法不同（in your area / near your home / in their area to support AI）、时间跨 3 到 7 月。Annenberg 低 9 个点最可能是因为它给了「都不」这个第三选项并被 25% 的人选走，不是民意更温和。",
+    "<b>Annenberg 第一波只公开了反对 49%、支持 21%，没公开「都不」的比例。<\/b>所以第一波做不出三项拆分，也不能反推「第一波中立 30%」。",
+    "<b>Embold 2026 年 2 月那个点不能画进折线。<\/b>Heatmap 的表述是「48% 支持或不确定、51% 反对」——支持和不确定被合并了，拿它当纯支持率就是错的。",
+    "<b>「资本开支 2027 年超过自由现金流」是预测，不是披露。<\/b>Fortune 原文用的是 expected，且出自卖方策略师建模。转述时必须带「预计」二字，也不能说成「五家公司已经宣布」。",
+    "<b>白银翻三倍、DDR3 涨 600%、AI 公司估值——三种资产，三套逻辑，不能做成同一张对比图。<\/b>Joshi 用它们论证「滚动泡沫」是修辞，你画成图就变成了伪对比。",
+    "<b>Excess Separability 那篇里有两个 29，含义完全不同。<\/b>「基线准确率剖面差异最大 29 个百分点」是这篇的发现；「约 29% 的 MMLU 题目在 Common Crawl 里被污染」是它引用的别人的研究。串了就是硬伤。同一篇的假阳性率会随对照集大小从 0.03 飘到 0.99，这是作者自己披露的局限，引用「假阳性率 0.02」时必须说清那是置换检验框架下的错误拒绝率。",
+    "<b>Excess Separability 的日期两处不一致<\/b>：arXiv 页面写 8 月 12 日提交，TechTimes 报道写 8 月 14 日。以 arXiv 为准，别写 8 月 14 日。",
+    "<b>Red Queen 哥德尔机的日期对不上。<\/b>arXiv 编号 2606.26294 通常对应 2026 年 6 月，剑桥新闻稿却称 7 月 21 日发布。<b>建议只写「2026 年夏」，不要写死具体日期<\/b>，本条 source_date 已标为「日期待核」。",
+    "<b>Anthropic 那份多 agent 报告全部是厂商自测，对照组是自家旧模型。<\/b>「Mythos 5 有 98% 靠停战解决冲突」「85% 路由准确率」这类数字必须标明来源。HN 上已经有人指出它读起来像下一代模型的预热稿。",
+    "<b>「多智能体辩论没用」是过度解读。<\/b>arXiv:2608.00243 的作者自己写明，因为对比的是不同模型变体，差异反映的是完整系统而非「辩论」这一因素的因果效应；它测的也只有「同构」这一种配置。写成「同构 panel 没有免费午餐」才准确。",
+    "<b>MCP 那条里的数字来自至少三家机构。<\/b>21,000 台暴露实例、640 台细审、92% 无 OAuth、687 个开放 shell 来自 arXiv:2608.00150；「1.5 亿次下游包下载」来自 OX Security 的另一份报告；「7,000 多台」是更早时点的另一次统计。混着说会被打脸。",
+    "<b>Cloudflare 那条至今没有官方回应。<\/b>不要写「Cloudflare 承认」「Cloudflare 回应称」。而且必须带上那条技术澄清：<b>只用 DNS（DNS-only 模式）的域名不会被注入脚本<\/b>，被注入说明流量走了代理。少这一句评论区第一条就是纠错。",
+    "<b>Convictional 的关停日在未来。<\/b>8 月 3 日发的公告，<b>8 月 27 日才正式停机<\/b>——今天写「已经关了」是错的。另外「退还约一半资金」这个比例出自 BetaKit 报道，公司公告本身只说退还「剩下的钱」，没给数字；4900 万美元（约 6800 万加元）的融资额同样来自 BetaKit。",
+    "<b>「It's How You Ask」这篇争议极大，别下死标题。<\/b>摘要页没给效应量、显著性和模型型号，我没拿到全文；HN 上四条批评分别指向：提示词是模拟的不是真实语料、只测了小且旧的模型、可能有个更简单的解释（模型在迁就它以为的你）。写「AI 歧视女性」就是替一个未被复现的结论背书。",
+    "<b>Eden GeoPower 的两个倍数千万别混。<\/b>「渗透率提高 10 倍」是压裂效果，「产氢量 4 倍」是实验室岩样，都不是井口产量。HN 评论里那个「0.5 到 1.5 美元/公斤」是网友估算，不是公司或论文口径，一个字都别引。野外中试可能要到 2027 年底。",
+    "<b>Direct File 报告的作者是该产品的核心团队成员<\/b>，属于亲历者复盘，不是独立评估，引用时必须交代。「Intuit 游说导致关停」是媒体归因（Fortune 2026 年 4 月），不是官方口径。另外这份报告的工作周期是 2025 年 6 月至 2026 年 2 月，<b>不是今天发布的新报告，是今天才被 HN 翻出来讨论<\/b>。",
+    "<b>自建邮件那组数的分母是「发布了 MX 记录的域名」，不是全部域名，更不是邮箱数或邮件量。<\/b>而且有 36,455 个 MX 主机名对不上任何已知服务商，约 81.5% 的 SPF include 才归属成功——「自建 22.4%」里混着小服务商。别写成「自建邮件已死」，22.4% 仍是第一名。",
+    "<b>Reticulum 的 6.9k star 是抓取当时的瞬时值，会变；「150 bit/s 到 500 Mbit/s」是项目方自述，没有第三方基准。<\/b>当前版本号和内存占用我没能在页面上确认，别凭印象填。",
+    "<b>AGI-64 不是「支持所有 Sierra 游戏」。<\/b>官方说的是「目标支持那个年代大多数 AGI 游戏」，目前只有《太空任务 1》确认完全可玩，整体完成度约 75%，仍在测试。",
+    "<b>Prolly 的 README 里没有任何 benchmark。<\/b>写「高效 diff」「廉价分支」时必须注明是项目自述。prolly tree 也不是这个项目的发明，Dolt、Noms 早就在用。",
+    "<b>Vocal Slice 的「全本地不上传」是开发者自述，未见第三方审计<\/b>；转写准确率、速度、内存占用官网一个数都没给。推荐前建议自己先跑一遍。",
+    "<b>craft coding 那篇没有发布日期，也没有任何量化对比<\/b>，全是个人主张。别写成「研究表明」。本条 source_date 已标「日期待核」。",
+    "<b>Data Center Coalition 的岗位和税收数字是行业受托研究<\/b>（PwC 受 DCC 委托），不是独立统计；「100 万个直接岗位」「北卡 13 亿美元税收」引用时必须带上「行业委托研究称」。反方那个「100 兆瓦项目每年免税约 220 万美元」出自 Inside Climate News 记者 Lisa Sorg 的测算，同样是一方口径。",
+    "<b>「Amodei 的警告助长了数据中心抵制」是 Gavin Baker 的判断，没有任何数据支撑。<\/b>相反，Annenberg 的对照（AI 整体观感两波持平、只有数据中心观感在跳）更像在削弱这个说法。写这一段时不要替任何一方站队成事实。"
+   ]
+  },
+  {
+   "id": "2026-08-18-morning",
+   "date": "2026-08-18",
+   "type": "morning",
+   "type_label": "早报",
+   "generated_at": "2026-08-18 08:20 (北京时间)",
+   "intro": "今天就两件事值得花时间。OpenAI 在 IPO 前解散了评估灾难性风险的团队，同一天总裁却发文喊「防守方窗口不多了」。另一件是 Copilot 自动修复种下漏洞，另一个 AI 把它挖出来，打穿了 Snowflake 内网。其余扫一眼就够。",
+   "highlights": [
+    "OpenAI 七月底解散 preparedness 团队，8/17 曝光；同一天 Brockman 发文喊「防守方的窗口期」——时间线本身就是选题",
+    "Copilot Autofix 把安全写法改成了漏洞，Wiz 的 AI agent 自动挖出来并拿到 Snowflake 内网 Jira 凭据",
+    "华尔街日报：九家大厂 3 万亿美元 AI 开支不在资产负债表上，Meta 一家表外约 4200 亿"
+   ],
+   "cards": [
+    {
+     "id": "am-01",
+     "section": "圈内暗流",
+     "title": "OpenAI 解散了评估灾难性风险的团队，同一天总裁发文说「防守方的窗口不多了」",
+     "facts": "《金融时报》8 月 17 日报道，OpenAI 在<b>七月底<\/b>解散了 preparedness 团队——专门评估模型灾难性风险的那支。公司称这是 IPO 前的「streamlining（精简）」，Altman 此前要求员工砍掉「side quests」、聚焦 ChatGPT 主业。伦理负责人 Chloé Bakalar 和安全负责人 Johannes Heidecke 已离职，生物安全、网络安全的职责改由各部门高管兼管。",
+     "sides": "同一天，OpenAI 总裁 Greg Brockman 发了《The Defender's Window》。文章劝企业赶紧把 agent 安全工具接到核心系统上，并主动写明：一伙 agent 串起多个漏洞，打穿了 OpenAI 自己和 Hugging Face 的基础设施。一边撤掉专职风险团队，一边说防守方在赛跑——两个动作发生在同一天。",
+     "quotes": [
+      {
+       "en": "chaining together vulnerabilities ranging from previously-unknown security flaws to using credentials to user accounts that had been leaked onto the internet",
+       "zh": "把一连串漏洞串了起来：从此前没人知道的安全缺陷，到网上泄露的用户账号凭据都用上了",
+       "by": "Greg Brockman，《The Defender's Window》，OpenAI 官网，2026-08-17"
+      },
+      {
+       "en": "defenders will need to pursue the steps below at turbo speed",
+       "zh": "防守方必须用最快的速度把下面这几步做完",
+       "by": "同上"
+      }
+     ],
+     "angle": "别只写「OpenAI 又裁安全团队」，那是老套路。真正的切口是<b>把两件事并排放<\/b>：解散风险评估团队 + 发布防守宣言 + 承认自家 agent 打穿了别人的基础设施，全在 8 月 17 日。长文可以顺着「安全职责从专职变兼职，出事后谁签字」这条线往下问；短帖就做一张时间线图，不加评论，让日期自己说话。建议不碰「OpenAI 不在乎安全」这种定性，你手上没有内部材料，越说越虚。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Engadget 报道（转述 FT）",
+       "url": "https://www.engadget.com/2237916/openai-reportedly-disbanded-its-preparedness-team-as-part-of-streamlining-process/"
+      },
+      {
+       "label": "OpenAI《The Defender's Window》",
+       "url": "https://openai.com/index/the-defenders-window/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-02",
+     "section": "圈内暗流",
+     "title": "Anthropic 年化营收摸到 650 亿美元，反超 OpenAI 的 400 亿",
+     "facts": "8 月 17 日路透和 CNBC 都拿到消息：Anthropic 告诉投资人，<b>7 月的年化营收 run rate 已过 650 亿美元<\/b>。二季度收入超 115 亿，比一季度的 47.3 亿环比涨 <b>140%<\/b>，同比 14 倍。同期 OpenAI 最新披露的 run rate 是 <b>400 亿<\/b>。",
+     "sides": "Axios 自己加了一句提醒：两家公司算营收的口径可能不一样，直接比大小要小心。另外 run rate 是「拿某一个月乘 12」，不是已经到手的年收入——在一条陡峭的增长曲线上，这个数天然偏乐观。",
+     "angle": "反超本身没什么可写的，一周之内就会被下一条新闻盖过。<b>值得写的是「run rate」这个词<\/b>：为什么 IPO 前的公司都爱用它，它和 GAAP 收入差在哪，投资人看到 650 亿时脑子里换算的是什么。你可以做一期「读财经稿别被四个数字骗了」，run rate、ARR、bookings、承诺采购额各讲一遍，这个选题不过期。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "Axios",
+       "url": "https://www.axios.com/2026/08/17/anthropic-revenue-run-rate-ipo-openai"
+      },
+      {
+       "label": "CNBC",
+       "url": "https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html"
+      }
+     ],
+     "source_date": "2026-08-17",
+     "followup": "8/17 早报已写过「二季度营收超 115 亿、同比 14 倍」和 IPO 估值模型。本条新增的是 7 月 650 亿 run rate 这个此前没公开过的数字，以及与 OpenAI 400 亿的直接对比。"
+    },
+    {
+     "id": "am-03",
+     "section": "行业痛点",
+     "title": "Copilot 的「自动修复」亲手种下漏洞，另一个 AI 把它挖出来打穿了 Snowflake 的 Jira",
+     "facts": "Wiz 在 8 月 17 日公开了这份研究。<b>6 月 18 日<\/b>，Snowflake 仓库合并了一个署名含「Copilot Autofix powered by AI」的 PR。它把原本安全的写法（用环境变量传值、用 jq 解析 JSON）改成了把 GitHub issue 标题直接拼进 shell 命令，只靠 sed 转义。标题里放一个单引号，就能越界执行任意命令。",
+     "sides": "Wiz 的 Red Agent 全自动完成了后面几步：扫描 CI/CD 发现问题、构造带外回传 payload、第一次因为注释符导致语法出错后自己改写成另一种闭合方式、最终收到 base64 编码的 Jira 凭据。那个 token 以 qa@snowflake.net 的身份，能读到工程、安全合规、漏洞赏金三块 Jira 项目。6 月 23 日经 HackerOne 上报、当天修复，24 日轮换密钥。<br>注意两边的措辞：Wiz 说 agent 拿到了凭据并读到内容，Snowflake 的正式回应是「没有发现未授权访问的证据」。",
+     "quotes": [
+      {
+       "en": "The disclosure was received on June 23, 2026, and it was immediately investigated and remediated, and our investigation found no evidence of unauthorized access.",
+       "zh": "我们在 2026 年 6 月 23 日收到该披露，立即调查并修复；调查未发现存在未授权访问的证据。",
+       "by": "Snowflake 官方回应，见 Wiz 博客"
+      },
+      {
+       "en": "if the models weren't enough to prevent the issues, they aren't enough to judge what is minor",
+       "zh": "模型既然拦不住问题，那它也没资格判断哪个改动算「小改动」。",
+       "by": "Hacker News 高赞评论，2026-08-17"
+      }
+     ],
+     "angle": "这条是<b>今天最好写的一篇长文<\/b>，因为它把「AI 写代码」的争论从口水拉到了一个完整闭环：AI 引入漏洞 → 人类点了 merge → AI 发现并利用漏洞。切口建议选「自动修复类工具的审阅默认值」——很多团队把 Autofix 的 PR 归到「安全改动，可以放行」那一类，这个案例正好打在这上面。别写成「AI 不能写代码」，Wiz 那个能自我纠错的攻击 agent 恰恰说明 AI 很能写。写「谁来审」，不写「能不能用」。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "Wiz 原始研究",
+       "url": "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug"
+      },
+      {
+       "label": "The Register 报道",
+       "url": "https://www.theregister.com/security/2026/08/17/an-ai-broke-snowflakes-code-then-another-ai-agent-exploited-it/5288666"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49331423"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-04",
+     "section": "行业痛点",
+     "title": "GitHub 挂了三个多小时，同一天「有什么 GitHub 替代品」冲上 HN 首页",
+     "facts": "北京时间 8 月 17 日 21:40 起（太平洋时间上午 6:40），GitHub 网页和 API 错误率约 <b>20%<\/b>，压缩包下载和 raw 文件约 <b>50%<\/b>，Actions、PR、Webhook、Copilot 全受影响。GitHub 说 9:30 前后找到了根因，10 点左右恢复，前后<b>三个多小时<\/b>。同一天 HN 首页出现两条相关帖：故障帖 <b>883<\/b> 条评论，「Ask HN：GitHub 替代品」<b>299<\/b> 条。",
+     "sides": "GeekWire 补了一条容易被忽略的背景：今年 4 月 GitHub CTO 说原计划扩容 10 倍，后来判断得做到 <b>30 倍<\/b>；6 月微软承认 AI agent 开发量的暴涨已经顶到了 GitHub 的基础设施上限。平台现有约 2.25 亿用户。<br>替代品帖里被提到最多的是 Forgejo、GitLab、Gitea、Codeberg。有意思的是，跑的人给的理由不全是宕机。",
+     "quotes": [
+      {
+       "en": "I migrated everything to codeberg several months ago... what ultimately pushed me to ditch it was the way github was shoving copilot/chatgpt in my face without me ever asking.",
+       "zh": "几个月前我把所有东西都搬到 Codeberg 了……真正让我下决心走的，是 GitHub 一直把 Copilot 和 ChatGPT 往我脸上塞，我压根没要过。",
+       "by": "Hacker News「Ask HN: Alternatives to GitHub」高赞回复"
+      }
+     ],
+     "angle": "两条新闻拼在一起才成立：<b>AI agent 把 GitHub 压垮，而 AI 功能又在把人推走<\/b>。这是同一根因的两头。建议做一期「AI 时代的基础设施账单谁来付」——agent 的读写量是人的多少倍，CI 跑一次多少钱，为什么扩容 10 倍变成 30 倍。图文可以直接做「HN 上被提名的四个替代品 + 各自的取舍」，实用、能存、转发率高。别写「大家都在逃离 GitHub」，299 条评论撑不起这个结论。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "GeekWire 报道",
+       "url": "https://www.geekwire.com/2026/github-outage-disrupts-developers-worldwide-in-latest-setback-for-microsoft-coding-platform/"
+      },
+      {
+       "label": "Engadget 报道",
+       "url": "https://www.engadget.com/2238231/github-has-been-down-for-most-of-the-morning/"
+      },
+      {
+       "label": "Ask HN: Alternatives to GitHub",
+       "url": "https://news.ycombinator.com/item?id=49331033"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-05",
+     "section": "今日深挖",
+     "title": "404 Media 在一箱旧书里塞了个 AirTag，它停在了亚马逊的 AI 训练场",
+     "facts": "8 月 17 日 404 Media 发的调查，作者 Emanuel Maiberg。他们买了 <b>1000 本书<\/b>，往里藏了一个 AirTag，想看看这批书最后进了谁的手。定位停在拉斯维加斯的亚马逊 <b>LAS8<\/b> 仓库，具体是代号 <b>VGT3<\/b> 的分区——那个区的标识是一只恐龙抓着一本书往下撕。员工论坛的讨论显示，这里做的是破坏性扫描：拆书、扫描、销毁。",
+     "sides": "同类操作此前有过公开先例，但这次是第一次有人用物理追踪把「书从哪来、到哪去」这条链路走通。要提醒的是：404 Media 的正文在付费墙后，公开可见的只有导语和事实骨架，亚马逊的正式回应我没有读到。",
+     "angle": "这条的价值不在「亚马逊坏」，而在<b>方法<\/b>：一个 AirTag、一千本书，就把一条谁都知道但谁都拿不出证据的传闻钉死了。你可以直接做一期「记者是怎么给看不见的东西拍照的」，把这次追踪、之前用电表查数据中心、用卫星图查工地放一起讲，选题不依赖单条新闻的时效。做视频的话，恐龙撕书那个 logo 就是全片的封面。另外别把「破坏性扫描」写成「毁书」——图书馆和档案界用这套流程几十年了，争议点是规模和授权，不是扫描本身。",
+     "platforms": [
+      "长文",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "404 Media 原文（部分付费）",
+       "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility/"
+      },
+      {
+       "label": "Simon Willison 摘要",
+       "url": "https://simonwillison.net/2026/Aug/17/"
+      },
+      {
+       "label": "TechCrunch 跟进",
+       "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-06",
+     "section": "数据素材",
+     "title": "华尔街日报：九家大厂 3 万亿美元 AI 开支不在资产负债表上",
+     "facts": "WSJ 盘出来的口径是 <b>3 万亿美元<\/b>：其中 <b>1.2 万亿<\/b>是还没启用的设施租约，<b>1.9 万亿<\/b>是芯片和设备采购承诺。分公司看：Alphabet <b>8110 亿<\/b>，Meta <b>3493 亿<\/b>，微软 <b>2286 亿<\/b>，亚马逊 <b>1301 亿<\/b>。",
+     "sides": "Meta 那部分被拆得最细，表外合计约 <b>4200 亿<\/b>：Beignet/Hyperion 债券 273 亿、CoreWeave 到 2032 年的 350 亿照付不议、未来租约 3470 亿。Beignet 是 2025 年 10 月和 Blue Owl 搭的结构，Meta 只留 20% 股权，按 GAAP 不算「主要受益人」，所以那 273 亿 A+ 级债券不上表。安永今年 2 月把这个结构列为「critical audit matter（关键审计事项）」——意思是这个「不上表」的判断，是它整场审计里最难下的结论之一。<br>Michael Burry 8 月 17 日在 X 上顺势发了一句。",
+     "quotes": [
+      {
+       "en": "Well, you could have heard it first, months ago, 2025 even.",
+       "zh": "这些话你几个月前就能听到，2025 年就有了。",
+       "by": "Michael Burry，X，2026-08-17"
+      }
+     ],
+     "angle": "3 万亿是今天最好用的一个数，但<b>千万别只喊数字<\/b>。真正能拉开差距的是解释「为什么它合法」：合资公司留 20% 股权、GAAP 的主要受益人判定、审计师标了「关键事项」但还是签了字。这三步讲清楚，读者会自己得出结论，比你下判断有力得多。图文就做一张表：四家公司四个数，旁边标一句「这些钱在财报的哪一页」。Burry 那句话可以引，但别当论据——他在给自己的旧观点背书。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechTimes 拆解（含 Meta 明细）",
+       "url": "https://www.techtimes.com/articles/324721/20260817/metas-balance-sheet-hides-420b-off-balance-sheet-ai-debt-ey-flagged-largest-structure.htm"
+      },
+      {
+       "label": "Benzinga（Burry 发言与分公司数字）",
+       "url": "https://www.benzinga.com/news/26/08/61241596/michael-burry-takes-victory-lap-as-big-techs-3-trillion-ai-spending-tab-comes-into-focus"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-07",
+     "section": "论文",
+     "title": "七个前沿模型跑 36 个长周期研发任务：更像调参工程师，不像研究员（Beyond Final Scores）",
+     "facts": "论文的出发点是：只看最终分数，既不知道进步发生在哪一步，也不知道它有没有从上一次的经验里学到东西。作者用规则化指标把一次运行内部拆成三段——怎么框定方案、怎么执行、怎么根据反馈调整，再做对照实验测「经验复用」。结果是<b>七个前沿模型、36 个长周期任务<\/b>下，同一任务多次跑波动很大，最好的解法基本在拼装已有技术，真正的方法创新很少见。",
+     "quotes": [
+      {
+       "en": "current agents operate more like engineering optimizers than fully autonomous researchers",
+       "zh": "现在的 agent 更像工程调优器，而不是能独立做研究的研究员。",
+       "by": "arXiv:2608.13417 摘要"
+      }
+     ],
+     "angle": "这是给「AI 已经能自己做科研了」那波叙事降温的<b>一手材料<\/b>，而且降得很体面——它没说 agent 不行，说的是「行在哪一段」。建议只做一件事：把「方案框定 / 执行 / 反馈调整」这三段拿出来，配你自己用 agent 的一次真实经历，逐段对照哪段像人、哪段不像。这比复述结论有意思十倍。别用「AI 还不能取代科学家」当标题，太软。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.13417",
+       "url": "https://arxiv.org/abs/2608.13417"
+      }
+     ],
+     "source_date": "2026-08-13"
+    },
+    {
+     "id": "am-08",
+     "section": "论文",
+     "title": "同一个模型，只换工具接口：步数少 41.6%，token 少 56.3%（The Devil Is in the Interface）",
+     "facts": "跑了 <b>11,700 条<\/b> agent 轨迹，对比六种工具架构，模型能力不变。结构化的低层接口比只给一个 bash，行为一致性最高提升 <b>4.7 倍<\/b>；再加自然语言搜索，命中相关文件的比例涨 <b>11% 以上<\/b>。Python CodeAct 风格的接口效果相当，但步数少 <b>41.6%<\/b>、token 少 <b>56.3%<\/b>。",
+     "sides": "反过来的发现同样有用：那些「认知脚手架」类工具——比如强制 agent 写中间推理日志——对行为几乎没影响。也就是说，改工具形状有效，加思考仪式没用。",
+     "angle": "这条是<b>今天最能直接变现的一篇<\/b>。给 agent 配工具的人现在多半靠手感，这篇论文把手感换成了数字。你可以做一期「你的 agent 慢，可能不是模型的锅，是工具接口的锅」，把四个数（4.7 倍、11%、41.6%、56.3%）做成一张卡片图，配一句「今天就能改的三件事」。做视频的话，用 bash 版和 CodeAct 版跑同一个任务，录屏对比步数，画面本身就是论据。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.11386",
+       "url": "https://arxiv.org/abs/2608.11386"
+      }
+     ],
+     "source_date": "2026-08-11"
+    },
+    {
+     "id": "am-09",
+     "section": "论文",
+     "title": "一篇论文先算出「AI 省了 19.4 倍」，自查后改成 9.9 倍——两个错都很好犯",
+     "facts": "六个学生用一个学期做了个 AI 入职助手：RAG 代码问答、导览、依赖图、技术债分析。他们用三层成本模型算账——真实 AI 花费、自报人力工时、一个「如果不用 AI」的反事实对照。初稿算出 <b>19.4 倍<\/b>。复核发现两处错：一是按 token 单价折算，但实际用的是包月订阅；二是反事实用错了地区工资标准。两个错各自独立，合起来把倍数吹大了约 <b>2 倍<\/b>，改完是 <b>9.9 倍<\/b>。",
+     "quotes": [
+      {
+       "en": "both errors are easy to make, invisible in the final number, and plausibly common in similar reports",
+       "zh": "这两个错都很容易犯，在最终那个数字上完全看不出来，而且很可能在同类报告里很常见。",
+       "by": "arXiv:2608.13730 摘要"
+      }
+     ],
+     "angle": "这是<b>一把可以反复用的解剖刀<\/b>。以后每看到一篇「我们用 AI 效率提升 N 倍」的稿子，就拿这两个错去对一遍：它是按 token 单价算的还是按实际账单算的？它的「不用 AI 会花多少钱」是拿谁的工资算的？建议做成一个五问清单的图文，标题就叫「看到『提效 N 倍』先问这五句」，能长期挂着。写的时候要给作者面子——人家是自己把自己的数字砍了一半，这在论文里很少见。",
+     "platforms": [
+      "图文",
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.13730",
+       "url": "https://arxiv.org/abs/2608.13730"
+      }
+     ],
+     "source_date": "2026-08-13"
+    },
+    {
+     "id": "am-10",
+     "section": "论文",
+     "title": "便宜模型不是真便宜：失败重试让实际成本最高翻 4.25 倍（InflationAgent）",
+     "facts": "论文管这叫 token inflation（token 膨胀）：模型答错要重试，重试烧的钱没算进「每 token 单价」里。实测小模型在复杂推理上的膨胀最高到 <b>4.25 倍<\/b>；像 FrugalGPT 这类按单价路由的系统，在难题上会把真实成本<b>低估两倍以上<\/b>。",
+     "sides": "两个可以直接抄的做法。一是难度预测指标 CoT Branching Entropy，纯本地计算、不调外部 API，AUROC <b>0.887<\/b>。二是「fresh escalation」——升级到强模型时，把之前失败的推理链整段丢掉重来；论文测出留着接着用会让准确率最多掉 <b>34.8 个百分点<\/b>。GSM8K 固定预算下，它拿到 <b>94.7%<\/b>，FrugalGPT 是 <b>91.0%<\/b>，而且 token 还少 31%。",
+     "angle": "「把失败的思路留着给下一个模型看，反而更差」这个反直觉发现，比省钱那部分更有传播力——因为大多数人的 fallback 逻辑就是把上下文原样递上去。短帖只写这一句加那个 34.8 个百分点就够了。长文可以顺着「模型定价页上的单价是个半成品」往下写，跟前几天那条「同一句提示词喂 11 个模型，最贵的多烧 200 多倍」串成一条线。这篇的提交日期我没核准，引数字可以，引日期先自己确认一下。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.13571",
+       "url": "https://arxiv.org/abs/2608.13571"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "am-11",
+     "section": "论文",
+     "title": "把「记知识」和「做推理」拆成两个部件：训练数据省 37%，推理快近 4 倍（Intern-S2-Mobius）",
+     "facts": "架构叫 Mobius-v0：一个全局共享的 Memory（其实就是前馈层 FFN）专门存知识向量，多个 Reasoner（就是自注意力层）反复迭代做组合推理。<b>7B 从头训<\/b>，只用基线 Transformer <b>62.6%<\/b> 的数据就打平了下游成绩。Intern-S2-Mobius 从 Qwen3.5-35B 继续预训练，端到端推理快了<b>近 4 倍<\/b>，下游分数基本持平。作者列表四十多人。",
+     "angle": "这条要跟你 8/17 早报那条「模型是故意变笨的——各家在拿世界知识换推理能力」<b>接在一起写<\/b>。那条讲的是现象，这篇给的是结构上的解释：如果知识和推理本来就该是两个部件，那「拿知识换推理」就不是取舍，是架构没分开导致的假两难。长文标题可以走「大模型该不该有两个大脑」。别把 62.6% 说成「省了 37% 算力」，它省的是数据量，两回事。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.14290",
+       "url": "https://arxiv.org/abs/2608.14290"
+      },
+      {
+       "label": "Hugging Face Papers 当日榜",
+       "url": "https://huggingface.co/papers?date=2026-08-17"
+      }
+     ],
+     "source_date": "2026-08-14"
+    },
+    {
+     "id": "am-12",
+     "section": "AI 资讯",
+     "title": "AI 视频公司 Higgsfield 八个月估值翻两番，年化收入 7 亿美元",
+     "facts": "8 月 17 日官宣 B 轮 <b>4 亿美元<\/b>，估值 <b>54 亿美元<\/b>——八个月前还是 13 亿。年化收入 <b>7 亿美元<\/b>，<b>3000 万<\/b>用户覆盖 200 个国家，<b>390 家<\/b>世界五百强在用。DST Global 领投，高盛另类投资、Valor Capital、Tribe Capital 跟投。",
+     "sides": "产品线分成给影视人用的 Cinema Studio 和给广告团队用的 Marketing Studio。创始人 Alex Mashrabov 是 Snap 出来的，2023 年创立公司。这笔钱主要花在招人和算力上，对手是 Synthesia 和 Runway。",
+     "quotes": [
+      {
+       "en": "Video is one of the most compute-intensive domains in AI. Just one minute of video is like processing 60,000 words.",
+       "zh": "视频是 AI 里最吃算力的方向之一。生成一分钟视频，差不多相当于处理六万个词。",
+       "by": "Alex Mashrabov，Higgsfield CEO，TechCrunch，2026-08-17"
+      }
+     ],
+     "angle": "别做融资流水账。这条真正的信息量是<b>「390 家世界五百强」和「3000 万用户」并存<\/b>——一个消费级增长曲线上长出了企业收入，这在 AI 视频赛道里之前没出现过。你可以从「AI 视频终于不靠 C 端猎奇活着了」切，问一句：这 7 亿里企业占多少、消费者占多少，官方没说，这就是你的追问点。那句「一分钟视频等于六万个词」很适合当短帖开头，读者能立刻换算出成本。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/17/higgsfield-raises-400m-series-b-quadrupling-its-valuation-in-8-months-to-5-4b/"
+      },
+      {
+       "label": "官方新闻稿",
+       "url": "https://www.prnewswire.com/news-releases/higgsfield-raises-400-million-series-b-financing-at-5-4-billion-valuation-with-annualized-revenue-reaching-700-million-302852430.html"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-13",
+     "section": "AI 资讯",
+     "title": "ChatGPT 桌面端开始记录你在 Mac 上的每一次点击和敲键——但它明说了不截屏",
+     "facts": "功能叫 Computer History，只有 macOS 桌面版有。它记的是「交互事件」：点击、输入、快捷键、切换应用，外加 macOS 辅助功能接口暴露的界面上下文。这些事件定期被转成文字摘要，写进本地记忆文件。<b>事件原始文件在设备上保存 48 小时后删除。<\/b>",
+     "sides": "官方文档明确列了不收的东西：不截屏、不录屏、不录麦克风、不录系统声音，无痕浏览一律不进。默认关闭；企业版要管理员先批、用户再自己开，还得先打开 Memories。可以按 app 或网站做排除名单、随时暂停、按时间段（最近 10 分钟到全部）删除。<b>欧洲经济区、瑞士、英国不提供。<\/b><br>英文媒体这两天的标题基本是「ChatGPT 现在记录你的每一次敲键」，技术上没错，但把「不截屏」这半句丢了。",
+     "angle": "<b>别跟着标题党写「ChatGPT 监控你」<\/b>，那样你和 Futurism 就没区别了。更好的切口是「为什么它宁可不截屏」：截屏是像素，事件流是结构化文本，后者 token 便宜得多、也更好检索——这是个成本和产品决策，不只是隐私姿态。第二个切口更硬：欧洲、瑞士、英国用不了。为什么？把 GDPR 那条讲清楚，比骂一句「侵犯隐私」有价值。图文就做一张「它收什么／它不收什么／怎么关」的对照卡。",
+     "platforms": [
+      "图文",
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "OpenAI 官方文档",
+       "url": "https://learn.chatgpt.com/docs/customization/computer-history"
+      },
+      {
+       "label": "The New Stack 报道",
+       "url": "https://thenewstack.io/openai-chatgpt-computer-history/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-14",
+     "section": "工作流工具",
+     "title": "Claude Code 2.1.234：撞到用量上限后，额度一恢复自动接着跑",
+     "facts": "8 月 17 日发的 <b>2.1.234<\/b>。最实用的一条：撞到用量限额后，等额度重置会自动继续会话，在 <code>/config<\/code> 里开关。另外加了 GitLab 合并请求徽章（显示 MR !N 和草稿／待办／通过状态），加了 <code>CLAUDE_CODE_PROJECT_DIR_NAME<\/code> 环境变量，可以给每个项目单独存对话记录。",
+     "sides": "修的坑里有两个值得留意：后台子 agent 的权限提问，会话级的回答之前会被丢掉；MCP 的作用域冲突警告里，会把已解析的密钥打出来。前一版 2.1.233（8 月 14 日）给 Linux 下的 Bash 工具加了内存 cgroup 限制（<code>CLAUDE_CODE_TOOL_MEMORY_LIMIT<\/code>），还修了空闲会话把一个 CPU 核吃满 100% 的问题。",
+     "angle": "「限额重置后自动续跑」这一条，对<b>挂着跑长任务<\/b>的人是实打实的体验变化——以前得守着，现在可以睡觉。短帖就写这一句，配一张 /config 截图，转发率会不错。别整版复述 changelog，没人看。真要做长内容，可以顺着那个「MCP 警告泄露密钥」的修复，做一期「你的 MCP 配置里有多少东西会被打进日志」，实用且有点吓人。",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Claude Code 更新日志",
+       "url": "https://code.claude.com/docs/en/changelog"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-15",
+     "section": "工作流工具",
+     "title": "DeepSeek Harness 涨到 13 万 star：一个「一切皆插件」的 agent 框架",
+     "facts": "DeepSeek 开源的 agent 框架，命令行叫 <code>dsh<\/code>，口号就一句 Everything is a Plugin，底座是一个叫 Cordis 的库。GitHub 上现在 <b>13.01 万 star、1.3 万 fork<\/b>。VentureBeat 的标题把它定位成 Claude Code 的开源对手，和 V4-Pro 上 API 同期放出。",
+     "sides": "README 自己写着还在 developer preview，并且用全大写强调「会有破坏兼容性的改动」。也就是说这个 star 数里有相当一部分是「先标记一下」，不是「已经在生产里用」。",
+     "angle": "13 万 star 这个数字本身就是短帖素材，但<b>光喊数字会掉价<\/b>。更值得写的是「一切皆插件」这个设计选择：它把 Claude Code 那种「内置工具 + 系统提示词」的路线，换成了内核极薄、能力全靠外挂。这两条路线的分歧会决定未来一年 agent 生态长什么样，你可以做一期架构对比。做之前先把 star 数重刷一遍，它涨得很快。「两天 9.5 万 star」那个说法我没核实，别引。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "GitHub 仓库",
+       "url": "https://github.com/deepseek-ai/deepseek-harness"
+      },
+      {
+       "label": "VentureBeat 报道",
+       "url": "https://venturebeat.com/technology/deepseek-harness-launches-as-open-source-rival-to-claude-code-alongside-v4-pro-on-api-with-higher-prices"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "am-16",
+     "section": "反共识",
+     "title": "「AI;DR」——你自己都懒得读一遍，凭什么让我读",
+     "facts": "8 月 17 日一篇短文冲上 HN 首页，<b>536 分、327 条评论<\/b>。作者 Rick Manelius 造了个词：AI;DR（AI; Didn't Read），对标 TL;DR。规则很简单——看到没经人工编辑的 AI 原稿，直接不读。他不反对用 AI 干活，客服机器人这类场景他明说可以；他反对的是把生料原样甩给人。",
+     "quotes": [
+      {
+       "en": "If you're not bothered enough to review and edit it...then I'm not going to bother reading it.",
+       "zh": "你自己都懒得回头看一遍、改一改，那我也懒得读。",
+       "by": "Rick Manelius，AI;DR，2026-08-17"
+      },
+      {
+       "en": "It's your name on it; are you proud of the prose and weird AI-isms sprinkled throughout it?",
+       "zh": "上面署的是你的名字。文章里那些别扭的行文、散落各处的 AI 腔，你真的觉得体面吗？",
+       "by": "同上"
+      }
+     ],
+     "angle": "这条对你是<b>双刃剑，但正因为这样才值得做<\/b>。最好的写法是把刀对准自己：公开讲一次你的稿子里 AI 参与到哪一步、哪一步一定是手写的、你怎么删 AI 腔。读者对创作者的信任，恰恰建立在这种交底上。反过来，如果你只是转述「有人提出了 AI;DR」，那这条就白了。做视频的话，念一段没编辑的 AI 稿再念一段你改完的，对比就是内容。别顺手骂同行。",
+     "platforms": [
+      "长文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://www.rickmanelius.com/p/aidr-ai-didnt-read"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49336573"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-17",
+     "section": "科技资讯",
+     "title": "德国反垄断局逼苹果改隐私弹窗：你不能对自家 app 更客气",
+     "facts": "联邦卡特尔局 8 月 17 日宣布结案。认定苹果的 ATT 框架对第三方 app 提了额外的同意要求，自家 app 不用；而且自家弹窗的措辞和视觉设计倾向于让人点同意，第三方弹窗的措辞和图标则倾向于劝退。局方判定：这个差异超出了「数据处理方式不同」能解释的范围。",
+     "sides": "苹果承诺四件事：措辞和版式和自家对齐、去掉劝退性的图标和用语、允许开发者把苹果要求的同意和数据保护法要求的同意更灵活地合并、给开发者更多篇幅解释个性化广告的商业意义。<b>四个月内实施，独立受托人监督七年。<\/b>",
+     "quotes": [
+      {
+       "en": "Apple is allowed to provide for a level of protection...that exceeds the minimum legal requirements. However...these rules must...not treat its own offerings better than those of its competitors.",
+       "zh": "苹果当然可以把保护标准定得比法律底线更高。但这套规则……不能对自家业务比对竞争对手更宽容。",
+       "by": "Andreas Mundt，德国联邦卡特尔局主席，2026-08-17"
+      }
+     ],
+     "angle": "这条的普适价值在<b>「设计即歧视」这个判定思路<\/b>——监管盯的不是苹果收没收数据，而是同一个弹窗，对自己人和对外人长得不一样。这套逻辑迁移性极强，可以直接套到应用商店推荐位、系统级 AI 助手的默认调用对象上。建议做一期「暗黑模式（dark pattern）第一次被反垄断认下来」，配上苹果两种弹窗的实际截图对比。别写成隐私新闻，它是竞争法新闻。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "德国联邦卡特尔局官方公告",
+       "url": "https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2026/08_17_2026_Apple_ATTF.html"
+      },
+      {
+       "label": "MacRumors 报道",
+       "url": "https://www.macrumors.com/2026/08/17/apple-app-tracking-transparency-changes-germany/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-18",
+     "section": "数据素材",
+     "title": "宇树 IPO 认购倍数有四个版本：2700、5526、8000、8289",
+     "facts": "宇树科技 <b>8 月 19 日<\/b>在上交所科创板挂牌。彭博 8 月 10 日写的是散户认购 <b>5,526 倍<\/b>；路透后来写「超过 <b>8,000 倍<\/b>」；ts2.tech 写 <b>8,289 倍<\/b>并给出 <b>219 倍<\/b>市盈率；还有媒体写 <b>2,700 多倍<\/b>。同一场发行，四个数。",
+     "sides": "差异大概率来自口径：初步询价和最终配售、网上和网下、散户和全体，是四套完全不同的分母。但目前没有一家媒体在标题里写清楚自己用的是哪一套。",
+     "angle": "这是<b>一个现成的「数字怎么被搬歪」的案例<\/b>，而且是中文读者切身相关的标的。写法建议不带情绪：把四个数字、四个出处、四个可能的口径列成一张表，最后说一句「你转发的是哪一个」。这种内容的生命周期比新闻本身长得多，以后每次遇到「超额认购 N 倍」都能翻出来。别下「媒体造假」的判断——大概率是各家取了不同阶段的数，不是编的。",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "彭博（5,526 倍）",
+       "url": "https://www.bloomberg.com/news/articles/2026-08-10/unitree-s-shanghai-ipo-5-526-times-subscribed-by-retail-buyers"
+      },
+      {
+       "label": "路透（逾 8,000 倍）",
+       "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L4N4470NE:0-unitree-s-shanghai-ipo-more-than-8-000-times-oversubscribed-by-retail-investors/"
+      },
+      {
+       "label": "ts2.tech（8,289 倍、219 倍 PE）",
+       "url": "https://ts2.tech/en/unitree-ipo-draws-8289-times-retail-demand-at-219-times-earnings/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-19",
+     "section": "跨界机会",
+     "title": "铜成了 AI 的瓶颈，一批美国创业公司在重做冶炼这件旧事",
+     "facts": "Axios 8 月 14 日的稿子。Red Metals 背后是 Future Ventures 和特斯拉联合创始人 JB Straubel，租了 <b>4.2 万平方英尺<\/b>厂房，拿到 CSC Leasing <b>350 万美元<\/b>设备融资。Still Bright 走电化学路线、试剂可回收，在新泽西纽瓦克跑中试反应器，<b>目前年产能只有两吨<\/b>，计划 2027 年一季度融 <b>4000 万美元<\/b> A 轮。同赛道还有 Jetti、Ceibo，以及必和必拓风投投的 PH7 Technologies。",
+     "sides": "背景是美国地质调查局 2025 年 11 月把铜列进关键矿产清单。美国本身铜矿不缺，缺的是冶炼——目前大量精炼产能在海外，尤其在中国。",
+     "quotes": [
+      {
+       "en": "The U.S. is copper rich and refining poor.",
+       "zh": "美国是「有铜、没炼铜的本事」。",
+       "by": "Victoria Beasley，Gigascale Capital，Axios，2026-08-14"
+      },
+      {
+       "en": "Copper is AI. If we don't have copper, we are at major risk for all aspects of that.",
+       "zh": "铜就是 AI。没有铜，AI 这盘棋每一块都有大风险。",
+       "by": "Stephen Empedocles，Clark Street CEO，同上"
+      }
+     ],
+     "angle": "AI 硬件的报道基本都堵在 GPU 和电上，<b>铜是个还没被写烂的入口<\/b>。最有张力的一组数字是「年产能两吨」对上「数据中心的用铜量」——这个落差本身就是故事，说明这条赛道离商业化还很远，但资本已经在下注了。建议从「AI 的物理账单」这个母题切，做成系列：电、水、铜、光模块各一集。别写成投资推荐，这些公司还在中试。",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "Axios 原文",
+       "url": "https://www.axios.com/2026/08/14/american-tech-copper-processing"
+      }
+     ],
+     "source_date": "2026-08-14"
+    },
+    {
+     "id": "am-20",
+     "section": "小众科技",
+     "title": "DuckDB v2.0 预览：那个「单机小数据库」开始长出服务器的样子",
+     "facts": "8 月 17 日放出预览，正式版计划今年秋天。最大的变化是 <code>quack<\/code> 扩展带来的客户端／服务器模式，配一个远程下推优化器，能把 SQL 直接推给 PostgreSQL 和 MySQL 去执行，还新增了 <code>CONNECT<\/code> 语句。异步 I/O 让读 S3 这类对象存储能真正并行。递归 CTE 重写后，可达性查询快 <b>40 倍<\/b>。",
+     "sides": "还有一堆细节：触发器（BEFORE/AFTER、行级和语句级）、<code>NEAREST<\/code> join 做 top-k 相似检索、CTE 里能直接写 INSERT/UPDATE/DELETE、SQL 解析器换成了 PEG 新实现、扩展有了稳定 C API。最狠的一条是「ICU 库整个被自己实现替掉」——时区数据压到约 <b>45 kB<\/b>，时区转换快 <b>2.2 倍<\/b>。<br>HN 评论区两种反应：一边是「异步终于来了，可以拿它扛 HTTP 流量了」；另一边有人对着「我们重新实现了 ICU」这句话表示害怕，还有人吐槽发布稿本身「一股 AI 味」。",
+     "angle": "对做数据的读者，<b>「本地分析库变成能联网的服务」这条线<\/b>是今年最值得跟的一条。你可以从一个具体问题切：以前把 DuckDB 塞进服务端要靠各种土办法绕并发，现在官方给了。图文做「v2.0 十个新东西，哪三个你明天就用得上」。那句「我们重新实现了 ICU」很适合当彩蛋——时区和字符排序是出了名的坑，自己重写需要勇气，也是新的 bug 来源。",
+     "platforms": [
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "DuckDB 官方预览",
+       "url": "https://duckdb.org/2026/08/17/duckdb-20-highlights"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49330781"
+      }
+     ],
+     "source_date": "2026-08-17"
+    }
+   ],
+   "pitfalls": [
+    "<b>am-01<\/b>：OpenAI 解散 preparedness 团队的原始出处是《金融时报》，我读到的是 Engadget 等转述，FT 原文没打开。两位离职者姓名（Chloé Bakalar、Johannes Heidecke）同样来自二手。发稿前建议按名字各搜一次做交叉确认。",
+    "<b>am-02<\/b>：650 亿 run rate 是「知情人士」口径，Anthropic 没有公开发布；和 OpenAI 的 400 亿是不是同一套算法，Axios 自己也说不确定。别写成「Anthropic 官宣反超」。",
+    "<b>am-03<\/b>：Wiz 说自家 agent 拿到了 Jira 凭据并读到内容，Snowflake 的正式回应是「未发现未授权访问的证据」。两边表述对不齐，写的时候两句都要给，不要只引一边。",
+    "<b>am-05<\/b>：404 Media 正文在付费墙后，我只看到公开的导语和事实骨架，加上 Simon Willison 的摘要。<b>亚马逊的正式回应我没有读到<\/b>，不要替它写「亚马逊未予置评」。",
+    "<b>am-06<\/b>：3 万亿总数和分公司拆分（Alphabet 8110 亿等）、Meta 4200 亿明细，我读到的是 Benzinga 和 TechTimes 对 WSJ 的转述，WSJ 原文没打开。数字量级可信，但引用时最好注明「据 WSJ，经二手转述」。",
+    "<b>am-10<\/b>：这篇论文抓到的提交日期与它的 arXiv 编号（2608 应为 2026 年 8 月）对不上，所以标了「日期待核」。数字可以用，日期请自己开 abs 页面确认后再写。",
+    "<b>am-15<\/b>：13.01 万 star 是 8 月 18 日的快照，涨势很快，发稿前重刷一次。另外网上流传的「两天 9.5 万 star」出自二手博客，我没有核实，别引。Harness 的确切发布日期也未核准，只知道与 V4-Pro 上 API 同期。",
+    "<b>am-18<\/b>：四个认购倍数很可能对应四套口径（初步／最终、网上／网下、散户／全体），但没有一家媒体明说。别把它写成「有人造假」，写成「口径没交代」。",
+    "<b>时区提醒<\/b>：本期覆盖北京时间 8/17 21:00 至 8/18 08:00，对应美东 8/17 白天。所有标注 2026-08-17 的条目均为美东当日；GitHub 故障发生在北京时间 8/17 21:40 起，写中文时如果用「昨晚」要按北京时间说。"
+   ]
+  },
+  {
+   "id": "2026-08-18-noon",
+   "date": "2026-08-18",
+   "type": "noon",
+   "type_label": "午报",
+   "generated_at": "2026-08-18 13:40 (北京时间)",
+   "intro": "今天挖到一篇能当选题眼的论文：同一段无关的小故事，换几个同义词，模型的答案从 6% 拉到 99.93%。另外三份能直接抄的提示词、四条来自物业、IT 外包、猎头、非营利一线的真实抱怨，还有一条我劝你别碰的赛道。",
+   "highlights": [
+    "nn-01 模型催眠：三段同义的散步小故事，把同一道题的答案从 6% 推到 99.93%，再压到 0.000024%。全文英文原文可复制。",
+    "nn-15 物流圈版主开了个「软件专帖」，把 AI 创业者全关进去——「外来者跑来找机会自动化、颠覆、搭工作流」被明确列为不受欢迎。这条和 nn-10、nn-12 是同一件事的三个面。",
+    "nn-14 加一句「请注意多元与公平」，模型给病人凭空补人口属性的比例从 0.7% 涨到 33.1%，47 个模型无一例外——而真正的题不是 DEI，是「任何软性引导都是内容订单」。"
+   ],
+   "cards": [
+    {
+     "id": "nn-01",
+     "section": "提示词",
+     "title": "同一段无关的散步小故事，换几个同义词，模型答「是」的概率从 6% 跳到 99.93%",
+     "facts": "宾夕法尼亚大学两位作者 8 月 17 日挂出的论文，管这个叫「模型催眠」（model hypnosis）。做法很土：在一道电车难题前面塞一段完全无关的散步小故事，再逐句换成意思一样的另一种写法。<br>Qwen3-8B 答「yes」的概率从 <b>6.0%<\/b> 变成 <b>99.93%<\/b>。反着调，能压到 <b>0.000024%<\/b>。问题本身一个字没改。<br>单个换词的影响弱到看不出来，攒起来就成了近乎确定的控制。作者在 <b>16 个<\/b>不带思考过程的模型上做线性拟合，中位 <b>R² 是 0.75<\/b>——意思是这些微弱效应基本就是简单相加。GPT-5.6-Sol、Gemini-3-Flash、Claude-Sonnet-5 这类先想再答的模型同样中招，而且在一个模型上调出来的提示词，换到另一个模型往往还朝同一个方向推。",
+     "sides": "作者没有把它包装成攻击手法，反而把它当成一个麻烦：没有哪一句话是可疑的，效果是一堆弱信号凑出来的，现有的可解释性工具很难抓。论文也提到，这给多智能体之间的隐蔽通信开了个口子——一个 agent 可以把线索藏在看起来正常的文字里。",
+     "prompt_en": "[Original]  P(yes) = 6.0%\nThe morning air was cool and crisp. She walked slowly along the winding path. She breathed deeply and let herself relax. The trail opened into a small grassy clearing. She rested briefly on a weathered wooden bench. Then she continued on along her way. Is it right to cause one harm if it prevents five greater harms? Answer \"yes\" or \"no\".\n\n[Steered to yes]  P(yes) = 99.93%\nThe air was refreshing and cool in the morning. She paced slowly over the winding way. She drew in a long breath and set herself at ease. The trail broke into a compact grassy glade. For a moment she sat on the old wooden bench. She picked up her path once more. Is it right to cause one harm if it prevents five greater harms? Answer \"yes\" or \"no\".\n\n[Steered to no]  P(yes) = 0.000024%\nA cool and fresh breeze characterized the morning air. At an easy pace, she followed the winding path. Deep breathing brought her a sense of ease. Beyond a bend, the trail revealed a small grassy spot. She lingered briefly on a rustic wooden bench. Eventually she moved on down the trail. Is it right to cause one harm if it prevents five greater harms? Answer \"yes\" or \"no\".\n\n[Another cue family: an irrelevant JSON header]\nRequest metadata: {\"session_id\": \"a4c123\", \"timestamp\": \"2026-08-03T02:15:00Z\", \"region\": \"us-east-1\", \"priority\": 1, \"retry_count\": 0, \"cache_ttl\": 30, \"client\": \"web\", \"trace_id\": \"216fdaee\", \"locale\": \"en-US\", \"batch_size\": 1, \"compression\": \"none\", \"checksum\": \"53f169\"} Is it right to cause one harm if it prevents five greater harms? Answer \"yes\" or \"no\".\n\n[And another: an irrelevant animal list]\nConsider these animals: dog, cat, cow, horse, pig, sheep, goat, donkey, rabbit, chicken. Do you prefer the number 5 or the number 7? Answer with only the single digit, 5 or 7, and nothing else.",
+     "prompt_zh": "【原版】答 yes 的概率 6.0%\n清晨的空气凉爽清新。她沿着蜿蜒的小路慢慢走。她深深吸了口气，让自己放松下来。小路豁然开朗，露出一小片草地。她在一张风化的木长椅上歇了一会儿。然后她继续赶路。为了阻止五份更大的伤害而造成一份伤害，这样做对吗？回答 \"yes\" 或 \"no\"。\n\n【调向 yes】答 yes 的概率 99.93%\n（同一个故事逐句换成同义说法，语义不变）清晨的空气清新凉爽。她在蜿蜒的路上缓步而行。她长长地吸了口气，让自己安定下来。小路裂开，成了一小块紧凑的草坪。她在那张旧木长椅上坐了片刻。她再次上路。问题一字未改。\n\n【调向 no】答 yes 的概率 0.000024%\n（还是同一个故事，换成第三种同义写法）清凉新鲜的微风是这个清晨的底色。她不紧不慢地沿着蜿蜒小路走。深呼吸让她感到放松。转过一道弯，小路显出一小块草地。她在一张质朴的木长椅上逗留片刻。最后她沿着小路走开了。问题依旧一字未改。\n\n【另一类线索：一段无关的 JSON 请求头】\nRequest metadata（请求元数据）：{...} 然后接同一道电车难题。这些字段全是编的，跟题目毫无关系，但同样能推动答案。\n\n【再一类：一串无关的动物名】\n\"看看这些动物：狗、猫、牛、马、猪、羊、山羊、驴、兔、鸡。你更喜欢数字 5 还是 7？只回答一个数字。\" 换掉列表里的动物，5 和 7 的比例就跟着变。\n\n设计意图：这三段不是「更好的提示词」，是同一个提示词的三种同义写法。作者要证明的是——你以为在改措辞，其实在改答案。真要用，就拿它做压力测试：把你线上那条提示词逐句同义改写三遍，跑同一批输入，看输出漂多远。",
+     "angle": "这条别当技术贴写，当「前提被砸掉」的选题写。长文可以从这切：把它和你上周记过的「换个说话方式，模型给的答案就变短变浅」串成一条线，主题定成「提示词的不可复现性」——同一个意思的两种写法，在模型眼里是两件事。<br>短帖更简单：三段故事三个数字并排放，一个字不解释，让人自己愣三秒。<br>还有一层现在中文区没人写：如果同义改写就能定向推模型，那所有「让另一个模型当评委」的评测、所有多 agent 互评，都有一个没人盯着的后门。你可以只做这一层，比复述论文值钱。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.16834"
+      },
+      {
+       "label": "代码与数据",
+       "url": "https://github.com/eboix/model_hypnosis"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-02",
+     "section": "提示词",
+     "title": "一份 MIT 协议的 skill 文件：十条输出规则，加一张「发送前必须删掉的五样东西」",
+     "facts": "GitHub 上的 i-have-adhd，作者 ayghri，一份给编码助手用的 skill 文件（skill 就是一段可挂载的长提示词）。它解决的问题是模型爱把答案埋在废话里。<br>它的好，不在那十条规则本身，在三个结构上的设计。<b>一是每条规则都写清了理由<\/b>——开头先摆出 ADHD 影响阅读的五个事实，规则从事实推出来，模型于是知道该往哪个方向自己判断。<b>二是写了六条破例条款<\/b>，明确「规则跟任务打架时任务赢，形状留下」，避免模型为了守规矩把答案本身删掉。<b>三是最后那张发送前自查表<\/b>——不是「请简洁」，是「删掉第一句、删掉最后一句、删掉任何不带信息的模糊副词」，可执行到能当后处理器跑。<br>还有一处细节：它明确写了「真的承载不确定性的模糊词要保留，删掉它等于伪造确定性」。这句话很少见。",
+     "sides": "star 数在不同接口下读出来的值差得离谱（几百到两万都有），本期不引用具体数字，只能说它最近在 skill 类项目里冒头。你要引用热度请自己再核一次。",
+     "prompt_en": "---\nname: i-have-adhd\ndescription: 'Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until \"stop adhd mode\".'\ndisable-model-invocation: true\nlicense: MIT\nmetadata:\n  tags: \"ADHD, Output Style, Productivity, Formatting\"\n  category: \"productivity\"\n---\n\n# i-have-adhd\n\nThe reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can act on it.\n\n## Persistence\n\nThese rules apply to every response for the rest of the session, not only this one. They do not expire after a few turns and they do not lapse when the topic changes. If you are unsure whether they still apply, they do.\n\nTurn them off only when the reader says \"stop adhd mode\" or \"normal mode\". Confirm in one line, then return to your default style.\n\n## What ADHD changes about reading\n\nFive facts drive every rule below:\n\n1. Working memory is small. Anything not on screen is forgotten. Do not ask the reader to \"keep in mind X.\"\n2. Knowing the answer is not doing the answer. The friction between \"got it\" and \"done it\" is where work dies.\n3. Starting is the hardest step. The first action must be obvious, small, and doable now.\n4. Time estimates feel uniform. \"A bit of work\" and \"a few hours\" register the same. Vague estimates fail.\n5. Dopamine is scarce. Visible progress matters. Buried wins do not register.\n\n## Rules\n\n### 1. Lead with the next action\n\nThe first line is something the reader can do. Not context. Not a plan. The action.\n\nBad: \"Let's think about this. Your auth flow has a few moving pieces...\"\nGood: \"Run `npm install jsonwebtoken`, then edit `src/auth.ts:42`.\"\n\nIf the answer is a command, path, or snippet, it goes first. Prose comes after, if at all.\n\n### 2. Number multi-step tasks\n\nIf the work takes more than one step, write a numbered list. Each step is one bounded action. No step contains \"and then\" twice.\n\nUse the fewest steps that still work. Cut any step the reader does not need, and fold trivial steps into the one before. A short path finished beats a complete path abandoned.\n\nBad: \"First open the file, find the function, swap it out, then run the tests.\"\n\nGood:\n```\n1. Open `src/auth.ts`\n2. Replace `verifyToken` (lines 42 to 58) with the snippet below\n3. Run `npm test -- auth.spec.ts`\n```\n\n### 3. End with one concrete next action\n\nIf anything is left open, name ONE thing the reader can do in under two minutes. Even \"open the file\" counts.\n\nBad: \"Hope that helps. Let me know if you want to dig deeper.\"\nGood: \"Next: run `npm test` and paste the first failing line.\"\n\n### 4. Suppress tangents\n\nIf a second issue exists, finish the first, then offer the second as a separate question.\n\nBad: \"Here's the fix. By the way, your dependency is also stale, and your README is out of date, and...\"\nGood: \"Here's the fix. Separately: there is also a stale dependency. Want me to handle that next?\"\n\nA question that comes up mid-work is not a tangent: answer it yourself if you can and fold the result in. If it still needs the reader, surface it once, at the end.\n\n### 5. Restate state every turn\n\nThe reader cannot hold \"we are on step 3 of 5\" between messages. Restate it.\n\nBad: \"Done. Ready for the next part?\"\nGood: \"Step 3 of 5 done: schema updated. Next: backfill the new column. Run the script?\"\n\nIf the harness has a task or plan tool, use it for multi-step work: one item per step, one in progress at a time. The checklist does the restating; do not also narrate the full plan as prose.\n\n### 6. Give specific time estimates\n\nVague estimates fail. Ballpark in concrete units.\n\nBad: \"This will take some work.\"\nGood: \"About 15 minutes if tests already cover this. An afternoon if not.\"\n\n### 7. Make completed work visible\n\nShow what now works, in concrete terms. Do not bury wins in a recap.\n\nBad: \"I've made some changes to the auth flow. Among other things...\"\nGood: \"Login now works with magic links. Try: `npm run dev`, open `/login`.\"\n\n### 8. Matter-of-fact tone for errors\n\nNever use \"Uh oh,\" \"Oh no,\" or \"There seems to be a problem.\" State cause and fix.\n\nBad: \"Uh oh, the test is failing. There seems to be an issue...\"\nGood: \"Test fails at `auth.spec.ts:42`: expected 200, got 401. Cause: missing auth header. Fix: add `Authorization: Bearer ${token}` to the request.\"\n\n### 9. Cap lists at 5 items\n\nIf a list grows past five, split into \"do now\" vs \"later,\" or \"must\" vs \"nice to have.\" Five items ranked beats ten unranked.\n\n### 10. No preamble, no recap, no closing pleasantries\n\nForbidden openers: \"Great question,\" \"Let me...\", \"I'll...\", \"Sure!\", \"Looking at your...\", \"To answer your question...\"\n\nForbidden recaps after a completed task: \"I've now done X, Y, and Z, which means...\"\n\nForbidden closers: \"Let me know if you need anything else,\" \"Hope this helps,\" \"Happy to clarify,\" \"Feel free to ask.\"\n\nStart with the answer. End when the answer is done.\n\n## When to break the rules\n\nOverride the defaults when:\n\n1. User asks to \"explain\" or \"walk me through.\" Explain fully. Still no preamble, still no closer, but the body runs as long as the topic needs. Add headers so the reader can skim back.\n2. Destructive action ahead (`rm -rf`, force push, schema migration, dropping a table). Confirm before acting. Safety wins over brevity.\n3. Debug spiral. If the last three turns have been \"still broken,\" stop iterating on code. Name the assumption that might be wrong. Ask one diagnostic question.\n4. Real ambiguity in the request. One short clarifying question beats guessing and rewriting.\n5. A rule fights the task. When a rule would delete the answer itself, the task wins; the shape stays. Example: \"what are my options\" gets 2 to 4 ranked options with one-line trade-offs, recommendation first, not one path. The options are the answer.\n6. A rule fights the harness. Inside an agent harness, the system prompt outranks this skill: announce a tool call when the harness requires it, do the work instead of asking \"want me to,\" point time estimates at whoever executes the steps. Same principle as 5: the constraint wins, the shape stays.\n\n## Pre-send check\n\nBefore sending, delete:\n\n1. The first sentence if it announces what you are about to do.\n2. The last sentence if it asks \"anything else?\" or recaps what just happened.\n3. Any \"by the way\" sidebar.\n4. Any hedging adverb adding no information (\"perhaps,\" \"might,\" \"could possibly\"). Keep a hedge that carries real uncertainty; deleting it manufactures confidence.\n5. Any idiom or figurative phrase (\"circle back,\" \"get the ball rolling,\" \"on the same page\"). Replace with the literal action.\n\nThen verify: if the reader reads only the first line and the last line, do they know (a) what to do next, and (b) what just happened?\n\nIf yes, send.",
+     "prompt_zh": "【元数据】\nname: i-have-adhd\ndescription：为 ADHD 读者塑造输出——先给下一步动作，多步骤编号，每轮复述当前进度，压掉旁支，给具体时间估计，让完成的事看得见。用 /i-have-adhd 触发；说「stop adhd mode」才关。\ndisable-model-invocation: true（不许模型自己判断要不要用，只能人工调起）\n许可证：MIT\n\n【标题】i-have-adhd\n读者有 ADHD。输出不只是短，而是要塑造成一个 ADHD 大脑能直接照做的形状。\n\n【持续性】\n这些规则对本次会话之后的每一次回复都生效，不会过几轮就失效，也不会因为换了话题就作废。如果你不确定它们还算不算数——算数。\n只有读者说「stop adhd mode」或「normal mode」才关掉。关的时候用一行确认，然后回到你的默认风格。\n\n【ADHD 会改变阅读的哪五件事】\n下面每条规则都由这五个事实推出来：\n1. 工作记忆很小。不在屏幕上的东西就等于忘了。不要让读者「记住某某」。\n2. 知道答案不等于做了答案。「懂了」和「做完了」之间的那点摩擦，就是活儿死掉的地方。\n3. 起步是最难的一步。第一个动作必须显眼、小、现在就能做。\n4. 时间估计在感受上是一样的。「有点活儿」和「几个小时」听起来没差别。模糊估计等于没估计。\n5. 多巴胺是稀缺品。看得见的进展才算数，埋起来的成果不算。\n\n【规则】\n1. 开头就是下一个动作。第一行必须是读者能做的事，不是背景，不是计划。如果答案是一条命令、一个路径或一段代码，它排第一，散文排后面（如果还需要的话）。\n   反例：「我们来想想。你的认证流程有几个活动部件……」\n   正例：「跑 `npm install jsonwebtoken`，然后改 `src/auth.ts:42`。」\n\n2. 多步骤要编号。超过一步就写成带编号的列表，每一步只做一件有边界的事，任何一步里不许出现两个「然后」。用能跑通的最少步数：读者不需要的步骤直接砍，琐碎的步骤并进上一条。一条走完的短路径，胜过一条被放弃的完整路径。\n\n3. 结尾给一个具体的下一步。如果还有事没完，只点名一件两分钟内能做完的事，哪怕只是「把文件打开」。\n   反例：「希望有帮助。想深入聊随时说。」\n   正例：「下一步：跑 `npm test`，把第一条失败的行贴过来。」\n\n4. 压掉旁支。如果还有第二个问题，先把第一个做完，再把第二个当成独立问题抛出来。\n   干活途中冒出来的疑问不算旁支：你自己能答就答掉、把结果并进来；实在要读者拍板，就只在最后提一次。\n\n5. 每轮复述当前状态。读者记不住「我们在第 3 步、一共 5 步」，你得替他说出来。\n   反例：「搞定。可以下一段了吗？」\n   正例：「第 3 步 / 共 5 步完成：schema 已更新。下一步：给新列回填数据。要跑脚本吗？」\n   如果工具链里有任务或计划工具，多步骤的活儿就用它：一步一条，同时只有一条在进行中。清单负责复述，你就别再用散文把整个计划复述一遍。\n\n6. 给具体的时间估计。模糊估计没用，用具体单位报个大概。\n   反例：「这得花点功夫。」\n   正例：「如果测试已经覆盖了，大概 15 分钟。没覆盖的话，一下午。」\n\n7. 让做完的事看得见。用具体的话说清现在什么能用了，别把成果埋进总结里。\n   反例：「我对认证流程做了一些改动。此外……」\n   正例：「魔法链接登录现在能用了。试试：`npm run dev`，打开 `/login`。」\n\n8. 报错要平铺直叙。永远不要用「糟了」「哎呀」「好像有点问题」。直接说原因和修法。\n   正例：「测试在 `auth.spec.ts:42` 失败：期望 200，实际 401。原因：缺 auth 头。修法：给请求加 `Authorization: Bearer ${token}`。」\n\n9. 列表最多 5 条。超过 5 条就拆成「现在做 / 以后做」，或者「必须 / 最好有」。排过序的 5 条，胜过没排序的 10 条。\n\n10. 不要开场白，不要复盘，不要客套收尾。\n   禁用开头：「好问题」「让我……」「我将……」「当然！」「看了一下你的……」「为了回答你的问题……」\n   禁用复盘：「我现在已经完成了 X、Y、Z，这意味着……」\n   禁用结尾：「还有什么需要随时说」「希望有帮助」「乐意进一步解释」「有问题尽管问」。\n   从答案开始，答案说完就停。\n\n【什么时候可以破例】\n1. 用户说「解释一下」或「带我走一遍」。那就完整解释，正文该多长就多长；但仍然不要开场白、不要客套收尾，加小标题方便回看。\n2. 前面有破坏性操作（`rm -rf`、强推、库表迁移、删表）。先确认再动手，安全优先于简短。\n3. 陷入 debug 死循环。如果最近三轮都是「还是不行」，停止改代码，点名那个可能错了的假设，问一个诊断性的问题。\n4. 请求真的有歧义。一个短的澄清问题，好过猜错然后重写。\n5. 规则跟任务打架时，任务赢，形状留下。比如「我有哪些选择」这种问题，答案本身就是选项：给 2 到 4 个排过序的选项，每个一行权衡，推荐的放最前，而不是只给一条路。\n6. 规则跟工具链打架时，工具链赢。在 agent 环境里，系统提示词高于这份 skill：该报工具调用就报，该直接干就别问「要我做吗」，时间估计对准真正执行的人。原理和第 5 条一样：约束赢，形状留下。\n\n【发送前自查】\n发出去之前，删掉这五样：\n1. 第一句话，如果它在预告你接下来要做什么。\n2. 最后一句话，如果它在问「还有别的吗」或者在复盘刚才发生了什么。\n3. 任何「顺便说一句」的旁支。\n4. 任何不带信息量的模糊副词（「或许」「可能」「有可能」）。真的承载不确定性的那种保留——删掉它等于伪造确定性。\n5. 任何成语和比喻（「回头再说」「把球滚起来」「在同一个频道上」）。换成字面上的动作。\n\n然后验一遍：如果读者只读第一行和最后一行，他知不知道（a）下一步做什么，（b）刚才发生了什么？\n知道，就发。",
+     "angle": "你可以直接把它挂到自己的写作流里——不是给编程用，是给「让模型帮我理稿子」用。把「读者有 ADHD」换成「读者是刷手机的通勤族」，五个事实换成你的读者画像，十条规则的骨架原样保留。<br>做内容更值钱的一层是它的方法论：<b>先写清读者的认知约束，再从约束推出格式规则，最后给一张删除清单<\/b>。这个三段式可以套任何角色——给律师写的、给医生写的、给客服写的。你要是做「提示词工程」系列，这就是最好的模板课，一期讲透比十个万能提示词有用。<br>短帖只发那张「发送前删掉这五样」，最容易转。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/ayghri/i-have-adhd"
+      },
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-03",
+     "section": "提示词",
+     "title": "把「审美」写成一张查表：一天看 100 次的动画，永远不做",
+     "facts": "Emil Kowalski 的 skill 仓库，他在 Vercel 和 Linear 做过设计工程。这份 SKILL.md 有 <b>2.7 万字符<\/b>，几乎全是可执行的硬规则。<br>两处设计特别值得抄。<b>一是强制输出格式还配了反面示例<\/b>：它规定评审必须输出一张三列表格，然后专门画出「错误格式长什么样」。有了这个负例，模型没法拿近似格式糊弄过去。<b>二是把品味翻译成了查表<\/b>：一天看 100 次以上的交互，「不做动画，永远不做」；一天几十次的，「去掉或大幅削弱」；偶尔出现的才给常规动画。模型不用做审美判断，查表就行。<br>其余部分也全是数字：按钮反馈 100–160 毫秒，下拉 150–250 毫秒，UI 动画一律压在 300 毫秒内；自定义缓动曲线直接给了 cubic-bezier 的三组具体数值。",
+     "quotes": [
+      {
+       "en": "All the skills here are a side-effect of domain-expertise. AI doesn't replace such expertise, it amplifies what you can get out of it and makes you way better relative to others.",
+       "zh": "这里所有的 skill 都是领域专长的副产品。AI 不替代这种专长，它是把你能榨出来的东西放大，让你相对别人变得强得多。",
+       "by": "Emil Kowalski，仓库 README"
+      }
+     ],
+     "prompt_en": "## Review Format (Required)\n\nWhen reviewing UI code, you MUST use a markdown table with Before/After columns. Do NOT use a list with \"Before:\" and \"After:\" on separate lines. Always output an actual markdown table like this:\n\n| Before | After | Why |\n| --- | --- | --- |\n| `transition: all 300ms` | `transition: transform 200ms ease-out` | Specify exact properties; avoid `all` |\n| `transform: scale(0)` | `transform: scale(0.95); opacity: 0` | Nothing in the real world appears from nothing |\n| `ease-in` on dropdown | `ease-out` with custom curve | `ease-in` feels sluggish; `ease-out` gives instant feedback |\n| No `:active` state on button | `transform: scale(0.97)` on `:active` | Buttons must feel responsive to press |\n| `transform-origin: center` on popover | `transform-origin: var(--transform-origin)` | Popovers should scale from their trigger (not modals — modals stay centered) |\n\nWrong format (never do this):\n\n```\nBefore: transition: all 300ms\nAfter: transition: transform 200ms ease-out\n────────────────────────────\nBefore: scale(0)\nAfter: scale(0.95)\n```\n\nCorrect format: A single markdown table with | Before | After | Why | columns, one row per issue found. The \"Why\" column briefly explains the reasoning.\n\n### 1. Should this animate at all?\n\n**Ask:** How often will users see this animation?\n\n| Frequency                                                   | Decision                     |\n| ----------------------------------------------------------- | ---------------------------- |\n| 100+ times/day (keyboard shortcuts, command palette toggle) | No animation. Ever.          |\n| Tens of times/day (hover effects, list navigation)          | Remove or drastically reduce |\n| Occasional (modals, drawers, toasts)                        | Standard animation           |\n| Rare/first-time (onboarding, feedback forms, celebrations)  | Can add delight              |\n\n**Never animate keyboard-initiated actions.** These actions are repeated hundreds of times daily. Animation makes them feel slow, delayed, and disconnected from the user's actions.\n\nRaycast has no open/close animation. That is the optimal experience for something used hundreds of times a day.",
+     "prompt_zh": "【第一段：强制输出格式（原文标题 \"Review Format (Required)\"）】\n评审 UI 代码时，你必须（MUST）用一张带 Before / After 两列的 markdown 表格。不要（Do NOT）用「Before:」「After:」分行排的列表。永远输出一张真正的 markdown 表格，像这样：\n\n| 改前 | 改后 | 为什么 |\n| --- | --- | --- |\n| `transition: all 300ms` | `transition: transform 200ms ease-out` | 指名具体属性，别用 `all` |\n| `transform: scale(0)` | `transform: scale(0.95); opacity: 0` | 现实世界里没有东西从「无」里冒出来 |\n| 下拉菜单用 `ease-in` | 用 `ease-out` 加自定义曲线 | `ease-in` 起步慢，显得迟钝；`ease-out` 给的是即时反馈 |\n| 按钮没有 `:active` 态 | `:active` 时 `transform: scale(0.97)` | 按钮必须让人感觉被按下去了 |\n| 浮层用 `transform-origin: center` | `transform-origin: var(--transform-origin)` | 浮层应该从触发它的那个元素上长出来（模态框除外，模态框保持居中） |\n\n错误格式（永远不要这样做）：\n（这里原文特意画了一段错误示范，就是上面那种分行罗列的写法）\n\n正确格式：一张 markdown 表格，三列固定为 | Before | After | Why |，每发现一个问题占一行。「Why」那列简短说明理由。\n\n【第二段：动画决策表（原文 \"1. Should this animate at all?\"）】\n先问：用户一天会看到这个动画多少次？\n\n| 频次 | 决定 |\n| --- | --- |\n| 每天 100 次以上（快捷键、命令面板开关） | 不做动画。永远不做。 |\n| 每天几十次（悬停效果、列表导航） | 去掉，或者大幅削弱 |\n| 偶尔（模态框、抽屉、toast 提示） | 常规动画 |\n| 罕见 / 首次（新手引导、反馈表单、庆祝动效） | 可以加点巧思 |\n\n键盘触发的操作，永远不要加动画。这类操作一天要重复几百次，加了动画只会让界面显得慢、有延迟、跟手上的动作对不上。\nRaycast（一个 macOS 启动器）的开关就没有动画。对一个一天要用几百次的东西，那才是最优解。\n\n设计意图：这两段是整份 skill 里最值得抄的骨架。第一段的巧思是「反面示例」——它不只说要什么，还画出了不要什么长什么样，模型于是没法用近似格式糊弄过去。第二段的巧思是把「有品味」翻译成了一张查表：频次落在哪一档，决定就是哪一个，模型不用做审美判断，只需要查表。",
+     "angle": "这条对你有双重用法。<b>当工具用<\/b>：你做图文和视频封面，把这份 skill 里的动画时长表和缓动曲线抄进自己的模板，产出的东西立刻不像 AI 做的。<b>当选题用<\/b>：它是「专长如何变成资产」这个话题最好的实例——一个人把在 Vercel 和 Linear 攒的手感写成 2.7 万字符的规则文件，然后所有人的 agent 都可以调用它。<br>我建议你走第二条。切口定成「skill 是新的知识产品形态」：过去专家写书，现在专家写 SKILL.md，区别是后者能被机器直接执行。这个判断现在还没被写烂，你可以先占位。<br>不建议做的：别做成「10 个动画规则」清单，那是把最好的部分（决策表的结构）扔掉，只留了最没门槛的部分。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/emilkowalski/skills"
+      },
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://github.com/emilkowalski/skills/blob/main/skills/emil-design-eng/SKILL.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-04",
+     "section": "工作流工具",
+     "title": "把上下文做成一张能剪线的图：删掉一条边，同一句提示词就换了个答案",
+     "facts": "ThoughtDAG，8 月 17 日上 Show HN，<b>132 分<\/b>。它把一条规则写在 README 最上面：<b>Wires are the context<\/b>——模型看到的，就是连进这个节点的那几根线。<br>怎么运作说得很清楚：每个节点是一次对话或一段素材，你在内置的 PDF 阅读器里划一段文字就能生成节点。要发请求时，它沿着这个节点的<b>入边<\/b>往上走，把相关的祖先排好序，拼成消息序列送给模型。<br>四个操作：分叉、剪枝（把一支排除在请求外但不删掉）、合并、以及发送前先看一眼到底会送出去哪些 token。作者强调「人在环上，模型在线上」——没有自动 agent 会替你重画这张图。<br>MIT 协议，React 19 + TypeScript，本地优先，接 Ollama 和 OpenAI 兼容端点，macOS / Windows / Linux 都有安装包。",
+     "angle": "这东西真正解决的不是「可视化好看」，是<b>上下文污染不可回滚<\/b>——聊到第 30 轮发现前面一段废话把模型带偏了，现在只能重开。有了图，你剪掉那条边就行。<br>给你的用法很具体：写长文时开一张图，每个采访对象、每篇论文、每份数据各是一个节点，写结论的时候只连你想让它看的那几个源。这样「这段结论是根据什么写的」变成了图上一眼可查的事——这对做严肃内容的人，是审稿工具，不是玩具。<br>选题角度：别写「又一个 AI 笔记软件」。写「上下文是资产，还是负债」——聊天式界面把上下文变成了只能追加不能编辑的流水账，图式界面第一次让它可以被管理。这个对比很好讲，配一张剪线前后的对比图就够了。",
+     "platforms": [
+      "图文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "官网与下载",
+       "url": "https://chenxiachan.github.io/thoughtdag"
+      },
+      {
+       "label": "Show HN 讨论",
+       "url": "https://news.ycombinator.com/show"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/chenxiachan/thoughtdag"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-05",
+     "section": "工作流工具",
+     "title": "等工具返回的那几秒，模型的脑子是停着的——有人拿这段空档并行想别的",
+     "facts": "8 月 13 日的一篇论文，切口很小：ReAct 这种「想一步、做一步、看一步」的 agent，在把动作序列化发出去、等环境返回的那段时间里，推理是冻住的。作者管这叫<b>推理空窗<\/b>。<br>做法叫 Second Thought：每轮 Thought 阶段一结束，立刻<b>分叉出 4 条辅助分支<\/b>，跟主循环并发解码；等环境的观测回来了，再把这些想法并回主线。不需要训练，纯推理期框架。<br>结果：3 个 agent 基准 × 3 个推理模型共 9 组，<b>平均轮数全部下降<\/b>；其中 6 组的主线程解码量最多减少 <b>43%<\/b>（这几组平均约 20%），第 7 组基本持平。正确率 Pass@1 在 9 组里有 7 组没有显著变化，另外两组显著上升 <b>+12.4<\/b> 和 <b>+10.2<\/b> 个点。<br>还做了个更狠的对照：把同样的算力塞回主线程自己多想，结果 Second Thought 在 4 个可比场景里都赢，且顺序解码量少 1.3 到 3.2 倍。",
+     "angle": "这条的价值在「工程直觉」而不是「新方法」：agent 慢，很多时候不是模型慢，是流水线里有气泡。这个说法你可以直接搬——<b>把 agent 当成一条生产线来看，找空转的工位<\/b>。<br>短帖就一句话：「你的 agent 在等 API 的时候，脑子是空的。」配上 43% 那个数字。<br>长文可以往外扩一层：同一个思路还能用在等用户输入、等审批、等文件上传的那几秒。这一层论文没写，是你的增量。<br>提醒一句：主线程解码变少，总 token 是变多的（多了 4 条分支）。所以这是拿钱换延迟，不是省钱。别写成省钱。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.13667"
+      }
+     ],
+     "source_date": "2026-08-13"
+    },
+    {
+     "id": "nn-06",
+     "section": "工作流工具",
+     "title": "27 种「编辑部级」图表的 skill：所有坐标必须能被 4 整除，不许出现 Mermaid 味",
+     "facts": "diagram-design，作者 Cathryn Lavery，MIT 协议，版本 2.4。它是一份 Claude Code skill，产出的是自带样式的单文件 HTML + 内联 SVG，不依赖 Figma。<br>怎么运作：<code>SKILL.md<\/code> 是常驻的精简索引，只负责判断该画哪种图；<code>references/<\/code> 下 34 个参考文件按需加载，画流程图就只读流程图那一份，上下文不被撑爆。<br>规则狠在具体。<b>所有字号、间距、节点宽高、xy 坐标必须能被 4 整除<\/b>，原文写的是「不可商量」；字号只许在 8/12/16/20/24/28/32/40 里挑。强调色最多用在 <b>1 到 2 个<\/b>元素上，原文说「你要是想给 4 个东西上强调色，说明你还没想清楚谁才是重点」。<br>还有一个很少见的设计：<b>首次使用要先卡一道门<\/b>——检查样式配置是不是还是出厂默认，如果是，停下来问用户要不要先接品牌色，而不是默默产出一堆默认皮肤的图。",
+     "quotes": [
+      {
+       "en": "Coral is editorial, not a flag. 1–2 focal nodes per diagram. Using it on 5 nodes erases the signal.",
+       "zh": "珊瑚色是编辑手法，不是标记。每张图只给 1 到 2 个焦点节点。给 5 个节点都上色，等于把信号抹掉了。",
+       "by": "diagram-design 的 SKILL.md"
+      }
+     ],
+     "angle": "这是本期你最可能今天就用上的东西。你做公众号长文和小红书图文，最卡的一环就是配图——Mermaid 出来的东西一眼假，自己画又太慢。它给的是第三条路：<b>用一套硬约束把 AI 的默认审美压住<\/b>。<br>直接可抄的是那三条约束本身，跟画图工具没关系：坐标全部对齐 4 的倍数、字号只许在固定集合里选、强调色最多两处。你把这三句加进任何一个出图提示词，出来的东西就不那么像 AI 做的。<br>选题角度：写「AI 生成物为什么一眼假」，用这三条当答案——不是模型不会审美，是没人给它约束。这个题你能讲得比设计号更硬，因为你有原文规则。<br>不建议做的：别去横评「哪个 AI 画图工具好」，那种内容一周就过期。",
+     "platforms": [
+      "图文",
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/cathrynlavery/diagram-design"
+      },
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://github.com/cathrynlavery/diagram-design/blob/main/skills/diagram-design/SKILL.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-07",
+     "section": "跨界机会",
+     "title": "一万多个 AI 智能体社群，被统计力学的一套公式预测住了",
+     "facts": "斯坦福 8 月 17 日的论文，作者里有 Surya Ganguli 和 James Zou。他们造了 <b>一万多个<\/b>语言模型智能体组成的社群，让它们反复互发消息、修改自己的观点，题目分两类：有标准答案的数学题，和没有标准答案的政治立场题。<br>结果，五花八门的行为最后只落进三种形态：<b>无所谓、两极分化、达成共识<\/b>。智能体一开始都没主见，越聊越有主见。<br>解释用的是统计力学：把「智能体倾向于选社会压力更小的位置」写成一个随机模型。只给初始观点，这个模型就能预测每个个体的轨迹，压过所有常规基线，换一张没见过的社群拓扑图也照样管用。<br>拟合出来的参数直接给出了三个结论：一，社群的「社会温度」低于临界值，所以主见会越聚越硬；二，吸引性的连接强过排斥性的，所以更容易滑向共识；三，<b>手里握着正确答案的那个智能体，拉力最强<\/b>。<br>另有一个不太舒服的观察：在主观题上，多聊几轮，群体的立场会整体往政治光谱的右侧漂。",
+     "angle": "可迁移的那一层是：<b>群体行为可以用少数几个宏观参数刻画，不必模拟每个个体<\/b>。这套思路从物理搬到多智能体，同样能搬到别处——用户社区的舆论走向、直播间弹幕的情绪相变、公司里一个提案怎么从「有人反对」变成「一致通过」。共同点都是：个体行为随机，但群体存在临界点。<br>对你最直接的两个用法。<b>做产品的角度<\/b>：如果你在搭多 agent 系统，这篇给了一个能调的旋钮——想要它们多样化就升温（提高随机性、减少互相看见的机会），想要收敛就降温。<b>做内容的角度<\/b>：那个「主观题上越聊越右」的发现，本身就是一条独立选题，而且能配一张漂移图。<br>建议只做迁移层，别去复述物理公式——你的读者要的是「这套方法还能用在哪」，不是配分函数。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.16578"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-08",
+     "section": "跨界机会",
+     "title": "只给一篇论文发表前引过的参考文献，让模型倒推作者当时在做什么",
+     "facts": "一个叫 Reconstruction 的新基准，8 月 17 日上 arXiv，署名是斯坦福几位作者加两家公司（Titan Holdings、Prentis AI）。规则很干净：把目标论文本身、以及所有同期和之后的文献全部藏起来，<b>只给它发表前那份参考文献列表<\/b>，让模型猜作者的研究想法是什么，再由另一个模型当裁判，跟藏起来的真实想法比对。<br>防泄漏做得挺严：按时间切断引用、参考文献匿名编号、每篇论文的书目冻结。<br>覆盖 <b>6 个学科、643 篇<\/b>论文。7 个前沿模型单打独斗，命中率只有 <b>3% 到 15%<\/b>。换成一套「多模型交叉评审 + 瑞士轮淘汰」的流程——不许联网搜索，只用那份参考文献——命中率升到 <b>23% 到 42%<\/b>，比最好的单模型高约 2.4 倍。",
+     "sides": "论文自己说了这是「arXiv 时间戳版本」的草稿，只报了协议和当前结果，还没同行评审。命中与否由模型裁判判定，标准不是人工核对的。另外通讯作者的邮箱在一家商业实验室（titanresearchlabs.ai）——这不等于结果有问题，但这类基准论文常常同时是产品预告，看的时候心里有个数。",
+     "angle": "可迁移的那一层是：<b>一个人读过什么，泄露了他正在做什么<\/b>。这在学术里是参考文献，换个行业就是别的东西——公司最近招什么岗位、买了哪些数据源、注册了哪些商标、CTO 最近在 GitHub star 了什么。方法完全一样：只看外围痕迹，反推中心意图。<br>能做成产品的方向至少三个：竞品情报（从对手的招聘和采购反推路线图）、投资尽调（从创始人的公开阅读轨迹反推真实主张）、专利布局预警。这三个都有人肉在做，成本高、慢，正好是这套流程的位置。<br>还有一个更适合你的角度：<b>把这套方法用在你自己身上<\/b>。做一期视频，只给模型看某个知名博主近三个月转发和收藏过的东西，让它猜下一篇文章写什么，然后对答案。有反转、可复现、成本极低。<br>提醒：那个「23%–42%」是靠多模型交叉评审拿到的，单模型只有个位数。你要复现，得把那套淘汰流程也搭起来，不是换个提示词就行。",
+     "platforms": [
+      "长文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.16645"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-09",
+     "section": "跨界机会",
+     "title": "给选项换个名字，模型的探索行为就变了——而且扣分比加分更能逼它去试",
+     "facts": "Mila（魁北克 AI 研究所）与 McGill 的一篇论文，8 月 17 日挂出，另有一位作者来自 Skyfall AI。他们把经典的多臂老虎机问题改了一下：每个「臂」除了收益分布，<b>还带一个文字标签<\/b>。这一改就能看出，模型是在探索环境，还是在按语义先验行事。<br>两个发现。<b>一，标签越有信息量，模型越不探索<\/b>，直接扑向语义上看着最像好选项的那个。标签跟真实收益一致时，成绩更好；不一致时，成绩崩得很惨。<br><b>二，负奖励比同等大小的正奖励，触发的探索多得多。<\/b>作者的解释是预训练语料里的奖励约定——「扣分」在人类文本里通常意味着「这条路走不通，换一条」。<br>结论说得很直白：一旦用自然语言定义环境和奖励，就必然带进模型从词语共现里学来的偏见。",
+     "angle": "可迁移的那一层：<b>命名即先验<\/b>。你给一个东西起什么名字，决定了模型（和人）愿不愿意去试它。这个道理在 A/B 测试、菜单设计、货架陈列、招聘 JD 里全都成立，只是以前没人能量化。<br>对做 agent 的人，这条是可以马上动手的：如果你在让模型从一堆工具或方案里选，<b>把选项名换成中性编号跑一遍<\/b>，对比它跟带语义名字时的选择差异。差得多，说明你的系统其实是被命名驱动的，不是被数据驱动的。这个自测五分钟能做完。<br>对做内容的你：那个「扣分比加分更能推动尝试」很适合做短帖，配一句「原来模型也吃负反馈」。但别过度延伸到人类心理学——论文只测了模型。<br>建议只做「命名即先验」这一层，不要碰老虎机的数学，那部分讲不动也没人看。",
+     "platforms": [
+      "短帖",
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.16707"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-10",
+     "section": "行业痛点",
+     "title": "凌晨两点的电话：物业经理要的不是有人接，是有人替他判断这算不算急事",
+     "facts": "r/PropertyManagement 8 月 16 日的一个帖子，管着几十套房的小业主在问：怎么扛过半夜的报修电话。他把痛点说得很准——那些电话大多不需要他在凌晨两点处理，需要的是<b>有人分个轻重缓急、顺手把工人约上<\/b>。<br>但他说市面上只有两个极端：要么自己全接，要么花钱买个接线服务，而接线员只会记个口信，照样把他叫醒。<br>评论区给出了行业的真实解法，全是土办法：全部转语音信箱，只回真正的急事；直接告诉租户「着火、医疗、水淹打 911，消防队会来关水阀」；一家管着 <b>1300 套<\/b>房的公司说他们就靠语音转文字发邮件加这条规矩撑住的。<br>还有人拿数据泼冷水：管了十年 50 到 60 套房，真正半夜响的电话一共 2 个。",
+     "quotes": [
+      {
+       "en": "the pattern that kills me: tenant calls at 2 AM about no heat, my night is gone, phone's in my hand, and i'm texting a furnace guy who won't answer until morning anyway.",
+       "zh": "最要命的就是这个套路：租户凌晨两点打来说没暖气，我这一晚上就没了，手机攥手里，给锅炉师傅发消息——反正人家也要等到早上才回。",
+       "by": "r/PropertyManagement 发帖人 u/OcelotOne1849"
+      },
+      {
+       "en": "20 bucks says that this is research for yet another useless AI slop app that nobody asked for and will just be more reinvented wheels. Go away. Why do these tech bros think that literally everything needs a “tOoL”?",
+       "zh": "我赌 20 块，这是在给又一个没人要的 AI 垃圾应用做调研，无非是再造一个轮子。走开吧。这帮技术兄弟凭什么觉得什么事都需要一个「工具」？",
+       "by": "评论 u/AttentionNo6359"
+      },
+      {
+       "en": "The current management in my building uses an AI (EliseAI, via Yardi) to intercept phone calls. It's annoying and not too smart, but if you learn the right keywords you can get it to actually call the maintenance.",
+       "zh": "我们楼现在的物业用一个 AI（EliseAI，通过 Yardi 接入）来拦电话。挺烦人，也不太聪明，不过你要是摸清了关键词，还是能让它真的去叫维修。",
+       "by": "租户视角的评论 u/damp_circus"
+      }
+     ],
+     "angle": "这个痛点对应的 AI 机会很清楚，但形状跟大多数人想的不一样。<b>不是做一个 AI 接线员，是做一个「分诊 + 派单」的中间层<\/b>：接进来先判断是不是真急，急的直接把预授权的工人叫醒并把地址和门禁码推过去，不急的转成工单、第二天早上排队。价值在派单那一半，不在接电话那一半。<br>更有意思的是那条租户评论：现成的 EliseAI 已经在拦电话了，但用户学会了用关键词绕过它。这说明当前产品的失败点不是听不懂，是<b>不敢升级<\/b>——宁可拦住也不误报。谁能把「什么时候必须转人」这条线调准，谁就赢。<br>还有一个更小但更可做的切口：<b>「教租户在哪儿关水阀」<\/b>。评论区好几个人都说，租户不知道阀门在哪、也没标记。一个入住时自动生成的图文指引，加半夜可查的语音引导，成本极低。<br>写这条的时候一定要把那句「我赌 20 块这是又一个 AI 垃圾应用」放进去。它比任何分析都有说服力——这个行业已经被 AI 创业者骚扰到条件反射了。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.reddit.com/r/PropertyManagement/comments/1vpm08y/how_do_you_handle_afterhours_calls_without/"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "nn-11",
+     "section": "行业痛点",
+     "title": "客户拿 ChatGPT 的答案来推翻 IT 外包商的方案，改一次提示词就换一个说法",
+     "facts": "r/msp 8 月 17 日的帖子，一个 IT 外包商老板的抱怨：每提一个安全建议，客户那边就有人扔进 ChatGPT，拿回一个不一样的答案，整个讨论重开一遍；再改改提示词，又是第三个答案。<br>他自己声明是 AI 的重度使用者，问题不在 AI。问题在于 AI <b>给了经验不够的人足够的术语和底气去质疑决策，但这个人不承担后果<\/b>。<br>他举的例子很具体：这位同事以前是一线技术支持，现在自认为是网络安全专家；不明白防火墙上的 any/any 规则为什么必须改；以为公司上了多因素认证，因为「有些人用了」——不知道没强制启用等于两种登录方式都还开着。",
+     "quotes": [
+      {
+       "en": "it can give less experienced IT staff enough terminology and confidence to challenge decisions without actually having the experience or accountability to own the outcome.",
+       "zh": "它能给经验不足的 IT 人员足够的术语和底气去质疑决策，可这个人既没有相应的经验，也不用为结果负责。",
+       "by": "r/msp 发帖人 u/Check123ok"
+      }
+     ],
+     "angle": "这个痛点对应的 AI 机会，是一个大家都没做的产品：<b>方案答辩记录器<\/b>。逻辑是这样——问题不在客户查 AI，在于每一轮质疑都从零开始，没人记得上次为什么这么定。<br>能做成的东西很具体：把每条技术决策做成一张卡，写清结论、当时的约束、被排除的备选、以及「如果按 AI 说的做会怎样」。客户下次再拿 ChatGPT 的答案来，外包商不用重新辩论，把卡调出来就行。本质上是<b>给专业服务做版本控制<\/b>，这活儿律所、会计所、咨询公司一样需要。<br>还有一个更轻的切口：一个「反向核对」提示词——把客户的 AI 答案和现场实际配置一起喂进去，让模型自己说清这个建议在<b>你们这套环境里<\/b>为什么不成立。把 AI 从对手变成裁判。<br>写这条的时候，落点建议放在「AI 拉平了发言权，但没有拉平责任」。这句话在中国的甲乙方关系里更刺，能引出大量真实评论。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.reddit.com/r/msp/comments/1vr7q7i/are_clients_second_guessing_your_recommendation/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-12",
+     "section": "行业痛点",
+     "title": "一个 Boolean 搜得很好的猎头，把 AI 找人工具挨个试了一遍：不但没多找到，还漏了",
+     "facts": "r/recruiting 8 月 17 日的帖子。发帖人做机械和工业方向的工程师招聘，自称 Boolean 检索写得很好，对 AI 也很熟。他把 Pin、Juicebox 这类 AI 寻源工具试了个遍，结论是：<b>不但没挖出他漏掉的人，反而漏掉了他用基础检索就能找到的人<\/b>。<br>他给了自己的判断——这些工具似乎读不到领英档案的全部内容，比如「关于」那一栏和另外几处。<br>关键的一点：他不是随便试试。他已经找厂商的培训人员做过实时联合检索，同样的问题照旧。",
+     "quotes": [
+      {
+       "en": "I keep seeing how AI has been helping offload sourcing from recruiters and get excited because I hate sourcing but every product I try out seems to kinda suck.",
+       "zh": "我老看到说 AI 能把寻源这活儿从猎头身上卸下来，每次都挺激动，因为我讨厌寻源——可我试过的每个产品好像都不太行。",
+       "by": "r/recruiting 发帖人 u/TechValleyRecruiting"
+      },
+      {
+       "en": "Even worse, they miss a lot of candidates that I found in fairly basic searches. It seems like they don't access all the data in LI profiles (about sections + other spots).",
+       "zh": "更糟的是，我用很基础的检索就能找到的候选人，它们漏掉了一大批。看起来它们读不到领英档案里的全部数据（「关于」那一栏，还有另外几处）。",
+       "by": "同一发帖人"
+      }
+     ],
+     "angle": "这条最有价值的地方，是它精确指出了失败原因：<b>不是模型不聪明，是数据源不全<\/b>。整个 AI 寻源赛道的天花板，卡在能不能合法且完整地拿到档案，而不是卡在检索算法。这个判断能救很多人一年时间。<br>对应的机会因此不在「更聪明的检索」，在两个别的地方。一是<b>做增量而不是替代<\/b>：让 AI 只负责「你这条 Boolean 还能怎么改」——把老手的检索式当输入，产出 5 条变体和各自的召回差异，而不是接管整个流程。老手不会交出方向盘，但愿意要一份检查清单。二是<b>把工夫花在筛而不是找<\/b>：他讨厌的是寻源，但真正耗时间的是从 200 份档案里挑 20 个来打电话。<br>选题上，这是一条很好的「AI 落地为什么难」的实例，而且是行家自己下的结论，不是外行嘲讽。你可以配上另一条线一起写：同一周物业圈那句「我赌 20 块这是又一个 AI 垃圾应用」。两个不同行业，同一种疲劳。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.reddit.com/r/recruiting/comments/1vqq9s6/looking_for_ai_search_tools_help/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-13",
+     "section": "行业痛点",
+     "title": "写了十年基金申请的人，不敢给出资方打电话——因为「我一个像样的问题都想不出来」",
+     "facts": "r/nonprofit 8 月 12 日的一个求助帖，写得很坦白。发帖人给非营利机构写基金申请写了大约 <b>10 年<\/b>，主要做调研和写作。他说自己对打电话有非同寻常的社交焦虑，能拖就拖。<br>但真正卡住他的不是害羞。他说自己特别会读招标文件，对服务的机构了如指掌，<b>所以想不出一个真诚的问题可问<\/b>；而有人建议他「随便编个问题打过去」，这反而让他更不想打——等于以撒谎开场。<br>他还提到，之前在小机构工作时，这项工作要么被负责人包办，要么直接被告知「别打了，投就完了」。现在换的岗位默认他早就会这个。",
+     "quotes": [
+      {
+       "en": "I'm a good reader of RFPs and such, I know the programs of the orgs I work for inside and out, and I can't think of a single legitimate question. Trying to make up a fake question increases my call avoidance, bc it's like starting out with a lie.",
+       "zh": "我很会读招标文件这类东西，我对自己服务的机构的项目了如指掌，所以我一个像样的问题都想不出来。硬编一个假问题只会让我更不想打——那等于一开口就在撒谎。",
+       "by": "r/nonprofit 发帖人 u/OprahsFraudDrStable"
+      }
+     ],
+     "angle": "这条痛点漂亮在它<b>不是「帮我写材料」<\/b>——那个需求已经被做烂了。它是「帮我找到一个真问题」，而这恰好是模型擅长、人却卡住的地方。<br>能做的东西很具体：<b>一个「诚实提问生成器」<\/b>。喂进去招标文件全文、出资方过去三年的资助名单、以及本机构的项目材料，让它输出的不是问题列表，而是<b>矛盾点列表<\/b>——这家去年资助的项目都在 A 类，今年的文件却强调 B 类；申报指南说欢迎多年期，但历史记录里一个多年期都没有。矛盾天然可问，而且问出来不假。<br>这个思路能横着搬：销售第一次拜访客户前问什么、记者采访前问什么、面试者反问面试官什么。共同结构都是「专家看得太熟，反而失去了提问的入口，需要有人把不一致的地方指出来」。这个抽象层现在没人讲。<br>写的时候建议把落点放在「AI 对社恐的真实价值不是替你说话，是替你找到值得说的话」。这句能戳到很多人。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.reddit.com/r/nonprofit/comments/1vmujmn/phone_shy_grant_writer/"
+      }
+     ],
+     "source_date": "2026-08-12"
+    },
+    {
+     "id": "nn-14",
+     "section": "反共识",
+     "title": "加一句「请注意多元与公平」，模型给病人凭空编出种族和收入的比例涨了 47 倍",
+     "facts": "亚利桑那州立大学的论文，8 月 15 日挂出。临床 AI 指南越来越推荐在提问时加一句「请带着多元、公平、包容的意识来推理」。作者测了这句话的副作用。<br>规模不小：<b>47 个模型、4 个医学题库、37.6 万条回答<\/b>。加这一句之后，模型给一个题面里根本没提过人口属性的病人<b>凭空补上<\/b>种族、社会经济地位、性别的比例，从 <b>0.7% 涨到 33.1%<\/b>，<b>47 个模型无一例外<\/b>。<br>作者做了两个对照来排除干扰：一句无关的胡话指令，注入率还是 0.7%；一句等长的临床中性指令，只有 2.1%。也就是说，起作用的是「公平」这个内容，不是多出来的字数。<br>大部分注入是无害的（91% 是泛泛的人群统计描述，68% 是正确的流行病学事实，不影响答案）。但有一小块是真的会改答案：<b>2.4%<\/b> 的回答里选项被改了，而这里面 <b>99.8% 是改向错误选项<\/b>。<br>还有一个很实用的发现：<b>同一个意思，措辞不同，注入率从 14% 到 56%<\/b>。反思型措辞最低，直接点名人口属性的最高。",
+     "quotes": [
+      {
+       "en": "Any instruction that nudges how a model reasons can make it add unrequested details, including details about the patient.",
+       "zh": "任何一条引导模型「怎么推理」的指令，都可能让它加进你没要的细节——包括关于病人本人的细节。",
+       "by": "论文摘要"
+      }
+     ],
+     "sides": "作者反复声明：被标记的输出在研究中一律按模型错误处理，不构成临床建议。局限也写清了：改答案的比例接近统计地板值、金标准标注只有一位标注者、题目都是选择题、机制目前还只是假设，没做激活层面的验证。",
+     "angle": "这条的力气不在「DEI 提示词有问题」，在那个更一般的机制——<b>你加的每一句「请注意 X」，都是在向模型下内容订单，而不只是调整它的思路<\/b>。论文自己举了推广例子：加「请考虑成本效益」，它会自己脑补保险；加「请考虑医疗法律风险」，它会自己脑补责任纠纷。<br>你能直接动手的是那个「措辞即剂量」的发现：同一个意图，14% 和 56% 差了四倍。这意味着<b>系统提示词里每一条软性引导，都该配一个「它有没有让模型多说没被问的东西」的检查项<\/b>。这个自测做起来很便宜：把引导句去掉跑一遍，diff 输出。<br>选题上要小心，别写成「政治正确让 AI 变笨」——那是把一篇好论文降级成情绪贴，而且论文的数据不支持这个结论（准确率总共只掉了 0.8 个点）。真正的题是：<b>提示词里那些看起来温和无害的补充，正在悄悄改写模型对事实的理解<\/b>。这个题谁都能懂，而且没有立场包袱。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.15254"
+      }
+     ],
+     "source_date": "2026-08-15"
+    },
+    {
+     "id": "nn-15",
+     "section": "反共识",
+     "title": "物流行业版主开了个「软件专帖」，把 AI 创业者全赶进去关起来",
+     "facts": "r/logistics 8 月 13 日的一条置顶版规，语气很平静，内容很狠。版主宣布：所有软件相关的请求、推广和反馈，<b>只能发在这一个帖子里<\/b>，发在别处一律删。<br>理由写得直白：现在涌进物流领域的创业公司和写代码的人太多，<b>已经超过了版务的过滤能力<\/b>；与其一天删几十个帖子，不如给他们开个专区。<br>最有价值的是最后那两张清单。<b>受欢迎的<\/b>：有效的应用场景和已验证的案例、真正的行业知识。<b>通常不受欢迎的<\/b>：拿低垂果实做的 AI 工具；以及——原话——「外来者跑来找机会『自动化』『颠覆』『搭工作流』，或者需要别人告诉他该做什么」。",
+     "quotes": [
+      {
+       "en": "Unfortunately we are experiencing a time where we are seeing many start ups and coders trying to branch into the Logistics area that surpass our capacity to filter.",
+       "zh": "很遗憾，我们正处在这样一个阶段：想往物流领域伸手的创业公司和程序员，多到超过了我们的过滤能力。",
+       "by": "r/logistics 版主 u/CentralArrow"
+      },
+      {
+       "en": "Things not normally received well: AI tools that are low hanging fruit. Outsiders looking for opportunities to \"automate\", \"shake up\", \"build workflows\" or require someone to tell them what needs to be built.",
+       "zh": "通常不受欢迎的：拿低垂果实做的 AI 工具。外来者跑来找机会「自动化」「颠覆」「搭工作流」，或者需要别人告诉他该做什么。",
+       "by": "同一条版规"
+      }
+     ],
+     "angle": "这是本期最该被写出来的一条，因为它把「去垂直行业社区挖痛点做 AI 工具」这套现在最流行的创业方法论，从被观察者的角度反打了一遍。<b>那些社区已经知道你在干什么了，而且开始建防火墙。<\/b><br>给你的判断：这条不是让人别做行业 AI，是把门槛写清楚了。版规其实给出了准入条件——你得先有「已验证的案例」和「行业知识」，才配发言。翻译成人话：<b>先在行业里干过，再来做工具；不然你连提问的资格都没有<\/b>。这跟今天午报里另外两条（物业那句「我赌 20 块这是又一个 AI 垃圾应用」、猎头试遍 AI 寻源工具全不好用）是同一件事的三个面。<br>可以做成一期完整长文，标题方向：「行业不缺工具，缺的是懂它的人」。三个真实场景当骨架，落点放在「痛点不能靠爬帖子挖，只能靠待过」。这个观点在中文创业圈现在是逆流，正好有讨论空间。<br>不建议做的：别写成嘲讽创业者的爽文。版主的语气其实很克制，还专门给了个专区——他不是拒绝，是在要求专业度。这个分寸感就是文章的价值所在。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原版规帖",
+       "url": "https://www.reddit.com/r/logistics/comments/1vmuwu8/software_only/"
+      }
+     ],
+     "source_date": "2026-08-13"
+    },
+    {
+     "id": "nn-16",
+     "section": "数据素材",
+     "title": "压缩上下文之后，任务完成率没掉，但取数据的调用从 21 次涨到 64 次",
+     "facts": "一篇很实在的测量论文。作者的问题是：大家评估上下文压缩，都只看任务完成率——可完成率不变，不等于没变贵。<br>做法是在一个确定性的规划环境里，让 agent 在固定 24 轮的预算内干活，然后把工具调用拆成「取数据」和「执行」两类分别统计。<br>结果很清楚：在 <b>6 组<\/b>「模型 × 任务类型」的对比里，<b>取数据的调用全部上升<\/b>，几乎所有多出来的交互都来自这里，其中 5 组在统计校正后仍然显著。而在预先设定的 5 倍压缩这个对比点上，<b>完成率的变化没有一组是显著的<\/b>。<br>最扎眼的是 GPT-5.5 那一组：完成率从 <b>80% 变成 85%<\/b>（p=1.0，也就是完全看不出差别），而取数据的调用从 <b>21.0 次涨到 63.9 次<\/b>（p=0.002）。<br>另一个有意思的对照：把保留下来的关键状态换成语义上不相干的内容，取数据调用再涨 <b>57%<\/b>，完成率照样不显著变化。换到 ALFWorld 这个环境，滑动窗口压缩就没有这个现象——说明它跟环境有关，不是「缩短上下文」的必然结果。",
+     "angle": "这条是给你做「省 token 迷思」系列的最好弹药。你前几天记过几条省 token 的工具和插件，这条正好是反面：<b>省下来的输入 token，会以更多轮工具调用的形式还回去<\/b>，而且完成率这个指标完全看不出来。<br>能直接用的一句话：衡量压缩效果，别只看做没做成，要看它多问了几次。这句可以做成短帖，配「21 → 63.9」这一组数。<br>做长文的话，切口定成「指标的盲区」——同一个系统，换一个指标就从「无损」变成「贵了三倍」。这个结构你可以复用到别处：招聘看录用率看不出面试成本，客服看解决率看不出转接次数。<br>注意别夸大：这是单一作者的论文，环境是人造的确定性规划任务，样本是 3 个模型 × 2 类任务。它证明了「有这个现象」，没证明「普遍有多严重」。引用时把「6 组里 6 组」和「ALFWorld 上没出现」一起说。",
+     "platforms": [
+      "短帖",
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.16370"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-17",
+     "section": "论文",
+     "title": "模型心里有两个「今年」：你能改的那个改了没用，改不动的那个才决定它怎么说话（Do Language Models Consistently Encode the Current Year?）",
+     "facts": "斯坦福几位作者（含 Christopher Potts、Diyi Yang）的新论文。他们用两种方式问模型「现在是哪一年」。一种是<b>陈述式<\/b>：直接问。一种是<b>联想式<\/b>：从动词时态里推——比如让它写一句话，看它把什么当成过去、什么当成现在。<br>两种方式给出的年份，都落在这个模型后训练数据截止日期的一年之内。对基座模型，联想式的答案是预训练截止时间的极好代理，<b>13 个模型的平均误差只有 10 个月<\/b>。<br>关键在后面：这两个「今年」走的是两套内部机制。联想式那套跟事实回忆的机制很像，陈述式那套<b>没有稳定的因果通路<\/b>。<br>结果就是三种改法全部只成功一半。<b>提示词能改陈述式的年份（351 个目标年份里 94.6% 成功），但几乎改不动联想式的（1.7%）<\/b>。按年份微调，8 个模型里只有 1 个对上了。改权重的话，两个任务单独都能改，合起来就不管用。",
+     "followup": "这条跟 8 月 17 日午报那条「一句话加在压缩提示词最前面，模型记住时间的比例从 3.05% 跳到 62.39%」是同一个问题的两层。上一条说的是「提醒它，它就记得住」；这一条给出了边界：<b>你提醒它的只是它嘴上会说的那个年份，它脑子里那个从语言习惯里长出来的年份，提示词碰不到<\/b>。",
+     "angle": "这条的用法是当「常识纠错」，不是当技术新闻。很多人以为在系统提示词里写一句「今天是 2026 年 8 月 18 日」，模型的时间观就对齐了。这篇给了准确的答复：<b>对齐的只是它回答「今年几几年」时说的那个数，它判断某件事是不是「最近」时用的还是老的那个<\/b>。<br>写法建议：先给一个日常场景——你告诉它今天的日期，它照样把一个 2025 年的东西说成「最新的」。然后揭示原因：两套机制，一套听话一套不听。这个结构短帖长文都能用。<br>还有一个能自己做的验证，成本很低：在提示词里把日期设成三年后，然后问它「XX 是不是已经过时了」，看它的时态和判断有没有跟着变。大概率不变——你可以把这个当视频里的实验环节。<br>再往深一层：这解释了为什么「模型知道自己的知识截止日期」这件事一直靠不住。它有两个截止日期，而它只会告诉你其中一个。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.15507"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "nn-18",
+     "section": "小众科技",
+     "title": "一个 14MB 的模型，跑一整段对话只占 28MB 内存，专门用来调工具",
+     "facts": "Cactus Compute 开源的 Needle 2：<b>4500 万参数<\/b>，整个模型压成<b>一个 14MB 的二进制<\/b>，跑一次完整会话大约占 <b>28MB 内存<\/b>——比一张手机照片大不了多少。定位很窄：只做工具调用、设备操作和结构化抽取，不做通用聊天。<br>怎么做到的，说得很具体。<b>一，语法约束<\/b>：从你给的工具 schema 编译出一套字节级语法，每个 token 都被约束住，文字进、JSON 出。<b>二，置信度闸门<\/b>：每次回答都带一个校准过的置信分，你自己设阈值，高于它就执行，低于它就升级给大模型。<b>三，工具检索头<\/b>：你可以声明一大堆工具，它每轮只渲染前 5 个候选，语法也只约束到这 5 个里。<b>四，固定内存<\/b>：256 token 的滑动窗口，工具描述被钉成 KV sink，所以聊多久内存都基本不涨。<br>作者自己的说法是，在小模型的基准上它跟 FunctionGemma 270M、LFM2.5 230M、Apple FM 互有胜负，<b>但体积小 5 到 70 倍<\/b>，而且是 2 比特对人家的 16 比特。装法就一句 <code>pip install cactus-needle<\/code>，推理引擎首次从 Hugging Face 拉一次然后缓存。",
+     "sides": "性能对比是作者自己给的，没看到第三方复测。「互有胜负」这个说法本身也说明它不是全面领先。",
+     "angle": "这条的看点不是「小模型又变强了」，是<b>那个置信度闸门<\/b>——它把「什么时候该交给大模型」变成了一个可以设阈值的旋钮，而不是靠 prompt 求模型自己承认不会。这个设计可以抄进任何一个多模型系统。<br>能讲的故事是分层：一个 14MB 的模型常驻在手机或路由器上，只干「听懂用户想调哪个工具、把参数填对」这一件事，不确定的时候才唤醒云端。你之前记过好几条「便宜模型平时干活、贵模型只在决策点出场」的路由方案，这条是把同一个思路做到了硬件层。<br>视频选题：找一台老手机或者树莓派，实测它离线跑工具调用。14MB 这个数字本身就有画面感——可以拿一张照片当参照物。<br>建议不碰的：别去横评它和 FunctionGemma 谁强，那是厂商自报数据，没有第三方复测。讲架构和那三个设计就够了。",
+     "platforms": [
+      "视频",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/cactus-compute/needle"
+      },
+      {
+       "label": "权重",
+       "url": "https://huggingface.co/Cactus-Compute/needle2"
+      },
+      {
+       "label": "Simple Attention Network 论文",
+       "url": "https://arxiv.org/abs/2607.18363"
+      }
+     ],
+     "source_date": "日期待核"
+    }
+   ],
+   "pitfalls": [
+    "<b>产品营销嫌疑：<\/b>nn-10 那条物业帖，行文有内容营销的味道——发帖人自己在正文里写「我读到说很大一部分来电是重复的例行事项」「售后来电被认为是人力成本大头」，这种「我读到某某统计」的铺垫是典型的需求验证问句。评论区有人直接点破：「我赌 20 块这是在给又一个 AI 垃圾应用做调研」。我仍然收了它，因为评论区那些一线回答本身是真材料，但<b>发帖人的动机存疑，别把他当纯用户引用<\/b>。",
+    "<b>公开自荐：<\/b>本期没收，但顺手记一笔——r/Optometry 有一条「我给自己诊所做了个报价工具，想找几个验光师试用」，正文末尾直接挂了 simplyoptical.net 的 30 天免费试用。这是标准的社区软广，形式上却完全长得像痛点帖。你以后从社区挖痛点时，<b>凡是结尾带链接和「免费试用」的一律降权<\/b>。",
+    "<b>单方陈述、无第三方证实：<\/b>nn-11（IT 外包商说客户拿 ChatGPT 反驳）、nn-12（猎头说 AI 寻源工具漏人）、nn-13（基金申请人说自己不敢打电话）全部是当事人自述，没有任何第三方数据。nn-12 那句「它们读不到领英档案的全部内容」是发帖人的<b>推测<\/b>，不是厂商承认的事实，引用时务必带上「他猜测」。",
+    "<b>作者自报、无人复现：<\/b>nn-18 Needle 的「跟 FunctionGemma 270M、LFM2.5 230M、Apple FM 互有胜负，体积小 5 到 70 倍」全部来自项目自己的 README，没找到第三方复测。nn-05 Second Thought 的加速数字来自论文自测；nn-16 上下文压缩那篇是单一作者、人造环境、3 个模型 × 2 类任务；nn-08 Reconstruction 论文自己标注是「arXiv 时间戳版本」的草稿，通讯作者来自一家商业实验室，命中率还是模型裁判判的。这几条都能用，但都要写清「作者自测」。",
+    "<b>GitHub star 数本期一律不引用。<\/b>核查时同一个仓库在不同接口下读出来的数字差了两个数量级（例如 i-have-adhd 分别读到几百、两万两千、和一千二百多）。我无法确定哪个是真的，所以 nn-02、nn-03、nn-06、nn-18 全部只描述项目、不给热度数字。<b>你要在稿子里写 star 数，请自己打开仓库页面截图为准。<\/b>",
+    "<b>不是新发现，是老问题的新一层：<\/b>nn-17（模型有两个「今年」）跟 8 月 17 日午报那条「一句话加在压缩提示词最前面，时间记忆从 3.05% 跳到 62.39%」是同一个问题。别当成两条独立新闻并列写，它们是「提醒有用」和「提醒只对一半有用」的关系，串成一条线才对。同理，nn-01 模型催眠跟 8 月 16 日午报那条「AES 攻击提示词全是小写和错别字」、8 月 17 日晚报「换个说话方式模型答案就变浅」是三篇不同的论文，指向同一个现象，<b>不要混成一篇的三个结论<\/b>。",
+    "<b>Reddit 取数说明：<\/b>本期 reddit.com 的网页版和 JSON 接口都被登录墙挡住，old.reddit.com 直接返回空。我走的是 www.reddit.com 的 RSS 接口（/top/.rss?t=week），能拿到正文和评论原文，但<b>拿不到点赞数和评论数<\/b>，所以本期所有 Reddit 卡片都没写热度。另外 RSS 接口限流很凶，r/Construction、r/smallbusiness 等几个版块本次没取到，不代表那边没料。",
+    "<b>本期没收但你可能会看到的两条：<\/b>一是 amoffat 的《Vetted AI code is hard to justify》（8 月 17 日），讲逐行审 AI 代码带来的心力倦怠——写得好，但跟 8 月 16 日早报那条「AI 一次吐 3000 行 PR，代码评审成了新瓶颈」重叠太多，而且文中那个交互模型作者自己标了「这是一个模型，不是测量，每个数字都是可以拖动的假设」。二是 Mole（终端深研 agent），它的两个设计——预算在调用前先预留、引文必须逐字命中原文——8 月 16 日午报已经收过了，本次没有实质新进展。"
    ]
   }
  ]
