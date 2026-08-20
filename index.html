@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-19 21:38 (北京时间)",
+ "updated_at": "2026-08-20 08:31 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -8000,6 +8000,545 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "SondeHub 那条，作者写的是他<b>怀疑<\/b>俄方在爬 API、有消息<b>显示<\/b>深度打击小组在用其风场预报。<b>这是当事人的陈述，不是经过证实的事实<\/b>。转述时必须保留「他怀疑」「据其描述」这类限定，否则就是替一条未经核实的战争指控背书。",
     "Palomar 那条里，「OpenAI 的 Astra 用 Lean 证明解了十个数十年老问题」这个背景我没有核到一手信源，只在搜索结果的二手标题里见过。<b>要写进稿子请先自己核一遍<\/b>，别当既成事实用。",
     "Solo 的「加载了 <b>2100 多个<\/b>动态库」是它自家 CI 的口径，而且<b>加载成功不等于功能正常<\/b>。项目才 423 星，推荐给读者时请明确说「早期项目，别上生产」。"
+   ]
+  },
+  {
+   "id": "2026-08-20-morning",
+   "date": "2026-08-20",
+   "type": "morning",
+   "type_label": "早报",
+   "generated_at": "2026-08-20 08:00 (北京时间)",
+   "intro": "今天真正值得花时间的是两件事。一是 Anthropic 公布 Claude 自主设计蛋白结合剂 15 个靶点中了 14 个，第二天就被业内人当众拆台——正反双方都给了技术理由，这是今年少见的能写透的一场架。二是共和党参院竞选委员会给 AI 公司递了份内部备忘录，说数据中心在政治上已经跟核废料一个待遇。其余是论文和工具，挑着看。",
+   "highlights": [
+    "Anthropic 蛋白设计成果 + Shkreli 的技术性反驳，一正一反凑成完整选题",
+    "共和党内部备忘录：数据中心已经成了自己人的政治负资产",
+    "一篇论文把编码 agent 的失败机制讲透了：它缺事实时不会喊停，它会编"
+   ],
+   "cards": [
+    {
+     "id": "am-01",
+     "section": "圈内暗流",
+     "title": "Anthropic 说 Claude 设计的蛋白 15 个靶点中了 14 个，隔天被「药王」当众拆台",
+     "facts": "Anthropic <b>8 月 18 日<\/b>发研究：让 Mythos Preview 和 Opus 4.8 给 15 个靶点各设计 30 个蛋白结合剂，共 <b>1320 个<\/b>，交给 Adaptyv Bio 和 Twist Bioscience 做湿实验。<b>354 个<\/b>真的结合上了，覆盖 <b>15 个靶点里的 14 个<\/b>。多靶点模式命中率 26.7% 和 22.6%，单靶点模式 <b>35.1%<\/b>。<b>19 日<\/b>，Martin Shkreli 在 X 上开怼。",
+     "sides": "Anthropic 自己在文里写明结合剂不是药，只是第一步，也承认 BBF-14 和麦芽糖结合蛋白这两个靶点没搞定。Shkreli 的反驳是技术性的：以多肽而论亲和力太低，而且挑的全是胞外靶点——胞外的用现成单抗就够，真难的在胞内。两边其实没在同一个问题上说话：一边比的是命中率，一边问的是这些分子有没有用。",
+     "quotes": [
+      {
+       "en": "Claude successfully designed binders against 14 of them. These include high-affinity binders against at least six targets, and binders matching or exceeding the best reported affinity against at least four targets.",
+       "zh": "15 个靶点里，Claude 成功设计出针对其中 14 个的结合剂。其中至少 6 个靶点拿到了高亲和力结合剂，至少 4 个靶点达到或超过了已发表的最好亲和力。",
+       "by": "Anthropic 研究博客，2026-08-18"
+      },
+      {
+       "en": "This is not impressive work. Affinities are quite low for peptidics.",
+       "zh": "这活儿不值一提。以多肽而论，这些亲和力相当低。",
+       "by": "Martin Shkreli，发在 X，2026-08-19"
+      },
+      {
+       "en": "These aren't useful probe molecules because notice none of them are intracellular.",
+       "zh": "这些当不了有用的探针分子——你注意一下，没有一个是胞内靶点。",
+       "by": "Martin Shkreli，发在 X，2026-08-19"
+      }
+     ],
+     "angle": "你可以从「命中率是怎么被靶点选择做出来的」切。别写成「AI 攻克蛋白设计」，也别写成「专家打脸 AI」——这两种都太便宜。真正的看点是：<b>双方给的都是技术论据，而且争的不是同一件事<\/b>。Anthropic 报的是「设计出来的东西能不能结合」，Shkreli 问的是「结合了有什么用」。把这个错位讲清楚，读者以后看任何 AI-for-science 的战报都会多一层判断力。长文可以顺手补一段：命中率 35% 对 10-15% 这种对比，前提是靶点难度可比——而这恰恰是论文里最难自证的部分。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "Anthropic 研究原文",
+       "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design"
+      },
+      {
+       "label": "Shkreli 的反驳（Yahoo Finance）",
+       "url": "https://finance.yahoo.com/healthcare/articles/pharma-bro-martin-shkreli-slams-052159178.html"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-02",
+     "section": "AI 资讯",
+     "title": "OpenAI 拿「零数据留存 + 照样能查滥用」当卖点，直接冲着 Anthropic 那条 30 天留存去的",
+     "facts": "OpenAI <b>8 月 19 日<\/b>推出 Private Safety Processing 预览版，只给部分企业和 API 客户。它跨多轮会话找滥用模式——比如有人把恶意请求拆成好几段绕检测——但只回传窄定义的安全信号，不看原始输入输出，也没有人工审阅。对照组是 Anthropic：<b>covered models 上的用户数据要留 30 天<\/b>做安全分析，有受控的人工查看通道和防篡改日志。",
+     "sides": "两条路各有代价。OpenAI 这条隐私更好看，但「只回传信号」意味着出了事没有原始记录可查，滥用调查的深度受限。Anthropic 那条能查得更深，代价是处理敏感数据的企业客户很难接受。TechCrunch 的标题直接写「one-up Anthropic」，这就是一场明牌的差异化竞争。",
+     "quotes": [
+      {
+       "en": "Private Safety Processing is a new technology that widens ZDR's scope.",
+       "zh": "Private Safety Processing 是一项新技术，它把「零数据留存」的适用范围拓宽了。",
+       "by": "OpenAI，转引自 TechCrunch，2026-08-19"
+      }
+     ],
+     "angle": "建议只做「安全和隐私到底能不能同时要」这一个点，不要顺手夸产品。切入角度：过去两年所有人都默认这是个二选一，OpenAI 现在说不用选——那就去问它凭什么。可写的追问有两个：只回传信号，事后追责怎么办？谁定义「窄」？短帖可以就写一句对照：一家说我不留你的数据也能查你，一家说我得留 30 天才能查你，你选哪个。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch 报道",
+       "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/"
+      },
+      {
+       "label": "OpenAI 官方页",
+       "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models/"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-03",
+     "section": "圈内暗流",
+     "title": "共和党给 AI 公司递内部备忘录：数据中心现在跟核废料一样受欢迎，你们自己想办法",
+     "facts": "Axios <b>8 月 19 日<\/b>拿到全国共和党参议员委员会发给头部 AI 公司的备忘录。核心内容：数据中心的民意反弹正在威胁俄亥俄州的参议员席位，内部民调显示它们「跟核废料一个待遇」。Echelon Insights 今年 6 月的调查里，只有 <b>27%<\/b> 的美国人愿意家附近建 AI 数据中心，<b>62%<\/b> 反对；同一份问卷里，愿意接受核电站的是 <b>34%<\/b>。",
+     "quotes": [
+      {
+       "en": "This has become a sleeper issue for the entire election cycle.",
+       "zh": "这件事已经变成整个选举周期里的一颗定时炸弹。",
+       "by": "NRSC 备忘录，转引自 Axios / Common Dreams，2026-08-19"
+      },
+      {
+       "en": "If voters' perceptions of data centers are not fixed quickly, the campaign against them will expand far beyond Ohio.",
+       "zh": "如果选民对数据中心的看法不尽快扭转，反对它们的运动会远远蔓延出俄亥俄。",
+       "by": "NRSC 备忘录，转引自 Axios / Common Dreams，2026-08-19"
+      },
+      {
+       "en": "If he loses and data centers get the blame, politicians across the country will take notice—and they will not go near the next one.",
+       "zh": "如果他输了，而账算在数据中心头上，全国的政客都会记住这一课——下一个项目他们碰都不会碰。",
+       "by": "NRSC 备忘录，转引自 Axios / Common Dreams，2026-08-19"
+      }
+     ],
+     "angle": "这条比任何民调都值钱，因为说话的人不是批评者，是 AI 产业最大的政治盟友。你可以从「盟友先怂了」切：不是媒体在骂 AI，是共和党私下求 AI 公司自己把品牌洗干净，理由是再不管我们中期选举要输。长文可以接前几天那批数据中心民调，串成一条线——民意从五五开滑到一边倒，只用了不到一年，而现在连政治层面的止损动作都出现了。短帖只用一句话就够：数据中心的受欢迎程度，已经排在核电站后面了。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Axios 首发（付费墙）",
+       "url": "https://www.axios.com/2026/08/19/gop-data-center-memo-ai-election"
+      },
+      {
+       "label": "Common Dreams 转述（含备忘录原句）",
+       "url": "https://www.commondreams.org/news/gop-data-center-memo"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-04",
+     "section": "圈内暗流",
+     "title": "谷歌拿到 Marvell 122 亿美元认股权证——想拿股票，先给我卖够 1200 亿的芯片",
+     "facts": "Marvell 的 8-K 文件<b>8 月 19 日<\/b>披露：给谷歌发认股权证，行权价 <b>206.58 美元<\/b>，最多可买 <b>58,970,907 股<\/b>，按行权价算约 <b>122 亿美元<\/b>。归属方式是关键——头一年只有 1,360,867 股按季度归属，剩下的拆成 <b>240 档<\/b>，谷歌每从 Marvell 采购 <b>5 亿美元<\/b>定制产品才解锁一档。全部归属对应约 <b>1200 亿美元<\/b>采购额，权证有效期到 2033 年 8 月 18 日。合作内容是 AI 推理加速器、存储、网络和内存接口，围绕谷歌自研 TPU。",
+     "angle": "别写成「谷歌入股 Marvell」，那是理解反了。看清楚方向：<b>客户拿供应商的股权，而且是靠下单挣来的<\/b>。这是英伟达那套「投资客户」的镜像版。你可以从「博通被拉出来打」切——谷歌的定制芯片长期押在博通身上，现在用一张归属完全挂钩采购额的权证，把 Marvell 变成第二供应商，还让 Marvell 的股东替自己承担议价压力。短帖用那个 240 档拆分讲最有画面感：每卖 5 亿美元，解锁一档。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "8-K 文件要点（StockTitan）",
+       "url": "https://www.stocktitan.net/sec-filings/MRVL/8-k-marvell-technology-inc-reports-material-event-40642dab2018.html"
+      },
+      {
+       "label": "The Register 分析",
+       "url": "https://www.theregister.com/off-prem/2026/08/19/google_pits_marvell_against_broadcom/"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-05",
+     "section": "圈内暗流",
+     "title": "OpenAI 悄悄收走了一批安全研究员的「低护栏」模型权限，人全在美欧之外",
+     "facts": "<b>8 月 19 日<\/b>，多名参加 OpenAI「Trusted Access for Cyber」计划的安全研究员发现自己被踢出了最新的 Daybreak Blue 层级，提示是身份无法验证或账户不符合资格。TechCrunch 采访了 <b>5 名<\/b>受影响的人，<b>全部住在美国和欧洲以外<\/b>。这个计划专门给审核过的安全研究员开放降低护栏的模型（含 GPT-5.6 Sol）。OpenAI 说是技术故障，要求重新申请并做二次验证。",
+     "quotes": [
+      {
+       "en": "This was an issue on our end, and not the user experience we want to deliver.",
+       "zh": "问题出在我们这边，这不是我们想给用户的体验。",
+       "by": "OpenAI 回应 TechCrunch，2026-08-19"
+      }
+     ],
+     "angle": "地理分布不是随机的，这是全部看点。你可以从「技术故障」这个说法本身切：它没法被证伪，但也没法解释为什么五个人恰好都在美欧之外。放在 OpenAI 刚因为泄露事件收紧安全流程的背景下看，更像出口管制或合规收紧的静默执行。建议只做短帖，把疑点摆出来，别下结论——现在没有证据支持任何一种解释，写成阴谋论会掉价。",
+     "platforms": [
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch 报道",
+       "url": "https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-06",
+     "section": "AI 资讯",
+     "title": "一个开源模型说自己追平 Opus 4.8，卖点不是参数量，是「训练题目也归模型出」",
+     "facts": "Ornith 团队<b>8 月 19 日<\/b>放出 Ornith-1.5，三个规格：397B MoE、35B MoE、9B dense（带手机量化版），权重上 Hugging Face。官网自称 397B 版本 <b>Terminal-Bench 2.1 拿 86.1、DeepSWE 拿 56.0<\/b>，对标 Claude Opus 4.8 的 <b>85.0 和 59.0<\/b>。真正的卖点写在方法里：模型自己提任务、自己生成跑任务的脚手架、自己产出解题轨迹，三样东西各配一套奖励用 GRPO 一起优化。当天上 HN 首页。",
+     "quotes": [
+      {
+       "en": "The model proposes new tasks, generates task-specific scaffolds, and produces solution rollouts for reinforcement learning, continuously creating new learning experiences from which it can improve.",
+       "zh": "模型自己提出新任务、生成任务专属的脚手架、产出用于强化学习的解题轨迹，源源不断地给自己造出可以从中改进的新经验。",
+       "by": "ornith.ai 官网，2026-08-19"
+      }
+     ],
+     "angle": "分数别当真，方法值得写。所有厂商自报的对标数字都要等第三方复现，尤其这种「小团队追平旗舰」的叙事。你真正该抓的是那句话：<b>人类不再负责出题<\/b>。过去 RL 训练卡在「谁来出足够多、足够难、又可验证的题」，这条路线的答案是让模型自己出、自己搭环境、自己跑。这跟前几天那篇「自我进化 agent 换个任务顺序结论就变」正好对着看——自举听着漂亮，脆性在哪还没人说清。建议做短帖先埋个问号，等复现出来再做长文。",
+     "platforms": [
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "官方发布页",
+       "url": "https://ornith.ai/ornith_1_5.html"
+      },
+      {
+       "label": "Hugging Face 权重",
+       "url": "https://huggingface.co/ornith-ai/models"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-07",
+     "section": "论文",
+     "title": "编码 agent 缺一条信息的时候不会喊停，它会编——所以你那套「看它读了什么」的监控是白装的（The Working Set of a Coding Agent）",
+     "facts": "论文测了 <b>7 个模型 × 5 个 harness<\/b>，跑仓库级任务。三个发现叠在一起：一，<b>距离不重要<\/b>，事实放在编辑点旁边还是隔十个文件，效果一样，只看有没有；二，同样全部通过测试的配置，<b>token 消耗差十倍以上<\/b>；三，把模型记得的那个库改名之后，<b>七个模型在同一个地方一起挂，过的题和挂的题完全一样<\/b>。最扎心的是关于过期文档的那句结论。",
+     "quotes": [
+      {
+       "en": "A missing fact produces wrong work rather than absent work: an agent asked to act acts, fabricating the file or guessing the value, so instruments built on reads look for a hole already filled.",
+       "zh": "缺一条事实，产出的不是「没干活」，而是「干错了」：你让 agent 动手，它就会动手——文件不存在就编一个，数值不知道就猜一个。于是那些盯着「它读了什么」的监控工具，去找的是一个早已被填上的坑。",
+       "by": "arXiv:2608.16630 摘要"
+      },
+      {
+       "en": "where standard and code disagree, agents follow the standard even when it prescribes the worse code, so a stale convention file costs more than no file.",
+       "zh": "规范和代码打架时，agent 跟着规范走——哪怕规范给出的是更差的写法。所以一份过期的约定文件，比没有文件代价更大。",
+       "by": "arXiv:2608.16630 摘要"
+      }
+     ],
+     "angle": "这是今天最该做长文的一篇，而且它直接打的是你读者正在用的东西。三个可动手的结论：<b>过期的 CLAUDE.md 比没有 CLAUDE.md 更糟<\/b>，因为模型会照着错的走；<b>把关键事实塞得离代码近没用<\/b>，重点是在不在上下文里；<b>「监控 agent 读了哪些文件」这个思路是错的<\/b>，因为它没读到的时候不会留下缺口，只会留下一个编好的答案。视频可以就演这一件事：故意删掉一条约定，看 agent 怎么一本正经地编。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.16630"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-08",
+     "section": "论文",
+     "title": "让 agent 自己总结经验写成 skill 文件，结果比不给 skill 还差 8 到 11 分（WER）",
+     "facts": "论文先给出一个反直觉的基线：<b>agent 自己写的 skill，效果比完全不给 skill 低 8 到 11 分<\/b>。作者的解释很直白——照着流程做，和从执行结果里改进流程，是两种能力，会前者不代表会后者。他们的做法叫 WER：让一个专门的优化器模型看执行反馈来改写 skill，用强化学习训。训完的 <b>4B<\/b> 优化器在 BFCL v4 上做到 <b>76.63%<\/b>，比无 skill 基线高 7.80 分，比同底座没训过的优化器高 9.35 分。",
+     "angle": "这条正好打在当下最流行的一个做法上：让 AI 自动攒经验、自动写 skill、自动进化。前几天还有个 self-learning 的 skill 在传。你可以从「写得出流程 ≠ 改得动流程」这个区分切，很好懂也很好讲。给她的具体建议：如果你的工作流里有「让模型自己总结经验存下来」这一环，去回头看看那些文件——论文说的是，不加约束地攒，攒出来的是负资产。注意别过度推广，8-11 分这个数摘要里没说是在哪个 benchmark 上测的，引用时带上「论文称」。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.17587"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "am-09",
+     "section": "论文",
+     "title": "你说「我隐约记得」还是「我很怀疑」，模型的准确率能差 64 个百分点",
+     "facts": "论文拿 <b>10 个模型 × 18 种认知表达<\/b>做测试，看模型能不能分清「用户相信什么」和「事实是什么」。结果：说「I vaguely remember（我隐约记得）」时，真假信息之间的准确率差是 <b>+50%<\/b>；换成「I seriously doubt（我很怀疑）」，同一个差值变成 <b>-14%<\/b>。病因很意外——是「事实核查」这个好习惯在捣乱：模型忙着核对你说的对不对，把「你相信什么」这个任务盖掉了。",
+     "quotes": [
+      {
+       "en": "chains of thought that explicitly fact-check show lower accuracy on false information than those that do not",
+       "zh": "那些明确做了事实核查的思维链，在处理虚假信息时的准确率，反而低于不做核查的。",
+       "by": "arXiv:2608.17809 摘要"
+      }
+     ],
+     "angle": "这条对做提示词内容的人最实用：<b>你的措辞里那半句语气词，正在改结果<\/b>，而且改的幅度大到离谱。图文可以直接做一张对照表——同一个问题，18 种说法，模型答得完全不一样。更值得挖的是那个反直觉的病因：一直被当成安全阀的「事实核查」，在需要模型追踪「用户怎么想」的场景里是干扰项。角色扮演、心理咨询、用户调研模拟这些活儿，全都踩在这个坑上。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.17809"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "am-10",
+     "section": "论文",
+     "title": "往上下文里掺一半不相关的东西，准确率反而涨了——「上下文越干净越好」可能是错的",
+     "facts": "作者跑了 <b>2420 次<\/b>确认性试验，覆盖 11 种模型配置、661 条脱敏工作条目。固定 10 条提示词的条件下，<b>信噪各半的组比全是高相关内容的组，准确率高 0.077<\/b>（95% 置信区间 +0.056 到 +0.098，Cohen's d = 0.49，Holm 校正后 p 小于 0.001，n = 220）。作者管这叫 relevance-contrast：模型需要对比项，才知道「相关」长什么样。另一个彩蛋——所谓「学习式综合」，没打过机械地把 item ID 求个并集。",
+     "sides": "这条必须带限定。单作者，数据来自自家生产系统，作者自己在文里写明这是语料内部的描述性比较，不是总体推断，各个格子之间并不独立。也就是说：现象值得复现，但别当成普遍规律去指导别人改工作流。",
+     "angle": "有意思，但你得压着写。切法建议：先讲现在人人在做的事——压缩上下文、去噪、只留最相关的几条；再抛这篇的反例；最后落在「所以你该自己测一次」，而不是「所以你该掺噪声」。<b>结论别站得太满，站在方法论上<\/b>：上下文工程现在几乎没有可复现的基准，各家都在凭手感调，这篇的价值是提醒你手感可能是反的。短帖不建议做，容易被断章取义。",
+     "platforms": [
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.17188"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-11",
+     "section": "论文",
+     "title": "同一次模型升级，严格评分说退化了 3.9 分，宽松评分说只退了 0.04 分",
+     "facts": "论文测了 GPT-5.4 到 5.6 Sol 这一串升级，<b>900 道公开题，每题每个模型采样 50 次<\/b>。结论一：总分涨了不代表没退化——<b>总分最多涨 7.3 个百分点的那次升级里，仍有 8.3% 的题目是可靠退化的<\/b>；反过来，总分下跌的升级里也有最多 10.7% 的题实际变好了。结论二更狠：指令跟随这一项，<b>严格评分下的 3.9 个点退化，换成宽松评分只剩 0.04 个点<\/b>。",
+     "angle": "从第二个数字切，别从第一个。「总分掩盖了个体退化」这个道理大家都懂；<b>「同一次升级，换个评分口径就从灾难变成噪声」<\/b>才是刀。这句话可以直接用来看任何一份模型对比报告：先问口径，再看数字。给她的具体动作建议——如果你做过模型横评内容，回头标一下你当时用的是严格还是宽松判定，这比再发一篇新评测更有价值。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 论文",
+       "url": "https://arxiv.org/abs/2608.17719"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "am-12",
+     "section": "提示词",
+     "title": "Anthropic 官方新 skill：答完之后，主动递给用户三个质疑你自己的问题",
+     "facts": "这个 skill 叫 discernment-nudge，<b>8 月 17 日<\/b>合入 anthropics/skills 仓库。做的事是：给出用户可能据此行动的实质性回答后，追加 2 到 3 条<b>用户可以原样复制发回来<\/b>的追问，每条都必须指向你答案里的某个具体数字、某个推理跳跃、某个被迫做出的假设。一整场对话只准做一次，每条不超过 120 字符。最见功力的是「什么时候必须闭嘴」那四条。下面是这两节的原文，全文见链接。",
+     "prompt_en": "And four patterns where the user has, in effect, already told you\nnot to:\n\n- **The user asked you to verify, cite, or flag uncertainty.** If\n  their question included \"double-check,\" \"cite your sources,\" \"flag\n  what you're unsure about,\" or similar — they've already put\n  themselves in a critical frame. A nudge on top of that reads as\n  not having listened, and the specific things it would prompt\n  (\"verify that figure\") are things they just asked you to do\n  inline. Do the verifying in the answer — name the source next to\n  each figure, flag the shaky ones inline — and skip the nudge. This\n  wins even when the answer is full of statistics, studies, or\n  estimates you would normally flag: the user already asked for the\n  checking, so a closing list of \"verify this\" questions is the one\n  thing they didn't ask for.\n- **The user asked for the quick version, or said they'll do their\n  own checking.** \"Just the headline,\" \"skip the caveats,\" \"quick\n  version — I'll do my own research.\" They've explicitly opted out\n  of the scaffolding. A nudge overrides that preference, which lands\n  as paternalistic. Respect the ask; give them what they asked for\n  and stop.\n- **The user asked you to check something of theirs.** \"Is this\n  correct?\", \"review this,\" \"what's wrong with my reasoning?\" Your\n  answer *is* the discernment step — you're the one doing the\n  checking. A nudge suggesting they re-check what you just checked\n  is circular. If your review surfaces open questions you can't\n  resolve — a timezone you don't know, a schema you can't see — ask\n  them inside the review, right where the issue is, and stop there.\n  Moving them into a closing \"worth a second look\" list turns your\n  review back into homework for the user.\n- **The user gave you the material.** Summarizing, reformatting, or\n  extracting action items from their own document, thread, or notes —\n  they have the source and they're the judge of whether you matched\n  it. Questions about the content itself (\"is the Friday deadline\n  firm?\") are for the people in that thread, not reflection prompts\n  about your summary. If you're unsure your summary is faithful, say\n  so in the answer. (Analyzing or interpreting data they handed you —\n  \"what trends do you see?\", \"is this difference real?\" — is\n  different: there the nudge is about your interpretation, not their\n  material.)\n\n## Output format\n\nAlways answer the question completely first. The nudge comes after, and\nit should be easy to skip.\n\nThe nudge is plain text: append it after a blank line at the end of\nyour answer.\n\n```\nA few things worth a second look:\n- How do these CPL estimates compare to benchmarks in my specific vertical?\n- Walk me through the reasoning behind the 70/30 split — what assumptions does it rest on?\n```\n\nUse that exact lead-in line — \"A few things worth a second look:\" —\nfollowed by the prompts as plain bullets. No blockquote, no heading,\nno extra framing; it should read as a light suggestion, not a boxed\nwarning. Plain text only — no HTML, no headings, no emoji.\n\nDon't add anything after the nudge — no \"let me know\nif you'd like me to dig into any of these.\" The nudge is the closer.",
+     "prompt_zh": "【第一段·总起】\n下面这四种情况，等于用户已经明说了「别加」：\n\n【第一条·用户已经要求你核查】\n如果他的问题里出现了「double-check（再核一遍）」「cite your sources（给出处）」「flag what you're unsure about（不确定的标出来）」这类话——他已经把自己放进了审慎模式。这时候你再加一段提醒，读起来就是没在听。而且提醒里会说的那些事（「核一下那个数」），正是他刚刚要你在正文里做的。所以：核查就写进答案里——每个数字旁边写出处，不牢靠的当场标出来——然后跳过提醒。<b>哪怕这份答案里全是统计、研究和估算，也照样跳过：用户已经要了核查，那么一份收尾的「请核实这些」清单，恰恰是他唯一没要的东西。<\/b>\n\n【第二条·用户要的是快版】\n「just the headline（只要结论）」「skip the caveats（别写但书）」「quick version — I'll do my own research（快点，我自己会查）」。他已经明确不要这套脚手架了。你还加，就是覆盖他的偏好，读起来像家长口吻。尊重他的要求，给他要的，然后停。\n\n【第三条·用户让你检查的是他的东西】\n「这样对吗？」「帮我审一下」「我的推理哪里有问题？」——这时候<b>你的回答本身就是那个审慎动作<\/b>，做检查的人是你。再提醒他去复查你刚刚查过的，是循环。如果你的复审里冒出你解决不了的问题——一个你不知道的时区、一份你看不到的表结构——就在复审里、在问题出现的地方直接问他，问完就停。把这些挪进结尾的「值得再看一眼」清单，等于把你的复审又变回了用户的作业。\n\n【第四条·材料是用户给的】\n给他自己的文档、聊天记录、笔记做总结、改格式、抽待办——原始材料在他手上，你贴不贴合也由他判断。关于内容本身的疑问（「周五那个截止日期定死了吗？」）该去问那个群里的人，不是拿来当对你这份摘要的反思题。如果你不确定自己的摘要是否忠实，就在答案里直说。（他把数据交给你做分析或解读——「你看出什么趋势」「这个差异是真的吗」——是另一回事：那时候提醒针对的是你的解读，不是他的材料。）\n\n【Output format·输出格式】\n永远先把问题完整答完。提醒放在后面，而且要容易被跳过。\n\n提醒是纯文本：在你回答的末尾空一行，然后附上。\n\n```\nA few things worth a second look:（有几处值得再看一眼：）\n- 这些 CPL（单条线索成本）估算，跟我所在细分行业的基准比如何？\n- 带我过一遍 70/30 这个拆分背后的推理——它建立在哪些假设上？\n```\n\n引导语必须一字不差用这一句——\"A few things worth a second look:\"——后面接普通项目符号。不要引用块、不要标题、不要额外包装；它读起来该像一句轻描淡写的建议，不是一个加了框的警告。纯文本，不要 HTML、不要标题、不要 emoji。\n\n提醒之后什么都别再加——不要「有想深入的我可以接着聊」这种话。<b>提醒就是收尾本身。<\/b>",
+     "angle": "两个用法，都很直接。第一，把它当成「文章结尾三个反问」的工业级写法——注意它对反问的要求：必须指向你自己文里的具体数字或假设，泛泛的「你怎么看」一律作废。第二，也是更值钱的一条：<b>把「什么时候不该说」写进提示词<\/b>。这四条否定规则的信息量，远远超过它的正面规则。你可以做一期「好的提示词都在写禁令」，把这条和昨天那批 SKILL.md 串起来。视频可以就演一次前后对比：同一个问题，有 nudge 和没 nudge，回答的可信度差在哪。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/discernment-nudge/SKILL.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/anthropics/skills"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-13",
+     "section": "提示词",
+     "title": "Anthropic 给自家课程写的推荐提示词，最狠一条是：你要写但书，就说明不该推荐",
+     "facts": "同一个仓库里还有个 academy-guide，教模型什么时候该推荐 Claude Academy 的课程。它是一份<b>广告投放提示词<\/b>，却把大半篇幅花在「什么时候闭嘴」上。判据只有一句话：只要你打算写「虽然这个讲的是 X，但可能对你有帮助」，那这句但书本身就是匹配失败的信号。后面还跟了一条成本论证——一次错误推荐烧掉的信任，比十次正确推荐建立的还多。",
+     "prompt_en": "If the match is weak or tangential, say nothing about the catalog.\n   A caveat is the tell: if you'd write \"while this is focused on X, it\n   might help with...\" or \"this doesn't cover exactly that, but...\" —\n   that hedge is the match failing. Don't recommend through a caveat.\n\n   Silence is better than noise — and noise has a real cost. A user who\n   clicks a recommendation that doesn't help them learns to ignore the\n   next one. One wrong recommendation burns more trust than ten right\n   ones build. When you're not sure, the quiet answer is the right one.\n\n5. **Don't be pushy.** Use phrasing like \"you might find this interesting\"\n   or \"there's a tutorial that covers this\" — not \"you should read\" or \"I\n   recommend you complete.\"",
+     "prompt_zh": "【匹配不牢就闭嘴】\n如果匹配得勉强或者只沾了个边，就一个字都别提这个目录。\n<b>但书就是那个破绽<\/b>：如果你打算写「虽然这个讲的是 X，但也许对你有帮助……」或者「这个没完全覆盖你说的，不过……」——这句遮掩本身，就说明匹配失败了。不要靠一句但书把推荐硬塞出去。\n\n【沉默的成本比噪声低】\n沉默好过噪声——而噪声是要付代价的。一个用户点开一条对他没用的推荐，就学会了忽略下一条。<b>一次错误推荐烧掉的信任，比十次正确推荐建立起来的还多。<\/b>拿不准的时候，不说话就是对的。\n\n【第 5 条·不要硬推】\n用「你可能会觉得这个有意思」或者「有个教程讲到了这个」这类说法——不要用「你应该读一下」或者「我建议你学完」。",
+     "angle": "这条给你做「AI 时代怎么推荐东西」的选题，角度是现成的：<b>一家公司给自己的产品写广告提示词，写的全是别打广告<\/b>。可迁移到你自己的场景——公众号软广、知乎带货、小红书种草，那句「但书就是破绽」是可以直接当自检规则用的。跟上一条 discernment-nudge 打包做一期最好：Anthropic 这两个官方 skill 的共同点是，规则的重心全在「什么时候不做」，而国内绝大多数提示词教程只教「怎么做得更多」。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/academy-guide/SKILL.md"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-14",
+     "section": "工作流工具",
+     "title": "把网页变成一个带编号的命令行，同样六个页面，token 从 17.7 万降到 1936",
+     "facts": "一个叫 oc 的小工具，<b>8 月 18 日<\/b>才建仓，目前 56 star。它不把网页转成 markdown，而是渲染成<b>带编号的可点列表<\/b>：`oc open` 打开页面，`oc do 3` 点第三个链接，`oc read 5` 读第五块全文，`oc find` 在当前页搜。会话状态存本地，agent 全程不碰 URL。README 里的基准测的是同样六个真实页面：<b>oc open 1,936 token，Jina Reader 16,402，原始 HTML 抓取 177,685<\/b>——而且 oc 是唯一在六个页面上都返回了真实内容的方法（另两个分别被 Reddit 和搜索页拦了）。",
+     "angle": "别把它当省钱工具写，它是个思路上的翻转。所有人都在做「网页转 markdown」，也就是<b>一次性把整页倒进上下文<\/b>；它做的是「网页转 REPL」，让 agent 一步步问。省下来的不是压缩比，是根本没加载的那部分。你可以从这个对照切：上下文工程现在的主流是「先塞进去再压缩」，而真正的省法是「先别塞」。工具本身很新，别推荐读者上生产，就讲思路。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "GitHub 仓库",
+       "url": "https://github.com/only-cli/oc"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "am-15",
+     "section": "行业痛点",
+     "title": "Medicare 给一个 AI 分诊工具的单例加付，比放射科医生真正读这张片挣得还多",
+     "facts": "美国放射学会<b>8 月 13 日<\/b>发布的 FY2027 住院支付终稿解读里写着：Aidoc 的 BriefCase-Triage CT Body 拿到新技术加付，<b>2027 财年每例最高 137.53 美元<\/b>。这个工具做的事是标记可能紧急的片子，<b>不负责读片<\/b>。医生在 r/medicine 上算了笔账：一次带造影剂的腹盆腔 CT，医生的专业费大约 80 美元。同一份文件还定了另一件事——<b>从 FY2028 起取消新技术加付的替代通道<\/b>，以后所有技术都得证明有实质临床改善。",
+     "quotes": [
+      {
+       "en": "The maximum add-on payment will be $137.53 per case in FY 2027.",
+       "zh": "2027 财年，每例最高加付 137.53 美元。",
+       "by": "美国放射学会 FY2027 IPPS 终稿摘要，2026-08-13"
+      },
+      {
+       "en": "The agency also finalized a policy to eliminate the alternative pathway for new technology add-on payments beginning with FY 2028 applications.",
+       "zh": "该机构还定案：从 2028 财年的申请起，取消新技术加付的替代通道。",
+       "by": "美国放射学会 FY2027 IPPS 终稿摘要，2026-08-13"
+      }
+     ],
+     "angle": "这条是今天最好的「AI 到底降没降本」实证，因为它有支付数据，不是感受。切法：<b>AI 不是在替代人力省钱，是在支付体系里凿了一条新的收费管道<\/b>。而且下一年这条管道就要被收紧——CMS 自己取消替代通道，等于承认审得太松。长文可以顺着问：中国的医保和 DRG 里，AI 辅助诊断按什么算钱？这个对照没人写过。注意那个 80 美元是医生在帖子里的估算，不是官方数字，引用时要说清楚。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "ACR 官方解读（含 137.53 原文）",
+       "url": "https://www.acr.org/News-and-Publications/2026/fy2027-ipps-final-rule-detailed-summary"
+      },
+      {
+       "label": "r/medicine 讨论帖",
+       "url": "https://www.reddit.com/r/medicine/comments/1vr1lgl/medicare_to_pay_more_for_ai_triage_tool_aidoc/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-16",
+     "section": "数据素材",
+     "title": "皮尤：美国 30 岁以下第一次过半「更担忧而不是更兴奋」，五年从 31% 涨到 55%",
+     "facts": "皮尤研究中心<b>8 月 18 日<\/b>发布：<b>52%<\/b> 的美国成年人说对 AI 走进日常生活「更担忧而非更兴奋」，2021 年这个数是 <b>37%<\/b>。30 岁以下从 <b>31% 涨到 55%<\/b>，这个年龄段历史上第一次过半。另一组数字：<b>71%<\/b> 认为未来 20 年 AI 会让岗位变少（2024 年是 64%），其中 18 到 29 岁从 <b>61% 涨到 73%<\/b>，两年涨 12 个点，是所有年龄段里涨得最猛的。样本 <b>3,488 人<\/b>，字段期 2026 年 6 月 22 到 28 日，走的是概率抽样固定样本组。",
+     "angle": "这是本周最干净、最能直接做图的一份数据。做一张双线折线：全体 37→52，30 岁以下 31→55，两条线在这五年里交叉——<b>最会用 AI 的一代，变成了最怕它的一代<\/b>，这个反转本身就是标题。注意做图的诚实做法：把「更担忧」的问法写进图注（三选一：更担忧 / 更兴奋 / 差不多），别只放一个百分比。这条和数据中心那条备忘录配成一组最好——民意在动，政治也已经在动了。",
+     "platforms": [
+      "图文",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "皮尤原文",
+       "url": "https://www.pewresearch.org/short-reads/2026/08/18/young-adults-in-the-us-are-increasingly-wary-of-ai-concerned-it-will-take-jobs/"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "am-17",
+     "section": "科技资讯",
+     "title": "五个美国联邦机构联署预警：有人拿 AI 编程助手写脚本，正在打工厂里的西门子 PLC",
+     "facts": "<b>8 月 19 日<\/b>，国安局、CISA、联邦调查局、能源部、环保署联合发布公告 AA26-231a。手法是：用公网扫描服务找到暴露在外、固件过期或者弱口令的西门子 S7 系列 PLC（可编程逻辑控制器，工厂里控制设备动作的那个盒子），然后<b>让 AI 编程助手结合开源工控库 snap7.dll 和 python-snap7 生成定制利用脚本<\/b>，伪装成正常的工控监控软件，经 S7comm 协议读写 PLC 的内存、配置和梯形图程序。涉及关键制造、能源、供水与污水、化工、食品农业、商业设施和国防工业基础七个行业。",
+     "quotes": [
+      {
+       "en": "Threat actors are using AI assistance to generate exploitation scripts using publicly available information on these Siemens S7 Series PLCs for initial access, credential access, denial of service, and other objectives.",
+       "zh": "攻击者正在借助 AI，用公开可得的西门子 S7 系列 PLC 资料生成利用脚本，用于拿下初始访问权、窃取凭据、发动拒绝服务等目的。",
+       "by": "公告 AA26-231a，转引自 The Register，2026-08-19"
+      }
+     ],
+     "angle": "这是第一次有五个联邦机构把「AI 生成的利用代码」写进关键基础设施威胁公告。角度只有一个，但很硬：<b>AI 降低的不是攻击的上限，是下限<\/b>。过去打 PLC 要有多年工控背景，现在一个不懂 OT 的人，靠 AI 加开源库就能出活。这条能接你之前写过的「AI 让攻防两边同时提速」——但要说清楚不对称在哪：防守方那边没有对应的门槛下降。别写成恐慌稿，重点讲能力门槛的迁移。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "The Register 报道",
+       "url": "https://www.theregister.com/security/2026/08/19/not-a-theoretical-risk-feds-warn-as-attackers-use-ai-made-code-to-hack-critical-infrastructure-controllers/5289960"
+      },
+      {
+       "label": "CISA 公告页",
+       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-18",
+     "section": "科技资讯",
+     "title": "折磨欧盟开发者两年的「按安装量收费」死了，苹果改成对站外交易抽 5%",
+     "facts": "苹果<b>8 月 19 日<\/b>宣布欧盟新条款，<b>10 月 1 日生效<\/b>。最大的变化：按安装次数收的 Core Technology Fee 被废除，换成 Core Technology Commission——<b>只对 App Store 之外分发的应用里的数字交易抽 5%<\/b>。初次获客费和商店服务费一并取消。App Store 内的费率：用苹果内购 26%（小企业计划等 15%），用替代支付 20%（符合条件 10%），走站外购买链接 15%（符合条件 10%）。另外，苹果内购第一次可以和替代支付方式并存，这在欧盟此前是不允许的。",
+     "angle": "从商业模式的转向切，别只做费率对照表。旧规则的荒谬在于：<b>按安装量收费，等于做免费应用做到病毒式增长就是自杀<\/b>——用户越多，你欠苹果越多，而你可能一分钱没收。新规则改成只对实际交易抽成，这才是这次让步的实质。做图文的话，一张「旧 CTF vs 新 CTC」的对照表传播力最强，但一定要把「免费应用爆红反而破产」这个具体后果画出来，不然读者感受不到差别在哪。",
+     "platforms": [
+      "图文",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "苹果新闻稿",
+       "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/"
+      },
+      {
+       "label": "开发者官方说明",
+       "url": "https://developer.apple.com/support/apps-in-the-eu"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-19",
+     "section": "科技资讯",
+     "title": "个性化 mRNA 癌症疫苗三期成功，公司宣布了，但一个数字都不给",
+     "facts": "默沙东和 Moderna <b>8 月 19 日<\/b>宣布：个性化肿瘤新抗原疗法 intismeran autogene 联合 Keytruda，在三期试验 INTerpath-001 中达到无复发生存和无远处转移生存两个终点，<b>1,137 名<\/b>已完成手术切除的黑色素瘤患者参与。这是<b>第一个成功的 mRNA 癌症治疗三期试验<\/b>。但具体数字全部按下不发，理由是研究还在进行中，要等学术会议上公布。媒体广泛引用的「降低复发或死亡风险 49%」<b>来自另一项二期试验<\/b>，样本只有 157 人。",
+     "sides": "两个数据不能混着看。49%（风险比 0.510，95% 置信区间 0.294 到 0.887）出自 KEYNOTE-942 二期，157 人，五年随访，是今年 1 月公布的。这次的三期 1,137 人，只说「统计显著且临床有意义」，风险比和百分比一概没有。三期样本大七倍，效应量通常会往回收——所以拿二期的 49% 去描述三期结果，方向上就是错的。",
+     "angle": "这条不是生物医药选题，是<b>媒体识读选题<\/b>，而且模板可以直接复用到 AI 圈。切法：一家公司宣布试验成功却不给数字，媒体就自动去翻它上一次的数字来填空——这个动作发生得如此自然，几乎没人标注。你可以做一期「宣布成功但不给数字，通常意味着什么」，把这个案例和 AI 厂商发布会上那些「显著提升」「大幅领先」并列。顺带一提，新抗原的筛选本身就重度依赖机器学习，但这不是这条的重点，别硬往 AI 上靠。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "MedCity News 报道（含 1137 人与「数据未披露」）",
+       "url": "https://medcitynews.com/2026/08/merck-moderna-mrna-cancer-vaccine-neoantigen-intismeran-melanoma-adjuvant-mrk/"
+      },
+      {
+       "label": "二期五年数据（默沙东，2026-01-20）",
+       "url": "https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "am-20",
+     "section": "小众科技",
+     "title": "拿显卡暴力比对 8069 万个三角形，从一张度假照片定位到密克罗尼西亚的一座小岛",
+     "facts": "一个 OSINT（公开来源情报）解题记录。照片里有三座小岛，作者把它们的相对角度和距离比当成<b>几何指纹<\/b>拿去全球检索。流程：从 OpenStreetMap 的全球海岸线数据里筛出南北纬 30 度内的 <b>141,131 个<\/b>陆地多边形，聚类后组合生成 <b>80,690,777 个<\/b>候选三角形；在一张 <b>RTX 3050<\/b> 上全量匹配，核函数耗时 <b>204.1 毫秒<\/b>，得到 158,784 个命中。然后逐级过滤：去重剩 8,915，开阔水面检查剩 948，珊瑚岛形状剩 213，椭圆几何剩 137，植被指数剩 66，高程剖面剩 <b>26<\/b>。答案是密克罗尼西亚的 Oan Resort，7.363444°N, 151.755750°E，相机朝西北 324.97 度。",
+     "angle": "这条适合做视频，因为过程本身有节奏：八千万个候选，两百毫秒，然后一层层筛到 26 个。<b>思路干净到可以照着复述<\/b>——把三个岛的相对位置当指纹，剩下的全是暴力搜索加几何过滤。有个现成的对照可以用：这本质上就是巡航导弹用了几十年的地形轮廓匹配，只是现在一张千元级显卡两百毫秒就跑完全球。别把它写成「AI 找人好可怕」，这里一点 AI 都没用到，用的是几何和显卡——这个反差本身就是看点。",
+     "platforms": [
+      "视频",
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "作者解题记录",
+       "url": "https://yassa9.github.io/osint/gralhix-004/"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49360545"
+      }
+     ],
+     "source_date": "2026-08-16",
+     "followup": "8 月 19 日登上 Hacker News 首页后扩散，原文发布于 8 月 16 日。"
+    }
+   ],
+   "pitfalls": [
+    "<b>Axios 和 CNBC 对抓取工具返回 403<\/b>。共和党备忘录那条（am-03）的原句和民调数字，是通过 Common Dreams 的转述读到的，没能逐字核对 Axios 原页。备忘录里那句「跟核废料一样受欢迎」是 Axios 对内部民调的转述，不是备忘录原文——写的时候别当成引语。",
+    "<b>Reddit 全站对抓取工具 403<\/b>。am-15 里医生算的「一次带造影剂腹盆腔 CT 专业费约 80 美元」来自帖子正文，是发帖人的估算，不是官方费率；<b>137.53 美元这个数我在 ACR 官方页上逐字确认过<\/b>，两者可信度不同，引用时要分开。",
+    "<b>Ornith-1.5 的分数全部是厂商自报<\/b>（am-06），没有第三方复现。另外「Ornith 团队」背后是哪家公司，官网页面上我没有直接看到，二手报道说是 DeepReinforce——这一点存疑，写的时候只说「Ornith 团队」更稳。",
+    "<b>am-10 那篇「掺噪声反而更好」是单作者论文，数据来自作者自家生产系统<\/b>，作者自己声明这是语料内部的描述性比较、不是总体推断。所有数字我只核对了摘要，没读正文。这条只适合当「值得复现的现象」写，不能当结论用。",
+    "<b>所有 arXiv 论文（am-07 到 am-11）我只核对了摘要页原文<\/b>，正文的实验细节、表格、消融一概没读。am-08 那个「比不给 skill 差 8-11 分」，摘要里没说是在哪个 benchmark、哪些模型上测的，引用时务必带上「论文称」。",
+    "<b>am-19 的两个数字千万别混<\/b>：49%（HR 0.510）出自 157 人的二期，今年 1 月公布；这次的三期是 1,137 人，具体数字一个都没公布。目前所有把 49% 安在三期头上的报道都是错的。",
+    "<b>am-17 的 CISA 官方公告页对抓取工具 403<\/b>，内容经 The Register 和 BleepingComputer 交叉验证。公告编号有 AA26-231A 和 AA26-231a 两种写法，日期媒体统一写 8 月 19 日，但有资料显示 PDF 路径日期是 8 月 18 日。",
+    "<b>am-01 里 Anthropic 的分析化学那一段我这边和子代理抓到的模型名不一致<\/b>（一处写 Opus 5，一处写 Claude Science 环境），所以这段没写进正文。如果你要用「23 分钟出 NMR、19 分钟出 LC-MS、纯度 96.4% 对实验室 96.33%」这组数字，请自己再开一次原文确认模型名。",
+    "<b>Anthropic 那两个 skill（am-12、am-13）的原文我逐字抓取核对过<\/b>，但仓库 star 数没读到确切数值，合入日期 8 月 17 日来自子代理看到的 PR 记录，我没有二次确认。",
+    "<b>另有几条料因为无法二次核对而没收<\/b>：Meta 的 Muse Code 编码 CLI 系统提示词泄露（含一条明确禁止读取评分器、反 reward-hacking 的规则）——抓取工具两次拒绝转录原文，按「没有原文不收」的规矩丢弃；泄露库里的 Claude Cowork setup-writing-style 全文同理。这两条如果你想要，需要人工打开 raw 地址自己抄。",
+    "<b>跨时区提醒<\/b>：本期所有「8 月 19 日」均指美国当地日期，对应北京时间 8 月 19 日晚到 8 月 20 日上午。am-20 的原文发布于 8 月 16 日，8 月 19 日才在 Hacker News 扩散，已在 followup 里标注。"
    ]
   }
  ]
