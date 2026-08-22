@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-22 08:30 (北京时间)",
+ "updated_at": "2026-08-22 13:25 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -11769,6 +11769,517 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "Codex 缓存那笔账是按 AWS Cost Explorer 用量推算的估值，<b>不是最终账单<\/b>，原帖作者自己写明了。该 issue 8 月 9 日开、现已关闭，8 月 21 日才被翻上 HN。",
     "Signs101 论坛显示的是相对日期（Today / Yesterday），8 月 21 日和 20 日均为按站点时区推算，非站内绝对时间戳。",
     "所有 arXiv 论文均为 <b>2026-08-20 提交的预印本<\/b>，未经同行评议；其中 PersonalBench、Phantom Gains 为单作者或小样本研究，结论请按预印本对待。"
+   ]
+  },
+  {
+   "id": "2026-08-22-noon",
+   "date": "2026-08-22",
+   "type": "noon",
+   "type_label": "午报",
+   "generated_at": "2026-08-22 12:30 (北京时间)",
+   "intro": "今天真正值得花时间的是两件事：Anthropic 官方 skill 里亲手写出了 AI 设计的\"审美指纹\"，精确到一个色号，你上周做的落地页大概率中招；另一篇论文用心理学的老测验量出了三年来大模型正在越来越像——这条直接关系到你靠 AI 起标题这件事还能吃多久。其余当素材翻，不必细读。",
+   "highlights": [
+    "Anthropic 官方 skill 点名 AI 设计的三副长相，第一种精确到 #F4F1EA",
+    "跨三年模型实测：输出多样性统计显著下降，各家 AI 正在写得越来越像",
+    "纽约 4.3 万个地址被模型判定为「非铅管」，铅管数为零——零方差本身就是警报"
+   ],
+   "cards": [
+    {
+     "id": "nn-01",
+     "section": "提示词",
+     "title": "有人给 Opus 5 的口头禅做了张黑名单，还顺手发明了一套编号锚点",
+     "facts": "开发者 disler 开源了 fixing-smartass-opus-5，一份专治 Opus 5 「爹味」的系统提示词，五天涨到 <b>215<\/b> 星。它没有空喊「请简洁」，而是直接点名封杀模型的五个口头禅。第二妙的是编号规则：三条以上的发现、决策、风险各配一个短代号，整场对话不许换号。",
+     "prompt_en": "#### Negative Patterns\n\n- Avoid words, and phrases in this list:\n    - \"load-bearing\"\n    - \"worth stating plainly\"\n    - \"here's the honest truth\"\n    - \"the real tension\"\n    - \"carry the argument\"\n- Avoid analogies. Discuss what's right in front of us.\n- Do not over use em dashes or dash chaining.\n- Do not flatter, praise, validate, or agree without reason.\n- Do not use decorative headings, emoji, or motivate language.\n- Avoid semicolons, fragments, and non-standard punctuation.\n- Do not repeat yourself. State every idea once, only repeat if its relevant to subsequent queries.\n\n### 2. Reference Points\n\nWe use reference points to communicate quickly with each other.\n\n- Use numbered lists and markdown headings when the improve navigation.\n- When presenting three or more findings, decisions, options, risks, questions, or actions assign every one a short code.\n    - Use `D1`, `D2`, `DN` for decisions.\n    - Use `O1`, ... for options.\n    - Use `F1`, ... for findings.\n    - Use `R1`, ... for risks.\n    - Use `Q1`, ... for questions.\n    - Use `A1`, ... for actions.\n    - Invent new references for sections we don't have.\n    - Preserve the same codes throughout the conversation.\n    - Do not create codes for short simple answers.",
+     "prompt_zh": "【负面样板】\n\n- 下列词与短语一律回避：\n    - \"load-bearing\"（承重的／关键的）\n    - \"worth stating plainly\"（值得直说一句）\n    - \"here's the honest truth\"（说句实话）\n    - \"the real tension\"（真正的张力在于）\n    - \"carry the argument\"（撑起这个论证）\n- 不要打比方。就事论事谈眼前这件事。\n- 不要滥用破折号，也不要一串破折号连用。\n- 不要奉承、夸赞、附和，也不要没有理由地同意。\n- 不要用装饰性标题、emoji 或励志腔。\n- 回避分号、句子碎片和非标准标点。\n- 不要重复自己。每个意思只说一遍，除非后续提问确实用得上才重提。\n\n【二、引用锚点（Reference Points）】\n\n我们用「引用锚点」来快速沟通。\n\n- 编号列表和 markdown 标题能改善导航时就用。（原文此处有笔误 \"when the improve navigation\"，照录不改）\n- 凡是一次给出三条及以上的发现、决策、选项、风险、问题或行动，每一条都配一个短代号。\n    - 决策（decisions）用 `D1`、`D2`、`DN`。\n    - 选项（options）用 `O1`、……\n    - 发现（findings）用 `F1`、……\n    - 风险（risks）用 `R1`、……\n    - 问题（questions）用 `Q1`、……\n    - 行动（actions）用 `A1`、……\n    - 没覆盖到的类别，自己造新代号。\n    - 整场对话中同一代号保持不变（不许回收重排）。\n    - 简短的小问答不要编号。",
+     "angle": "两半都能做。<b>前半<\/b>是全网通用的「AI 味」检测器：让读者翻自己的聊天记录，数一数出现过几次「真正的张力在于」「说句实话」。中文侧完全可以照做一份对应的黑名单——「值得注意的是」「不仅仅是……更是……」「让我们深入探讨」。<b>后半更实用<\/b>：把 D1/O1/F1 那套编号贴进 CLAUDE.md，你追问就从「你刚才第二个方案里那个数据库的问题」变成「O2 的 R1 怎么解」，录屏做前后对比转化率会很好。<b>顺手埋个梗<\/b>：本期 nn-04 那份提示词恰恰把 load-bearing 当核心术语在用，一个封杀一个供奉，天然对打。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "提示词原文",
+       "url": "https://raw.githubusercontent.com/disler/fixing-smartass-opus-5/main/sr_opus_5_system_prompt.md"
+      }
+     ],
+     "source_date": "2026-08-16"
+    },
+    {
+     "id": "nn-02",
+     "section": "提示词",
+     "title": "Anthropic 官方 skill 里写着一个色号 #F4F1EA——它在告诉模型：这就是你偷懒时的样子",
+     "facts": "anthropics/skills 的 frontend-design 在 <b>6 月 9 日<\/b>被大改，加了一段「校准」说明，把当下 AI 生成设计最爱掉进去的三副长相直接点名，第一种精确到十六进制色值 <b>#F4F1EA<\/b>。最狠的一句是它承认这三种本身都不差，只是它们是默认值而不是选择，而且不管什么题材都会冒出来。",
+     "prompt_en": "For calibration: AI-generated design right now clusters around three looks: (1) a warm cream background (near #F4F1EA) with a high-contrast serif display and a terracotta accent; (2) a near-black background with a single bright acid-green or vermilion accent; (3) a broadsheet-style layout with hairline rules, zero border-radius, and dense newspaper-like columns. All three are legitimate for some briefs, but they are defaults rather than choices, and they appear regardless of subject. Where the brief pins down a visual direction, follow it exactly — the brief's own words always win, including when it asks for one of these looks. Where it leaves an axis free, don't spend that freedom on one of these defaults. Just like a human designer who's hired, there's often a careful balance between doing what you're good at and taking each project as a chance to experiment and learn.",
+     "prompt_zh": "先做个校准：当下 AI 生成的设计基本聚集在三副长相——(1) 暖奶油色背景（接近 #F4F1EA），配高对比度衬线大标题和陶土色点缀；(2) 近黑背景，配一个高亮的酸绿或朱红点缀色；(3) 报纸大开张式排版，发丝级细线、圆角为零、密排的新闻栏。这三种对某些需求（brief）来说都是成立的，但它们是默认值（defaults）而不是选择（choices），而且不管题材是什么它们都会冒出来。凡是需求里已经把视觉方向钉死的，就严格照做——需求自己的用词永远优先，哪怕它要的正好就是上面这三种之一。凡是需求留空的那个维度，别把这份自由花在这些默认值上。就像一个被雇来的人类设计师：「做自己擅长的」和「把每个项目当成一次实验和学习的机会」之间，往往要小心权衡。",
+     "angle": "钩子是「官方亲自公布了 AI 的审美指纹」。<b>开头照着这三种各生成一张图并排放<\/b>，读者会瞬间「这不就是我上周让 AI 做的落地页」。然后拆这条规则的两层设计：第一层用精确色值封死统计吸引子，比空泛地说 be original 有效得多；第二层是那个逃生口——需求的用词永远优先，防止反默认规则本身变成抗命。<b>建议顺手迁移到中文场景<\/b>：与其说「别写得像 AI」，不如把你亲眼见过的三种默认结构写出来点名。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md"
+      }
+     ],
+     "source_date": "2026-06-09"
+    },
+    {
+     "id": "nn-03",
+     "section": "提示词",
+     "title": "泄漏的 Claude Code 代码审查提示词：三档判决，而默认值故意设成了「可能成立」",
+     "facts": "Claude Code 的 code-review skill 让一个独立 verifier 子代理对每条疑似 bug 只出三种判决之一，并把默认值钉死在 <b>PLAUSIBLE<\/b>。最妙的是它提前预判并点名了模型最爱用的两句托辞——「这太投机了」「这取决于运行时状态」——然后逐条列出仍然算数的现实场景。反过来要判 REFUTED，必须能从代码里构造出证据。",
+     "prompt_en": "## Phase 2 — Verify (1-vote, recall-biased)\n\nDedup near-duplicates (same defect, same location, same reason → keep one). For\neach remaining candidate, run **one verifier** via the Agent tool:\ngive it the diff, the relevant file(s), and the candidate; it returns exactly\none of **CONFIRMED / PLAUSIBLE / REFUTED**.\n\n**PLAUSIBLE by default** — do not refute a candidate for being \"speculative\" or\n\"depends on runtime state\" when the state is realistic: concurrency races,\nnil/undefined on a rare-but-reachable path (error handler, cold cache, missing\noptional field), falsy-zero treated as missing, off-by-one on a boundary the\ncode does not exclude, retry storms / partial failures, regex/allowlist that\nlost an anchor. These are PLAUSIBLE.\n\n**REFUTED** only when constructible from the code: factually wrong (quote the\nactual line); provably impossible (type/constant/invariant — show it); already\nhandled in this diff (cite the guard); or pure style with no observable effect.\n\nKeep **CONFIRMED and PLAUSIBLE**. Drop REFUTED.",
+     "prompt_zh": "【第二阶段——验证（单票，偏向召回率）】\n\n先去重（同一缺陷、同一位置、同一理由 → 只留一条）。对剩下的每个候选项，用 Agent 工具起**一个** verifier（验证者）：把 diff、相关文件、候选项交给它；它只返回 **CONFIRMED / PLAUSIBLE / REFUTED**（已确认／可能成立／已推翻）三者之一。\n\n**默认值是 PLAUSIBLE**——不要因为一条候选项「太投机」或「取决于运行时状态」就把它推翻，只要那个状态是现实存在的：并发竞态；在虽罕见但可达的路径上出现 nil/undefined（错误处理分支、冷缓存、缺失的可选字段）；把值为 0 的假值当成了「缺失」；在代码并未排除的边界上差一（off-by-one）；重试风暴或部分失败；正则、白名单丢了锚点。这些都算 PLAUSIBLE。\n\n**只有能从代码里构造出证据时才判 REFUTED**：事实错了（把真正那一行引出来）；可证明不可能（类型、常量、不变量——把它亮出来）；这次 diff 里已经处理了（指出那个守卫）；或者纯粹是风格问题、没有任何可观察影响。\n\n保留 **CONFIRMED 和 PLAUSIBLE**，丢掉 REFUTED。",
+     "angle": "抽出来讲一个通用技巧：<b>给判决设一个偏心的默认值<\/b>。大多数人写审查提示词只会说「请严格验证」，结果模型倾向于把不确定的都毙掉——因为否定听起来更专业也更省事。这份提示词反过来把「不确定」单独设成一档，规定它默认成立，还把模型会用的托辞原文写进禁令。第二个可迁移的点是<b>举证责任倒置<\/b>：肯定不需要证据，否定必须引用那一行。做内容就让读者拿同一个 PR 跑两遍，数漏掉的 bug 差多少。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/claude-code/skills/code-review/SKILL.md"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-04",
+     "section": "提示词",
+     "title": "1189 星的 crucible：它逼模型在提问前先写「猜错了会怎样」，写不出狠话的问题当场降级",
+     "facts": "crucible 是个 Claude Code 的计划加固 skill，6 月 5 日建仓，现在 <b>1189<\/b> 星。它规定每个问题必须带四行固定格式，其中一行是「猜错了会有什么具体后果」。最妙的是自检规则：如果这一行写得软弱无力，说明这问题只是装饰性的，当场降级丢进批量处理。",
+     "prompt_en": "### Load-bearing questions — one at a time, structured\nEvery question ships in this format:\n\n> **Q<n>: <the question>**\n> **Why it matters:** <the dependency or constraint that makes this load-bearing>\n> **Recommendation:** <Claude's answer, committed — not a menu>\n> **If we guess wrong:** <the concrete failure — migration, rewrite, breach, churn>\n\nWait for the answer before the next question. If drafting a question and the \"if we guess wrong\" line comes out weak — the question is cosmetic; demote it to the batch. If mid-interrogation a question turns out answerable from the code or the research, answer it yourself and log it to the ledger instead of asking.\n\n### Cosmetic decisions — one batch\nPresent the whole cosmetic tier as recommendations with a one-line rationale each. The user vetoes by exception; silence = accepted.\n\n### Escape hatch\nAt any point the user can say **\"accept all remaining recommendations\"** — Claude locks every open decision at its recommended answer, logs them as such in the plan, and proceeds. Offer it explicitly if the load-bearing tier exceeds ~8 questions.",
+     "prompt_zh": "【承重级问题——一次只问一个，且要结构化】\n每个问题都必须按这个格式发出：\n\n> **Q<编号>：<问题本身>**\n> **为什么它重要：**<是哪个依赖或约束让它成为承重的（load-bearing）>\n> **推荐答案：**<Claude 自己的答案，必须表态——不是给一份菜单>\n> **如果我们猜错了：**<具体的失败后果——数据迁移、推倒重写、安全泄漏、反复返工>\n\n问完一个要等回答，再问下一个。如果你起草某个问题时，「如果我们猜错了」那一行写出来软弱无力——那这个问题就是装饰性的（cosmetic）；把它降级丢进批量处理。如果拷问到一半发现某个问题其实能从代码或前期调研里查到答案，就自己答掉、记进台账（ledger），不要拿去问人。\n\n【装饰性决策——打成一批】\n把整个装饰性层级作为一组推荐一次性给出，每条配一句理由。用户以「例外否决」的方式处理；沉默＝通过。\n\n【逃生口】\n用户随时可以说 **\"accept all remaining recommendations\"**（接受剩下所有推荐）——Claude 就把所有未决事项锁定在推荐答案上，在计划里如实记录，然后继续推进。如果承重级问题超过 8 个左右，要主动把这个逃生口告诉用户。",
+     "angle": "这条最适合做「怎么让 AI 别问一堆废话」。三个设计可以拆开单讲：<b>一<\/b>，问题自带「猜错了会怎样」字段，等于强迫模型先给自己的问题做成本估算，写不出后果的就没资格占你一轮对话；<b>二<\/b>，推荐答案必须表态、不许给 A/B/C 菜单，这直接打掉 AI 助手最常见的甩锅式回答；<b>三<\/b>，沉默＝通过加一句话逃生口，把审批成本压到最低。建议只做前两条，第三条太工程化，普通读者用不上。四行格式可以直接给读者复制。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/chaseai-yt/crucible/main/skills/crucible/SKILL.md"
+      }
+     ],
+     "source_date": "2026-08-13"
+    },
+    {
+     "id": "nn-05",
+     "section": "提示词",
+     "title": "把航空维修手册的写作标准搬来写提示词：should、may、could 全部禁用",
+     "facts": "有人把航空业的「简化技术英语」标准 ASD-STE100 做成了 agent skill，7 月 30 日在 Hacker News 拿了 <b>363<\/b> 分。它只允许 can、will、must 三个情态动词，把 should、would、may、might、could 全封死。理由不是语法洁癖：模型会把 should 读成「可选」。",
+     "prompt_en": "| 3.6 | Active voice. In descriptive text, passive is legal only when the agent is unknown. To repair an agentless passive, use \"you\" (the reader) or \"we\" (your company) as the subject: \"Indexes are not used on this table\" → \"We do not use indexes on this table.\" |\n| 3.7 | Describe an action with a verb, not a noun (\"compress the file\", not \"perform compression of the file\"). |\n\n**Approved modals: can, will, must. Banned: should, would, may, might, could.**\nThe standard rejects \"could\" even for possibility: write \"an explosion can occur\", never \"could occur\". For \"should\": a requirement becomes \"must\". A suggestion is stated as fact or deleted. This matters double for agent instructions — models read \"should\" as optional.\n\n**Before:** The migration has completed and the table is being rebuilt.\n**After:** The migration completed. The database rebuilds the table.\n\n**Before:** The flag can be set in the config file, making restarts unnecessary.\n**After:** You can set the flag in the config file. Then a restart is not necessary.\n\n**Before:** The temperature must be adjusted.\n**After:** Adjust the temperature.",
+     "prompt_zh": "| 3.6 | 用主动语态。描述性文字里，只有当动作发出者未知时，被动语态才合法。要修掉一个没有主语的被动句，就用 \"you\"（读者）或 \"we\"（你公司）当主语：\"Indexes are not used on this table\"（这张表上没有使用索引）→ \"We do not use indexes on this table.\"（我们不在这张表上用索引。） |\n| 3.7 | 用动词描述动作，不要用名词（写 \"compress the file\"／压缩这个文件，不要写 \"perform compression of the file\"／对该文件执行压缩操作）。 |\n\n**允许的情态动词：can、will、must。禁用：should、would、may、might、could。**\n该标准连表示「可能性」的 could 都不接受：写 \"an explosion can occur\"（可能发生爆炸），绝不写 \"could occur\"。至于 should：它表达的如果是一项要求，就改成 must；如果是一个建议，要么陈述为事实，要么直接删掉。这一条对写给 agent 的指令来说重要程度翻倍——模型会把 \"should\" 读成「可选」。\n\n**改前：** 迁移已经完成，表正在被重建。\n**改后：** 迁移完成了。数据库重建这张表。\n\n**改前：** 这个标志位可以在配置文件里设置，从而使重启变得没有必要。\n**改后：** 你可以在配置文件里设这个标志位。这样就不需要重启。\n\n**改前：** 温度必须被调整。\n**改后：** 调整温度。",
+     "angle": "钩子是跨界：飞机维修手册的写作标准，被人拿来写 AI 提示词，而 ASD-STE100 是有几十年历史的真工业标准。<b>主线一句话<\/b>：模型把 should 当可选，所以你 CLAUDE.md 里所有「应该」都在被打折执行。<b>让读者立刻做一件事<\/b>——全文搜自己提示词里的「应该」「尽量」「最好」，逐条判定是要求还是建议：是要求就改「必须」，是建议就删。同仓库还有「一物一名，别这里叫 config 那里叫 settings」「每句最多 20 词」「一句一个指令」，凑一份可执行清单刚好。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/AminBlg/SimpleEnglish/main/skills/simple-english/SKILL.md"
+      }
+     ],
+     "source_date": "2026-07-30"
+    },
+    {
+     "id": "nn-06",
+     "section": "反共识",
+     "title": "Anthropic 自己写的写提示词指南：一旦你开始打全大写的 ALWAYS 和 NEVER，就是黄牌",
+     "facts": "anthropics/skills 里的 skill-creator 是官方教模型怎么写 skill 的元提示词。它给了一条反直觉的规矩：发现自己在写全大写的 ALWAYS/NEVER，或者在用极度僵硬的结构，那是<b>一张黄牌<\/b>，应该改成把理由讲出来。依据是「今天的大模型很聪明，有不错的心智理论」。",
+     "prompt_en": "3. **Explain the why.** Try hard to explain the **why** behind everything you're asking the model to do. Today's LLMs are *smart*. They have good theory of mind and when given a good harness can go beyond rote instructions and really make things happen. Even if the feedback from the user is terse or frustrated, try to actually understand the task and why the user is writing what they wrote, and what they actually wrote, and then transmit this understanding into the instructions. If you find yourself writing ALWAYS or NEVER in all caps, or using super rigid structures, that's a yellow flag — if possible, reframe and explain the reasoning so that the model understands why the thing you're asking for is important. That's a more humane, powerful, and effective approach.",
+     "prompt_zh": "3. **把「为什么」讲出来。** 你要求模型做的每一件事，都尽力把背后的**为什么**讲清楚。今天的大模型是*聪明的*。它们有不错的心智理论（theory of mind），只要给它一副好的骨架（harness），它就能越过死记硬背的条文，真把事情做成。哪怕用户给的反馈很简短、甚至带着火气，也要真去理解这个任务、理解用户为什么写下这些话、以及他到底写了什么，然后把这份理解转写进指令里。如果你发现自己正在写全大写的 ALWAYS 或 NEVER，或者在用极其僵硬的结构，那是一张黄牌（yellow flag）——只要可能，就换个说法、把理由讲出来，让模型明白你要的这件事为什么重要。这是更有人情味、也更强大、更有效的做法。",
+     "angle": "这条直接打中文提示词圈最流行的写法：满屏「必须」「禁止」「绝对不要」「重要！！！」。<b>做成「官方打脸」这个角度<\/b>最省力——Anthropic 自家写 skill 的指南把全大写命令列为黄牌。落地动作明确到可执行：让读者拿自己的 CLAUDE.md，把每条全大写命令改写成「因为……所以……」，跑同样的任务对比。<b>提醒一句取舍<\/b>：这文件是三月的，不是新闻，别按新品发布写，就当方法论素材用。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/skill-creator/SKILL.md"
+      }
+     ],
+     "source_date": "2026-03-06"
+    },
+    {
+     "id": "nn-07",
+     "section": "工作流工具",
+     "title": "一台 eBay 淘的二手机，每月 20 英镑：他让 agent 从一句话直接跑到线上 HTTPS",
+     "facts": "英国开发者 Jake Saunders 在自家 homelab 上搭了套全自托管的「agent 软件工厂」。他说从一个提示词出发，agent 自己建仓库、写应用和测试、把 CI 跑绿、开好 Postgres、部署到带 HTTPS 的域名，中途<b>没再输入过一句话<\/b>。硬件是 eBay 上淘的 2021 款十代 i7、32GB 内存，持续成本只有每月 <b>20 英镑<\/b>的 Codex 订阅。",
+     "quotes": [
+      {
+       "en": "From one prompt it created a repo, wrote the application and tests, got CI green, provisioned Postgres and deployed the finished app behind HTTPS without another message from me.",
+       "zh": "只用一个提示词，它就建好了仓库、写完了应用和测试、把 CI 跑成绿色、开好了 Postgres，并把成品部署在 HTTPS 后面——中途我没有再发过一条消息。",
+       "by": "Jake Saunders, blog.jakesaunders.dev"
+      },
+      {
+       "en": "The one at the bottom is a 2014 dual-core i3... It's valiantly hosting this blog... I'd be miffed if an LLM broke it, so that's not what we're using today.",
+       "zh": "最下面那台是 2014 年的双核 i3……它正勇敢地托管着这个博客……要是被 LLM 搞坏我会很不爽，所以今天我们不用它。",
+       "by": "Jake Saunders, blog.jakesaunders.dev"
+      }
+     ],
+     "angle": "这是「AI 全自动开发」话题里少见的、有完整清单能抄的自托管版本，四层结构说得清：<b>隔离层<\/b>另买一台旧机专门给 LLM 糟蹋，不做端口转发、无外部入站，靠 Tailscale 进出；<b>代码层<\/b>自托管 Forgejo 加 Runner 跑流水线；<b>agent 层<\/b>通过 MCP 把 Forgejo 和 Coolify 两个能力交到 agent 手里，而且它读完 Coolify 文档自己写出了集成；<b>部署层<\/b>Coolify 跑在 Docker 上当自托管 PaaS。国内可以给 Gitea/极狐 + 1Panel 的对照版。<b>建议单开一段讲安全<\/b>：agent 直接 commit 不走 PR，凭据权限收敛作者自己承认没做完——这在公司环境里是什么后果，值得说透。",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory/"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "nn-08",
+     "section": "工作流工具",
+     "title": "「别再给我圆角框了」——2.5 万星的画图插件，真正值钱的是它的目录结构",
+     "facts": "diagram-design 是个 Agent Skill 插件，装到 Claude Code 上能出 38 种编辑级图表，输出是自包含的单个 HTML 加内联 SVG。GitHub 显示 <b>25,093<\/b> 星、本周新增 <b>8,457<\/b> 星，仓库四月才建。作者的动机很直白：以前问 Claude 要架构图，回来的永远是一个泛泛的圆角框玩意儿。",
+     "quotes": [
+      {
+       "en": "Every time I needed a diagram — an architecture sketch, a flowchart, a pyramid of what matters most — I'd ask Claude and get back a generic rounded-box thing.",
+       "zh": "每次我需要一张图——架构草图、流程图、或者一个「什么最重要」的金字塔——我问 Claude，拿回来的永远是个泛泛的圆角框玩意儿。",
+       "by": "diagram-design README"
+      },
+      {
+       "en": "the agent only reads the one you need. Add a new type tomorrow and nothing else changes.",
+       "zh": "agent 只读你需要的那一个。明天新增一种类型，其他什么都不用动。",
+       "by": "diagram-design README"
+      }
+     ],
+     "angle": "两条线，<b>我建议主推第二条<\/b>。表层是实用向：录一段装插件前后同一句提问的对比，一边 Mermaid 灰框一边排版级 SVG，视觉冲击强。但更值钱的是方法论——它没把 38 种图塞进一个巨型提示词，而是 skills/ 下按类型拆成一个个 reference 文件，agent 只读当下需要的那个，再配 Python 校验脚本保证生成的 SVG 真能渲染。<b>这就是「渐进式披露」怎么落地的现成范本<\/b>：一个 skill ＝ 一个索引 + N 个按需读的文件 + 一套校验脚本。读者可以照搬去写自己公司的「PPT 规范 skill」「SQL 规范 skill」。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/cathrynlavery/diagram-design"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "nn-09",
+     "section": "工作流工具",
+     "title": "本地跑模型别再靠猜：一条命令扫完你的机器，告诉你哪些跑得动、能跑多快",
+     "facts": "llmfit 是个 Rust 写的命令行工具，检测你机器的内存、CPU、显存和推理后端，再把内置模型目录按「装不装得下、预估速度、质量、上下文长度」四个维度打分排序。GitHub 显示 <b>33,471<\/b> 星，本周新增约 <b>1,991<\/b> 星。装法一行：<code>brew install llmfit<\/code>。",
+     "quotes": [
+      {
+       "en": "a memory-bandwidth model grounded in runtime sampling and real community measurements",
+       "zh": "一个基于内存带宽的模型，由运行时采样和真实社区实测数据校准。",
+       "by": "llmfit README"
+      }
+     ],
+     "angle": "国内讲本地部署最大的痛点就是「我这台 4090 / M4 Pro 32G / 16G 轻薄本到底能跑什么」，答案永远散在贴吧评论区。<b>最省事的做法<\/b>：在三台代表性设备上各跑一遍 <code>llmfit fit<\/code>，三张排序表并排一放，天然就是一篇选型指南。<b>进阶那篇更值钱<\/b>——带读者算一遍「显存带宽 ÷ 模型每 token 要读的权重字节 ≈ 理论 token/s」，再用 <code>llmfit info<\/code> 验证，把黑盒变成读者自己会算的公式，这类内容留存最好。<b>务必标清楚<\/b>：它给的速度是估算不是实测，别当 benchmark 引用。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/AlexsJones/llmfit"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "nn-10",
+     "section": "工作流工具",
+     "title": "18 英镑一个月的 Claude：一位老程序员的抠门流水线，核心动作是「写完计划就清空上下文」",
+     "facts": "ScraperWiki 出身的 Francis Irving 记录了他用 <b>18 英镑/月<\/b>的 Claude 套餐做自用 App 的完整流程。核心节奏就一句：先写计划文档，人工编辑定稿，然后<b>清空上下文窗口<\/b>再让 agent 去实现。他还明确说自己固执地不升级到更贵的套餐。",
+     "quotes": [
+      {
+       "en": "I edit it, make decisions, then clear the context window and tell the agent to implement the plan.",
+       "zh": "我编辑它、做出决定，然后清空上下文窗口，再告诉 agent 去实现这个计划。",
+       "by": "Francis Irving, flourish.org"
+      },
+      {
+       "en": "Later on I learnt you can type `!sleep 3h` (or whatever) when you run out of tokens, and press Ctrl+B to background it (otherwise you get a 2 minute timeout).",
+       "zh": "后来我学会了：token 用完时可以输入 `!sleep 3h`（或者别的时长），再按 Ctrl+B 把它挂后台（否则会遇到 2 分钟超时）。",
+       "by": "Francis Irving, flourish.org"
+      }
+     ],
+     "angle": "这是「省钱版 AI 编程」的极佳样本，跟满屏「我一个月烧了几千刀 token」形成强对比，中文读者会买账。四条可执行：<b>plans/ 目录加清空上下文的两段式工作法<\/b>（这条最值钱，给一份提示词模板）、无头浏览器给每个页面截图做快照测试、把严格类型检查和覆盖率当 agent 的护栏、额度用完就 <code>!sleep<\/code> 挂后台等而不是升套餐。<b>重点展开第一条<\/b>：它其实回答了「上下文越长效果越差」这个人人都遇到的问题，而解法不需要任何工具，只要改工作习惯。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://www.flourish.org/2026/08/personal-apps/"
+      }
+     ],
+     "source_date": "2026-08-13"
+    },
+    {
+     "id": "nn-11",
+     "section": "跨界机会",
+     "title": "训练集里根本没有的物种，也能认出来——欧洲蝙蝠识别的「地理外挂」（ChiroEcho）",
+     "facts": "荷兰 Naturalis 生物多样性中心做了个框架，同时预测蝙蝠叫声的「种」和「属」两级标签，再在推理阶段叠一层地理分布约束：某个属在当地只有一个物种，属级预测就能直接锁到种。训练数据只覆盖 <b>35<\/b> 种欧洲蝙蝠，靠这一招把可识别范围扩到 48 种本土蝙蝠中的 <b>41<\/b> 种，覆盖率从 <b>73%<\/b> 提到 <b>85%<\/b>。",
+     "quotes": [
+      {
+       "en": "geographic resolution extends operational coverage from 35 to 41 of the 48 native European bat species, increasing coverage from 73% to 85%",
+       "zh": "地理约束把可用覆盖范围从 48 种欧洲本土蝙蝠中的 35 种扩展到 41 种，覆盖率从 73% 提升到 85%。",
+       "by": "ChiroEcho 论文摘要"
+      }
+     ],
+     "angle": "<b>可迁移的那一层是<\/b>：粗粒度预测 + 推理时的外部硬约束 = 处理训练集里压根不存在的类别。一般的分类系统遇到没见过的类就摆烂输出错标签；这里的解法是只让模型预测它有把握的那一层（属，不是种），最后一跳交给一张确定性的查表。落到产品上很直接——客服工单别硬训几百个细类，训一个粗类模型加上「客户所属行业/产品线」做约束收敛；商品打标、RAG 文档路由、多语种意图识别都一样。<b>顺带一个卖点<\/b>：外部约束是透明可审计的，出错能指着哪条规则错了，比端到端黑箱好交代。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.18191"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "nn-12",
+     "section": "数据素材",
+     "title": "纽约 4.3 万个地址被模型判成「非铅管」，铅管数是零——零方差本身就是警报",
+     "facts": "美国新规允许自来水公司用预测模型代替开挖来判定供水管材质。有人审计了纽约州 <b>153<\/b> 个地方，发现 <b>75<\/b> 个（涵盖 12.6 万个地址）记录的结果全是同一个值；其中 <b>7<\/b> 个跟自家施工队的实测结果矛盾。纽约市最极端：模型覆盖 <b>43,215<\/b> 个地址，全标为「Known Other」，铅管数为零；而同一个城市在 12.2 万个「未知」地址里记录了 <b>120,692<\/b> 根铅管。",
+     "sides": "作者说得很克制：零方差本身不等于失职——75 个里有 68 个要么与自家实测吻合，要么样本太少无法检验。真正站不住的是那 7 个被自家施工队推翻的，其中 6 个超出任何抽样误差能解释的范围。作者估计被模型「洗白」的地址里实际预期有 <b>1,150–1,450<\/b> 根铅管。",
+     "quotes": [
+      {
+       "en": "the archived 2025 snapshot shows the public-side determination was copied from a customer-side model output",
+       "zh": "归档的 2025 年快照显示，公共侧的判定结果是从客户侧的模型输出直接复制过来的。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "这不是科技新闻，是水务新闻，但方法论完全能搬。<b>建议做成「隔着屏幕看出别人的模型在裸奔」<\/b>，三条通用检查清单：<b>一，零方差就是信号<\/b>——LLM 判官如果给 95% 的样本打同一个分、审核模型一整周没拦下任何东西，第一反应该是「这模块是不是被短路了」，而不是「效果真好」。<b>二，配对验证<\/b>——论文指出几乎没有一个地址同时有模型判定和实测，所以只能做群体比较；你的线上系统必须刻意留一小撮双轨样本，否则永远无法证伪。<b>三，推测被复制成事实<\/b>——链路一长就没人记得源头是猜的。结尾落到读者自己：你敢不敢对自己的流水线跑一遍这个审计。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.19922"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "nn-13",
+     "section": "跨界机会",
+     "title": "波士顿公共图书馆的 147 万张旧报纸，被切成了 163 亿 token",
+     "facts": "哈佛法学院图书馆创新实验室（作者含 Jonathan Zittrain）联手波士顿公共图书馆，做了条模块化的历史报纸处理流水线。跑完 <b>1,473,635<\/b> 张 1795–1930 年的公版报纸扫描件，切出 <b>8,310 万<\/b>个碎块、产出 <b>163 亿<\/b>个 token，全部作为开放数据集发布。整条流水线被刻意设计成每步可解释可替换，工作站级硬件就能跑。",
+     "quotes": [
+      {
+       "en": "It was architected so that each step remains interpretable and customizable, and so that the pipeline as a whole remains computationally frugal enough to run on workstation-level hardware.",
+       "zh": "它的架构设计保证每一步都保持可解释、可定制，并且整条流水线在计算上足够节俭，能在工作站级别的硬件上运行。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "<b>可迁移的两层<\/b>。一是「先切碎再理解」：它不去做一个能读懂整版报纸的万能模型，而是先把不规则版面切成与版面类型无关的小块，每块独立走轻量流程，最后再重建阅读顺序——处理 PDF 年报、扫描合同、聊天记录、老网站存档都该这么干，而不是硬塞进长上下文。二是「模块化加节俭」：每步用自己的小模型，能单独评测、单独替换，出错能 debug；这跟一条 prompt 端到端产出结构化数据是两种世界观。<b>做内容就画那条流水线<\/b>（切块／OCR／阅读顺序／NER／主题／embedding），对照读者手里「一个 prompt 搞定一切」的方案。<b>结尾指向中文<\/b>：地方志、老报纸、档案馆的公版材料，同样的流水线搬过来是什么量级。跟今天早报那条「AI 公司拆书扫描再销毁」并排读，对照感极强。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.18972"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "nn-14",
+     "section": "反共识",
+     "title": "用心理学的「一块砖能干嘛」测验，量出了三年来大模型正越来越像",
+     "facts": "作者拿两套材料评测跨三年发布的大模型：真实用户的开放式提问集，加上心理学的经典发散思维测验 Alternate Uses Task（给一个日常物品，列举非常规用途）。用句向量相似度衡量多样性，结果是模型输出的多样性随时间<b>统计显著下降<\/b>，各家在创造性内容上正在收敛。",
+     "quotes": [
+      {
+       "en": "Our findings show a statistically significant decrease in model output diversity over time, suggesting that LLM outputs may be converging in creative substance across models.",
+       "zh": "我们的结果显示模型输出的多样性随时间出现统计显著的下降，表明不同大模型的输出在创造性内涵上可能正在趋同。",
+       "by": "论文摘要"
+      },
+      {
+       "en": "If this trend persists, LLM-driven homogenization may progressively diminish human agency in human-AI co-creative work.",
+       "zh": "如果这一趋势持续，由大模型驱动的同质化可能会逐步削弱人在人机共创工作中的主体性。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "<b>这条是今天最该你亲自写的一篇<\/b>，因为它直接说的就是你这行。标题往「你觉得 AI 写的越来越千篇一律，这里有数据」上走。<b>核心给读者一个可自检的动作<\/b>：同一个 prompt 跑 50 次，算输出之间的句向量相似度，这个数字就是你的内容同质化指数，附十几行脚本思路即可。<b>然后把话说狠<\/b>：模型层面在收敛，换一个模型救不了你，差异化只能来自你喂进去的私有素材、真实经历和结构约束。顺带一个方法论卖点——心理测量学做了几十年的「测多样性而非正确性」，是现在几乎无人竞争的评测缺口。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.19437"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "nn-15",
+     "section": "行业痛点",
+     "title": "28 个月没被查过车，反而被货运经纪拉黑——「没记录」被算成了「不可信」",
+     "facts": "TruckersReport 论坛上一位个体卡车司机说，自己车干净、记录良好，正因为太干净、<b>28 个月<\/b>没被路检过，多家大型货运经纪商以「无路检记录」为由把他拉黑。跟帖司机列出的被拒理由还有「用 Gmail 邮箱不行」「连不上 ELD 不行」。他最后靠熟人警察补了一次三级路检，所有问题瞬间消失。",
+     "quotes": [
+      {
+       "en": "I'm clean, clean truck, good record and I don't get inspected much. In fact, it's been about 28 months since I was inspected at all.",
+       "zh": "我很干净，车干净，记录良好，很少被查。事实上我已经大约 28 个月没被查过一次了。",
+       "by": "TheTruckersReport 论坛 / 用户 86scotty"
+      },
+      {
+       "en": "Trust me not just you. I've been told in the last 2 years: 'Gmail address, can't use you' 'No inspections' 'Can't connect to a ELD/ELD exempt can't use you'",
+       "zh": "相信我，不止你一个。这两年我被告知过：\"用 Gmail 邮箱，不能用你\"「没有路检记录」「连不上 ELD／ELD 豁免的不能用你」。",
+       "by": "TheTruckersReport 论坛 / 用户 PSM379"
+      },
+      {
+       "en": "Used to be a day when you knew your broker face to face. They knew you and knew your truck and operation.",
+       "zh": "以前你是当面认识你的经纪人的。他们认识你、认识你的车和你的经营方式。",
+       "by": "TheTruckersReport 论坛 / 用户 SmallPackage"
+      }
+     ],
+     "angle": "<b>这条痛点的价值在于它是「数据贫困」的完美样本<\/b>：一个人的记录太干净，反而在自动风控里等于查无此人。对应两个方向。<b>C 端<\/b>：做「承运人合规副驾」，持续盯自己在各家核验平台上的画像，用可解释模型告诉小车队「你这单被自动拒，卡在路检空白、邮箱域名、ELD 未绑这三条」，再自动生成证据包并起草申诉信。<b>B 端更值钱<\/b>：给经纪商做低数据量承运人的替代信用评估，别再把「没记录」直接等同于「高风险」。<b>建议只做 C 端那半<\/b>，B 端讲起来抽象、也没画面。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.thetruckersreport.com/truckingindustryforum/threads/brokers-blacklisting-me-because-of-no-inspections-blaming-highway.2524248/"
+      }
+     ],
+     "source_date": "2025-05-01",
+     "followup": "原帖发于 2025 年 5 月，但一路吵到 2026 年 8 月仍有新跟帖，至少 6 页回复，2026 年 2、3、8 月都在更新。"
+    },
+    {
+     "id": "nn-16",
+     "section": "行业痛点",
+     "title": "「如果视频那头是 AI 呢？」——公证员开始害怕自己的脸被拿去做远程公证",
+     "facts": "7 月 29 日，Notary Cafe 论坛一位流动公证员发帖说她不敢做远程在线公证，怕对面签字的是 AI 生成的人，更怕有人盗用公证员本人的影像去冒名公证。<b>20 多条<\/b>跟帖里，有人贴出 FBI 波士顿分局关于假冒地契诈骗上升的警告，也有人指出最近流行的「Zoom 面试」骗局其实是在采集公证员的生物特征。",
+     "quotes": [
+      {
+       "en": "Sure there are questions you can ask but what if it is another person using the notary's image only? It's scary to me that this is a thing and thought that by now there would be legislation that prohibits it.",
+       "zh": "当然你可以问问题核实身份，可要是对方只是盗用了公证员的影像呢？这种事居然存在，太吓人了，我本以为到现在应该早有立法禁止了。",
+       "by": "Notary Cafe 论坛 / 用户 abbottirene"
+      },
+      {
+       "en": "AI is taking over everywhere. The zoom call scam was all about stealing biometrics to pretend to be notaries.",
+       "zh": "AI 到处攻城略地。那个 Zoom 通话骗局根本就是为了偷生物特征、好冒充公证员。",
+       "by": "Notary Cafe 论坛 / 用户 johnsonps306"
+      },
+      {
+       "en": "It also seems like there might not be measures that are in place that consider whether the actual notary is real or a generated person...",
+       "zh": "而且好像根本没有任何机制去判断公证员本人是真人还是被生成出来的……",
+       "by": "Notary Cafe 论坛 / 用户 abbottirene"
+      }
+     ],
+     "angle": "<b>注意她真正怕的不是「客户是假的」，是「我自己是假的」<\/b>——所有反深伪产品都在验对面那个人，没人验持证的这一方。这个空白就是机会。三个具体产品：<b>一<\/b>，不绑定单一平台的活体检测 SDK，既验签字人，也监测公证员的影像有没有在别处被复用；跟帖里就明确吐槽现有工具只能在一个平台上用。<b>二<\/b>，跨平台欺诈共享登记库，专治骗子被一个公证员拒了就换下一个。<b>三<\/b>，一个小而美的「招聘骗局识别器」，判断这场 Zoom 面试是不是在采集你的人脸和签名样本。<b>建议就写第三个<\/b>，最轻、最像能做出来。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://forum.notarycafe.com/t/ai-and-your-image/57449"
+      }
+     ],
+     "source_date": "2026-07-29"
+    },
+    {
+     "id": "nn-17",
+     "section": "行业痛点",
+     "title": "1.9 万份申请堆着、审批要等 8 到 12 个月：美国海员正拿着过期证件出海",
+     "facts": "gCaptain 专业海员论坛的一个长帖里，一位用户 4 月发帖问复工拨款什么时候下来，说自己的晋级审批一直卡着。5 月一份帖内通报显示，美国国家海事中心积压申请已超过 <b>19,000<\/b> 份还在涨，处理周期预计延长到 <b>8 到 12 个月<\/b>。一位老海员直接说：接下来会有一大批人拿着过期证件出海。",
+     "quotes": [
+      {
+       "en": "the NMC has accumulated a significant backlog of applications, currently more than 19,000 submissions and growing. Processing timelines are expected to extend 8-12 months from the date a completed application is received.",
+       "zh": "NMC 已经积压了大量申请，目前超过 19,000 份且还在增加。从收到完整申请之日算起，处理周期预计将延长到 8 到 12 个月。",
+       "by": "gCaptain 论坛 / 用户 AKBJR 发布的进度通报"
+      },
+      {
+       "en": "There are going to be quite a few people sailing on expired credentials.",
+       "zh": "接下来会有相当多的人拿着过期证件出海。",
+       "by": "gCaptain 论坛 / 用户 tugsailor"
+      }
+     ],
+     "angle": "<b>关键细节藏在跟帖里<\/b>：大量延误其实来自材料不全被打回，不是审得慢。这就把问题从「你搞不定政府」变成了「你能在提交前把包补齐」——AI 能做的正是后者。产品形态很清楚：读下船证明、海上服务信、体检表、培训证书，对照法规的等级要求自动核对缺件，提交前就补全；再加状态追踪和自动起草催办信（帖子里就有人靠找议员办公室催成了）。<b>B 端版本更好卖<\/b>：给船东预测哪些船员的证件将在窗口期内到期、谁会因此不能上船。<b>写的时候把「材料不全」这条点破<\/b>，否则这条读起来只是又一个政府效率吐槽。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://forum.gcaptain.com/t/nmc-rec-updates/75227"
+      }
+     ],
+     "source_date": "2026-04-21",
+     "followup": "该帖共 104 条回复，2026 年 8 月 22 日仍在更新；同论坛多年来同类帖成串。"
+    },
+    {
+     "id": "nn-18",
+     "section": "行业痛点",
+     "title": "500 英镑的设备在角落吃灰、指甲油放到过期：产后复出的美甲师快撑不住了",
+     "facts": "8 月 3 日，英国 SalonGeek 论坛一位美甲师发帖求助：做了三年，因为还有份兼职只能晚上和周六接客；2025 年 1 月休完产假回来后几乎没有回头客。唯一的老客户还说「指甲变脆要停一阵」，她说这一下把信心彻底击垮了。她天天在本地社群发帖，但 <b>500 多英镑<\/b>的设备就那么放着。",
+     "quotes": [
+      {
+       "en": "I post on the local groups and stay as active as I can on socials but I'm on the verge of giving up. How much more can I do? I have over £500 worth of equipment just sat there and my polishes are going to waste!",
+       "zh": "我在本地群里发帖，在社交媒体上尽量保持活跃，但我已经快要放弃了。我还能再做什么？五百多英镑的设备就那么摆在那儿，我的指甲油都要放坏了！",
+       "by": "SalonGeek 论坛 / 用户 Sophie Broadway"
+      },
+      {
+       "en": "I had a regular and she messaged to say she's having a break as she's finding her nails are weak (completely knocked my confidence)",
+       "zh": "我有个老客户发消息说要暂停一段时间，因为她觉得自己指甲变脆了（这一下彻底把我的信心击垮了）。",
+       "by": "SalonGeek 论坛 / 用户 Sophie Broadway"
+      }
+     ],
+     "angle": "<b>别去写又一个「AI 帮小店做营销」<\/b>，那个赛道已经烂了。这条真正的钩子是那句「指甲变脆」——她把客户流失归因成自己没天赋，但那其实是一个可诊断的技术问题。所以产品该做的是<b>流失诊断<\/b>：把客户反馈和作品照片一起交给多模态模型，反推是打磨过度还是卸甲手法有问题，给出可执行的技术改进建议。这比再给她一个排班日历有用一百倍。<b>选题角度就一句<\/b>：单人手艺人最缺的不是获客工具，是一个会看她作品、能指出她哪一步做错了的师傅。这个逻辑在美甲、烘焙、宠物美容、摄影上完全通用。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.salongeek.com/threads/time-to-give-up.339748/"
+      }
+     ],
+     "source_date": "2026-08-03",
+     "followup": "同版块近期并排着「我今天很难过，想放弃了」「你最近 5 个新客到底从哪来的」等多个同主题帖，是该论坛反复出现的主旋律。"
+    }
+   ],
+   "pitfalls": [
+    "<b>本期痛点全部来自专业论坛，没有一条 Reddit。<\/b>抓取时 Reddit 全站（含 old.reddit.com）被拦，另有十几个行业论坛被 Cloudflare 或付费墙挡回 403/402。这意味着样本偏向那些还开着门的小众论坛，别当成「行业普遍情绪」的代表。",
+    "<b>nn-15 卡车司机那条原帖发于 2025 年 5 月，不是新帖。<\/b>它值得收是因为一路吵到 2026 年 8 月还在更新，写的时候必须点明时间跨度，别当今日新闻发。",
+    "<b>nn-17 里那段「1.9 万份积压、8 到 12 个月」是论坛用户在帖内发布的通报文本，不是我拿到的官方原始公告。<\/b>引用时要说清出处是转贴，别写成「美国海事中心宣布」。",
+    "<b>nn-07 那套自托管流水线全是作者自报的单次演示，没有第三方复现。<\/b>任务本身是 demo 级（一个卡路里记录应用），跑完还有个 CSRF bug 要人工追加提示才修好，凭据权限收敛作者自己承认没做完。「一句话跑通全流程」这个说法要打折用。",
+    "<b>nn-08 的 25,093 星是四个月攒的，skill / 插件类仓库星数普遍虚高，不等于日活。<\/b>另外仓库描述写 38 种图表，README 正文列了 39 种，有出入——要写数字就直接数 skills/ 目录下的实际文件。「编辑级品质」是作者自评，没有第三方评测。",
+    "<b>nn-09 llmfit 给的 token/s 是估算模型算出来的，不是实测。<\/b>README 自己都强调要用 <code>llmfit info<\/code> 反查它用了哪些假设。33,471 星这个量级对一个硬件检测 CLI 偏高，谨慎当作质量背书；内置模型目录的更新频率和覆盖度也没有验证。",
+    "<b>nn-10 的「100% 测试覆盖率」「接近生产品质」是作者对自己自用 App 的自评。<\/b>自用小工具和商业产品的品质门槛不可比。另外那个 <code>!sleep<\/code> 技巧依赖具体客户端版本行为，可能随版本失效。文章其实是 8 月 13 日的旧文，8 月 21 日被 lobste.rs 重新捞起。",
+    "<b>nn-02 和 nn-06 都不是新东西。<\/b>frontend-design 那段的所在版本提交于 6 月 9 日，skill-creator 更早，是 3 月 6 日；两个文件本身都比这更早存在。当方法论素材用可以，别按「Anthropic 今天发布」写。",
+    "<b>nn-03 标的 8 月 17 日只是该文件在泄漏仓库里被目录重构后落到这个路径的日子<\/b>，不是这份提示词的发布日——改名截断了更早的路径历史。稳妥说法是「不晚于 8 月 17 日」。",
+    "<b>nn-01 和 nn-04 是同一个词的两种态度，别当成共识。<\/b>fixing-smartass 把 load-bearing 列入封杀名单，crucible 却拿它当核心判据。两个都是个人仓库，星数（215 / 1189）是它们唯一的背书，没有任何效果评测。",
+    "<b>nn-18 那条帖子的顶楼回复是论坛管理员，内容是劝她去美甲版块发作品照。<\/b>这类「求助帖 + 管理员引导发帖」的组合，本身带有论坛自我引流性质，情绪是真的，但别把它当成一份中立的行业调查样本。",
+    "<b>nn-12 的「1,150–1,450 根铅管」是作者的估算，不是实测数。<\/b>而且作者自己明确写了零方差不等于失职——75 个零方差的地方里 68 个要么与实测吻合、要么样本太小。转述时千万别把「49% 的地方在造假」当结论写出去，那是原文明确排除的读法。"
    ]
   }
  ]
