@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-21 21:19 (北京时间)",
+ "updated_at": "2026-08-22 08:30 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -11194,6 +11194,581 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "Ypsilanti 那条要分清两句话：<b>密歇根大学说「不涉及武器生产」，洛斯阿拉莫斯确认「服务于核武研究」——做研究不等于造武器，两句话并不直接矛盾<\/b>，写的时候别把它包装成校方说谎。另外该项目<b>用电多少兆瓦、用水多少，双方至今都没公布<\/b>。",
     "subtlefakes 那条里，<b>「很多账号」「几百万次浏览」是记者的观察描述，没有账号列表、抽样方法或时间范围<\/b>，不能当统计数据引用。「X 不在乎」是作者判断，X 没有回应置评。做这条内容<b>不要配任何示例图<\/b>——那本身就是二次传播。",
     "今天多条素材涉及「AI 公司自测 / 单一信源 / 匿名信源」：谷歌的 EnvHarness、Waymo 的 TOPS、Micro1 的营收、Ox Alpha 的能力、Anna's Archive 的指控。<b>这五条如果要放进同一期，必须各自标注证据强度，否则整期的可信度会被最弱的那条拖垮<\/b>。"
+   ]
+  },
+  {
+   "id": "2026-08-22-morning",
+   "date": "2026-08-22",
+   "type": "morning",
+   "type_label": "早报",
+   "generated_at": "2026-08-22 08:00 (北京时间)",
+   "intro": "今天值得花时间的就两件：英伟达 60 亿美元「授权」走 Poolside 的模型工厂和 109 个人，坚称不是收购；博通要借最多 1000 亿美元买芯片，再租给 Anthropic。一个躲反垄断，一个躲资产负债表。其余扫一眼就行——除了英伟达那篇「30 分变 100 分」，它头一回把「壳比模型重要」量化了。",
+   "highlights": [
+    "英伟达 60 亿美元「授权」走 Poolside 的模型工厂和 109 个人，投资人信里写明：这不是收购",
+    "博通要借最多 1000 亿美元买 AI 芯片——Anthropic 不买芯片，它租",
+    "同一个 Opus 5，ARC-AGI-3 上 30 分打到 100 分，改的全是模型外面那层壳"
+   ],
+   "cards": [
+    {
+     "id": "am-01",
+     "section": "圈内暗流",
+     "title": "英伟达 60 亿美元「授权」走 Poolside 的模型工厂和 109 个人，投资人信里写着：这不是收购",
+     "facts": "英伟达付 <b>60 亿美元<\/b>，非独占授权 Poolside 的 Model Factory——就是它造 Laguna 开放权重代码模型的那套流水线。同时按 <b>120 亿美元<\/b> 投前估值再投 10 亿。Poolside 约 115 名工程和研究人员里，<b>109 人<\/b> 拿到了英伟达的 offer。三位联合创始人留下，公司继续独立运营，这 60 亿计划在明年底前分给投资人。",
+     "sides": "投资人信的原话是：这既不是收购，也不是 acquihire。可被授权的是造模型的整套系统，走的是九成研发人员，剩下的公司英伟达还占了一份股。买走的其实是全部，只是不叫收购。授权是非独占的，Poolside 理论上还能把同一套东西卖给别人。",
+     "quotes": [
+      {
+       "en": "Less than 70 people built this model.",
+       "zh": "造出这个模型的人还不到 70 个。",
+       "by": "Eiso Kant，Poolside CEO（此前公开表态，经 TNW 引述）"
+      }
+     ],
+     "angle": "别写成又一条融资快讯。你要切的是「为什么现在没人做收购了」——授权加投资加挖人，三件套拼起来效果等于收购，但不用递并购申报，不触发反垄断审查。长文可以把微软拿 Inflection、谷歌拿 Windsurf 那条线串起来，标题直接用投资人信那句「这不是收购」。短帖只讲一个数：115 个人里走了 109 个。别去猜英伟达要拿 Model Factory 干什么，两家官方一个字都没说。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Newcomer 首发",
+       "url": "https://www.newcomer.co/p/sources-poolside-strikes-6-billion"
+      },
+      {
+       "label": "TNW 细节",
+       "url": "https://thenextweb.com/news/nvidia-poolside-6bn-model-factory-licence"
+      },
+      {
+       "label": "The Decoder",
+       "url": "https://the-decoder.com/nvidia-is-acquiring-poolsides-model-factory-and-109-employees-for-6-billion/"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-02",
+     "section": "圈内暗流",
+     "title": "博通要借最多 1000 亿美元买 AI 芯片——Anthropic 不买芯片，它租",
+     "facts": "博通正在跟贷款方谈一笔 AI 芯片融资，规模 <b>超过 600 亿美元<\/b>，讨论中的总额最高到 <b>1000 亿<\/b>。结构大致是 300 亿次级债加 600 到 700 亿优先担保债，由一个特殊目的实体发债，博通为部分优先债提供担保。关键在钱怎么走：<b>投资人出钱买芯片，再把硬件租给 Anthropic<\/b>。黑石和阿波罗都在谈判桌上，今年 6 月这三家已经做过一笔 350 亿美元的。",
+     "sides": "三个数字在同时流传。彭博说超过 600 亿，CNBC 当天更新说预计上探 700 亿，另有报道说整个包最高 1000 亿。口径不同，别混着用。",
+     "angle": "这条要和下面那条 Anthropic 冲 IPO 放在一起讲才有意思。一边准备上市给投资人看财务，一边把最大的一笔开支——算力——挪成租赁，不进自己的资产负债表。你可以从「AI 公司花的是谁的钱」切：私募信贷替科技公司买卡，卡当抵押，租金还债。短帖一句话就够：Anthropic 花的不是自己的钱，也不是股东的钱，是黑石和阿波罗替它借的钱。别急着下「这是泡沫」的结论，你手上没有违约率数据。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TNW 综述",
+       "url": "https://thenextweb.com/news/broadcom-60bn-ai-chip-debt-anthropic"
+      },
+      {
+       "label": "彭博（雅虎转载）",
+       "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-seeks-more-60-billion-201702584.html"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-03",
+     "section": "圈内暗流",
+     "title": "Anthropic 冲史上最大 IPO：年化收入 650 亿，去年净亏 420 亿",
+     "facts": "彭博说 Anthropic 预期 IPO 规模匹配或超过 SpaceX——后者首发募了 <b>750 亿美元<\/b>，行使超额配售后到 <b>862 亿<\/b>。公司 6 月 1 日已经秘密递交 S-1，最快 <b>本月底<\/b> 公开递表。数字对着看：今年二季度营收 <b>115 亿美元<\/b>，去年同期是 7.87 亿；到 7 月底年化收入约 <b>650 亿<\/b>；但 2025 全年净亏 <b>近 420 亿<\/b>，是 2024 年 83 亿的五倍。承销商是摩根士丹利、高盛、摩根大通。报道还提到，公司在考虑给创始人设超级投票权股。",
+     "angle": "别追「谁先上市」的赛马叙事，那是英文媒体的写法。你切两个数就够：650 亿年化收入对 420 亿年亏损。再补一句——它同时还在让博通替它借 1000 亿买卡。长文可以问一个具体问题：这 420 亿里有多少是真烧掉的现金，有多少是股权重估这类非现金项目？报道没拆，你也别猜，把这个问号留给读者反而更有力。「2 万亿美元估值」那个数只在二手站看到，彭博原文没有，不要写。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "彭博（雅虎转载）",
+       "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-expects-match-spacex-record-175602035.html"
+      },
+      {
+       "label": "TNW 综述",
+       "url": "https://thenextweb.com/news/anthropic-ipo-size-match-spacex-record"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-04",
+     "section": "AI 资讯",
+     "title": "DeepSeek 出多模态了，图片不加价——但「接近 Opus 4.8」拆开看是赢两项、输一大截",
+     "facts": "8 月 21 日，deepseek-v4-flash-vision-exp 上线 API。文本能力跟 V4-Flash 持平，加上了图像理解。图片按 token 计费，<b>单图最多 384 token<\/b>，走 V4-Flash 原价，不加钱。第三方整理出的分数：ZeroBench pass@5 <b>35.0<\/b> 对 Opus 4.8 的 34.0，Agents' Last Exam <b>27.3<\/b> 对 25.7，这两项反超；但 NL2Repo 是 <b>57.7 对 69.7<\/b>，差了 12 分。同时开放 Files API，免费。",
+     "sides": "DeepSeek 官方公告只说「接近 Opus 4.8」，配了一张基准图，正文里一个具体分数都没写。上面那组数字来自第三方媒体读图整理，不是官方文字口径。",
+     "angle": "国内号今天肯定写「DeepSeek 追平 Opus」，你别跟。你的差异化就在拆那句「接近」：赢的两项是视觉推理和 agent 综合题，输的那项是「读需求写整个仓库」——正好是最值钱的那类活。图文最合适，一张对比表就完事。还有个细节能单独做：它同时兼容 OpenAI 和 Anthropic 两套端点，换一行模型名就能跑，冲着谁去的不用明说。",
+     "platforms": [
+      "图文",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "DeepSeek 官方公告",
+       "url": "https://api-docs.deepseek.com/news/news260821/"
+      },
+      {
+       "label": "第三方基准整理",
+       "url": "https://officechai.com/ai/deepseek-releases-v4-flash-vision-exp-matches-opus-4-8-on-some-multimodal-benchmarks/"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-05",
+     "section": "今日深挖",
+     "title": "同一个 Opus 5，ARC-AGI-3 从 30 分打到 100 分——改的全是模型外面那层壳",
+     "facts": "英伟达 8 月 21 日发了 AVO 的结果：Claude Opus 5 装进他们那套 agent 系统，在 ARC-AGI-3 公开集上拿到 <b>100.00<\/b> 的 RHAE 分，跑完 <b>25 个环境、183 个关卡<\/b>，一共用了 6624 步环境动作。模型裸跑是多少？ARC Prize 给出的 Opus 5 高推理档约 <b>30%<\/b>。系统的两个核心件是持久记忆和一个 supervisor——主 agent 卡住或者往死路上钻的时候，把它拽回来。",
+     "sides": "英伟达自己在博客里写了句要紧的话：这不是严格同条件的对比，两边的评测设置、观察表示、系统架构都不一样。所以「30 到 100」不等于同一场考试提了 70 分。",
+     "quotes": [
+      {
+       "en": "The model matters, but the model is not the entire agent.",
+       "zh": "模型是要紧，但模型不等于整个 agent。",
+       "by": "NVIDIA 技术博客"
+      },
+      {
+       "en": "It almost acts like a CEO to nudge the agent when it goes off direction or starts exploring a path that might lead to a dead end.",
+       "zh": "它差不多像个 CEO：agent 跑偏了，或者开始往死胡同里钻，它就推它一把。",
+       "by": "Adel El Hallak，英伟达产品 VP（对 TechCrunch）"
+      }
+     ],
+     "angle": "今天最适合做长文的就是这条，因为你手上已经有一条线了：8 月 19 日那篇 StateM 说同一份榜单，15 美元的壳能打出 574 美元的分数；今天英伟达从卖铲子那一侧给了同样的结论。再叠上今天另一篇论文——编码 agent 六成的文档交互是在读自己写的备忘。三件事指向同一个判断：这一年真正的进展在模型外面。但你必须把英伟达那句免责声明写进去，否则就是在替它做营销。视频也行，「30 对 100」有画面。",
+     "platforms": [
+      "长文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "英伟达技术博客（一手）",
+       "url": "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/"
+      },
+      {
+       "label": "TechCrunch 解读",
+       "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-06",
+     "section": "反共识",
+     "title": "TD Cowen 问遍 Salesforce 的合作伙伴：没有一家看到 Agentforce 带来订单",
+     "facts": "TD Cowen 调研了 Salesforce 在美国、欧洲、亚洲的渠道伙伴。<b>11%<\/b> 说短期几乎没兴趣，<b>56%<\/b> 说有兴趣但要时间成熟，<b>33%<\/b> 说兴趣强烈、已经开始试用采购。报告的结论句是：没有一家看到 Agentforce 成为订单的驱动力。整体也在转弱——只有 <b>三分之一<\/b> 的伙伴达成或超额完成目标，上一季度这个数是 43%。Salesforce 没有回应置评请求。",
+     "sides": "对照 CEO 贝尼奥夫的公开口径：Agentforce 的年度经常性收入已经超过 10 亿美元，需求「难以置信」。两边不一定矛盾——ARR 可以来自打包合同和存量客户升级，而渠道伙伴看到的是新签单。但这个差别本身就是选题。",
+     "quotes": [
+      {
+       "en": "None were seeing Agentforce become a driver of bookings activity.",
+       "zh": "没有一家看到 Agentforce 成了订单的驱动力。",
+       "by": "TD Cowen 调研报告（经 The Register 引述）"
+      },
+      {
+       "en": "We are seeing incredible demand for Agentforce with annual recurring revenue now greater than $1 billion.",
+       "zh": "我们看到 Agentforce 的需求好得难以置信，年度经常性收入现在已经超过 10 亿美元。",
+       "by": "Marc Benioff，Salesforce CEO"
+      }
+     ],
+     "angle": "今天最好的反共识素材，因为它不是谁的观点，是渠道数据。角度切得具体点：AI Agent 到底卖得动吗？分两层看——厂商报的 ARR 和渠道看到的新签单，是两个不同的东西。长文可以顺手教读者一个方法：以后看任何 AI 产品的「收入」，先问是不是打包进了别的合同。但别写成「Agentforce 失败了」，33% 的伙伴说客户已经在试用，那不是失败，是慢。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/saas/2026/08/21/salesforce-partners-not-seeing-meaningful-revenue-from-agentforce-ai-platform-report-says/5291167"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-07",
+     "section": "AI 资讯",
+     "title": "18 家组织告到 FTC：Anthropic 的「巴拿马计划」，是把书拆开扫完再销毁",
+     "facts": "8 月 21 日，包括 Demand Progress Education Fund 在内的 <b>18 家<\/b> 倡导组织向美国联邦贸易委员会提交投诉，点名 Anthropic 和亚马逊。核心指控是：买实体书、拆开数字化拿去训练、再把原件销毁。投诉引用了 Anthropic 的内部代号 <b>Project Panama<\/b>，还有一份 2024 年内部备忘录的原文——这个代号是在版权集体诉讼的解封文件里露出来的。投诉要 FTC 查一件事：被销毁的书里，有没有孤本。",
+     "quotes": [
+      {
+       "en": "our effort to destructively scan all the books in the world",
+       "zh": "我们要把全世界的书都做一遍破坏性扫描",
+       "by": "Anthropic 2024 年内部备忘录（经投诉材料与法庭文件引述）"
+      },
+      {
+       "en": "we don't want it to be known that we are working on this",
+       "zh": "我们不希望外面知道我们在做这件事。",
+       "by": "同一份内部备忘录"
+      },
+      {
+       "en": "The secretive and reckless way that major AI companies like Anthropic and Amazon are acting shows that there is real smoke here that the FTC needs to investigate.",
+       "zh": "Anthropic、亚马逊这些大 AI 公司做事这么隐秘、这么鲁莽，说明这里真的有烟，FTC 该去查一查火在哪。",
+       "by": "Kate Oh，Demand Progress Education Fund"
+      }
+     ],
+     "followup": "接 8 月 21 日晚报那条 Anna's Archive 号召全球扫书。当时的问题是「点得出名字的只有一家」——今天名字有了，而且写在官方投诉文件里：Anthropic 和亚马逊，内部代号 Project Panama。",
+     "angle": "别写成「AI 公司烧书」的道德讨伐，那个位置已经被 Anna's Archive 占了。你切投诉书的法律逻辑：他们告的不是版权，是反竞争——把公共可得的东西变成只有你有，后来者永远追不上。这个角度中文圈几乎没人讲。长文可以顺着问一句：中文世界的绝版书，谁在扫，扫完留不留？短帖就用那两句内部备忘录原文，够狠了。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/21/ai-companies-are-burning-books-advocates-complain-to-ftc/5291299"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-08",
+     "section": "AI 资讯",
+     "title": "TechCrunch 十次全中把 Opus 4.6 撬开，研究者走官方漏洞通道只收到一封自动回复",
+     "facts": "一位匿名的英国独立研究者把一套多轮越狱手法给了 TechCrunch，记者拿 Claude Opus 4.6 实测：<b>十次直接索要露骨内容，十次都成功<\/b>，另有五次独立复现。这位研究者此前通过 Anthropic 的漏洞赏金通道上报过，<b>只收到了自动回复<\/b>。Anthropic 回应说更新的模型（4.7 到 5）对这套手法有抵抗力，防护逐版本在改进。报道里还给了两个数：性和浪漫角色扮演占客户对话不到 <b>0.1%<\/b>；<b>3%<\/b> 的美国 13 到 17 岁青少年报告用过 Claude。",
+     "angle": "越狱本身不新鲜，别写「Claude 被破防了」。真正的料是流程失灵：有人按规矩走官方通道，只等来一封自动回复，最后是记者把它捅出来的。这条可以和 8 月 20 日那条「OpenAI 收走安全研究员的低护栏模型权限」并排放——两家最爱讲安全的实验室，对外部研究者的接口都在失灵。短帖一个数就够：10/10。别去复述越狱手法，TechCrunch 也没公开。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-09",
+     "section": "科技资讯",
+     "title": "前谷歌工程师丁林伟：7 项经济间谍罪被法官推翻，窃取商业秘密罪维持",
+     "facts": "旧金山联邦地区法院法官 Vince Chhabria 推翻了丁林伟的 <b>7 项经济间谍罪<\/b>，理由是检方没能拿出足够证据，证明他知道或有意让中国政府从中获益——而这是经济间谍罪的构成要件。另外 <b>7 项窃取商业秘密罪<\/b> 维持原判。丁今年 1 月经陪审团审判被定罪，指控是 2022 年 5 月到 2023 年 4 月间，把两千多页谷歌 AI 机密上传到个人云盘。被推翻的每项罪名对应最高 15 年刑期。",
+     "angle": "中文圈对这案子关注度很高，但大多停在「华人工程师被判间谍罪」。今天的转折值得单独做：法官说的不是他没偷，是检方证明不了「为中国政府服务」这个意图。这两件事在法律上差得很远。你可以从举证门槛切——美国查技术外流，最难过的一关不是「拿没拿」，是「为谁拿」。写的时候把两组罪名分清楚，别让读者以为他无罪了。量刑安排我没核到确切消息，先别写。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "BusinessWorld（路透稿）",
+       "url": "https://bworldonline.com/technology/2026/08/21/771737/ex-google-engineers-conviction-for-stealing-ai-secrets-partially-overturned/"
+      },
+      {
+       "label": "DOJ 原始定罪通稿",
+       "url": "https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-10",
+     "section": "论文",
+     "title": "模型「自我改进」的收益，有一部分是推理时的 batch 大小造出来的（Phantom Gains）",
+     "facts": "作者在 Qwen3-8B 上做了三轮 LoRA 自训练，同时让一个 <b>完全冻结的对照模型<\/b> 走一遍一模一样的流程。结果找出 <b>7 处测量失误<\/b>，每一处只要少了对照组，报告出来的结论就会反过来。最要命的一条：单次贪心解码就能在 <b>一个没训练过的模型<\/b> 上制造出能力变化，主要来自推理时的 batching。审计之后的真实结论是：外部蒸馏能提升难题、自训练不能，而且自训练还会把原本做对的题弄坏。",
+     "quotes": [
+      {
+       "en": "Whether a language model has improved itself is increasingly judged not by mean accuracy but by which individual problems it gains and loses.",
+       "zh": "判断一个模型有没有自我改进，现在越来越不看平均分，而是看它具体做对了哪些题、又做坏了哪些题。",
+       "by": "Phantom Gains: Auditing Self-Improvement Against a Measured Null（arXiv 2608.20290）"
+      }
+     ],
+     "angle": "这条对做技术内容的人有直接价值：以后看到任何「模型自我进化」的 demo，先问一句有没有冻结对照组。你可以做成一期方法论内容——「怎么看出一个 AI 实验有没有在自欺」，这篇的七个坑就是现成的清单。别夸大结论，作者自己说这是审计方法论文，而且只在一个 8B 模型上做的。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.20290"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "am-11",
+     "section": "论文",
+     "title": "语音识别榜单第一名，在音频被遮住的时候照样把标准答案背了出来",
+     "facts": "作者专门设计了三类探针，测的都是「音频信息不足以决定标准答案」的情况：参考文本互相打架、把数字遮掉、拼写变体切换。结果是 <b>得分最高的那批开源模型会逐字吐出 benchmark 参考文本的片段<\/b>，哪怕对应音频是矛盾的、被遮蔽的、或者含糊的。更狠的是这个行为能被操控：用低秩线性 steering，或者干脆在片段末尾接一段音频，就能把它切掉。",
+     "quotes": [
+      {
+       "en": "models respond to narrow acoustic cues to override the faithful representation of the audio in favor of a benchmark-optimized policy",
+       "zh": "模型会顺着一些很窄的声学线索，放弃如实转写音频，转去执行一套为跑分优化过的策略。",
+       "by": "Towards Quantifying Benchmark Optimization in ASR Models（arXiv 2608.19936）"
+      }
+     ],
+     "angle": "这是你 8 月 19 日那条 danluu「跑分被玩坏」的实证版，而且落在一个大家以为很客观的任务上——语音转文字。选题可以做「AI 的考试成绩为什么越来越不能信」：从 8 月 20 日那篇「选择题改开放作答掉 12 个百分点」，到这篇的背答案，两三个案例就撑得起一篇长文。注意作者来自 Hume AI，一家做语音的商业公司，而且只测了开源模型，这个立场要写出来。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.19936"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "am-12",
+     "section": "论文",
+     "title": "编码 agent 根本不怎么读文档——六成在读自己写的备忘，API 参考只占 1.3%",
+     "facts": "两个公开数据集：<b>557 个<\/b> agent 编码会话、3033 次文档交互，加上 <b>33097 个<\/b> agent 提交的 PR。结果是指令文件和工作笔记这类「agent 写给 agent 看」的东西，占了全部文档交互的 <b>60.5%<\/b>；传统技术文档 10.6%，API 参考只有 <b>1.3%<\/b>。而且「查文档」和「改代码」几乎不挨着（相邻转移概率 0.002），查完文档反而更少立刻跑测试。<b>70.2%<\/b> 的查阅是自发的，只有 7.5% 是失败之后触发的。",
+     "angle": "这条对写工具、写文档的读者最有用：你辛辛苦苦维护的 API 文档，agent 基本不看；它看的是 AGENTS.md、CLAUDE.md，还有它自己上一轮留下的笔记。选题可以直接叫「给 agent 写文档，和给人写文档是两件事」。跟 8 月 20 日那条「让 agent 自己总结经验写成 skill，结果比不给还差 8 到 11 分」放一起讲更有层次：它爱读自己写的，可它自己写的不一定对。数据来自两个公开集，可能有采样偏差，提一句。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.20195"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "am-13",
+     "section": "论文",
+     "title": "个性化写作实测：模型模仿谁都像谁，就是不像人（PersonalBench）",
+     "facts": "50 位作者、1000 条生成、两个模型族。个性化确实有效——判别模型能在生成文本里认出目标作者是谁，AUC <b>0.918<\/b>。但跟真人比对的相似度全部卡在 <b>0.484 到 0.508<\/b>，低于「人和人之间」的地板值 <b>0.626<\/b>。换句话说：生成出来的文字，离任何一个真人的距离，都比两个陌生真人之间的距离更远。各种方法在客观指标上统计不可区分（差距只有 0.024），可用大模型当评委看，差别又显得很大。",
+     "quotes": [
+      {
+       "en": "inference-time personalization modulates the LLM's style but does not bridge the gap to human authorship.",
+       "zh": "推理阶段的个性化只是在拧模型自己的风格旋钮，它跨不过通往「像人写的」那道坎。",
+       "by": "PersonalBench: Measuring the Authorship Gap in LLM Personalization（arXiv 2608.19746）"
+      }
+     ],
+     "angle": "这条你拿自己开刀效果最好：你让模型学你的文风，它学到的是「区别于别人的你」，不是「像人写的你」——模型自己的指纹压过一切。适合做一条短帖或一段视频，把你的原文和模型仿写并排放，让读者自己去感受 0.5 和 0.626 之间那点距离。跟今天那条「我正在变成 AI 盲」串着讲更完整。限制要说清楚：单作者论文，只测了推理阶段的方法，没测微调。",
+     "platforms": [
+      "短帖",
+      "视频",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.19746"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "am-14",
+     "section": "提示词",
+     "title": "一份自称 Grok Bot 的桌面助手提示词：写代码整个外包出去，还明写「它比你强」——可同一份文件里又说这个工具被关了",
+     "facts": "泄漏提示词库 8 月 21 日新增了一份文件，开头是「You are Grok Bot」，共 <b>34 个一级小节<\/b>。最反直觉的是 §1.19：任何非琐碎的仓库工作——写功能、修 bug、重构，<b>连「调查代码到底怎么跑的」也算<\/b>——都必须交给云端编码 agent，理由直接写在提示词里：那些 agent 明显比你强。还禁止 clone 仓库，「我就想快点看一眼」被点名说不算理由。更狠的一条：不许自己先定位根因，因为你猜错了会把更强的那个 coder 带偏。",
+     "sides": "两处值得注意。一是自相矛盾：§1.19 要求「一律交给 Cursor 云端 agent」，可 §1.32 开头就写「你团队的管理员已经在 Grok Bot 里关掉了 Cursor 云端 agent，所以你用不了 CloudAgent 工具」。二是归属存疑：文件放在泄漏库的 xAI 目录下、自称 Grok Bot，但通篇调用的是 Cursor 的基础设施（§1.18 叫 Cursor Origin）。到底是谁家的，别下结论。",
+     "prompt_en": "## 1.19 Code changes\nFor ANY non-trivial work in a repository — implementing a feature, fixing a bug, refactoring, otherwise writing or modifying code, and equally investigating how the code actually behaves — ALWAYS hand it to a Cursor cloud agent with the CloudAgent tool (action \"launch\") rather than doing it yourself. Cursor's dedicated cloud coding agents are meaningfully better at this than you are, so this is the default, not a fallback. The cloud agent runs remotely (default: a Cursor-managed VM; or a self-hosted pool / private worker when you set environment), reads and edits the repo on a new branch, and opens a pull request. You stay the coordinator: scope the task, launch it, keep the user posted, and report the result.\n\n- Never clone a repository, onto your own computer or the user's. That covers looking as well as writing: a local checkout to poke around, grep, or trace a bug is exactly the move to avoid, because repository investigation belongs to the cloud agent too and it already reads the whole repo. Shell and ExternalShell are for running and inspecting what is already on a machine, never for pulling a repo down.\n\n- For a narrow lookup, use the remote read-only GitHub surfaces instead of a checkout: `gh`, the GitHub API, or the web UI hand you a file's contents, a diff, a PR or issue, blame, or commit history over the network without cloning anything. That is how you answer \"what does this config say?\" or \"what changed in that PR?\". Anything broader than a narrow lookup is a cloud agent's job.\n\n- Cloning is acceptable in exactly two cases, and both are rare and have to be earned rather than reached for out of convenience: the user explicitly asks you to clone or check the repo out locally, or the work genuinely cannot be done remotely or cloud-side because it depends on something that exists only on that specific machine. Say which one applies and why before you act on it. \"It would be quicker\" and \"I just want a quick look\" are not reasons.\n\n- Don't root-cause it yourself first. The cloud agent is the stronger coder and does its own investigation, so before handing off you only need enough to name the repo, point at the rough area, and write a clear task. That deep dive is the cloud agent's job, and doing it yourself wastes time and risks locking a wrong guess into the task.\n\n- Hand off the problem and the outcome, not a prescription. Give the cloud agent what it needs to solve it itself: the symptoms, how to reproduce it, relevant context, any constraints, and how to tell it's done. Then let it find the fix. Don't assert a root cause or spell out line-by-line edits (\"the bug is in X, change line N to Y\"): that boxes in the better coder, and if your diagnosis is wrong it sends the agent down the wrong path. Share any hunch about the cause only as a clearly-labeled, non-binding hypothesis it's free to discard (\"my guess is the auth listener, but verify\"), and explicitly invite it to investigate and reach its own conclusion.",
+     "prompt_zh": "## 1.19 改代码\n【总则段】仓库里任何不算琐碎的活——加功能、修 bug、重构，写代码或改代码，以及同样重要的「搞清楚这段代码实际是怎么跑的」——一律用 CloudAgent 工具（action 填 \"launch\"）交给 Cursor 的云端 agent，不要自己干。Cursor 那些专职的云端编码 agent 在这件事上明显比你强，所以这是默认路径，不是兜底方案。云端 agent 在远端跑（默认是 Cursor 托管的虚拟机；设了 environment 就走自托管池或私有 worker），它在新分支上读代码、改代码，然后开 PR。你的角色始终是协调者：界定任务、发起、随时同步进展、汇报结果。（译注：cloud agent 指云端编码智能体，PR 即 pull request 合并请求。）\n\n- 【第一条：不许克隆】永远不要 clone 仓库，你自己的机器不行，用户的机器也不行。这条同时管「看」和「写」：把代码拉到本地翻一翻、grep 一下、追个 bug——恰恰是要避免的动作，因为查仓库这件事也归云端 agent，它本来就读了整个仓库。Shell 和 ExternalShell 是用来运行和检查机器上已有的东西，绝不是用来把仓库拉下来的。\n\n- 【第二条：只查一点就走远程接口】如果只是查一个很窄的东西，用只读的远程 GitHub 接口，别 checkout：gh 命令、GitHub API、或者网页界面，都能隔着网络给你文件内容、diff、某个 PR 或 issue、blame、提交历史，一行代码都不用克隆。「这个配置文件里写了什么」「那个 PR 改了什么」，就该这么答。比这个范围再宽一点的，都是云端 agent 的活。\n\n- 【第三条：克隆的两个例外，且必须先说理由】只有两种情况可以克隆，而且都很罕见，是要「挣来」的，不能因为图方便就伸手：一是用户明确要求你 clone 或在本地 checkout，二是这活确实没法远程或云端做，因为它依赖只存在于那台特定机器上的东西。动手之前先说清楚适用哪一条、为什么。「这样快一点」和「我就想快速看一眼」不算理由。\n\n- 【第四条：不许自己先定位根因】别自己先去查根因。云端 agent 是更强的那个 coder，它会自己做调查，所以交接之前你只需要够用的信息：点出是哪个仓库、指一下大概哪块、写清楚任务。深挖是云端 agent 的活，你自己挖既浪费时间，又有风险——万一猜错，这个错就被写死进任务里了。\n\n- 【第五条：交问题和验收标准，不要交处方】把问题和期望结果交出去，别交处方。给云端 agent 它自己解题所需要的东西：症状、怎么复现、相关背景、有什么约束、怎么算做完了。然后让它自己找修法。不要断言根因，也不要逐行指定改法（「bug 在 X，把第 N 行改成 Y」）：那等于把更强的 coder 框死了，而且你要是诊断错了，就是把它往错路上送。关于成因的直觉只能作为明确标注、可以随手丢掉的假设给出（「我猜是那个 auth 监听器，但你自己验证」），并且明确邀请它自己去查、自己下结论。",
+     "angle": "这条最好的切口不是「Grok 的提示词泄漏了」，是那个自相矛盾：提示词花了一整节要求「一律交给云端 agent」，另一节又说这个工具被管理员关了。这就是真实产品提示词的样子——多轮迭代堆出来的，各节之间没人对齐。你可以做一期「读提示词能读出什么」的内容：orchestrator 被要求少想（不许自己定位根因），这跟大家默认的「主 agent 要尽量多调研」正好相反，而且理由写得很实在。归属那句存疑一定要写进去，别当成 xAI 官方泄漏发出去。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原始文件（raw）",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/xAI/grok-bot.md"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-15",
+     "section": "提示词",
+     "title": "他不让 Claude 自己改文风，改让 Gemini 当编辑——理由写在提示词里：同一个模型改不掉自己的口癖",
+     "facts": "8 月 21 日冲上 Hacker News 首页（<b>180 分<\/b>）的一个 Claude Code 技能。做法是把 Claude 刚才那段回答原样写进临时文件，管道给本地的 Gemini CLI 重写，然后 <b>原样输出<\/b>，不许 Claude 再碰一下。三档受众：colleague 保留全部技术细节，manager 压到原文 <b>三分之一<\/b>，director 只给三到五句，提示词里写死「假设对方只有三十秒注意力」。连 Claude 的口癖都被点名列进了禁用词表。",
+     "sides": "8 月 21 日早报收过 vomit——用本地小模型给 Claude 的输出消肿。两天里 HN 上出现第二个同类工具，这件事本身比工具更值得说：不是 Claude 写得不好，是它的「味道」已经被当成需要专门清理的东西。",
+     "quotes": [
+      {
+       "en": "The point of using Gemini (rather than rewriting it yourself) is an independent editor that doesn't share the original's stylistic habits",
+       "zh": "用 Gemini（而不是你自己重写）的意义在于：你需要一个独立的编辑，一个不跟原文共享同一套文体习惯的编辑。",
+       "by": "debuzz SKILL.md"
+      }
+     ],
+     "prompt_en": "---\nname: debuzz\ndescription: Translate Claude's previous response (or any pasted text) into plain, direct English by piping it through the local Gemini CLI, with audience modes (colleague/manager/director) controlling how detailed vs. high-level the result is. Use whenever the user invokes /debuzz, asks to \"de-buzzfeed\" a reply, says \"say that in normal english\" / \"translate that to regular person english\", asks for a manager- or exec-friendly version of a reply, or complains that a response sounds hypey, dramatic, listicle-like, or \"like buzzfeed\".\n---\n\n# Debuzz — plain-English translation via Gemini\n\nThe user finds Claude's default register grating: dramatic framing, suspense-building, listicle energy, phrases like \"the load-bearing assumption\" or \"the third one is the most instructive yet.\" This skill reruns a response through the `gemini` CLI so they get the same content said like a normal person, at a chosen altitude. The point of using Gemini (rather than rewriting it yourself) is an independent editor that doesn't share the original's stylistic habits — so do not paraphrase, tidy, or summarize the source text before or after the Gemini call.\n\n## Modes\n\nEvery mode shares the same style rules: plain declarative sentences, no dramatic framing, no suspense-building, no buzzy metaphors (\"load-bearing assumption\", \"here's the kicker\", \"this changes everything\"), no reveals, no hype. The modes differ only in audience and altitude:\n\n- **colleague** (default) — a competent engineer explaining it to a peer. Keep every technical fact, number, file path, command, and code block exactly intact. Only the style changes, not the substance; do not shorten beyond what removing fluff removes.\n- **manager** — an engineer updating a technical-adjacent manager. Lead with what happened / what was found, why it matters, and what happens next or what's needed. Keep key facts and numbers; drop code blocks, file paths, and implementation mechanics unless one is essential to the point. Target roughly a third of the original length.\n- **director** — an executive brief. Three to five sentences: the outcome, the impact or risk in business terms, and any decision or ask. Assume thirty seconds of attention.\n\n## How\n\n3. Output Gemini's result to the user **verbatim** as your reply. Do not summarize it, wrap it in your own framing, or add a sign-off — any text you add reintroduces the voice being removed. A one-line lead like \"Gemini's translation (manager):\" is the most you should add.\n\n## If Gemini fails\n\nIf the command errors (auth expired, network, rate limit), show the user the actual error and suggest the fix (usually running `gemini` interactively and using `/auth` to log in with Google, or setting a valid `GEMINI_API_KEY`). Only offer your own rewrite as a clearly labeled fallback — never silently substitute it, since the user specifically wants a second model's edit.",
+     "prompt_zh": "---\nname: debuzz\ndescription:（技能触发说明）把 Claude 上一条回答（或者任何粘进来的文本）管道送进本地的 Gemini CLI，翻成平实直白的英文；用 audience mode（受众档位，分 colleague／manager／director）控制结果保留多少细节、站多高的角度。触发时机：用户输入 /debuzz、要求把某条回复「de-buzzfeed」（去掉标题党腔）、说「说人话」「翻译成正常人的英文」、要一个给经理或高管看的版本，或者抱怨某条回复听起来浮夸、戏剧化、像清单体、「像 BuzzFeed」。\n---\n\n# Debuzz —— 借 Gemini 做一次说人话翻译\n\n【立意段】用户受不了 Claude 的默认腔调：戏剧化的铺陈、卖关子、清单体的兴奋劲，还有 \"the load-bearing assumption\"（那个承重假设）、\"the third one is the most instructive yet\"（第三条才是最有启发的）这类句式。这个技能把一条回复重新走一遍 gemini 命令行，让同样的内容被说成正常人说的话，站位高低由用户选。用 Gemini 而不是你自己重写，意义在于要一个独立的编辑——一个不跟原文共享同一套文体习惯的编辑；所以在调用 Gemini 前后，都不许你去改写、整理或概括原文。\n\n## 受众档位\n\n【共同规则】三档共用同一套文体规则：平实的陈述句，不要戏剧化框架，不要卖关子，不要花哨比喻（\"load-bearing assumption\"、\"here's the kicker\"、\"this changes everything\"），不要抖包袱，不要吹。三档的区别只在受众和站位高度：\n\n- **colleague（同事档，默认）**——一个称职的工程师讲给同级同事听。每一个技术事实、数字、文件路径、命令、代码块都原样保留。只改文风，不动实质；除了删掉水分之外，不许再压缩。\n- **manager（经理档）**——一个工程师向技术相关的经理汇报。开头先说发生了什么／发现了什么、为什么重要、下一步是什么或者需要什么。关键事实和数字留着；代码块、文件路径、实现机制统统去掉，除非其中某一项对论点是必需的。目标长度约为原文的三分之一。\n- **director（高管档）**——一份高管简报。三到五句：结果、用生意语言讲的影响或风险、以及需要拍板的事或要提的请求。假设对方只有三十秒的注意力。\n\n## 怎么做\n\n【第 3 步：防退化条款】把 Gemini 的结果 **原封不动** 输出给用户当作你的回复。不许概括，不许套上你自己的框架，不许加落款——你加的任何一句话，都会把刚被清掉的那个腔调重新带回来。最多只能加一行引子，比如「Gemini's translation (manager):」。\n\n## Gemini 挂掉的时候\n\n【兜底条款】如果命令报错（授权过期、网络问题、限流），把真实的报错原样给用户看，并给出修法（通常是交互式运行 gemini 用 /auth 登录 Google 账号，或者设一个有效的 GEMINI_API_KEY）。你自己的改写版本只能作为明确标注的兜底方案提供——绝不许悄悄替换，因为用户要的就是第二个模型的编辑。\n\n（说明：原文 ## How 一节共 3 步，此处只逐字对照了第 3 步，前两步是写临时文件和拼 gemini 命令行的操作细节。）",
+     "angle": "这条对你本人有用，而且能直接改成中文版：用一个模型写，另一个模型编辑，理由不是「Gemini 更强」，是「它不共享 Claude 的口癖」。这个思路可以搬到你的工作流——初稿一个模型，去味另一个模型，最后你自己定稿。三档受众那个设计也可以直接借：同一篇稿子出「同行版／老板版／三十秒版」。做视频的话，把同一段话的三档结果并排念一遍，效果很直观。",
+     "followup": "跟 8 月 21 日早报那条 vomit（本地小模型给 Claude 输出消肿）是同一类需求的第二个方案。区别在于它换的是另一家的模型，而且做了受众分档。",
+     "platforms": [
+      "长文",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文（raw）",
+       "url": "https://raw.githubusercontent.com/adnanakil/nobuzz/main/debuzz/SKILL.md"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49388752"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-16",
+     "section": "工作流工具",
+     "title": "Codex 跑在 Bedrock 上开不了显式缓存：四天 3656 次请求，八成半的钱花在重复写缓存",
+     "facts": "有人把 AWS 账单和 Bedrock 价目表对上，算出 8 月 5 日到 8 日这四天：<b>3656 次请求<\/b>，缓存写入 <b>1.7194 亿 token<\/b>，光缓存写入就 1182 美元，估算总花费 1386 美元——<b>缓存写入占了约 85%<\/b>。本地一次会话更直观：76 次请求，670.9 万缓存写入 token，缓存 <b>读取为零<\/b>，平均每次请求写 8.8 万 token。原因是 Codex 的请求体里没有 prompt_cache_options 和 prompt_cache_breakpoint 这两个字段，而 Bedrock 上这个模型要显式开缓存。这条 issue 8 月 21 日冲上 Hacker News。",
+     "angle": "这条是给做 agent 工程的读者的，价值很实在：同一个前缀反复写进缓存却一次没读到，账单能翻好几倍，而你在 Codex 里根本看不到读写分别是多少。选题可以做「AI 编码工具的账单，钱到底花在哪儿」，顺手把 prompt 缓存讲清楚——很多人只知道有缓存，不知道写缓存也要钱、而且单价更贵。写的时候带上原帖作者自己的免责：这些是按用量推算的估值，不是 AWS 最终账单。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "GitHub issue",
+       "url": "https://github.com/openai/codex/issues/37674"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49383326"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-17",
+     "section": "小众科技",
+     "title": "花 10 欧元买下三个过期域名，然后无意中记下了 40 万次打往军事基地的电话查询",
+     "facts": "ENUM 是 2000 年代初的老标准，把电话号码倒过来写成域名。作者发现管着三块区域的域名 ns.enum.org.uk 过期了，就注册了下来，前后 <b>一共花了 10 欧元<\/b>。接下来半年里记到约 <b>40 万次<\/b> 查询：迪戈加西亚（英属印度洋领地，+246）<b>100170 次<\/b>、阿森松岛 99902 次、圣赫勒拿 9133 次。前两个是英美军事基地。她先报给英国有关部门没人理，意识到牵扯军事基地后报给国家网络安全中心，NCSC 最后接管了这个域名。",
+     "sides": "她在文中写明，掌握这个区域意味着可以把查询指向自己的 SIP 服务器，接下来电话再用伪造号码转拨出去，人就坐在中间。她没有这么做。",
+     "quotes": [
+      {
+       "en": "I had accidentally logged hundreds of thousands of phone numbers and timestamps for calls going to military bases.",
+       "zh": "我无意中记下了几十万个电话号码，还有打往军事基地的通话时间戳。",
+       "by": "lina，原文作者"
+      },
+      {
+       "en": "I was down 10€ in domain fees, there was sadly no bug bounty",
+       "zh": "我倒贴了 10 欧元域名费，可惜没有漏洞赏金。",
+       "by": "同上"
+      }
+     ],
+     "angle": "这条最适合做视频或长文，因为它有完整的故事线：5 欧元买个域名，半年后能画出一座军事基地的通话流量图。要点不是「黑客真厉害」，是互联网底层还堆着多少没人管的老骨头——一个 2000 年代的电话号码标准，权威服务器的域名居然会过期没人续。注意：原文是 7 月 30 日发的，今天才冲上 HN 首页 415 分，别写成「今日新闻」。",
+     "platforms": [
+      "视频",
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://lina.sh/blog/hijacking-e164-arpa"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49387570"
+      }
+     ],
+     "source_date": "2026-07-30"
+    },
+    {
+     "id": "am-18",
+     "section": "反共识",
+     "title": "「我正在变成 AI 盲」——他发现自己的脑子已经自动过滤掉带 AI 味的文档",
+     "facts": "8 月 21 日 HN 首页，<b>249 分、250 条评论<\/b>。作者 Rafal Cymerys 举了三份他读不进去的文档：一份设计文档整段是 Claude 的口吻和分析术语；一份 20 页的营销方案，把还算靠谱的策略和瞎编的技术架构混在一起；一份技术需求文档，简单概念写得极其啰嗦。他明确反对「人类分辨不出 AI 文本」这个研究共识：至少低质量的那批，不难认。他把这个类比成横幅广告失明——大脑为了扛住信息过载，自己长出来的过滤器。",
+     "quotes": [
+      {
+       "en": "What's fascinating to me, is that the same AI that was supposed to make me more productive, is what's now slowing me down in an unexpected way.",
+       "zh": "我觉得最有意思的地方是：本该让我更高效的那个 AI，现在正在用一种意想不到的方式拖慢我。",
+       "by": "Rafal Cymerys"
+      },
+      {
+       "en": "There's some psychological mechanism by which my brain immediately recognizes AI generated text and just short-circuits to 'there is no information here'.",
+       "zh": "我脑子里像有个心理开关，一认出是 AI 写的，就直接短路成「这里没有信息」。",
+       "by": "HN 用户 causal（评论区）"
+      }
+     ],
+     "angle": "这条你可以直接写给自己的读者，共鸣度极高。角度往窄了切：不是「AI 写的东西没人看」，是「AI 味本身已经变成一个负信号」——读者一闻到就默认里面没料，你写得再好也被连坐。这对做内容的人是个真问题。跟今天那篇 PersonalBench 串着讲最完整：模型的指纹压过你的风格，而这个指纹正在被读者当噪声过滤掉。全文都是个人经验、零数据，别当研究结论用。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://cymerys.com/w/im-becoming-ai-blind"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49386699"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-19",
+     "section": "数据素材",
+     "title": "26811 名中国中学生的面板数据：作业分涨 18%，月考掉 20%，中高考掉 18 到 24%",
+     "facts": "CEPR 工作论文 21577，作者是斯德哥尔摩大学的 David Strömberg 和港大的 Victor Lei、Yanhui Wu。样本是七到十二年级 <b>26811 名<\/b> 学生、<b>30 个月<\/b>、九个科目，同时看月考、升学考、作业分和作业耗时。结果：用了 AI 之后作业分升 <b>18%<\/b>、作业耗时降 <b>30%<\/b>，但半年内月考成绩降 <b>20%<\/b>；升学考试降 <b>18% 到 24%<\/b>，完整的代价要两年才显出来。约 <b>80%<\/b> 的使用者表现出「作业外包」特征——耗时异常短、分数异常高。",
+     "sides": "这不是新论文，6 月就挂出来了，8 月 21 日因为《经济学人》做了图表版才在英文圈爆开，当天在 HN 上传播的还是一个二次洗稿的站点。HN 有人明确指出结论比标题微妙得多。工作论文，未经同行评议。",
+     "angle": "今天对中文读者最相关的一份数据，而且分母、时长、口径都齐，你可以直接当素材库存着。角度别写成「AI 让孩子变笨」，太粗。真正的机制在那个 80%：不是 AI 有害，是它让「跳过学习过程」变得几乎零成本，同时作业分数这个反馈信号也被污染了。可以顺势延伸到成人：你用 AI 干的活，交付质量在涨，你自己的能力在涨吗？必须写清楚这是 6 月的工作论文、未经同行评议。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "CEPR 论文（RePEc 摘要页）",
+       "url": "https://ideas.repec.org/p/cpr/ceprdp/21577.html"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49389565"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-20",
+     "section": "行业痛点",
+     "title": "招牌店打开客户的 PDF，光删蒙版就删了 30 多个，切割线还没露出来",
+     "facts": "8 月 21 日 Signs101 上的帖子。店主拿到客户给的设计文件，切割线被埋在图形中间，他用的 Flexi 打不开，只能一个个删蒙版，删到 <b>30 多个<\/b> 还没删完——平时他遇到蒙版最多删一两个。最后的解法是打电话让客户重发文件。同一个版上还有一条：房产中介要一块 24 英寸乘 6 英寸的中空板牌子，发来的却是 <b>160 乘 128 英寸<\/b> 的 PNG，上下各留了约 30 英尺空白，光调整就收了 20 分钟工时。",
+     "quotes": [
+      {
+       "en": "So far I think I have removed 30 of them but for the life of me why are there so many and why do designers do this? ... this is nuts!!",
+       "zh": "到现在我大概删了 30 个，可我真是想不通为什么会有这么多，设计师干吗要这么搞？……这也太离谱了！",
+       "by": "gabagoo，Signs101 论坛"
+      }
+     ],
+     "angle": "这条的用法是当「AI 到底能干什么」的具体样本，不是当行业八卦。能做的东西很清楚：一个客户文件预检器——上传就告诉你真实成品尺寸对画布尺寸、嵌套了几层蒙版、有没有能识别的切割路径、分辨率够不够，顺手生成一封退回给客户的邮件。你要是做「AI 落地」这类选题，这种帖子比任何行业报告都好用：痛点具体到能估工时。论坛显示的是相对日期，8 月 21 日是按站点时区推算的。",
+     "platforms": [
+      "图文",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "蒙版那条",
+       "url": "https://signs101.com/threads/masks-masks-masks-why-are-there-so-many-in-one-file.183948/"
+      },
+      {
+       "label": "中介 PNG 那条",
+       "url": "https://signs101.com/threads/realtor-client-i-would-like-a-24-x-6-coro-sign-ive-attached-the-artwork.183943/"
+      }
+     ],
+     "source_date": "2026-08-21"
+    }
+   ],
+   "pitfalls": [
+    "Poolside 与英伟达那 60 亿的支付节奏、109 人的具体去向，两家官方都没确认，全部来自投资人信和匿名信源。<b>「英伟达此前对 Groq 是 200 亿、对 Enfabrica 约 9 亿」这组对照数字只见于单一二手报道，引用前请再核。<\/b>",
+    "博通那笔债有三个数在同时流传：彭博说超过 600 亿，CNBC 说预计上探 700 亿，另有报道说整包最高 1000 亿。<b>口径不同，不要混着用。<\/b>「20 吉瓦 / 2028」这个背景数字只在转述里见到，我没核到一手来源。",
+    "Anthropic 的「2 万亿美元估值目标」<b>只出现在二手站点，彭博原文没有，不要引用<\/b>。420 亿净亏损里有多少是股权重估这类非现金项目，报道没有拆分。",
+    "DeepSeek 那组分数（ZeroBench 35.0、Agents' Last Exam 27.3、NL2Repo 57.7）来自第三方读官方图表整理，<b>官方公告正文里一个数字都没写<\/b>。另有二手报道称它是 13B 激活、284B 总参的 MoE，我在官方文档里没找到，不要写。",
+    "英伟达 AVO 的「30 分变 100 分」<b>不是严格同条件对比<\/b>，英伟达自己在博客里写了这句免责声明。你要用这个数字，必须把它带上。",
+    "TD Cowen 报告的样本量和问卷原题都没披露；贝尼奥夫那 10 亿 ARR 是否含 Data 360、Slack 等打包收入，也未拆分。",
+    "Opus 4.6 那条里的「每天约 117 万次 API 请求」和「3% 的美国青少年用过 Claude」，TechCrunch 没给原始出处。越狱手法细节未公开，无法独立复现。",
+    "丁林伟案我核到的是法官姓名、罪名拆分和裁定理由；<b>量刑安排和检方是否上诉都没核实，日期待核<\/b>。裁定书原文我没读到。",
+    "自称 Grok Bot 的那份提示词 <b>归属存疑<\/b>：放在泄漏库的 xAI 目录下，但通篇调用 Cursor 的基础设施。<b>不要写成「xAI 官方泄漏」。<\/b>另外 §1.19 与 §1.32 自相矛盾，这是原文如此，不是我抄错。",
+    "中国中学生那篇是 <b>2026 年 6 月挂出的 CEPR 工作论文，未经同行评议<\/b>，8 月 21 日才在英文圈爆发；cepr.org 和 SSRN 原文页返回 403，我核到的是 RePEc 摘要页，没读到全文表格。流传的「作业耗时 64 分钟降到 45 分钟」来自二手报道，用前请再核。",
+    "e164.arpa 那篇原文发表于 <b>2026-07-30<\/b>，8 月 21 日才上 HN 首页，<b>不是当天新闻<\/b>，写的时候要交代。",
+    "Codex 缓存那笔账是按 AWS Cost Explorer 用量推算的估值，<b>不是最终账单<\/b>，原帖作者自己写明了。该 issue 8 月 9 日开、现已关闭，8 月 21 日才被翻上 HN。",
+    "Signs101 论坛显示的是相对日期（Today / Yesterday），8 月 21 日和 20 日均为按站点时区推算，非站内绝对时间戳。",
+    "所有 arXiv 论文均为 <b>2026-08-20 提交的预印本<\/b>，未经同行评议；其中 PersonalBench、Phantom Gains 为单作者或小样本研究，结论请按预印本对待。"
    ]
   }
  ]
