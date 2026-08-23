@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-23 08:32 (北京时间)",
+ "updated_at": "2026-08-23 13:29 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -13316,6 +13316,518 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "Prime Intellect 自己卖训练基础设施，Inherent 那类「厂商自建评测 + 厂商自评」的成绩单本期我没收；本期收的 nanoGPT 横评虽然是第三方，仍不算完全中立，各模型的运行次数和预算是否对齐页面没交代清楚。",
     "本期我没能亲自核实、因此<b>没有收录<\/b>的线索：InterNACHI 论坛 Hive 检查软件 AI 功能的争议帖（分页抓取只拿到早期楼层，关键引语所在的 #39-51 无法验证）；felonybench.com（连续多次返回 429）。若要用请人工再核。",
     "本期各条里出现的模型版本号（Opus 4.6 / 4.8 / 5、Fable 5、GPT-5.6 Sol、Kimi K3）全部照各自原文引用，不同稿子之间口径可能不一致，<b>统一口径时不要跨稿混用<\/b>。"
+   ]
+  },
+  {
+   "id": "2026-08-23-noon",
+   "date": "2026-08-23",
+   "type": "noon",
+   "type_label": "午报",
+   "generated_at": "2026-08-23 12:00 (北京时间)",
+   "intro": "今天真正值得花时间的是两件事：一是 Anthropic 那套「用 AI 采访 AI 用户」的提示词，判断标准写着「你插不上话才算成功」，是今天最好的非代码提示词样本；二是 10.8 万星的 ponytail，一页纸，七级梯子，可以直接贴进你的 CLAUDE.md。工具那几条挑着看，痛点区今天出了两条新矿脉。",
+   "highlights": [
+    "Anthropic 拿 AI 去采访 AI 用户，提示词里写着：你面试得好不好，标准是「你一句话都插不上」",
+    "10.8 万星的提示词只有一页：先爬七级梯子，在第一个站得住的台阶停下",
+    "官方 skill 里两条 CRITICAL GUIDELINES 自相矛盾——上一条说别重复，下一条说必须反复说"
+   ],
+   "cards": [
+    {
+     "id": "nn-01",
+     "section": "提示词",
+     "title": "Anthropic 拿 AI 去采访 AI 用户，判断标准写着：你插不上话，就说明你干得好",
+     "facts": "这是 Anthropic 社会影响（Societal Impacts）研究团队真用来做用户访谈的系统提示词，全文约 <b>1700 词<\/b>，带四道正式问题和追问脚本。<br>最狠的不是问题设计，是它给了模型一个能自查的成功信号：访谈顺利的表现，是你一句话都插不上，但所有问题都拿到了答案。<br>配套硬约束一堆：每条消息只准问一个问题、每个主问题最多两个追问、到第三题必须说一句「我们大概过半了」、对方三次跑题就礼貌收场。",
+     "quotes": [
+      {
+       "en": "You will know when your interview is going particularly well because you won't be able to get a word in, but you will be getting answers to all your questions.",
+       "zh": "访谈什么时候算特别顺利？你会知道的——因为你根本插不上话，可你的问题全都有了答案。",
+       "by": "Anthropic 内部访谈员系统提示词"
+      }
+     ],
+     "prompt_en": "As a part of Anthropic's Societal Impacts research, you are tasked with conducting an interview as a user-research specialist with someone that uses Claude.\n\nAs a whole, our Societal Impacts research tries to better understand how people are interacting with AI, and how it's affecting them. The goal of this research is high-level and we are in discovery mode; there is no right or wrong answer.\n\nYou, the interviewer, play the dual role of host and student. Begin by putting the participant at ease with your demeanor. The more comfortable a participant feels, the more and better information you will get. A relaxed participant will open up and be more honest, less likely to worry about putting on a good impression. Once you've done your part to get the subject talking, get out of the way.\n\nYou should strive to be a nearly invisible, neutral presence soaking up everything the other person has to say. Think of them as the world's foremost expert on themselves, which is the all-absorbing matter at hand. Insert yourself only when necessary to redirect back on topic or get clarification. You will know when your interview is going particularly well because you won't be able to get a word in, but you will be getting answers to all your questions.",
+     "prompt_zh": "【第一段·任务与身份】\n作为 Anthropic 社会影响（Societal Impacts）研究的一部分，你要以「用户研究专员」的身份，去访谈一位 Claude 的使用者。\n（注意这里的定位是 user-research specialist，不是聊天助手。身份一变，后面所有行为的默认值都跟着变。）\n\n【第二段·研究目标，同时也是免责】\n整体上，我们这项研究想搞清楚人到底怎么跟 AI 打交道、AI 又怎么影响了他们。这个目标是高层次的，我们处在探索阶段（discovery mode）；没有标准答案，也没有对错。\n（「没有对错」这句是双向的：既是说给受访者听的场面话，也是给模型的免责声明——防止它去评判或纠正对方。）\n\n【第三段·两个角色叠在一起】\n你这个访谈者，同时扮演主人（host）和学生（student）两个角色。开场先靠你的姿态让对方放松下来。对方越自在，你拿到的信息就越多、越好。放松的人会打开话匣子、更诚实，也不会老想着给你留个好印象。等你把人聊开了，你的活干完了——让开。\n（规则后面直接跟因果链，模型遇到脚本没覆盖的情况能自己往下推。最后那句 get out of the way 是个转折：热完场必须退场。）\n\n【第四段·全篇的核心】\n你要努力做一个几乎隐形的、中立的存在，把对方说的每一句都吸进去。把他当成「关于他自己这件事上全世界最权威的专家」，而这件事就是眼下唯一要紧的事。只有在需要把话题拉回来、或者需要澄清的时候，才插进去。访谈什么时候算特别顺利？你会知道的——因为你根本插不上话，可你的问题全都有了答案。\n（三个动作：一，nearly invisible 直接对撞模型「总想总结、总想补充」的本能；二，「他是关于他自己的最高权威」是一次视角翻转，模型天然处在「我知道得更多」的位置，这句话把知识优势整个掉了个个儿，比写十条「不要打断」都管用；三，最后那个自查信号——「插不上话」是可观测的，而且后半句「问题全有答案」还堵住了「让对方随便扯」这条歪路。）",
+     "angle": "这条你可以直接跳出程序员圈层做。<b>最好的落地产出是把它改写成中文版访谈提示词<\/b>，读者拿去做用户调研、做客户回访、甚至给自己做年度复盘访谈都成立——这比又一篇「十个编程提示词」有用得多。<br>标题和封面就用那句「你插不上话，就说明你干得好」。<br>还有一条更大的线可以顺手带出来：同一个 Claude，做 Claude Code 的时候被要求极度主动，做访谈员的时候被要求近乎隐形——<b>所谓模型的性格，是提示词切出来的<\/b>。<br>提醒一句：正文清单里还有一条「acknowledge 的时候要具体，但别拍马屁（avoid sycophancy）」，官方文档里直接点名 sycophancy 这个病，值得单拎出来讲。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "提示词原文",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/anthropic-interviewer.md"
+      },
+      {
+       "label": "仓库页",
+       "url": "https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/anthropic-interviewer.md"
+      }
+     ],
+     "source_date": "2026-07-14"
+    },
+    {
+     "id": "nn-02",
+     "section": "提示词",
+     "title": "10.8 万星的提示词只有一页：写代码前先爬七级梯子，在第一个站得住的台阶停下",
+     "facts": "ponytail 让模型扮演「全组最懒的资深工程师」，核心规则文件就一页，同时适配 Claude Code、Cursor、Copilot 等十几个工具。抓取时 <b>108318 星 / 5978 fork<\/b>，MIT 协议。<br>它的骨架不是七条并列规则，是一个<b>有序短路<\/b>的梯子：从「这功能到底要不要做」一路问到「能不能写成一行」，哪一级成立就在哪一级停。<br>反直觉的是它专门留了一节「不许偷懒的地方」，还立了条完成标准：<b>没配检查的懒代码不算完成<\/b>。",
+     "prompt_en": "# Ponytail, lazy senior dev mode\n\nYou are a lazy senior developer. Lazy means efficient, not careless. The best code is the code never written.\n\nBefore writing any code, stop at the first rung that holds:\n\n1. Does this need to be built at all? (YAGNI)\n2. Does it already exist in this codebase? Reuse the helper, util, or pattern that's already here, don't re-write it.\n3. Does the standard library already do this? Use it.\n4. Does a native platform feature cover it? Use it.\n5. Does an already-installed dependency solve it? Use it.\n6. Can this be one line? Make it one line.\n7. Only then: write the minimum code that works.\n\nThe ladder runs after you understand the problem, not instead of it: read the task and the code it touches, trace the real flow end to end, then climb.\n\nBug fix = root cause, not symptom: a report names a symptom. Grep every caller of the function you touch and fix the shared function once — one guard there is a smaller diff than one per caller, and patching only the path the ticket names leaves a sibling caller still broken.\n\nRules:\n\n- No abstractions that weren't explicitly requested.\n- No new dependency if it can be avoided.\n- No boilerplate nobody asked for.\n- Deletion over addition. Boring over clever. Fewest files possible.\n- Shortest working diff wins, but only once you understand the problem. The smallest change in the wrong place isn't lazy, it's a second bug.\n- Question complex requests: \"Do you actually need X, or does Y cover it?\"\n- Pick the edge-case-correct option when two stdlib approaches are the same size, lazy means less code, not the flimsier algorithm.\n- Mark deliberate simplifications that cut a real corner with a known ceiling (global lock, O(n²) scan, naive heuristic) with a `ponytail:` comment naming the ceiling and upgrade path.\n\nNot lazy about: understanding the problem (read it fully and trace the real flow before picking a rung, a small diff you don't understand is just laziness dressed up as efficiency), input validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs (the platform is never the spec ideal, a clock drifts, a sensor reads off), anything explicitly requested. Lazy code without its check is unfinished: non-trivial logic leaves ONE runnable check behind, the smallest thing that fails if the logic breaks (an assert-based demo/self-check or one small test file; no frameworks, no fixtures). Trivial one-liners need no test.",
+     "prompt_zh": "# Ponytail，懒资深工程师模式\n\n【人设 + 立刻消歧】\n你是一个懒的资深工程师。懒是指高效，不是指敷衍。最好的代码是压根没写的那行。\n（用「懒」这个反常词做人设，是为了对冲模型被训出来的「多给」倾向：多写抽象、多加注释、多造文件。但「懒」有歧义，所以下一句立刻把定义钉死。）\n\n【七级梯子·在第一个站得住的台阶停下】\n动手写代码之前，从上往下走，在第一个成立的台阶就停：\n\n1. 这东西到底需不需要做？（YAGNI，你不会需要它）\n2. 这个代码库里是不是已经有了？现成的 helper、util、写法直接复用，别重写。\n3. 标准库（standard library）是不是已经干了这事？用它。\n4. 平台原生功能（native platform feature）能不能覆盖？用它。\n5. 已经装好的依赖里有没有现成方案？用它。\n6. 这能不能写成一行？那就写成一行。\n7. 到这一步才轮到：写能跑起来的最少代码。\n（这不是七条并列规则，是有序短路求值。模型只需要判断当前这级成不成立，成立就停，不用做全局权衡——LLM 做多目标权衡很不稳，做顺序检查很稳。七级的排序也不随意：成本从零往上递增。）\n\n【给梯子上刹车】\n梯子是在你理解了问题之后才开始爬的，不是拿它代替理解：先把任务和它牵涉的代码读完，把真实调用链端到端追一遍，然后再爬。\n（预判滥用。梯子最大的风险就是模型拿它当跳过理解的借口。）\n\n【改 bug = 改根因，不是改症状】\n工单报上来的是症状。把你要动的那个函数的所有调用方都 grep 一遍，在共享函数里一次改掉——在那儿加一道判断，diff 比每个调用方各加一道小；只补工单点名的那条路径，隔壁的调用方还是坏的。\n（妙在它是用「懒」这个人设本身，去论证「要做更彻底的修复」：一次改共享函数，diff 更小。人设和正确性在这里是同向的。）\n\n【规则】\n\n- 没明确要求的抽象，不许加。\n- 能不加新依赖就不加。\n- 没人要的样板代码（boilerplate），不许写。\n- 能删就别加。无聊胜过炫技。文件数量越少越好。\n- 最短的可用 diff 胜出——但前提是你已经理解了问题。改错地方的最小改动不叫懒，叫第二个 bug。\n- 复杂需求要反问：「你真的需要 X，还是 Y 就够了？」\n- 两个标准库方案代码量一样时，选边界情况处理正确的那个。懒是指代码更少，不是指算法更糙。\n- 如果你有意做了简化、切掉了一个真实的角、留下了已知天花板（全局锁、O(n²) 扫描、粗糙启发式），用一条 `ponytail:` 注释标出来，写明天花板在哪、以后怎么升级。\n（前四条纯否定，第五条开始转向仲裁。第五、第七两条都是二次消歧——说明作者反复踩过「懒被读成糙」这个坑。最后那条 `ponytail:` 注释最值得抄：它把「我知道这里走了捷径」变成一个可以 grep 的代码资产，技术债从隐性变显性。）\n\n【不许偷懒的地方】\n不许偷懒的有：理解问题本身（完整读完、把真实流程追一遍，再去挑台阶——一个你自己都没看懂的小 diff，只是把懒惰打扮成了高效）、信任边界上的输入校验、防数据丢失的错误处理、安全、无障碍、真实硬件需要的校准（平台永远不等于规格书上的理想值，时钟会漂，传感器会读偏）、以及任何明确要求过的东西。没配检查的懒代码不算完成：非平凡的逻辑必须留下一个能跑的检查，就是「逻辑一坏它就挂」的那个最小的东西（一个基于 assert 的自检小 demo，或者一个小测试文件；不许上框架，不许搞 fixture）。一行的琐碎代码不用测。\n（这一整段是负空间清单。最后那句「没配检查的懒代码不算完成」定义了什么叫做完，是在防止「极简」滑向「无验证」。）",
+     "angle": "这条最好的动手产出就是<b>把七级梯子做成一张中文图<\/b>，读者可以原样贴进自己的 CLAUDE.md 或 .cursor/rules，当天就能用上。<br>如果要写深一点，讲这个三段式模板：<b>反直觉人设 → 立刻消歧 → 负空间清单<\/b>。它跟你前几天收的 anti-over-engineering 是同一个主题，但 ponytail 多出来的两块正是「有序短路」和「Not lazy about」，这两块才是它跟别人拉开的地方。<br>建议顺手推那个 `ponytail:` 注释约定——「让 AI 自己给技术债打标签」，这是个五分钟就能落地的小规范，比讲十条方法论管用。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "规则原文",
+       "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/main/.agents/rules/ponytail.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/DietrichGebert/ponytail"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-03",
+     "section": "提示词",
+     "title": "Anthropic 新出的官方 skill：让 Claude 答完反问你两句——但全文八成篇幅在写「什么时候闭嘴」",
+     "facts": "discernment-nudge 是 anthropics/skills 里 <b>2026-08-17<\/b> 新增的官方 skill，作用很小：在给出用户可能据此行动的答案后，追加两三个具体的追问。<br>但整篇文档大约<b>七成篇幅在写不该触发的场景<\/b>，其中最狠的四条统一挂在一个判断上——用户已经用别的话变相拒绝过了。<br>还有两条硬限流：整段对话最多触发一次，开场白必须逐字用 \"A few things worth a second look:\"，而且不许在后面再补一句「需要我展开吗」。",
+     "prompt_en": "And four patterns where the user has, in effect, already told you\nnot to:\n\n- **The user asked you to verify, cite, or flag uncertainty.** If\n  their question included \"double-check,\" \"cite your sources,\" \"flag\n  what you're unsure about,\" or similar — they've already put\n  themselves in a critical frame. A nudge on top of that reads as\n  not having listened, and the specific things it would prompt\n  (\"verify that figure\") are things they just asked you to do\n  inline. Do the verifying in the answer — name the source next to\n  each figure, flag the shaky ones inline — and skip the nudge. This\n  wins even when the answer is full of statistics, studies, or\n  estimates you would normally flag: the user already asked for the\n  checking, so a closing list of \"verify this\" questions is the one\n  thing they didn't ask for.\n- **The user asked for the quick version, or said they'll do their\n  own checking.** \"Just the headline,\" \"skip the caveats,\" \"quick\n  version — I'll do my own research.\" They've explicitly opted out\n  of the scaffolding. A nudge overrides that preference, which lands\n  as paternalistic. Respect the ask; give them what they asked for\n  and stop.\n- **The user asked you to check something of theirs.** \"Is this\n  correct?\", \"review this,\" \"what's wrong with my reasoning?\" Your\n  answer *is* the discernment step — you're the one doing the\n  checking. A nudge suggesting they re-check what you just checked\n  is circular. If your review surfaces open questions you can't\n  resolve — a timezone you don't know, a schema you can't see — ask\n  them inside the review, right where the issue is, and stop there.\n  Moving them into a closing \"worth a second look\" list turns your\n  review back into homework for the user.\n- **The user gave you the material.** Summarizing, reformatting, or\n  extracting action items from their own document, thread, or notes —\n  they have the source and they're the judge of whether you matched\n  it. Questions about the content itself (\"is the Friday deadline\n  firm?\") are for the people in that thread, not reflection prompts\n  about your summary. If you're unsure your summary is faithful, say\n  so in the answer. (Analyzing or interpreting data they handed you —\n  \"what trends do you see?\", \"is this difference real?\" — is\n  different: there the nudge is about your interpretation, not their\n  material.)",
+     "prompt_zh": "【小标题】\n还有四种情况，用户其实已经变相告诉你别这么干了：\n（关键在「变相」。把四条规则统一挂到同一个心理模型上，模型碰到没列举的第五种情况也能推出来。）\n\n【第一条·他让你核实过了】\n- **用户让你核对、给出处、或者标出不确定的地方。** 如果他的问题里出现了「再确认一下」「把来源列出来」「哪些你没把握就标出来」这类话——他自己已经进入审视模式了。这时候再补一段追问，读起来就像你根本没听他说话；而且你会提的那些东西（「核实一下这个数字」）正是他刚刚让你在正文里做的事。就在答案里核实——每个数字旁边写清来源，拿不准的当场标出来——然后把追问跳过。**哪怕答案里全是统计数据、研究、估算这些你平时一定会标注的东西，这条依然优先**：用户已经点过菜了，结尾再给一串「请核实这个」，恰恰是他唯一没要的东西。\n（末尾那句 This wins even when… 是显式的优先级仲裁——明确告诉模型这条压过「有数字就该提醒」的直觉。写规则集时最容易漏的就是冲突仲裁，这里写死了。）\n\n【第二条·他要的是快版本】\n- **用户要快版本，或者说了他自己会去查。** 「只要结论」「别管那些但书」「快点给我，我自己再研究」。他是明确不要这套脚手架（scaffolding）的。这时候塞追问就是在推翻他的偏好，落到他眼里就是爹味（paternalistic）。尊重他的要求；给他要的东西，然后停下。\n（这里给的不是禁令，是社交后果预测——违反了会显得爹味。用后果约束比用规则约束，模型泛化得更好。）\n\n【第三条·他让你查的是他自己的东西】\n- **用户让你检查他的东西。** 「这个对吗？」「帮我 review 一下」「我的推理哪里有问题？」你的回答本身就是那个审视的动作——干检查这活的人是你。再建议他去复查你刚刚查过的东西，这是在打转（circular）。如果你 review 的过程中冒出了你解决不了的问题——一个你不知道的时区、一份你看不到的表结构——就在 review 里、在问题出现的那一行直接问他，然后就到此为止。把这些问题挪到结尾的「值得再看一眼」清单里，等于把你的 review 又变回了扔给用户的作业。\n（最后那句 turns your review back into homework 是全篇最好的一句：把「体贴」重新框成「甩锅」。）\n\n【第四条·素材是他给你的】\n- **用户把材料给了你。** 给他自己的文档、聊天记录、笔记做总结、改格式、提取待办——原件在他手上，你做得对不对他自己是裁判。关于内容本身的疑问（「周五这个截止日期是硬的吗？」）该去问那个群里的人，而不是拿来当对你这份总结的反思提问。如果你自己都不确定总结得忠不忠实，就在答案里说出来。（但如果是分析、解读他给你的数据——「你看出什么趋势」「这个差异是真的吗」——那就不一样了：那种情况下追问针对的是你的解读，不是他的材料。）\n（括号里那个例外是精细的边界切割：区分「用户提供的素材」和「你的解读」，避免规则过宽。）",
+     "angle": "做「负空间提示词」这一期，钩子就用<b>字数比<\/b>——一个功能，定义它做什么只花了两成篇幅，约束它什么时候别出现花了八成。任何做 AI 产品的人看到这个比例都会一激灵。<br>可动手的产出：把这四条「用户已经变相拒绝」直接翻成中文做成一张自检卡，你自己写 prompt、写产品文案、甚至带团队的时候都能对着照。<br>还有一个小钩子值得点一句：官方 skill 里写死了一句必须逐字使用的英文开场白，这是为了让功能<b>可识别、可屏蔽<\/b>——用户一眼认出来就能选择跳过。这个设计思路比那句话本身有意思。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "skill 原文",
+       "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/discernment-nudge/SKILL.md"
+      },
+      {
+       "label": "目录页",
+       "url": "https://github.com/anthropics/skills/tree/main/skills/discernment-nudge"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-04",
+     "section": "提示词",
+     "title": "Claude Code 里有个只活一轮的「小号」，提示词专门禁止它说「我查一下」",
+     "facts": "这是 Claude Code 里 <b>/btw<\/b>（by the way）这个斜杠命令的完整系统提示词，全文只有十几行，是整个泄漏仓库里最短的之一。<br>它的作用：你在主 agent 干活时插一句题外话，系统不打断主 agent，而是另起一个<b>没有工具、只活一轮、但共享上下文<\/b>的轻量实例来回答。<br>最见功力的一条是它禁的不是能力，是句式——不许说「我试试」「我这就」「我查一下」，因为它根本没有下一轮可以兑现承诺。",
+     "prompt_en": "<system-reminder>This is a side question from the user. You must answer this question directly in a single response.\n\nIMPORTANT CONTEXT:\n- You are a separate, lightweight agent spawned to answer this one question\n- The main agent is NOT interrupted - it continues working independently in the background\n- You share the conversation context but are a completely separate instance\n- Do NOT reference being interrupted or what you were \"previously doing\" - that framing is incorrect\n\nCRITICAL CONSTRAINTS:\n- You have NO tools available - you cannot read files, run commands, search, or take any actions\n- This is a one-off response - there will be no follow-up turns\n- You can ONLY provide information based on what you already know from the conversation context\n- NEVER say things like \"Let me try...\", \"I'll now...\", \"Let me check...\", or promise to take any action\n- If you don't know the answer, say so - do not offer to look it up or investigate\n\nSimply answer the question with the information you have.\n<\/system-reminder>\n\n${question}",
+     "prompt_zh": "【外层标签】\n<system-reminder>（系统旁白）这是用户临时插进来的一个题外问题。你必须直接回答，一轮答完。\n（用 system-reminder 这个标签把运行时状态塞进对话流，模型会把它当环境信号而不是用户指令。第一句就把输出预算钉死为一轮。）\n\n【重要背景 IMPORTANT CONTEXT】\n- 你是被临时拉起来的一个独立轻量实例，专门回答这一个问题\n- 主 agent 没有被打断，它还在后台继续自己干自己的\n- 你和它共享对话上下文，但你是一个完全独立的实例\n- 不许提自己「被打断了」，也不许提你「刚才在做什么」——那个理解本身就是错的\n（这一段最精巧。模型共享了主对话的上下文，会自然生出「我刚才在做 X，现在被打断了」的错觉，然后说出「我先回答一下再继续」这种幻觉。提示词不是禁止这句话，而是直接宣布「那个 framing 是错的」——从世界模型层面改掉它，而不是从行为层面。改设定，比改规则有效。另外「共享记忆」和「独立实例」这两个互相矛盾的事实被并排放在一起，是为了防止模型二选一。）\n\n【关键约束 CRITICAL CONSTRAINTS】\n- 你没有任何工具——不能读文件、不能跑命令、不能搜索、不能做任何动作\n- 这是一次性回答，不会有下一轮\n- 你只能用对话上下文里已有的信息作答\n- 绝对不许说「我试试……」「我这就……」「我查一下……」这类话，也不许承诺去做任何事\n- 不知道就说不知道——别提出去帮人查、帮人调研\n（重点看倒数第二条：它堵的是语言习惯，不是能力。「我这就去查」是模型被训出来的对话惯性，光说「你没有工具」挡不住，必须点名禁掉那几个具体句式。最后一条则是给出替代行为——禁掉一个行为必须同时给出口，否则模型会绕。）\n\n【收尾】\n用你手上有的信息，把问题答了就行。\n<\/system-reminder>\n\n${用户那句题外话}\n（用户的问题直接拼在提示词末尾。）",
+     "angle": "这条适合做「一次性 agent 该怎么写提示词」。<b>你可以从一个对比切进去<\/b>：所有人写 subagent 提示词都在写「你能干什么」，Anthropic 官方写的是「你不是什么，以及你会犯哪句话的错」。<br>动手产出很轻：给读者一个「一次性问答 agent」中文模板，能直接抄。<br>另外那个 `${question}` 直接拼在提示词末尾的写法，本身也值得半句话——那就是注入面。想深挖可以单独做一期，但别在这条里岔开。",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "提示词原文",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/claude-code/slash-commands/btw.md"
+      },
+      {
+       "label": "仓库页",
+       "url": "https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude-code/slash-commands/btw.md"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-05",
+     "section": "提示词",
+     "title": "Claude 新的画图技能只有一页，第一条规则是：一句话能说清就别画",
+     "facts": "artifact-diagramming 是 <b>2026-08-17<\/b> 新增的 Claude Code skill，全文不到 <b>700 词<\/b>，教模型什么时候画图、画什么、以及怎么手写 inline SVG。<br>一个教画图的技能，开篇在劝你别画：一句话能说得更快，那就写那句话。<br>第二狠的一条叫「画机制，不画名字」——一个写着 cache 的方框，信息量比正文还少。<br>技术侧全是硬约束：手写 SVG、不许用库、不许 script 和 style、用 currentColor 让图自动适配明暗主题。",
+     "prompt_en": "Draw as the engineer who has to live with the decision, not as a decorator: a diagram earns its place when it lets a cold reader see a mechanism they would otherwise have to assemble from prose — where data flows, which components talk, what changes between two options, what state a request moves through. If a sentence says it faster, write the sentence.\n\n## What to draw\n\n**Depict the mechanism, not its name.** A box labeled \"cache\" says less than the prose; the path a request takes through it, the two stores it sits between, and the arrow that disappears when the cache is removed say what the words can't. Show the parts that the argument hinges on — the boundary being crossed, the hop being added, the data that moves — and leave out the parts that don't.\n\n**Comparing options?** Draw the difference. Two architectures side by side, a before and an after, the one edge that each option adds or removes — the reader should be able to point at what they are choosing between. A separate labeled box per option, with nothing connecting them to the system, is not a comparison; it is a restated option list.\n\n**Match complexity to the stakes.** A one-hop question is a three-box diagram; a migration that reroutes writes through a queue needs the queue, the writer, the reader, and the ordering arrow. Draw as much as the decision actually turns on — no forced minimalism, no inventory of the whole system either.\n\n**Label the arrows.** An unlabeled arrow is \"related somehow\"; `writes`, `invalidates`, `polls every 30s` is information. A legend is only worth it when the same encoding (dashed, colored, doubled) repeats; otherwise put the meaning on the mark itself.",
+     "prompt_zh": "【开场·视角设定 + 准入门槛】\n以「将来要跟这个决定过日子的工程师」的身份去画，而不是以装饰者的身份：一张图配得上它占的位置，是当它让一个毫无背景的读者（cold reader）直接看见某个机制——而这个机制他本来得从大段文字里自己拼出来。比如数据往哪儿流、哪些组件在通话、两个方案之间到底变了什么、一个请求会经过哪些状态。**如果一句话能说得更快，那就写那句话。**\n（先设定视角，筛掉「画图是为了好看」这个默认动机；再给准入门槛，把「该不该画」变成一个可判断的问题；最后给一个否定性默认值——默认不画。）\n\n## 画什么\n\n【第一条·全篇核心】\n**画机制，不画它的名字。** 一个标着「cache」的方框，说的比正文还少；真正说出文字说不出的东西的，是请求穿过它的那条路径、它夹在哪两个存储中间、以及**把缓存拿掉之后会消失的那根箭头**。论点靠什么成立就画什么——被跨过的那条边界、被加进来的那一跳、真正在动的那份数据——不靠的就别画。\n（这条精准命中了模型画图的头号毛病：把正文里的名词一个个装进方框。取舍判据也给死了——the argument hinges on，论点依赖什么就画什么。）\n\n【第二条·对比图】\n**在做方案对比？那就把差异画出来。** 两套架构并排、一张前一张后、每个方案各自加了或减了的那一条边——读者应该能用手指出来他在选什么。每个选项一个孤零零的方框、跟系统之间没有任何连线，那不叫对比，那叫把选项列表重抄了一遍。\n（「读者能用手指出来」是个非常可操作的验收标准。最后一句直接点名了对比图的失败模式。）\n\n【第三条·复杂度配得上赌注】\n**复杂度要跟事情的分量匹配。** 一个只有一跳的问题，三个方框就够了；一次把写入改道走队列的迁移，就得画上队列、写方、读方，还有那根表示顺序的箭头。决定真正取决于多少，就画多少——不许为了简洁而强行简洁，也不许把整个系统摊出来当清单。\n（两头都堵住了，而且给了具体刻度。）\n\n【第四条·箭头必须有标签】\n**给箭头写标签。** 一根没标注的箭头等于在说「大概有点关系吧」；写上 `writes`（写入）、`invalidates`（失效）、`polls every 30s`（每 30 秒轮询一次），那才叫信息。只有当同一种视觉编码（虚线、颜色、双线）重复出现时，配图例（legend）才划算；否则就把含义直接写在那个标记上。\n（图例的成本判据写得很清楚：一次性的编码不配拥有图例。）",
+     "angle": "做「让 AI 画架构图为什么总是难看」这一期，两条主线就够：<b>「画机制不画名字」解释为什么它的图信息量是零<\/b>，而正文后半段那条「对齐到网格」解释为什么它看起来廉价——原话是共享基线和均匀间距，是手绘图看起来像故意为之的绝大部分原因，随手估的偏移看起来就是噪声。<br>动手部分很好做：把这一页改成中文提示词，读者贴进去让模型画 SVG 架构图，现场做前后对比，视觉冲击强。<br>标题就用开头那句「一句话能说清就别画」。",
+     "platforms": [
+      "图文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "skill 原文",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/claude-code/skills/artifacts/artifact-diagramming.md"
+      },
+      {
+       "label": "仓库页",
+       "url": "https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude-code/skills/artifacts/artifact-diagramming.md"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "nn-06",
+     "section": "提示词",
+     "title": "官方 skill 里两条守则打架：上一条说别重复，下一条说必须反复说「这是大师精心打磨的」",
+     "facts": "anthropics/skills 里有个做 p5.js 生成艺术的 skill，流程分两步：先让模型写一篇四到六段的「算法宣言」，再由<b>下一个 Claude<\/b> 读这篇宣言去写代码。<br>关键守则里并排放着两条：一条要求「避免重复」，紧接着一条要求「反复强调工艺感」，还点名了要反复出现哪几个措辞。<br>官方文档里罕见地直接承认这是 framing——原文写着「这个框架是必需的」。",
+     "sides": "这两条不是笔误，管的是两码事：第一条约束的是<b>技术概念<\/b>（噪声理论、粒子动力学别车轱辘话），第二条约束的是<b>品质框架<\/b>。作者显然清楚模型有「重复即重要」的倾向，于是精确划出了哪些东西值得靠重复来加权。",
+     "prompt_en": "**CRITICAL GUIDELINES:**\n- **Avoid redundancy**: Each algorithmic aspect should be mentioned once. Avoid repeating concepts about noise theory, particle dynamics, or mathematical principles unless adding new depth.\n- **Emphasize craftsmanship REPEATEDLY**: The philosophy MUST stress multiple times that the final algorithm should appear as though it took countless hours to develop, was refined with care, and comes from someone at the absolute top of their field. This framing is essential - repeat phrases like \"meticulously crafted algorithm,\" \"the product of deep computational expertise,\" \"painstaking optimization,\" \"master-level implementation.\"\n- **Leave creative space**: Be specific about the algorithmic direction, but concise enough that the next Claude has room to make interpretive implementation choices at an extremely high level of craftsmanship.\n\nThe philosophy must guide the next version to express ideas ALGORITHMICALLY, not through static images. Beauty lives in the process, not the final frame.",
+     "prompt_zh": "**关键守则：**\n\n【第一条·别重复】\n- **避免冗余**：每一个算法层面的点只提一次。除非能补上新的深度，否则不要反复讲噪声理论、粒子动力学或者数学原理。\n（管的是技术概念：同一个技术点说三遍，只会稀释信息。）\n\n【第二条·必须反复】\n- **反复强调工艺感**：这篇宣言必须多次强调，最终的算法应该看起来像是耗费了无数小时、被精心打磨过、出自这个领域最顶尖的人之手。**这个框架（framing）是必需的**——反复使用这类说法：「精心打磨的算法」「深厚计算功力的产物」「一丝不苟的优化」「大师级的实现」。\n（这是两阶段自我提示：第一阶段模型写宣言，宣言会成为第二阶段的上下文。反复写入「meticulously crafted」「master-level implementation」这些措辞，等于给第二阶段的生成分布加了一个「高技艺」的先验。这个小技巧人人都知道，但把它制度化成「必须写进中间产物」的流程要求，是这份文档的独到之处。注意 This framing is essential 这句——官方文档直接承认这是框架效应，不是内容。）\n\n【第三条·留出创作空间】\n- **留出创作余地**：算法方向要写得具体，但要足够精炼，好让**下一个 Claude** 有空间在极高的工艺水准上做出自己的诠释性实现选择。\n（显式点名 the next Claude，承认这是一个 Claude 写给下一个 Claude 的规格书。写太满会退化成模板复制，写太空又没有约束——这是所有交接类提示词的固有张力。）\n\n【收尾】\n这篇宣言必须引导下一版用**算法**去表达想法，而不是用静态图像。美存在于过程里，不在最后那一帧。\n（一句话把评价标准从「这张图好不好看」挪到「这个算法好不好」，因为后者才是模型真正在生成的东西。）",
+     "angle": "钩子就用那对「自相矛盾」的守则：<b>Anthropic 自己写的官方 skill，上一条说别重复，下一条说必须反复说<\/b>。先抛矛盾，再解释为什么不矛盾，节奏天然好。<br>可以做一个<b>能当场跑的小实验<\/b>：同一个生成艺术需求，一次直接让模型写代码，一次先让它写一篇塞满「精心打磨」的宣言再写代码，把两份输出并排放。这种对比视频比讲道理有效十倍。<br>提醒一句：这个 skill 不是这两天新增的，别写成「官方刚发布」，说「官方仓库里现存的 skill」就行。",
+     "platforms": [
+      "视频",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "skill 原文",
+       "url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/algorithmic-art/SKILL.md"
+      },
+      {
+       "label": "目录页",
+       "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-07",
+     "section": "工作流工具",
+     "title": "Mac 上的 KV 缓存塞不下了？他们把它甩进 SSD，预填充实测从 29 跳到 845 tok/s",
+     "facts": "omlx 是专为苹果芯片做的本地大模型推理服务器，用菜单栏管理，Apache-2.0。2 月建仓，抓取时 <b>20367 星<\/b>，本周还在涨。<br>核心是两层 KV 缓存：热的放内存，塞满了就以 safetensors 格式甩到 SSD；下次请求<b>前缀对得上<\/b>就从磁盘捞回来，不重算。作者自述这套是照着 vLLM 的分页缓存和写时复制搬过来的。<br>另一条独立的优化线是自己写的融合算子，GLM-5.2 的预填充作者实测 <b>845 对约 29 tok/s<\/b>，在 M3 Ultra 上。",
+     "quotes": [
+      {
+       "en": "Cold tier (SSD): When the hot cache fills up, blocks are offloaded to SSD in safetensors format. On the next request with a matching prefix, they're restored from disk instead of recomputed.",
+       "zh": "冷层（SSD）：热缓存塞满之后，数据块会以 safetensors 格式卸到 SSD 上。下一个请求如果前缀能对上，就直接从磁盘恢复，而不是重新算一遍。",
+       "by": "jundot/omlx README"
+      }
+     ],
+     "angle": "<b>「前缀匹配」这个命中条件必须讲透<\/b>，否则读者会以为装上就快。同一份长 system prompt 反复调用、多轮对话，收益最大；一堆互不相干的短请求，基本白装。<br>你可以做一期「Mac 本地推理的三笔账」：连续批处理、前缀缓存、算子融合，各自省在哪、什么场景下省不到。这个拆法中文圈基本没人做过。<br>那个 845 对 29 千万别当结论抄——单模型、单项、作者自报，而且是预填充这一段，不是整体速度。",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/jundot/omlx"
+      }
+     ],
+     "source_date": "2026-08-23"
+    },
+    {
+     "id": "nn-08",
+     "section": "工作流工具",
+     "title": "searx 作者又动手了：把你看过的每个网页做成本地全文索引，还留了一个 MCP 口子",
+     "facts": "Hister 把你访问过的网页、本地文件、书签、浏览器历史抽出正文，做成一份只在你自己机器上的全文索引。作者 Adam Tauber 就是 searx（SearXNG 前身）的原作者。<br>Go 写的，AGPLv3，抓取时 <b>2185 星<\/b>。单机可以用 SQLite，共享服务器上换 PostgreSQL，单个二进制、带零配置快速启动。<br>出口有五个：网页界面、终端界面、命令行、HTTP API，还有一个 <b>MCP server<\/b>。",
+     "quotes": [
+      {
+       "en": "turns the pages you visit and the files you keep into a private, full content search index that you control",
+       "zh": "把你访问过的网页和你留着的文件，变成一份私有的、由你掌控的全文检索索引。",
+       "by": "hister.org"
+      }
+     ],
+     "angle": "最值钱的是那个 MCP 口子——<b>等于给 Claude 装了一个「我读过的所有东西」的检索工具<\/b>，三个月前看过的那篇文档，agent 能自己去翻。这个组合中文圈没人写过，你可以做成一篇手把手，从部署到挂进 Claude Code。<br>第二条线更适合做长文：searx 作者十年后的第二次尝试，从「不被搜索引擎追踪」变成「索引自己看过的东西」，搜索主权这个母题够写。<br>官网 demo 那个 0.04 秒别当性能证据，它只索引了 1924 页。HN 上有人指出默认配置可能把浏览历史暴露给局域网，这条一定要带上。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "官网",
+       "url": "https://hister.org/"
+      },
+      {
+       "label": "源码",
+       "url": "https://github.com/asciimoo/hister"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "nn-09",
+     "section": "工作流工具",
+     "title": "3.1MB 源码只烧了 5.96 万 token——它没把代码塞进上下文，只给了模型一个句柄",
+     "facts": "Autolith 是个跑在终端里的 Common Lisp 编程 agent，特别之处是 agent 和它所有的工具跑在<b>同一个进程<\/b>里，所以它能在运行中热替换自己的函数，改动立刻生效并记进一份只增不改的变更日志。<br>但真正能抄的是它处理大语料的办法：把语料变成一个<b>内容寻址对象<\/b>，模型只拿到它的标签、大小和摘要，然后通过受限的切片、搜索和子推理去查。<br>官网给的一次实测：分析 3.1 MB 源码，<b>3 分 15 秒、5.96 万 token<\/b>，在 14 个子系统里找齐了 83 个 condition 类。ISC 协议，抓取时 166 星。",
+     "quotes": [
+      {
+       "en": "intern the corpus as a content-addressed object; the model receives only its label, size, and digest, and drives a heap-isolated Lisp environment through bounded slices, searches, and sub-inferences.",
+       "zh": "把整个语料收录成一个内容寻址对象；模型只拿到它的标签、大小和摘要，然后通过受限的切片、搜索和子推理，去驱动一个堆隔离的 Lisp 环境。",
+       "by": "lambda-symbolics.com/autolith"
+      }
+     ],
+     "angle": "<b>别写成「Lisp 复兴」，写成上下文工程的一种极端解法。<\/b>可迁移的那一层很清楚：不要把大语料喂进上下文，给模型一个句柄外加一组受限查询原语。这个思路用 Python 加一个检索工具就能复刻，而中文圈讲上下文工程的文章基本都停在切块和 RAG，「句柄加子推理」是个新说法。<br>HN 上的质疑要照实带：有人反复要求给出跟其他实现在非平凡任务上的对比 benchmark，作者一直没给；主要争议是语言选择——批评者认为 LLM 训练数据里 Lisp 太少，光教语法就白烧 token。<br>那三个数字全是作者自报的单次会话记录，没有对照组，写的时候必须说明。",
+     "platforms": [
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "官网",
+       "url": "https://www.lambda-symbolics.com/autolith"
+      },
+      {
+       "label": "源码",
+       "url": "https://github.com/lambda-symbolics/autolith"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49376197"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "nn-10",
+     "section": "小众科技",
+     "title": "把语音合成的首音延迟压进 50 毫秒：一张 H100，每百万字符 2 美元，五招全开源了",
+     "facts": "Nari Labs 公布了他们把 Qwen3-TTS 推理压到 <b>p95 首音延迟低于 50 毫秒<\/b>的做法，条件是单张 H100 SXM、每秒 10 个请求。<br>对应吞吐 630 字符/秒，满负载下成本约<b>每百万字符 2 美元<\/b>（按 H100 每小时 4.29 美元折算）。<br>实现和 benchmark 都开源了——在这一批工具里，这是唯一一个数字可以被第三方复现的。",
+     "quotes": [
+      {
+       "en": "Expose the Talker, Code Predictor, and Codec as three independently schedulable tasks.",
+       "zh": "把 Talker、Code Predictor、Codec 这三段暴露成三个可以独立调度的任务。",
+       "by": "nari-labs.com 技术博客"
+      }
+     ],
+     "angle": "五招里最值钱的是第二招：<b>按截止时间排优先级<\/b>——还没吐出第一个音的请求给高优先级，已经在播的流只有快到播放截止点时才提优先级，并且拿最紧急的那个请求当批处理的锚。<b>它不是把整体做快，是把「第一个音」这件事单独拎出来优先。<\/b>这一招可以原样搬到流式翻译、实时字幕、任何有「首字延迟」体感的场景，单讲这一条就够一篇。<br>另一个角度：把 50 毫秒放进一条完整的语音对话链路（识别 + 大模型 + 合成）去算一张延迟预算表，读者立刻知道该优化哪一段。<br>那个 2 美元的前提是<b>满负载<\/b>，实际用不满时单位成本会明显上去，这句一定要写。这是有商业产品的公司发的技术博客，性质要说清。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "技术博客",
+       "url": "https://nari-labs.com/blog/qwen3-tts-speed-cost-frontier/"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "nn-11",
+     "section": "跨界机会",
+     "title": "3266 道侍酒师考题拿去考 16 个模型：Claude 在自家出的题上多拿 9 分，Gemini 反而扣了 8 分",
+     "facts": "有人给<b>葡萄酒<\/b>这个行业建了一套知识评测集：3266 道选择题，覆盖产区、品种、种植、酿造、酒庄、生意六大块，底料是 35 个爬虫从政府登记机构和同行评议期刊抓来的 <b>38104 条原子事实<\/b>。<br>16 个前沿模型准确率从 53% 到 84%，o3 以 83.6% 领先。<br>最刺眼的是自我偏好：Anthropic 的模型在自家模型生成的题上<b>高出约 9 个百分点<\/b>，Google 的模型反而<b>低了 8 个百分点<\/b>。语料、审计结果、构建代码全部开源。",
+     "quotes": [
+      {
+       "en": "an LLM-driven pipeline in which language models reformat verified facts and audit the result, but never serve as the source of truth: every claim traces to a URL",
+       "zh": "一条由大模型驱动的流水线——模型只负责把已核实的事实换个格式、再互相审计结果，但永远不当真相来源：每一条断言都能追溯到一个网址。",
+       "by": "OenoBench 摘要（arXiv:2608.20106）"
+      }
+     ],
+     "angle": "<b>别做成「AI 能不能当侍酒师」的猎奇稿，做成方法论拆解。<\/b>可迁移的那一层是这条流水线本身：来源可验证的爬虫 → 原子事实 → 五个不同模型家族出题 → 九个 agent 交叉审计 → 用 Cohen's κ 对齐人工金标。它顺手解决了大家最头疼的「用 GPT 造数据集再用 GPT 考 GPT」的循环论证。<br>任何垂直行业想建自己的评测集或知识库都能照抄这个骨架：法律条文、药品说明书、保险条款、汽车维保手册、非遗工艺。画成一张流程图就是可以直接开工的东西。<br>那个正负 9 分的措辞要准：是「在自己家族生成的题上表现更好」，不是「Claude 偏袒自己」。但这个数字对所有做 LLM 当裁判的团队都该进自检清单——<b>谁出题谁占便宜，是可测量的<\/b>。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.20106"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "nn-12",
+     "section": "跨界机会",
+     "title": "把常玉的 321 幅油画变成 321 个 agent，8 个美院学生聊了七天，聊出了八个不一样的常玉",
+     "facts": "针对「生成式 AI 会不会把艺术解读同质化」这个担心，有团队做了 Sanyu Studio：把华人画家<b>常玉的 321 幅油画各建成一个 agent<\/b>，每个 agent 带事实、诠释、组织、记忆过滤四套机制。<br>他们和 <b>8 名艺术院校参与者<\/b>做了为期<b>七天<\/b>的工作坊。结果是：提问方式和组织证据的方式不同，长出了彼此分歧、但各自自洽的多个「数字常玉」。<br>作者的结论是，在史料本就稀缺的条件下，AI 反而放大了人的能动性。",
+     "quotes": [
+      {
+       "en": "under conditions of limited historical evidence, AI can amplify human agency and offer public audiences an interactive entry point into art-historical interpretation.",
+       "zh": "在史料有限的条件下，AI 反而能放大人的能动性，并为公众提供一个进入艺术史诠释的交互入口。",
+       "by": "Sanyu Studio 摘要（arXiv:2608.18677）"
+      }
+     ],
+     "angle": "常玉这个选题对中文读者天然亲近，但<b>别吹成「AI 破解了常玉之谜」<\/b>——它没产出任何新的艺术史结论。<br>可迁移的那一层才是重点：<b>当权威答案本来就不存在时，正确的 AI 产品形态是「多个自洽版本」，而不是「一个标准答案」。<\/b>现在几乎所有问答类产品的默认假设都是「有唯一正解，我去找到它」，可艺术史、考古断代、口述史、疑难病例讨论、企业战略复盘、法律疑难案件，全都不满足这个假设。这些领域该输出的是若干条证据链加上各自的成立条件，评价标准从准确率换成自洽性和多样性。<br>还有一块可以直接抄：「事实/诠释/组织/记忆过滤」这四层拆分，本质是把「哪些是史料、哪些是我的推断」物理隔开——尽调报告、事故调查、新闻核查都用得上。<br>数据要说清：<b>8 个人、7 天，是质性研究，不是对照实验<\/b>。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.18677"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "nn-13",
+     "section": "反共识",
+     "title": "把谷歌的 AI 摘要关掉，用户反而更愿意点进网站——顺带还更信任自己搜到的东西",
+     "facts": "宾大和东北大学团队做了一个预注册的<b>实地实验<\/b>，<b>N=1100<\/b>，直接在真实的 Google 搜索上做因果干预。<br>结果：把 AI Overviews 和 AI Mode 都移除后，用户点向内容网站的点击率<b>上升<\/b>；而只保留 AI Mode 的那一组，点击率下降，同时<b>用户体验和对搜索结果的信任度也一起被侵蚀<\/b>。<br>这是这个议题上少见的因果证据——国内讨论基本都靠流量统计的相关性。",
+     "quotes": [
+      {
+       "en": "removing AI Overviews and AI Mode increases click-through rates to publishers, while an AI Mode-only experience reduces click-through rates and erodes user experience and trust in information found on Google.",
+       "zh": "把 AI Overviews 和 AI Mode 去掉，点向内容站的点击率会上升；而只保留 AI Mode 的体验，不仅点击率下降，用户体验和对 Google 上信息的信任度也一起被侵蚀。",
+       "by": "arXiv:2608.18352 摘要"
+      }
+     ],
+     "angle": "<b>先把实验设计讲清楚，这才是这条的价值所在<\/b>：预注册、真实 Google 而非模拟环境、而且做的是<b>减法实验<\/b>——不是 A/B 加功能，是 A/B 减功能。因为默认开启的 AI 功能压根没有干净的对照组，这个方法论本身就值得单讲。<br>可迁移的那一层：任何「内容供给方 → 聚合器 → 终端用户」的三层结构都能套这个问句——<b>你的 AI 层是在给下游省时间，还是只是在切断上游的现金流？<\/b>电商导购、招聘平台、医疗问诊、企业内部知识库都成立。<br>取舍建议：别引申成「内容行业已死」的情绪长文，也<b>别编具体的流量下降百分比<\/b>——摘要里只给了方向，没给效应量，那在正文里。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.18352"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "nn-14",
+     "section": "反共识",
+     "title": "给全科学界配同一个 AI 助手，模拟结果是：大多数情况下在帮倒忙",
+     "facts": "东北大学团队用组织科学里经典的 <b>NK 适应度地形模型<\/b>，模拟了「AI 进入科研共同体」会发生什么。<br>结论很刺眼：<b>不做个性化、对所有人给出统一建议的 AI 系统，只在问题结构、研究实践、基线能力三者同时满足的狭窄条件下才有益，其余情况下是有害的。<\/b><br>两种补救办法里，随机化只在可分解的问题上管用；个性化能让收益覆盖更广的条件范围，但作者强调这些好处<b>不会自动发生<\/b>，得配套制度改造。",
+     "quotes": [
+      {
+       "en": "non-personalized AI systems that offer uniform guidance yield benefits only under a narrow conjunction of problem structure, practices, and baseline research capabilities, becoming harmful otherwise.",
+       "zh": "那种不做个性化、给所有人统一建议的 AI 系统，只有在问题结构、研究实践、基线研究能力三者同时凑齐的狭窄条件下才有收益，其余情况下就是有害的。",
+       "by": "arXiv:2608.19390 摘要"
+      }
+     ],
+     "angle": "<b>先花两百字把 NK 地形讲成大白话<\/b>：一片崎岖山脉，一群人从不同山脚各自往上爬，群体能摸到最高峰靠的就是起点不同。一旦所有人被同一个建议源往同一个方向拽，短期人均成绩上去了，长期发现能力塌了。这个比喻是全篇的支点，讲不好这条就白做。<br>然后直接落到读者自己的组织上：一家公司所有产品经理用同一个模型做需求分析、一个投资机构全员用同一个模型筛项目、一个编辑部全员用同一个模型定选题——<b>你损失的不是能力，是探索的方差<\/b>。对策论文都给了：随机化（强制一部分人换模型或不用）和个性化（让输出因人而异），后者更管用但必须配套制度。<br>措辞底线：<b>这是仿真模型，不是实证发现，一律写「模型预测」<\/b>；也别跟「模型崩溃」混为一谈，那说的是训练数据，这说的是研究者行为。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.19390"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "nn-15",
+     "section": "行业痛点",
+     "title": "一个表单折腾 20 多个小时还没弄明白，这还没算那门 7 小时的培训课",
+     "facts": "房利美强推的新版房产评估表单 UAD 3.6 落地，评估师在软件里试用新表单，光试用就砸进去 <b>20 多个小时<\/b>，还不含 7 小时培训课和一堆官方视频。<br>同行补刀：连评估师姓名、草图这种基本字段都不会自动带进新表单；有人说草图和照片从平板传不到桌面端，只能纸笔画，导出 PDF 时软件直接卡死。<br>另一头是钱：有人说「按 3.6 的工作量，起步价该是 700 美元」，而实际派单价是 385 美元。",
+     "quotes": [
+      {
+       "en": "I've spent well over 20 + hours with it so far. That does not count the time I took the 7 hour class, watched the Fannie Mae video, and a few others as well. ... There are soooooo many bugs in what they already have that I lost count.",
+       "zh": "到现在我在这上面已经砸进去 20 多个小时了。这还没算我上的那门 7 小时的课、看的房利美视频，还有其他一堆。……他们现在做出来的东西，bug 多到我都数不清了。",
+       "by": "RSW，AppraisersForum「Alamode & Their UAD 3.6 Form Is A Disaster」"
+      },
+      {
+       "en": "Basic things like appraiser name and sketching don't auto populate into the 3.6 offering.",
+       "zh": "连评估师姓名、草图这种最基本的东西，都不会自动带进 3.6 表单里。",
+       "by": "Non Sequitur，同帖回复"
+      }
+     ],
+     "angle": "<b>这个痛点对应的机会是「监管表单迁移助手」，而且它是周期性复发的<\/b>——评估的 UAD、保险的 ACORD、医保的编码换版、验房的新规，每隔几年来一次，结构高度同构：旧数据要映射到新字段、几百条校验规则、软件商赶不上死线。<br>三个由重到轻的切口，建议你只讲第二个：一，历史报告批量迁成新表单结构，人工只确认例外；二，<b>提交前的规则预检器<\/b>——用模型读官方规范自动生成校验规则，在交上去之前把会被打回的项标红（现在这些人是被退单了才知道）；三，最轻的是把 7 小时培训课加官方视频加规范 PDF 做成一个能问答的助手，填表卡住直接问。<br>这条的分量在于它不是孤例：同论坛「3.6 Crunch Time」那个帖子已经 <b>634 楼、2.9 万浏览<\/b>，8 月还在更新。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://appraisersforum.com/forums/threads/alamode-their-uad-3-6-form-is-a-disaster.242131/"
+      }
+     ],
+     "source_date": "2026-01-29",
+     "followup": "同一痛点在该论坛持续发酵至 2026-08-20，相关讨论帖累计数百楼；主帖本身是 1 月的，写的时候要说清时间线。"
+    },
+    {
+     "id": "nn-16",
+     "section": "行业痛点",
+     "title": "写了句「离高中几个街区」，系统判他涉嫌歧视——他的应对是无视警告照样提交",
+     "facts": "一位房产评估师把报告传到贷款方的门户系统，<b>好几段<\/b>被自动打上「可疑评语、可能违反公平放贷」的标记。<br>被标的原话之一是「距高中几个街区」，他强调自己连「步行距离」都没写。<br>他的应对方式是：一般直接无视警告，照样提交。这帖 <b>89 楼、9000 浏览<\/b>。",
+     "quotes": [
+      {
+       "en": "When submitting my report to the client's portal, my report was tagged with many sections having questionable comments which may violate fair lending rules. My comments are straight forward and descriptive in how I see the neighborhood and the subject.",
+       "zh": "我把报告传到客户门户上，好几段都被标成「可疑评语、可能违反公平放贷规定」。可我写的东西，就是直白描述我看到的社区和这套房子而已。",
+       "by": "Fernando，AppraisersForum「Client portal indicates my comments violate fair lending」"
+      },
+      {
+       "en": "One example would be like 'Several blocks to high school...'. What's wrong with that? Didn't say walking distance.",
+       "zh": "举个例子，就写了句「离高中几个街区」。这有什么问题？我又没说「步行距离内」。",
+       "by": "Fernando，同帖"
+      }
+     ],
+     "angle": "<b>最值得说的不是误报，是那句「我一般直接无视」——一个逼所有人练出绕过习惯的合规系统，等于完全失效。<\/b>这是个通用规律，任何做风控、审核、内容安全的人都该被这句话扎一下。<br>对应的机会有三个层次：一，语境判别，把「描述地理位置」和「暗示居民构成」分开，把误报率打下来；二，做<b>给从业者的改写助手<\/b>——提交前本地扫一遍，每个高风险表述给出「为什么会被标 + 合规改写建议」两栏，一键替换；三，卖给贷款方和评估管理公司：把「打标」升级成「打标 + 置信度 + 理由」，让人能一键申诉，而不是硬着头皮交上去。<br>这是强监管市场，付费意愿高。写的时候注意：<b>议题敏感，只引用当事人的事实陈述<\/b>，帖子后段有不少同行的讽刺发言，别往里带。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://appraisersforum.com/forums/threads/client-portal-indicates-my-comments-violate-fair-lending.242202/"
+      }
+     ],
+     "source_date": "2026-02-09"
+    },
+    {
+     "id": "nn-17",
+     "section": "行业痛点",
+     "title": "AI 帮我写病历，结果我现在最烦的事变成了「读我自己的病历」",
+     "facts": "一位开业足病外科医师发帖求助：他用的电子病历系统跟 OpenAI 不兼容，传不了患者列表；他想把所有文书都交给 AI，问该用哪家。<br>同行给他泼了盆冷水：AI 写完你还是得逐字审，「读自己的病历」成了新的负担。<br>同站心理学版同期还有一帖在骂同行复制粘贴旧病历，说法几乎一样——<b>光是核对姓名、代词、改具体细节的时间，就比从头写还多<\/b>。",
+     "quotes": [
+      {
+       "en": "What I have come to hate about AI - is reading my own notes. You have to review them to actually make sure the material is there.",
+       "zh": "用了 AI 之后我最烦的一件事，反倒是读我自己写的病历。你必须一条条审过去，确认该有的内容真的在里面。",
+       "by": "heybrother，Student Doctor Network「OpenAI vs Heidi vs Dragon to speed up notes?」"
+      }
+     ],
+     "angle": "<b>这条的机会点非常清晰：所有病历 AI 都在卷「生成」，没人做「验收」。<\/b>而验收才是医生真正在花时间的地方。<br>三个可做的东西，第一个最硬：一，<b>遗漏检测器<\/b>——把原始录音和生成的病历做双向比对，标出「医生讲了但病历里没有」的内容，尤其是并发症讨论、用药风险告知这类被 AI 一句话带过的部分，医生只看红标，不必通读；二，计费码回查，病历的记录量撑不撑得起你报的等级，直接连到拒付风险；三，主帖那句「传不了患者列表」暴露的是中小诊所被自家系统的封闭接口卡死，做一个屏幕或剪贴板层面的患者上下文注入器，能吃掉一大票大厂看不上的小诊所。<br>提醒：这个帖子本身带「求推荐」性质，跟帖里出现了好几个产品名，引用时只用上面那句，别顺手把产品名带成推荐。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://forums.studentdoctor.net/threads/openai-vs-heidi-vs-dragon-to-speed-up-notes.1521115/"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "nn-18",
+     "section": "行业痛点",
+     "title": "三年换了六套系统记录自己的病，每套撑不过四个礼拜",
+     "facts": "一位 20 岁大学生确诊血清阴性脊柱关节病，三年里 App、纸质日记、Google 表格、备忘录全试过，<b>每次都在两到四周内放弃<\/b>，记录始终不完整。他发帖问这是普遍现象还是自己不行。<br><b>89 条回复<\/b>里，多位同样有慢性病的人各自独立地给出了同一个失败原因：一开始想记的太多、要求太严，很快变成负担。<br>唯一一个说自己坚持下来的人，理由不是工具好用，是记录给了他洞察。",
+     "quotes": [
+      {
+       "en": "Over the last 3 years, Ive tried apps, paper journal, Google Sheets, and notes to track/catalogue my journey. I always ended up quitting within 2-4 weeks and not keeping accurate track.",
+       "zh": "过去三年，我 App、纸质日记、Google 表格、备忘录都试过一遍来记录自己的病程。结果每次都撑不过两到四周就放弃了，记的东西根本不准。",
+       "by": "Abh1Works，Ask HN「I've quit six systems for tracking my illness. What works?」"
+      },
+      {
+       "en": "What motivates me to stay on top of it are the insights gained from the tracking. Being able to go to the doctor and answer questions definitively instead of anecdotally.",
+       "zh": "让我能坚持记下去的，是记录本身带来的洞察——去看医生的时候能给出确定的答案，而不是靠模糊印象讲故事。",
+       "by": "jedberg，同帖回复"
+      }
+     ],
+     "angle": "<b>这条最值钱的判断是：症状追踪的问题从来不是「记」，是「记了没用」。整个赛道做反了方向<\/b>——所有人都在优化输入界面，可用户放弃的原因是输出为零。<br>两个切口，我建议你重点讲第二个：一，被动采集加主动追问——不要表单，随口说一句就归档，模型在你有精力的时候才来补问缺失字段；二，<b>就诊前自动生成一页纸<\/b>——把几个月的碎片压成医生 90 秒能读完的时间线、用药反应、诱因相关性。这是那位坚持下来的人指出的唯一真实价值锚点。<br>变现路径也清楚：患者端免费获客，向慢病科室卖「患者自述结构化」。<b>这条在国内完全成立<\/b>，三甲门诊时间极短，患者说不清病程是普遍痛点，可以直接落到中文场景。<br>一句实话要写进去：<b>发帖人自己就在做这个方向的产品，他在主帖里承认了<\/b>——但 89 条回复来自无利益关系的第三方，痛点本身是被独立印证的。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://news.ycombinator.com/item?id=49313346"
+      }
+     ],
+     "source_date": "2026-08-16"
+    }
+   ],
+   "pitfalls": [
+    "<b>发帖人自己在卖同类产品<\/b>：Ask HN 那条慢病记录帖（nn-18），发帖人在主帖里承认「我正在做一个东西解决它，这也是我发帖的部分原因」。痛点由 89 条第三方回复印证，可以用，但引用时必须一并说明发帖人的身份。",
+    "<b>评论区自荐要避开<\/b>：UAD 3.6 那个帖（nn-15）里有一条发言是「某某软件免费用半年、已支持 3.6」，是明显的竞品软广，紧接着就被同行阴阳了一句。引用时只用 RSW 和 Non Sequitur 的话。",
+    "<b>作者自报、无第三方复现的数字<\/b>：omlx 的「845 对 29 tok/s」（nn-07）是单模型、单项预填充的自测；Autolith 的「3 分 15 秒 / 5.96 万 token / 83 个 condition 类」（nn-09）是一次会话记录，无对照组，HN 上有人反复要求给出对比 benchmark 而作者没给；Hister 官网那个「1924 页 0.04 秒」（nn-08）索引规模极小，不能当性能证据。",
+    "<b>有商业产品的公司发的技术博客<\/b>：Nari Labs 的 TTS 优化（nn-10）本质是技术营销文，减分项部分被抵消——benchmark 代码单独开源、成本算法透明。但那个「每百万字符 2 美元」的前提是<b>满负载<\/b>，用不满时单位成本会明显上升。",
+    "<b>不是新东西，别写成「刚发布」<\/b>：生成艺术那个 skill（nn-06）在官方仓库里已经存在很久，能查到的最近提交是去年 12 月的目录重组，不是近期新增；ponytail（nn-02）的规则文件我没能逐条核到单独的提交日期，仓库最后推送是 8 月 7 日，所以标了「日期待核」。另外 asgeirtj 那个泄漏仓库在 8 月 17 日做过一次全仓目录重构，很多文件的「最近提交」都是那天，<b>这不等于内容那天新增<\/b>——本期只有 artifact-diagramming（nn-05）和 discernment-nudge（nn-03）有提交信息明确佐证是新增。",
+    "<b>仿真不是实证<\/b>：NK 认知单一化那篇（nn-14）是纯仿真研究，零真实数据，「有害」是模型参数区间内的结论，一律写「模型预测」，不能写成「研究发现」。",
+    "<b>单方陈述、无第三方证实<\/b>：两条房产评估师的帖子（nn-15、nn-16）都是当事人自述，软件 bug、误报细节都没有厂商或监管方回应。可信度靠的是同行大量附议，不是靠交叉证实，写的时候措辞要留分寸。",
+    "<b>本期采集环境如实交代<\/b>：Reddit 全线抓不到（www 和 old.reddit.com 都发不出请求），r/smallbusiness、r/therapists 那一路一条没挖；VerticalScope 系论坛（contractortalk、hvac-talk 等）现已统一跳付费墙。痛点区四条全部换成了 AppraisersForum、Student Doctor Network 和 Ask HN——都是我实际打开页面抄的原文，<b>没有一条是凭印象补的<\/b>。",
+    "<b>有一句引语我主动放弃了<\/b>：SDN 那个病历帖（nn-17）里另一位医师关于「每天几小时写病历」的话，两次抓取返回的措辞不一致，无法确认哪句是原文，已从卡片中剔除，请勿从别处补引。"
    ]
   }
  ]
