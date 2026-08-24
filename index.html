@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-24 13:36 (北京时间)",
+ "updated_at": "2026-08-24 21:20 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -15465,6 +15465,520 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "<b>样本小 / 适用范围窄<\/b>：nn-12 的 MemStrata 只有 130 个转移样本，且是精心筛过的「干净原子替换」，作者自承只覆盖真实修复的约 18%，0.91 对 0.57 是在最有利于自己方法的子集上做的。",
     "<b>重新分析不是新实验<\/b>：nn-14 是对已有数据集的再分析，那个 0.949 是「条件于已观察到移动」的描述性分解，作者明确反对读成「人其实是近似贝叶斯的」。另外「没动」也可能只是滑块粒度或四舍五入的报告口径问题，不等于心里没变。",
     "<b>本期缺口，如实说明<\/b>：Reddit 全站（含 old.reddit.com）在本次调研环境不可访问，practicalmachinist、allnurses、eng-tips、taxprotalk 等一批垂直论坛返回 403 或被付费墙拦截，X/Twitter 也抓不到带原文的推文。因此痛点部分改从 Ganoksin、AAPC、DynamoBIM、Airbnb Hosts Forum 等可访问论坛取材，兽医、殡葬、干洗、图书馆、印刷、翻译等方向本期没能覆盖，没有凭印象补写。"
+   ]
+  },
+  {
+   "id": "2026-08-24-evening",
+   "date": "2026-08-24",
+   "type": "evening",
+   "type_label": "晚报",
+   "generated_at": "2026-08-24 20:30 (北京时间)",
+   "intro": "今晚只有一件事值得你坐下来慢慢看：FT 说 Anthropic 最贵的模型卖不动，同一周 JetBrains 一万五千人的调查却说 Claude Code 半年翻了一倍。两条都是真的，答案在中间那层。其余的——数据中心用水、三个民调打架、Grok 那个两个半月没修的洞——挑着看，写图文很顺手。",
+   "highlights": [
+    "今日深挖：「最强模型卖不动」和「Claude Code 从 18% 涨到 39%」是同一周的事，冲突点在 harness 和便宜模型",
+    "国会研究局的数字：美国数据中心 2023 年用掉约 170 亿加仑水，十年翻三倍——但八成水根本不在机房里",
+    "三个民调问同一件事，答案是 70%、61%、45%——差的不是民意，是问法"
+   ],
+   "cards": [
+    {
+     "id": "ev-01",
+     "section": "今日深挖",
+     "title": "「最强模型卖不动」和「Claude Code 半年翻倍」，是同一周的两条新闻",
+     "facts": "<p>8 月 23 日 FT 发了一篇：Anthropic 最贵的那档模型拉不动用户，便宜工具在抢地盘。这篇在 HN 拿了 <b>604 分、535 条评论<\/b>，是本周最热的 AI 话题。<\/p><p>同一周，JetBrains 放出年度开发者生态调查。样本 <b>1.5 万名<\/b>专业开发者，调查窗口 <b>2026 年 5 到 7 月<\/b>。Claude Code 的采用率从 1 月的 <b>18% 涨到 39%<\/b>，美国 <b>47%<\/b>；<b>31%<\/b> 的人把它当主力工具。<\/p><p>同一张表里，GitHub Copilot 从 <b>29% 掉到 21%<\/b>，Cursor 从 <b>18% 掉到 12%<\/b>，Codex 从 <b>3% 冲到 16%<\/b>。<\/p><p>两条摆在一起就很怪：模型卖不动，装模型的壳却在暴涨。<\/p>",
+     "sides": "<p><b>说「卖不动」的一方（FT + HN 评论区）：<\/b>贵是一层，规则乱是另一层。评论里最常被点名的是限额——五小时一个窗口、周额度说变就变；还有账号莫名被封、申诉要等几周。有人直接说：「别家的模型也够用，还不折腾。」这些是网友自述，不是可核实的事实。<\/p><p><b>说「在涨」的一方（JetBrains 数据）：<\/b>这份调查按地区、雇佣状态、编程语言做了加权，是行业里少数样本够大、口径写得清楚的。它量的是<b>工具<\/b>的采用率，不是某一个模型的收入。<\/p><p><b>两边其实不矛盾。<\/b>Ramp 的刷卡数据（今天早报已收）显示：最贵的那一档只拿到 <b>6%<\/b> 的 token。人在用 Claude Code，但里面跑的未必是最贵的模型。<\/p><p><b>第三方视角：<\/b>Drew Breunig 8 月 23 日写了篇《Fable 与免费午餐的终结》，他自己估算 GLM 5.2 的价格大约是 Fable 的 <b>九分之一<\/b>、Opus 5 的 <b>五分之一<\/b>，「大部分重复性代码活，GLM 完全够」。注意：这是博主自己算的价格比，不是厂商公布的口径。<\/p><h4>时间线<\/h4><ul><li><b>2026-01<\/b>：JetBrains 上一轮调查，Claude Code 18%，Copilot 29%<\/li><li><b>2026-05 至 07<\/b>：本轮调查窗口<\/li><li><b>2026-08-22<\/b>：Ramp 8 月 AI 指数发布，最贵档拿 6% token<\/li><li><b>2026-08-23<\/b>：FT 发稿；同日 Breunig 发《免费午餐的终结》<\/li><li><b>2026-08<\/b>：JetBrains 公布结果<\/li><\/ul><h4>可能的后续<\/h4><p>如果「壳涨、模型不涨」成立，接下来该看的不是模型发布会，是三件事：厂商会不会把限额规则改得可预期；便宜模型能不能进企业采购；以及 harness 本身会不会开始收钱。<\/p>",
+     "quotes": [
+      {
+       "en": "We had to think about what work went where.",
+       "zh": "我们又得重新琢磨：哪一份活该派给谁。",
+       "by": "Drew Breunig,《Fable and the End of the Free Lunch》"
+      }
+     ],
+     "angle": "<p>这是今晚唯一值得做长文的题。你可以从「两条新闻撞车」切进去，标题就写「最强的模型卖不动，装它的壳半年翻了一倍」。中段把三组数字并排：FT 的定性、JetBrains 的采用率、Ramp 的 token 占比——正好是三个不同层面，不打架。<\/p><p>建议只做「为什么不矛盾」这一个论点，别顺手写成「Anthropic 要完了」。FT 那篇的证据强度撑不住这个结论，HN 评论区的抱怨更撑不住。<\/p><p>配图用下面这张 JetBrains 的对比条形图，四个工具、两个时间点、同一份问卷，是今天最干净的一组数据。<\/p><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 320' width='640' height='320'><rect x='0' y='0' width='640' height='320' fill='#F7F7F5'/><text x='24' y='32' font-family='Helvetica,Arial,sans-serif' font-size='16' font-weight='bold' fill='#1A1A1A'>专业开发者采用率：2026年1月 vs 5-7月<\/text><text x='24' y='52' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#6B7280'>来源：JetBrains 开发者生态调查，1.5 万名专业开发者，按地区加权<\/text><line x1='60' y1='260' x2='620' y2='260' stroke='#D1D5DB' stroke-width='1'/><line x1='60' y1='60' x2='60' y2='260' stroke='#D1D5DB' stroke-width='1'/><text x='50' y='265' text-anchor='end' font-family='Helvetica,Arial,sans-serif' font-size='10' fill='#6B7280'>0<\/text><text x='50' y='215' text-anchor='end' font-family='Helvetica,Arial,sans-serif' font-size='10' fill='#6B7280'>10%<\/text><text x='50' y='165' text-anchor='end' font-family='Helvetica,Arial,sans-serif' font-size='10' fill='#6B7280'>20%<\/text><text x='50' y='115' text-anchor='end' font-family='Helvetica,Arial,sans-serif' font-size='10' fill='#6B7280'>30%<\/text><text x='50' y='65' text-anchor='end' font-family='Helvetica,Arial,sans-serif' font-size='10' fill='#6B7280'>40%<\/text><rect x='80' y='170' width='42' height='90' fill='#9CA3AF'/><rect x='128' y='65' width='42' height='195' fill='#2563EB'/><text x='101' y='164' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#374151'>18<\/text><text x='149' y='59' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' font-weight='bold' fill='#1D4ED8'>39<\/text><text x='125' y='280' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='12' fill='#1A1A1A'>Claude Code<\/text><rect x='220' y='245' width='42' height='15' fill='#9CA3AF'/><rect x='268' y='180' width='42' height='80' fill='#2563EB'/><text x='241' y='239' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#374151'>3<\/text><text x='289' y='174' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' font-weight='bold' fill='#1D4ED8'>16<\/text><text x='265' y='280' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='12' fill='#1A1A1A'>Codex<\/text><rect x='360' y='115' width='42' height='145' fill='#9CA3AF'/><rect x='408' y='155' width='42' height='105' fill='#B45309'/><text x='381' y='109' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#374151'>29<\/text><text x='429' y='149' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' font-weight='bold' fill='#92400E'>21<\/text><text x='405' y='280' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='12' fill='#1A1A1A'>Copilot<\/text><rect x='500' y='170' width='42' height='90' fill='#9CA3AF'/><rect x='548' y='200' width='42' height='60' fill='#B45309'/><text x='521' y='164' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#374151'>18<\/text><text x='569' y='194' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='11' font-weight='bold' fill='#92400E'>12<\/text><text x='545' y='280' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='12' fill='#1A1A1A'>Cursor<\/text><rect x='400' y='296' width='12' height='12' fill='#9CA3AF'/><text x='418' y='306' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#374151'>2026年1月<\/text><rect x='500' y='296' width='12' height='12' fill='#2563EB'/><text x='518' y='306' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#374151'>2026年5-7月<\/text><\/svg>",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "FT 原文（HN 讨论）",
+       "url": "https://news.ycombinator.com/item?id=49411102"
+      },
+      {
+       "label": "JetBrains 调查",
+       "url": "https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/"
+      },
+      {
+       "label": "Breunig：免费午餐的终结",
+       "url": "https://dbreunig.com/2026/08/23/fable-the-end-of-moore-s-law.html"
+      },
+      {
+       "label": "Ramp AI 指数",
+       "url": "https://ramp.com/data/ai-index-august-2026"
+      }
+     ],
+     "source_date": "2026-08-23",
+     "followup": "今天早报收过 FT 那条和 Ramp 那条。晚报回头做，是因为 JetBrains 的调查和 Breunig 的文章补上了另外两块，三组数字凑齐才能看出「不矛盾」这个结论。"
+    },
+    {
+     "id": "ev-02",
+     "section": "数据素材",
+     "title": "国会研究局：美国数据中心一年用掉 170 亿加仑水，十年翻了三倍",
+     "facts": "<p>美国国会研究局（CRS，国会图书馆下属的研究机构）出了份报告，编号 <b>R49057<\/b>。核心数字：美国数据中心 <b>2023 年<\/b>用水约 <b>170 亿加仑<\/b>，是 <b>2014 年<\/b>的三倍。<\/p><p>更要紧的是拆解：机房里直接拿去冷却的水只是小头，<b>超过 80%<\/b> 的水消耗发生在场外——发电环节。<\/p><p>报告自己承认了一个大坑：联邦政府<b>没有<\/b>系统性统计这个行业的用水，数据主要靠各州各自收。而且水务公司和运营商之间常签保密条款，数字压根出不来。<\/p>",
+     "sides": "<p><b>发布机构<\/b>：CRS，为国会立法服务，不是环保组织也不是行业协会。<b>时间范围<\/b>：2014–2023。<b>口径<\/b>：全国合计年用水量。<\/p><p><b>必须标出来的一处含混<\/b>：The Register 转述时写了一句「直接用水约占 2%」，但没写清是「占全美总用水的 2%」还是「占数据中心总用水的 2%」。前者按量级算不成立，后者又跟「间接超 80%」对不上（剩下的 20% 去哪了）。<b>这个 2% 别用，用了会被人当场抓。<\/b><\/p><p><b>行业那边的说法<\/b>：欧洲云基础设施服务商协会（CISPE）警告，水资源监管过严会把机房挤到欧盟以外去。这是立场表态，不是数据。<\/p><p><b>最容易忽略的一点<\/b>：170 亿加仑是 2023 年的数字，那时候 AI 数据中心的大扩张才刚起步。现在的实际值只会更高，但没人有可信数字。<\/p>",
+     "angle": "<p>这题适合做成图文，标题就用「数据中心最耗水的地方不在机房」。因为大部分人以为水都浇在服务器上了，事实是八成在电厂——这个反差本身就是内容。<\/p><p>建议只做「翻三倍」和「八成在场外」这两个点，别去算「一个 ChatGPT 问答等于多少瓶水」——那类换算的口径全是自己拍的，翻车率极高。<\/p><p>配图就一张两根柱子的对比图，够了：<\/p><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 300' width='520' height='300'><rect x='0' y='0' width='520' height='300' fill='#F7F7F5'/><text x='24' y='32' font-family='Helvetica,Arial,sans-serif' font-size='16' font-weight='bold' fill='#1A1A1A'>美国数据中心年用水量（十亿加仑）<\/text><text x='24' y='52' font-family='Helvetica,Arial,sans-serif' font-size='11' fill='#6B7280'>来源：美国国会研究局报告 R49057，2014–2023<\/text><line x1='70' y1='240' x2='480' y2='240' stroke='#D1D5DB' stroke-width='1'/><rect x='140' y='180' width='90' height='60' fill='#94A3B8'/><text x='185' y='172' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='14' fill='#334155'>约 57 亿加仑<\/text><text x='185' y='260' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='13' fill='#1A1A1A'>2014<\/text><rect x='310' y='60' width='90' height='180' fill='#0E7490'/><text x='355' y='52' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='14' font-weight='bold' fill='#0E7490'>约 170 亿加仑<\/text><text x='355' y='260' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='13' fill='#1A1A1A'>2023<\/text><text x='260' y='288' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='12' fill='#B45309'>其中超过 80% 消耗在场外发电环节，不在机房<\/text><\/svg>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "The Register 报道",
+       "url": "https://www.theregister.com/on-prem/2026/08/24/us-datacenters-tripled-their-water-footprint-in-10-years/5291564"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-03",
+     "section": "数据素材",
+     "title": "同一件事三份民调：70%、61%、45%——差的不是民意，是问法",
+     "facts": "<p>美国人到底有多反对家门口建数据中心？今年有三份调查，数字差了 25 个百分点。<\/p><p><b>盖洛普<\/b>：<b>70%<\/b> 反对在自己所在地区建 AI 数据中心，其中 <b>48%<\/b> 是「强烈反对」。执行方 Recon MR，随机抽样 <b>1000<\/b> 名成年人，调查期 <b>2026 年 3 月 2 日至 18 日<\/b>。<\/p><p><b>宾大安纳伯格公共政策中心<\/b>：<b>61%<\/b> 反对（强烈反对 44%，有点反对 16%）。全国代表性样本 <b>1320<\/b> 名美国成年公民，调查期 <b>2026 年 6 月 16 日至 7 月 19 日<\/b>。30 岁以下反对率最高，<b>70%<\/b>；65 岁以上降到 <b>57%<\/b>。<\/p><p><b>Morning Consult<\/b>：<b>45%<\/b> 支持「立法禁止本地建数据中心」，这是自去年 11 月以来第一次支持禁令的人超过反对禁令的人。<\/p>",
+     "sides": "<p><b>关键区别在问法，不在人心变了。<\/b>盖洛普和安纳伯格问的是「你反不反对建」，Morning Consult 问的是「你支不支持立法禁建」。「我不想要」和「我要立法禁掉」是两码事，前者永远比后者高。<\/p><p><b>时间也不一样<\/b>：盖洛普是 3 月的场，安纳伯格横跨 6 到 7 月，Morning Consult 是 8 月。三者中间隔了半年。<\/p><p><b>口径不明的那一份<\/b>：Morning Consult 这组数字，转载文章里<b>没有公布样本量、字段日期和误差范围<\/b>，只说是「追踪数据」。要引用就必须写明这一点。<\/p><p>Morning Consult 那份还给了理由分布：支持禁令的人里，<b>48%<\/b> 提电费涨、<b>45%<\/b> 提用水、<b>42%<\/b> 提电网压力；另有 <b>46%<\/b> 的选民认为 AI 扩张推高了水价，比去年 10 月涨了 <b>14 个百分点<\/b>。<\/p>",
+     "angle": "<p>这是一期专门讲「怎么读民调」的绝佳素材，而且不需要你懂统计。你可以从「三个数字打架」开门，然后把问法一亮，答案自己就出来了。<\/p><p><b>千万别把 70、61、45 画进同一张柱状图。<\/b>口径不同，画一起就是自己给自己挖坑。要做视觉就做三栏对照表，每栏顶上写清「问的是什么」「谁做的」「多少人」「什么时候」。这张表本身就是内容。<\/p><p>做成短帖也行：一句话结论——「反对建 ≠ 支持禁建，中间隔着一整个立法程序」。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "盖洛普",
+       "url": "https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx"
+      },
+      {
+       "label": "安纳伯格调查",
+       "url": "https://www.annenbergpublicpolicycenter.org/opposition-to-local-data-centers-rises-sharply-annenberg-survey-finds/"
+      },
+      {
+       "label": "Morning Consult 追踪（转载）",
+       "url": "https://www.tampafp.com/new-poll-voter-opposition-to-local-ai-data-centers-hits-high-amid-rising-utility-concerns/"
+      }
+     ],
+     "source_date": "2026-08-19"
+    },
+    {
+     "id": "ev-04",
+     "section": "反共识",
+     "title": "把恶意指令加密了再放到网页上，Grok 会自己解开来执行——报了两个半月还没修",
+     "facts": "<p>安全公司 Adversa AI 演示了一种新玩法：把攻击指令用 AES-256-GCM 加密，连着密钥一起藏在网页里。安全扫描器解不开密文，就放行了。模型拿到之后，在自己的代码沙箱里把它解开，然后当成自己的工具输出照做。<\/p><p>结果是 Grok 会带着用户的<b>姓名、大致位置、订阅等级和完整聊天记录<\/b>去访问攻击者的网址，数据直接拼在 URL 参数里。<\/p><p>时间线很难看：<b>6 月 3 日<\/b>通过 HackerOne 和直接渠道都报给了 xAI，<b>8 月 4 日<\/b>和 <b>8 月 10 日<\/b>两次追问，到 <b>8 月 19 日<\/b>在 Grok.com 上照样能打通。<\/p><p>大约 <b>20 次<\/b>尝试里成功率约 <b>四成<\/b>。失败的原因是解密没成功，不是被防注入机制拦下来了。<\/p>",
+     "sides": "<p><b>研究方（Adversa AI，负责人 Rony Utevsky）说<\/b>：过滤器只检查进模型和出模型的文本，不看中间那段代码执行的输出——解开的指令正好活在这个盲区。同一招在 Google Gemini 上也绕过了安全过滤，套出了燃烧装置的制作说明；不过 Gemini 没有外网访问权限，所以数据带不出去。<\/p><p><b>xAI 那边<\/b>：确认收到了报告，但没给修复时间表，后续追问没有回应。<\/p><p><b>需要区分的<\/b>：漏洞机制、时间线、成功率都是研究方给的，Register 做了独立核实报道；「为什么会这样」那部分是研究者的推测，还不是被验证的结论。<\/p>",
+     "quotes": [
+      {
+       "en": "An attacker ships ciphertext along with the key material and an instruction to decrypt it, and the model runs that decryption inside its own code execution sandbox.",
+       "zh": "攻击者把密文、密钥、还有一句「解开它」一起送过去，模型就在自己的代码沙箱里把这段解密跑了。",
+       "by": "Rony Utevsky，Adversa AI"
+      }
+     ],
+     "angle": "<p>这条的看点不是「Grok 又出事了」，是那句「过滤器不看中间层」。所有带代码沙箱的 agent 都有这个结构，Grok 只是第一个被公开做实的。<\/p><p>你可以从「防注入其实防的是文本，不是行为」这个角度切，标题写「加密一下就能骗过去：AI 的安全护栏只看门口不看厨房」。<\/p><p>建议顺手把时间线做成一张图——6 月 3 日报告、8 月 4 日追问、8 月 10 日再追、8 月 19 日仍可复现。这条时间线比技术细节更有传播力。别去复述攻击步骤。<\/p>",
+     "platforms": [
+      "短帖",
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/20/grok-chat-duped-into-swallowing-injected-instructions/5290019"
+      },
+      {
+       "label": "Adversa AI 原文",
+       "url": "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "ev-05",
+     "section": "反共识",
+     "title": "Canonical 出钱研究「让 AI 把 C 翻成安全的 Rust」，同一周的论文说：类级别根本翻不动",
+     "facts": "<p>Canonical（Ubuntu 背后的公司）联合英国研究与创新署（UKRI），资助布里斯托大学一个<b>三年期<\/b>博士课题：研究大模型能不能把大型 C 代码库翻成安全的 Rust。做法是先把<b>几十万行<\/b> C 拆成小块，再逐块重写。<\/p><p>试验对象已经点名了两个：<b>snap-confine<\/b> 和 <b>AppArmor<\/b>。<\/p><p>Canonical 的理由是，现有的自动翻译器太贴着 C 的结构走，翻出来一堆 unsafe，C 的怪习惯全留着，还得人工大改。<\/p><p>巧的是，同一周 arXiv 上出了篇实证研究（2608.20776），系统比了学习型方法、基于大模型的方法和通用大模型。结论：方法级别翻译，大模型确实赢；<b>类级别<\/b>就难得多——要保住全局语义、接口、成员关系和跨方法依赖。主要拦路虎是静态语义错误和逻辑错误。<\/p>",
+     "sides": "<p><b>Canonical 一方<\/b>：这是三年研究课题，不是产品承诺，也没给任何成功率。<\/p><p><b>怀疑一方<\/b>：The Register 的开源版直接说「深表怀疑」，理由是——把大代码库拆成可管理的小块，本身可能就是个不可计算问题，跟停机问题一个性质。文章还搬出 Joel Spolsky 2000 年那篇经典：成熟代码里埋着大量没写进文档的知识，每一个丑陋的补丁背后都是一个真实世界的边角情况，重写会把它们一起扔掉。<\/p><p><b>论文一方<\/b>：不否定可行性，只是把难度分了层——方法级别有戏，类级别是另一回事。这跟 Canonical「先拆小块」的思路正好对上：拆得越碎越好翻，但拆碎之后全局语义谁来管，没人回答。<\/p>",
+     "angle": "<p>这条的价值在于「同一周两个信号方向相反」，特别适合做成一条不长的图文：左边是钱和三年期课题，右边是论文的分层结论和那句「停机问题」。<\/p><p>你可以从「拆得越小越好翻，但拆碎了之后呢」这个矛盾点切进去。别写成「AI 要淘汰 C 了」——离得太远。也别写成「这事不可能」——论文明确说方法级别是work 的。<\/p><p>如果要延伸，Joel Spolsky 那篇《你永远不该做的事》正好可以带出来，是老读者的爽点。<\/p>",
+     "platforms": [
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/software/2026/08/24/canonical-backs-quest-to-translate-mountains-of-c-into-safe-rust-with-ai/5290959"
+      },
+      {
+       "label": "代码翻译实证研究",
+       "url": "https://arxiv.org/abs/2608.20776"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-06",
+     "section": "数据素材",
+     "title": "Hacker News 首页有 19% 是 AI 写的——而且这个数字每月都在涨",
+     "facts": "<p>有人拿检测工具 Pangram 把 Hacker News 首页扫了一遍。<b>8 月<\/b>共分析 <b>1881 篇<\/b>文章，跨 <b>31 天<\/b>、来自 <b>1142 个<\/b>不同域名。<\/p><p>结果：<b>365 篇<\/b>被判为 AI 生成，占 <b>19%<\/b>。7 月是 <b>17%<\/b>，一个月涨了 <b>2 个百分点<\/b>。<\/p><p>日滚动平均在 <b>17% 到 25%<\/b> 之间波动，最高点出现在 <b>8 月 4 日<\/b>。<\/p>",
+     "sides": "<p><b>发布方<\/b>：个人项目（Salah Adawi 的 HN AI Detector），不是机构研究。<b>样本<\/b>：HN 首页文章，1881 篇。<b>工具<\/b>：Pangram。<\/p><p><b>最大的口径问题<\/b>：AI 检测器本身的准确率没有公开，判定阈值也没写。所有 AI 文本检测工具都有误判——尤其对英语非母语者写的规整文章。这个 19% 应该读成「Pangram 判定为 AI 的比例」，不是「实际是 AI 写的比例」。<\/p><p><b>还有一层<\/b>：「AI 生成」和「AI 润色」在检测器眼里往往是一回事。作者自己写完让模型改一遍语法，也可能进这 19%。<\/p>",
+     "angle": "<p>这条最好的用法不是「HN 沦陷了」，是「AI 检测器到底在测什么」。你可以从「19% 这个数字，比它测出来的现象更值得聊」切进去。<\/p><p>做趋势图的话，只画 7 月 17% → 8 月 19% 这一条线，两个点，别硬凑。图上一定要把「检测工具判定」这几个字写进标题里，不然读者会当成事实统计。<\/p><p>建议做成短帖，配一句：「这是检测器的判断，不是真相——而检测器自己也不敢公布准确率。」<\/p>",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "HN AI Detector 月报",
+       "url": "https://www.salahadawi.com/hacker-news-ai-detector/monthly/2026-08"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-07",
+     "section": "反共识",
+     "title": "AI 裁员正在回滚：32% 的岗位又招回来了，55% 的老板说当初做错了",
+     "facts": "<p>两份不同的调查，指向同一件事。<\/p><p><b>Robert Half<\/b>（人力资源公司）问了近 <b>2000<\/b> 名美国招聘经理：因为 AI 砍掉岗位的人里，<b>32%<\/b> 后来又把同样或类似的岗位招回来了。分行业看，金融 <b>44%<\/b>、人力 <b>35%<\/b>、技术 <b>32%<\/b>。<\/p><p><b>Orgvue<\/b>（人力规划公司）的数字：<b>39%<\/b> 的企业领导因为 AI 裁过人，其中 <b>55%<\/b> 后来承认那是个错误决定。<\/p><p>具体案例也有：福特三年里回聘和晋升了 <b>350 多名<\/b>资深工程师，因为自动化质检系统接不住老工程师那套经验；澳洲联邦银行 2025 年 7 月用语音机器人换掉 <b>45 个<\/b>客服岗，同年 <b>8 月 21 日<\/b>撤回，银行自己的说法是「判断有误，这些岗位并不多余」。<\/p>",
+     "sides": "<p><b>支持「AI 裁员在回滚」的一方<\/b>：上面这些数字，加上 Gartner 的预测——到 2027 年，把裁员归因于 AI 的公司里会有一半重新招回类似的活，只是换个岗位名字。<\/p><p><b>必须打的折扣<\/b>：这两份调查都是<b>人力资源服务商自己做的<\/b>，他们卖的就是招聘服务，天然有动机凸显「AI 裁员会翻车」。样本量 Robert Half 写了（近 2000 名招聘经理），Orgvue 那个 39%/55% <b>没有公开样本量和调查期<\/b>——这一点必须标出来。<\/p><p><b>还有一个陷阱<\/b>：32% 和 55% 不能放一起说成「回滚率」。前者是「岗位被重新招回」的比例，后者是「领导事后后悔」的比例，分母不同、口径不同。<\/p><p><b>IBM 那个例子要小心<\/b>：常被引用的说法是 AI 处理了 <b>94%<\/b> 的常规 HR 请求，剩下 <b>6%<\/b> 涉及伦理判断需要人。这是「AI 干得不错但有边界」，不是「AI 失败了」，别拿来当翻车案例。<\/p>",
+     "angle": "<p>国内读者对这类题的胃口很大，但也最容易被喂假的。你的差异化就在于把口径拆开讲——「32% 和 55% 说的不是一件事，而且这两份问卷是招聘公司做的」。<\/p><p>建议标题克制一点，比如「AI 裁掉的人正在被招回来，但数字没有你看到的那么爽」。别用「AI 裁员大翻车」这种，一查就露。<\/p><p>做视频的话，福特和澳洲联邦银行这两个具体案例最好用——有明确的人数、时间和官方表态，比百分比稳得多。<\/p>",
+     "platforms": [
+      "长文",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "IBTimes 汇总",
+       "url": "https://www.ibtimes.co.uk/ai-layoffs-reversed-companies-rehire-staff-1806357"
+      },
+      {
+       "label": "CNBC 报道",
+       "url": "https://www.cnbc.com/2026/07/01/employers-who-laid-off-workers-for-ai-are-reversing-their-decisions"
+      }
+     ],
+     "source_date": "2026-07-01"
+    },
+    {
+     "id": "ev-08",
+     "section": "圈内暗流",
+     "title": "AI 自动化公司 Relay 关停，团队进了 Google Chrome——付费用户 9 月 14 日断供",
+     "facts": "<p>Relay 是 2021 年成立的 AI 工作流自动化公司，一直被当成「Zapier 的挑战者」。现在关了。<\/p><p>创始人兼 CEO Jacob Bank 去 Google Chrome 团队当产品副总裁，回到了他六年前离开的公司。几个 Relay 的人跟着一起走。<\/p><p>用户的时间表：免费用户 <b>8 月 15 日<\/b>已经断了，付费用户 <b>9 月 14 日<\/b>断。7 月就先放了风。<\/p><p><b>Google 没有收购这家公司<\/b>，只是把人招走了。Relay 的客户得自己找地方搬工作流。<\/p>",
+     "sides": "<p><b>公司一方<\/b>：这是团队去了更大的舞台，创始人回归老东家做 Chrome 的 AI。<\/p><p><b>用户一方<\/b>：付费客户拿到的是一个断供日期，公司实体还在但产品没了，没有收购方接盘，也就没有人对数据迁移负责。<\/p><p><b>这个结构值得单独说<\/b>：不是收购（acquisition），是「人才收购」（acquihire）——买人不买公司。区别在于，收购通常伴随资产和责任的转移，招人不伴随。这几年 AI 圈这类交易越来越多。<\/p>",
+     "angle": "<p>这条别当成八卦写，写成「你在用的 AI 工具，明天可能只剩一封邮件」这个角度更有价值。<\/p><p>可以顺手拉一条清单：过去半年被「买人不买公司」处理掉的 AI 产品有哪些，用户拿到多长的缓冲期。今天早报里那条 InstantDB 四个人进 OpenAI、产品当场定死亡日期 2027 年 8 月 31 日，正好是同一个模式的另一个样本——两条并排，结构一目了然。<\/p><p>建议做成短帖或图文，别写长文，这题的信息密度撑不住 3000 字。<\/p>",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "ev-09",
+     "section": "行业痛点",
+     "title": "估价软件宣称「省 82% 的时间」，用户在论坛里说：AI 那部分基本不能用",
+     "facts": "<p>美国房产估价师论坛上有个帖子在聊 Aivre 这款估价报告软件，年费 <b>2000 到 3000 美元<\/b>。厂商的宣传是：报告时间<b>压缩 82%<\/b>。<\/p><p>论坛里的实际反馈是另一回事。有人说「省时间的前提是你把他们所有小工具都用上」（6 月 23 日）。另一位估价师 TerryRohrer 说得更直接：AI 不好使，自动填的数据得大改一遍才能用；而且承诺的手机 App 根本不存在（6 月 24 日）。<\/p><p>还有个致命限制：它只支持 <b>UAD 3.6<\/b> 表单，<b>不支持 2.6<\/b>。要做别的表单，你得再买一套软件。发帖人知道后回了一句：「那就算了。」<\/p>",
+     "sides": "<p><b>厂商说<\/b>：省 82% 的时间，有竞品没有的工具。<\/p><p><b>用户说<\/b>：82% 的前提条件没写在宣传里；AI 自动录入的数据要人工复核和大幅修改；表单格式覆盖不全。<\/p><p><b>也有正面的<\/b>：有用户认可它的「护栏」和不用来回复制粘贴的可比案例库（7 月 24 日）。所以不是一无是处，是宣传和实际之间有一段距离。<\/p><p><b>最扎心的一条<\/b>：一位叫 Tom D 的用户回了句冷笑话——报告时间砍 82%，收入也跟着砍 82%（7 月 24 日）。这是按件计费行业的普遍恐惧，不是数据。<\/p>",
+     "angle": "<p>这条的价值不在估价行业，在那个「82%」。所有垂直行业 AI 软件的宣传都长这样：一个漂亮的百分比，附加条件写在很小的字里。<\/p><p>你可以做一期「行业 AI 软件宣传语翻译指南」，从这个 82% 开门，讲清楚三件事：这个数字的分母是什么、达到它需要什么前提、达到之后你的收入怎么算。<\/p><p>建议做长文或视频，因为这题需要举好几个行业的例子才立得住。别只做估价这一个行业，国内读者没感觉。<\/p>",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "AppraisersForum 讨论",
+       "url": "https://appraisersforum.com/forums/threads/anyone-using-aivre.242764/"
+      }
+     ],
+     "source_date": "2026-07-24"
+    },
+    {
+     "id": "ev-10",
+     "section": "小众科技",
+     "title": "有人把可执行文件直接做成了 SQLite 数据库——chmod +x 就能跑",
+     "facts": "<p>这个项目叫 SELF（SQLite Executable and Linkable Format）。不是「用数据库描述可执行文件」，是那个文件本身就是一个 SQLite 数据库，你 <code>chmod +x<\/code> 然后直接运行。<\/p><p>做法：借 SQLite 的 4 字节 <code>application_id<\/code> 字段打上 <b>SELF<\/b> 标记，再靠 Linux 的 <code>binfmt_misc<\/code> 让内核认它。数据库里就两张核心表——<code>segments<\/code> 存段（可加载字节作为 BLOB），<code>symbols<\/code> 存符号并建索引。剩下的节、注释、动态项都是可选表，删了就是 stripped 版本。<\/p><p>体积数据：单个二进制大约<b>翻倍<\/b>；stripped 过的 coreutils 跟 ELF 差距在 <b>1% 以内<\/b>。整个用户态一起算——<b>723 个<\/b>可执行文件加 <b>400 个<\/b>库，SELF 是 <b>611.9 MiB<\/b>，原来的 ELF 是 <b>644.4 MiB<\/b>，反而更小。<\/p><p>启动开销约 <b>5 毫秒<\/b>固定成本，再加上跟镜像大小成正比的拷贝时间。<\/p>",
+     "sides": "<p><b>作者的论点<\/b>：ELF 本来就是一个数据库，只是自己重新发明了一遍字符串驻留、索引和外键，还发明得不好。换成 SQLite 之后，schema 自描述，能直接查，扩展也方便。<\/p><p><b>能力上的实际好处<\/b>：把一个可执行文件和它的依赖打包进同一个数据库，soname 歧义可以用外键消掉；改 <code>LD_PRELOAD<\/code> 可以放进事务里做成原子操作。<\/p><p><b>这是个人实验，不是生产方案<\/b>。作者自己也没宣称要取代 ELF。<\/p>",
+     "quotes": [
+      {
+       "en": "ELF is already a database.",
+       "zh": "ELF 本来就是个数据库。",
+       "by": "Farid Zakaria，《Your Executable Is a SQLite Database》"
+      }
+     ],
+     "angle": "<p>这题特别适合做「奇思妙想」类的图文，不需要读者懂 ELF。核心一句话就够：「你电脑里每个程序，其实都是一个格式很烂的数据库——那不如换个好的。」<\/p><p>那组体积数字是全文最好的钩子：单个文件翻倍，但整个系统反而小了 32 MiB。这个反直觉结果一讲就懂，因为共享的东西不用存两遍。<\/p><p>建议只做这一层，别深挖动态链接的实现细节，会劝退。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://fzakaria.com/2026/08/23/your-executable-is-a-sqlite-database"
+      }
+     ],
+     "source_date": "2026-08-23"
+    },
+    {
+     "id": "ev-11",
+     "section": "小众科技",
+     "title": "2001 年的《半条命》启动器被逆出来了——95% 是 LLM agent 干的，用了两个月",
+     "facts": "<p>有人把 2001 年 9 月的《半条命》WON 版启动器（build 1792）整个复刻成了源码。作者自己写在项目页上：<b>95%<\/b> 靠大模型和 agent 编排完成，耗时<b>两个月<\/b>。<\/p><p>没有调试符号可用，线索全靠拼：RTTI 里挖类名，NetGame.exe 里挖文件名，靠链接器的排序规律推文件顺序，再对上 Quake 源码的重合部分。<\/p><p>产物不止一个 hl.exe，还包括一个 WON 服务器模拟器 wonserverd.exe——因为真的 WON 服务器早就关了，作者只能自己搭一个来验证聊天室和联机列表这些功能到底对不对。<\/p><p>顺手还修了原版的毛病：全屏、窗口标题栏、更多分辨率、鼠标滚轮、列表键盘导航、记住窗口位置。<\/p>",
+     "sides": "<p><b>「95%」这个数字是作者自述<\/b>，没有第三方复核，也没有说明怎么算的——是代码行数占比、时间占比，还是感觉？做内容的时候别把它当成硬指标。<\/p><p><b>验证方式的局限<\/b>：因为原服务器已经不存在，很多功能只能靠作者自己写的模拟器验证，属于「自己出题自己批」。视觉上对得上，不等于行为完全一致。<\/p><p><b>但方法论是真的有意思<\/b>：在没有符号、没有文档、连服务端都消失了的情况下，靠多路间接线索交叉推断——这套活人也是这么干的，只是慢得多。<\/p>",
+     "angle": "<p>昨天晚报有条「本地 27B 模型半小时逆出商业软件授权校验」，这条是同一条脉络上的另一个极端：不是半小时的小活，是两个月的考古工程。<\/p><p>你可以把两条串起来做一期，主题叫「逆向工程正在变成一件不那么难的事」。中间的转折点就是：以前逆向最贵的是耐心，现在耐心可以外包了。<\/p><p>提醒一句：写的时候把「95%」标成作者自述，别当客观数据用。这是这条唯一的风险点。<\/p>",
+     "platforms": [
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "项目页",
+       "url": "https://github.com/oxiKKK/re-goldsrc-won-launcher-1792"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-12",
+     "section": "工作流工具",
+     "title": "他不写提示词了，改写伪代码：存成文件、改哪儿生成哪儿",
+     "facts": "<p>一个叫 Huzzah 的实验性编辑器，今天在 Show HN 拿了 <b>382 分、209 条评论<\/b>。<\/p><p>它的做法是：你写伪代码，存成 <code>.hz<\/code> 文件。一保存，Huzzah 就生成真代码。要改的时候，你改伪代码，它抓 diff，拿这个 diff 当提示词，只重新生成受影响的那部分。<\/p><p>作者的对比说得很清楚：用编码 agent 时，提示词是<b>长篇的、命令式的、用完就没的<\/b>；用 Huzzah，提示词是<b>伪代码的、声明式的、存下来的<\/b>。<\/p><p>作者说他做这个是因为用了几个月 agent 之后，写长段英文写累了，但又想保住对代码质量的控制，还想觉得自己是个专业的人。<\/p>",
+     "sides": "<p><b>支持这个方向的理由<\/b>：伪代码是人写的，所以它天然就是开发文档——记录的是意图，不是结果。而聊天记录不是文档，翻回去看没人受得了。<\/p><p><b>怀疑的地方<\/b>：作者自己说这东西「目前只处于实验状态」。伪代码到底要写多细才够生成正确的代码，这个边界没人验证过。写得太粗，模型自由发挥；写得太细，那就是在写代码了，只是换了种语法。<\/p><p><b>没有任何量化数据<\/b>——没有速度对比，没有正确率，没有用户规模。这是一篇想法文章，不是产品评测。<\/p>",
+     "quotes": [
+      {
+       "en": "With coding agents, prompts are (a) longform, (b) imperative, and (c) transient. With Huzzah, prompts are (a) pseudocode, (b) declarative, and (c) persistent.",
+       "zh": "用编码 agent，提示词是（a）长篇的、（b）命令式的、（c）一次性的。用 Huzzah，提示词是（a）伪代码、（b）声明式的、（c）持久的。",
+       "by": "Daniel Vaughn，Huzzah 作者"
+      },
+      {
+       "en": "The pseudocode acts as developer documentation because a human wrote it to express their intent.",
+       "zh": "伪代码本身就是开发文档——因为它是人写的，写的是意图。",
+       "by": "Daniel Vaughn"
+      }
+     ],
+     "angle": "<p>这条是今天「提示词工程」话题里最有嚼头的一个。你可以从一个很具体的痛点切进去：<b>你跟 AI 聊了三小时改出来的代码，明天早上你想不起来为什么那样改。<\/b>Huzzah 解决的就是这个。<\/p><p>建议做成短视频或图文，重点讲「持久 vs 一次性」这一组对比，别去深挖工具本身——它还在实验状态，写深了会过时。<\/p><p>顺手可以问读者一句：你现在的提示词存在哪？大多数人的答案是「不存」，这就是选题的落点。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "作者原文",
+       "url": "https://www.danielvaughn.dev/posts/huzzah/"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-13",
+     "section": "提示词",
+     "title": "一条只有一句话的技能：「等下，我没听懂，你重讲一遍」",
+     "facts": "<p>mattpocock 的技能库里有个叫 <code>wait-what<\/code> 的文件，正文只有一句话。它的作用是：当模型讲的东西你没听懂，你按一下这个，它就得换种方式重讲。<\/p><p>三个要求写得很具体：先给一点背景；用 <b>ASD-STE100 简化技术英语<\/b>（航空维修手册的写作规范）；用项目文档里的统一术语。<\/p><p>还有个细节值得注意：<code>disable-model-invocation: true<\/code>——这条只能你自己按，模型不许自己触发。<\/p>",
+     "prompt_en": "---\nname: wait-what\ndescription: \"Stop. That last message did not land: re-pitch it.\"\ndisable-model-invocation: true\n---\n\nWait, I don't understand where you've got to here. Re-pitch that: give me a little bit of context, talk in ASD-STE100 Simplified Technical English, and use the ubiquitous language from `CONTEXT.md` (follow `CONTEXT-MAP.md` to the right one if the repo has more than one).",
+     "prompt_zh": "【元信息段】\nname: wait-what（名字：等下，什么）\ndescription:「停。刚那条没讲明白：重新说一遍。」\ndisable-model-invocation: true（禁止模型自行调用——只能由用户手动触发）\n\n【正文，只有一句】\n等下，我没跟上你到底讲到哪了。重讲一遍：给我一点背景，用 ASD-STE100 简化技术英语（Simplified Technical English，航空维修文档的受控写作规范）来说，并且使用 `CONTEXT.md` 里的统一术语（ubiquitous language，领域驱动设计里指全团队共用的一套词；如果这个仓库里有多份，就照 `CONTEXT-MAP.md` 找到对的那一份）。",
+     "sides": "<p>值得留意的是那句 <code>disable-model-invocation: true<\/code>。作者刻意不让模型自己判断「用户是不是没听懂」——这个判断权留给人。因为模型自己触发的话，它会在你没问的时候不停地重讲，反而更烦。<\/p>",
+     "angle": "<p>这条最适合做「拿来就能用」的短帖。你完全可以把它改写成中文版给读者，比如：「等下，这段我没跟上。重讲：先给背景，用短句，一句话只说一件事，术语用我们之前定过的那套。」<\/p><p>更值得聊的是背后那个设计判断：<b>什么该由人触发，什么该由模型自己触发。<\/b>这是当前所有 agent 设计里最容易做错的一件事。你可以从这条一句话的技能切进去，讲一个不小的道理。<\/p>",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原文件",
+       "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/wait-what/SKILL.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-14",
+     "section": "提示词",
+     "title": "「原型是用来回答一个问题的一次性代码」——第一步不是写，是先想清楚在问什么",
+     "facts": "<p>同一个技能库里的 <code>prototype<\/code>，开头一句就把定义钉死了：<b>原型是回答一个问题的一次性代码，问题决定形态。<\/b><\/p><p>然后它逼模型先分岔：你在问「这套逻辑/状态模型对不对」，还是在问「这东西该长什么样」？<b>两条岔路产出的东西完全不同，分错了整个原型就白做。<\/b><\/p><p>后面六条规则，条条针对人容易犯的错：<b>第一天就当扔的写<\/b>、<b>一条命令能跑起来<\/b>、<b>默认不做持久化<\/b>、<b>不做打磨<\/b>、<b>每一步都把状态打出来<\/b>、<b>做完要归档<\/b>。<\/p>",
+     "prompt_en": "---\nname: prototype\ndescription: Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.\n---\n\n# Prototype\n\nA prototype is **throwaway code that answers a question**. The question decides the shape.\n\n## Pick a branch\n\nIdentify which question is being answered, using the user's prompt, the surrounding code, or by asking if the user is around:\n\n- **\"Does this logic / state model feel right?\"** → [LOGIC.md](LOGIC.md). Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive.\n- **\"What should this look like?\"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar.\n\nThe two branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend module → logic; a page or component → UI) and state the assumption at the top of the prototype.\n\n## Rules that apply to both\n\n1. **Throwaway from day one, and clearly marked as such.** Locate the prototype code close to where it will actually be used (next to the module or page it's prototyping for) so context is obvious, but name it so a casual reader can see it's a prototype, not production. For throwaway UI routes, obey whatever routing convention the project already uses; don't invent a new top-level structure.\n2. **Trivial to run.** A UI prototype starts from one command in the project's task runner: `pnpm <name>`, `python <path>`, `bun <path>`, etc. A logic demo is a single HTML file the user double-clicks. Either way, no thinking required to start it.\n3. **No persistence by default.** State lives in memory. Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear \"PROTOTYPE, wipe me\" name.\n4. **Skip the polish.** No tests, no error handling beyond what makes the prototype _runnable_, no abstractions. The point is to learn something fast.\n5. **Surface the state.** After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.\n6. **Capture it when done.** Fold any validated decision into the real code, then capture the prototype itself as a **primary source**: commit it to a throwaway branch, out of main, and leave a context pointer to that branch on the implementation issue. Capture the answer too (the verdict and the question it settled) in the issue or a commit. The main branch keeps only the validated decision.",
+     "prompt_zh": "【元信息段】\nname: prototype（原型）\ndescription: 做一个一次性原型，用来回答一个设计问题。适用场景：用户想验证某个状态模型或某段逻辑是不是靠谱，或者想探索界面该长什么样。\n\n【标题】原型\n\n原型就是**用来回答一个问题的一次性代码**。问题决定它长什么样。\n\n【第一节：选岔路】\n\n先弄清楚要回答的是哪个问题——从用户的话里判断，从周围的代码里判断，或者干脆问用户（如果人在的话）：\n\n- **「这套逻辑 / 状态模型感觉对吗？」** → 走 LOGIC.md。做一个可以直接发给别人的单文件 HTML（自由点击的按钮，加上分标签页的引导式走查），把状态机推过那些纸上推不明白的情况，而且要让不写代码的人也能自己点。\n- **「这东西该长什么样？」** → 走 UI.md。在同一个路由上生成好几套差别极大的界面方案，用 URL 查询参数（search param）加一条浮动底栏来切换。\n\n这两条岔路产出的东西完全不同，选错了整个原型就白做。如果问题真的很模糊、用户又找不着，就看周围代码更像哪一边（后端模块 → 走逻辑；页面或组件 → 走界面），选完把这个假设写在原型最上面。\n\n【第二节：两条路都适用的规则】\n\n1. **第一天就当它是要扔的，而且要让人一眼看出来。** 原型代码放在它将来真正会被用到的地方旁边（挨着对应的模块或页面），这样上下文一目了然；但名字要起得让人随便一看就知道这是原型、不是生产代码。一次性的界面路由，按项目已有的路由约定来，别自己发明一套新的顶层结构。\n2. **跑起来要毫不费劲。** 界面原型：项目的任务执行器里一条命令就能起——`pnpm <名字>`、`python <路径>`、`bun <路径>` 之类。逻辑演示：一个 HTML 文件，用户双击就开。总之，启动它不需要动脑子。\n3. **默认不做持久化。** 状态就活在内存里。持久化恰恰是原型要*检验*的东西，不该反过来依赖它。如果问题本身就绕不开数据库，那就连一个临时库或本地文件，名字里明明白白写上「PROTOTYPE, wipe me」（原型，随时可删）。\n4. **不要打磨。** 不写测试，除了让原型能跑起来必需的之外不做错误处理，不做抽象。原型的意义是快速学到点东西。\n5. **把状态摊开给人看。** 逻辑原型每执行一个动作之后、界面原型每切换一次方案之后，都要把相关状态完整打印或渲染出来，让用户看见到底变了什么。\n6. **做完要归档。** 把验证过的结论并回真代码，然后把原型本身当成**一手材料**保存下来：提交到一个一次性分支上，别进主干，再在对应的实现 issue 上留一个指向该分支的上下文指针。结论也要记下来（判断是什么、它解决了哪个问题），写进 issue 或者 commit 里。主干上只留经过验证的那个决定。",
+     "angle": "<p>这份提示词最值钱的不是它教 AI 怎么做原型，是它把「做原型」这件事的纪律写成了可执行的条文。第 6 条尤其狠——大部分人做完原型就删了，结论只留在脑子里，三个月后重新踩一遍同一个坑。<\/p><p>你可以做一期「AI 时代怎么做原型」，主线就用这六条。每条配一个国内读者能共情的场景：「你是不是把原型代码直接改改就上线了」（第 1 条）、「你是不是原型里连了生产数据库」（第 3 条）。<\/p><p>建议做长文，配一张「六条规则」的图卡，转发率会不错。<\/p>",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原文件",
+       "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/prototype/SKILL.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-15",
+     "section": "论文",
+     "title": "给 agent 加记忆到底有没有用？180 道题跑下来，11.67% 对 53.89%",
+     "facts": "<p>一份叫 DreamBench-SWE 的新 benchmark（arXiv:2608.20664，<b>8 月 21 日<\/b>提交），专门测软件 agent 的「记忆卫生」。设计很刁：后面的任务要用到前面会话里的信息，而这些信息<b>推不出来<\/b>，只能记住；打分靠隐藏的可执行判题器。<\/p><p>预注册的复核实验，<b>180<\/b> 个测试用例，四种配置的成功率：完全没有外部记忆 <b>11.67%<\/b>；确定性的逐字事件记忆 <b>45.56%<\/b>；结构化加原文的参考探针 <b>46.11%<\/b>；某个托管版 Mem0 配置 <b>53.89%<\/b>。<\/p><p>论文 <b>67 页<\/b>，benchmark 和证据都公开在 GitHub（v2.1.0）。<\/p>",
+     "sides": "<p><b>作者自己划的边界特别值得抄<\/b>：这份实验支持「DreamBench-SWE 是一个有区分度的可执行剖面 benchmark」，并且刻画了那一个托管记忆配置。但它<b>不能<\/b>说明外部系统的作用机制，<b>不能<\/b>说明带记忆的几种方案之间谁更强，<b>不能<\/b>说明它们等价，也<b>不能<\/b>推广到产品层面。<\/p><p><b>换句话说<\/b>：11.67% → 53.89% 这个跳跃只能读成「有记忆比没记忆强很多」，不能读成「Mem0 比另外两个强」。45.56、46.11、53.89 这三个数字之间的差距，作者明确说了不构成优劣结论。<\/p><p><b>要打的折扣<\/b>：单一作者、67 页、预印本，尚未经过同行评议。<\/p>",
+     "angle": "<p>这条最好的用法是当反面教材：<b>一份论文自己写清楚了「我不能证明什么」，而这恰恰是绝大多数 benchmark 不写的部分。<\/b><\/p><p>你可以从「53.89% 打赢 45.56%，作者却说这不算赢」切进去，讲一件很实用的事：看到几个百分点的差距先别兴奋，先去找作者有没有说这个差距有意义。<\/p><p>建议只做这一个点，别去讲记忆架构的技术细节——读者不需要，而且论文自己都说了机制没搞清。<\/p>",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.20664"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "ev-16",
+     "section": "论文",
+     "title": "用自然语言写的工作流不算软件——把它编译一遍，任务完成率涨 28 个点",
+     "facts": "<p>普渡团队的新论文（arXiv:2608.21341，<b>8 月 21 日<\/b>）指出一个具体毛病：自然语言写的工作流，数据依赖往往是隐含的——执行器得自己猜「这一步该用前面哪个结果」。<\/p><p>他们做了个编译器叫 Artic，把自然语言工作流转成「以产物为中心」的版本：数据声明写明白，约束写明白，控制流转写明白。转换过程靠场景测试和局部义务检查来验证。<\/p><p>在 <b>11 个<\/b>真实工作流、<b>488 个<\/b>问题实例上：任务完成率比纯文本工作流高 <b>28 个百分点<\/b>；跨模型一致性高 <b>32 个百分点<\/b>；重复执行一致性高 <b>56 个百分点<\/b>。<\/p>",
+     "sides": "<p><b>这条结论跟这两天的另外几篇能串上<\/b>：早报那篇「工具静默失败是 agent 头号杀手」、「错误传两跳就认不出源头」，讲的都是同一件事的不同侧面——agent 不可靠的地方，很多不在模型，在任务描述本身太含糊。<\/p><p><b>数字口径<\/b>：三个提升幅度都是百分点（percentage point），不是相对提升，别写成「提升了 28%」。<\/p><p><b>局限<\/b>：11 个工作流不算多，且是作者自己挑的；预印本，未经同行评议；编译器本身也要用模型，它自己的错误率没在摘要里给。<\/p>",
+     "angle": "<p>这条的钩子是标题里那句「自然语言工作流还不算软件」。对做自动化的读者来说，这句话直接戳中痛处——他们手里那些 Notion 文档、SOP、提示词流程，看着像流程，其实每一步之间的依赖全靠人脑补。<\/p><p>你可以从「你写的那份 SOP，机器读不出第三步该用第一步还是第二步的结果」这个具体场景切进去，比讲编译器好懂十倍。<\/p><p>建议做图文，把「隐含依赖 vs 显式声明」画成两张小流程图对比。别做长文，论文的信息量撑不住。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.21341"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "ev-17",
+     "section": "论文",
+     "title": "agent 找对了故障服务，却讲不清故障怎么传过来的——3500 条诊断轨迹的结论",
+     "facts": "<p>一篇微服务根因分析的研究（arXiv:2608.21310，<b>8 月 21 日<\/b>）换了个评估方式：不看 agent 最后有没有指对故障服务，而是看它推理的整条<b>轨迹<\/b>，跟人工标注的服务级故障传播路径去比。<\/p><p>核心发现：<b>答案对不对<\/b>和<b>诊断质量好不好<\/b>是两回事。agent 经常指对了服务，却完全没还原出问题是怎么一层层传过去的。<\/p><p>他们分析了 <b>3500 条<\/b>诊断轨迹，总结出成功模式（守在受影响面上、按证据行动、逐步扩大查询范围）和失败模式（漏证据、读错数据、下无依据的推论）。<\/p><p>然后做了个叫 DiagGuard 的两阶段纵深防御：定位前先验证观测，定位后再审计诊断。在独立 benchmark 上，准确率从 <b>43.5% 提到 52.5%<\/b>。<\/p>",
+     "sides": "<p><b>这篇的方法论比结果重要<\/b>：如果只看终点准确率，很多失败会被掩盖——agent 蒙对了，指标就好看。轨迹级评估把「蒙对」和「想明白了」分开了。<\/p><p><b>要注意的口径<\/b>：43.5% → 52.5% 是在「独立 benchmark」上测的，作者自己造的轨迹数据集和这个测试集不是同一个。这一点做得比多数论文规矩。<\/p><p><b>局限<\/b>：故障传播路径是人工标注的，标注质量和一致性摘要里没说；预印本。<\/p>",
+     "angle": "<p>这条可以和 8 月 23 日晚报那条「同一个模型跑 20 遍全对，成功率从 65% 掉到 25%」放在一起做一期专题，主题叫「我们一直在用错误的方式给 agent 打分」。<\/p><p>三种测法排一排：只看一次答案、看 20 次都对、看整条推理路径——难度一层比一层高，分数一层比一层低。这个结构本身就很有说服力。<\/p><p>建议做长文，面向做 AI 产品的读者。做大众向的图文会太硬。<\/p>",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.21310"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "ev-18",
+     "section": "工作流工具",
+     "title": "火山引擎开源了个「agent 上下文数据库」：不搜向量，用 ls 和 find 翻目录",
+     "facts": "<p>OpenViking 是火山引擎开源的上下文数据库，本周 GitHub 涨了 <b>3799<\/b> 星，总数 <b>3.28 万<\/b>。协议 <b>AGPLv3<\/b>，没有功能阉割版。<\/p><p>它的做法反直觉：不做黑盒向量检索，而是给 agent 一个虚拟文件系统（<code>viking://<\/code>），agent 用 <code>ls<\/code>、<code>tree<\/code>、<code>find<\/code> 这些老命令去确定性地翻。检索路径可观测，出问题能查。<\/p><p>内容分三层加载省 token：<b>L0<\/b> 一句话摘要，用来判断相关不相关；<b>L1<\/b> 核心信息和用法；<b>L2<\/b> 才是完整原文。<\/p><p>官方给的数字：在长对话记忆任务 LoCoMo 上，三种 agent 接入后准确率都落在 <b>80–83%<\/b>，原生记忆是 <b>24–57%<\/b>；输入 token 降了 <b>34.3% 到 91.0%<\/b>。多轮任务 tau2-bench 上，成功率提高 <b>6.87 到 11.87 个百分点<\/b>。<\/p>",
+     "sides": "<p><b>这些是厂商自测数字，目前没有第三方复核。<\/b>尤其「24–57% → 80–83%」这个跨度，取决于对照组的原生记忆怎么配——配得弱一点，提升就好看。做内容时必须标明是官方数据。<\/p><p><b>设计上的取舍是真实的<\/b>：向量检索快但不可解释，目录翻查慢但看得见。哪个更好取决于你的场景——出了问题需要复盘的场景，可观测性值钱；纯问答场景，向量够用。<\/p><p><b>协议要留意<\/b>：AGPLv3 对商业集成有传染性，接进闭源产品之前得看清楚。<\/p>",
+     "angle": "<p>这条适合做工具介绍类的图文，但你的切入点应该是那个设计哲学，不是功能列表：<b>「让 agent 的记忆能被人肉眼检查」，这件事本身就是个立场。<\/b><\/p><p>可以联系今天早报那条 Claude Code 的「做梦」记忆整理——它第一条规矩是「不许通读聊天记录」。两边都在解决同一个问题：记忆不能是一坨看不懂的东西。<\/p><p>建议提醒读者两点：数字是官方自测；AGPLv3 别乱接。这两句话会让你的介绍比别人可信。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/volcengine/OpenViking"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-19",
+     "section": "科技资讯",
+     "title": "AI 厂商正在集体绕开英伟达的 GPU——推理这块已经分家了",
+     "facts": "<p>The Register 今天梳理了一条正在成型的趋势：推理和训练开始用不同的芯片。<\/p><p>Cerebras 靠 <b>44GB<\/b> 片上 SRAM 在推理侧占住了位置，出词速度比 GPU 集群快。最新的 CS-4 机架是三颗模块化芯片、时钟翻倍，<b>每颗 15 千瓦<\/b>。OpenAI 的 Codex 就跑在 Cerebras 上。<\/p><p>英伟达 2025 年花 <b>200 亿美元<\/b>买下 Groq，想把出词速度和 GPU 的走量推理捏一起，正面对上 Cerebras。<\/p><p>其他几家：Google 找了 Marvell 和博通做 TPU 的 IP 伙伴；Waymo 自己设计机器学习加速器，从 FPGA 转成 ASIC，为的是延迟和算力密度；AMD 也推了机架级系统。<\/p>",
+     "sides": "<p><b>Register 系统编辑 Tobias Mann 的判断<\/b>：从「什么都在一种芯片上做」变成「分到两种芯片上做」。<\/p><p><b>要小心的地方<\/b>：这是媒体综述，不是财报。市场份额、性能对比这些没给具体数字，「比 GPU 集群快」是定性描述，没有基准测试口径。<\/p><p><b>另一边的说法<\/b>：英伟达并没有在推理侧退场，买 Groq 本身就是补齐这一块。所以「绕开英伟达」是趋势描述，不是既成事实。<\/p>",
+     "quotes": [
+      {
+       "en": "There's been this shift away from trying to do everything on one kind of chip... to distributing it across two.",
+       "zh": "以前是想在一种芯片上把所有事都干了，现在慢慢变成分给两种芯片。",
+       "by": "Tobias Mann，The Register 系统编辑"
+      }
+     ],
+     "angle": "<p>这题在国内讲得少，因为大家的注意力都在「谁买了多少张卡」。但真正的变化是：<b>训练和推理正在变成两门生意，用两种芯片。<\/b><\/p><p>你可以从一个很具体的事实切进去：OpenAI 的 Codex 没跑在英伟达上。这一句就够开一篇。<\/p><p>建议只做「分家」这一个论点，别去做性能对比表——原文没给可核实的基准数据，你也拿不到。做成图文，画一张「训练一边、推理一边」的示意图就很够。<\/p>",
+     "platforms": [
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/24/ai-vendors-are-turning-to-custom-hardware-as-microsoft-winds-back-the-clock-on-windows/5291293"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-20",
+     "section": "跨界机会",
+     "title": "好莱坞跟字节签了第一份 AI 版权协议——不是打官司，是定框架",
+     "facts": "<p>字节跳动和美国电影协会（MPA，代表美国各大制片厂和流媒体的行业组织）签了份谅解备忘录，就生成式 AI 视频和图像模型的知识产权保护建了一套全球框架。<\/p><p>这是 <b>MPA 跟 AI 公司签的第一份协议<\/b>，时间是 <b>8 月 18 日<\/b>。<\/p><p>背景是这一年整个行业的转向：十二个月里，五大版权方里有四家从法庭对峙走到了签约。环球和 Udio 谈成了，2026 年要上一个能让用户混音和改编歌曲的 AI 音乐平台；华纳跟 Suno 和解并达成协议。<\/p>",
+     "sides": "<p><b>需要说清楚的<\/b>：谅解备忘录（MOU）不是具有强制执行力的合同，是框架性文件。具体条款、赔付机制、执行方式目前都没有公开。<\/p><p><b>支持方的说法<\/b>：这是从对抗走向合作的转折点，创作者能拿到补偿。<\/p><p><b>质疑方的说法<\/b>：签约的是版权方（唱片公司、制片厂），不是创作者本人。钱怎么分到具体的词曲作者和演员手里，这些协议里没写。这是过去一年音乐圈争议最大的一点。<\/p>",
+     "angle": "<p>对国内做内容的人来说，这条的实际意义是：<b>字节是签这份协议的那一方。<\/b>也就是说，好莱坞承认了它的 AI 视频模型是个需要正式谈判的对手，而不是随便就能起诉掉的小玩意。<\/p><p>你可以从这个角度切：「好莱坞第一次找 AI 公司谈判，谈判对象是字节。」这个事实本身比协议内容有意思。<\/p><p>建议做成短帖或图文。别去解读协议条款——MOU 没公开细节，解读就是编。如果要做长的，就往「版权方签约 ≠ 创作者拿钱」这条线上写，那才是真问题。<\/p>",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Variety 报道",
+       "url": "https://variety.com/2026/biz/news/motion-picture-association-deal-bytedance-ip-ai-seedance-1236836240/"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "ev-21",
+     "section": "小众科技",
+     "title": "一个专门收「不臃肿替代品」的网站：205 个项目，不埋追踪代码",
+     "facts": "<p>debloat.dev 是个社区目录，专门收开源的、不臃肿的替代品——替代那些厂商塞给你的臃肿软件。今天在 HN 上 <b>362 分、114 条评论<\/b>。<\/p><p>目前收了 <b>205 个<\/b>项目、<b>145 条<\/b>社区讨论。分类里外设最多（<b>39 个<\/b>），然后是笔记本和台式机（<b>25<\/b>）、音频（<b>21<\/b>）、网络（<b>21<\/b>）、智能家居（<b>20<\/b>），最少的是摄像头（<b>13<\/b>）。<\/p><p>网站自己写着：<b>不追踪、不放 cookie<\/b>（登录才放一个），服务端渲染。看内容不用登录，发布和评分才要。<\/p>",
+     "sides": "<p><b>这类目录的老问题<\/b>：收录标准是社区投票，不是评测。「不臃肿」是个主观判断，205 个项目里的质量差异会很大。<\/p><p><b>没有公开维护方<\/b>：页脚只写了「© 2026 debloat.dev」，没有具体的人或组织。这对一个推荐软件的站点来说是个减分项——你不知道推荐背后有没有利益关系。<\/p><p><b>但它踩中的需求是真的<\/b>：昨天晚报那条「有人用 Rust 重写罗技驱动，不用登录账号不上传数据」，本周涨了 <b>6078<\/b> 星——这个方向的用户情绪很足。<\/p>",
+     "angle": "<p>这条的选题角度不该是「介绍一个网站」，该是「为什么一个反臃肿的目录站能在 HN 拿 362 分」。答案是：外设分类下有 39 个项目，说明大家最烦的是买了个鼠标还要装 800MB 的驱动加账号系统。<\/p><p>你可以做一期「你家里哪些设备被厂商软件绑架了」，从这个目录里挑几个国内也用得上的替代品讲。实用性强，转发率高。<\/p><p>提醒一句：站点没有署名维护方，推荐的时候顺带说清楚，别背书太满。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "debloat.dev",
+       "url": "https://debloat.dev/"
+      }
+     ],
+     "source_date": "日期待核"
+    }
+   ],
+   "pitfalls": [
+    "<b>数据中心用水那个「2%」千万别引用。<\/b>原文没写清是「占全美总用水的 2%」还是「占数据中心自身用水的 2%」。前者按量级根本不成立（170 亿加仑对全美年用水量是万分之一量级），后者又跟「间接用水超 80%」对不上。只用「170 亿加仑」「十年翻三倍」「超八成在场外发电」这三个数。",
+    "<b>三份数据中心民调绝对不能放进同一张图。<\/b>盖洛普 70%、安纳伯格 61% 问的是「反不反对建」，Morning Consult 45% 问的是「支不支持立法禁建」。口径不同、时间不同（3 月 / 6-7 月 / 8 月）、执行方不同。画一起就是标准的伪对比。",
+    "<b>AI 裁员那两个数字分母不同。<\/b>Robert Half 的 32% 是「因 AI 裁员后又把岗位招回来的招聘经理比例」，Orgvue 的 55% 是「裁过人的领导里事后后悔的比例」。不能说「32% 回滚、55% 后悔」像是一个递进关系。另外 Orgvue 那份<b>没公开样本量和调查期<\/b>，引用必须写明。两份调查都是人力资源公司自己做的，天然有立场。",
+    "<b>IBM 那个 94%/6% 不是翻车案例。<\/b>它说的是 AI 处理了 94% 的常规 HR 请求、剩下 6% 需要人做伦理判断。这是「有边界地成功」，被很多二手文章当成「AI 失败了」来引。别跟着错。",
+    "<b>DreamBench-SWE 的 45.56%、46.11%、53.89% 之间不构成优劣结论。<\/b>作者在论文里明确写了：本研究不能建立带记忆的几种方案之间谁更强、也不能建立等价性。只能说「有记忆（45%+）远好过没记忆（11.67%）」。别拿 53.89% 去写「Mem0 最强」。",
+    "<b>Artic 那三个数字是百分点，不是百分比。<\/b>28、32、56 都是 percentage point。写成「完成率提升 28%」就错了，差别很大。同样，DiagGuard 的 43.5%→52.5% 也是绝对值变化。",
+    "<b>OpenViking 的 LoCoMo 成绩（24-57% → 80-83%）是厂商自测，无第三方复核。<\/b>对照组「原生记忆」怎么配置的没有公开细节——对照组配得弱，提升就好看。写的时候必须带上「官方数据」四个字。",
+    "<b>半条命启动器那个「95% 靠 LLM」是作者自述。<\/b>没说是按代码行数算、按时间算还是凭感觉，也没有第三方核实。而且验证靠的是作者自己写的服务器模拟器（原服务器早已关闭），属于自己出题自己批——视觉上对得上不等于行为一致。",
+    "<b>dbreunig 那组「GLM 5.2 是 Fable 的 1/9、Opus 5 的 1/5」是博主自己算的价格比，不是厂商公布口径。<\/b>不同模型的计价单位（输入/输出 token、缓存、批量折扣）差别很大，直接拿价格比当性价比结论会翻车。",
+    "<b>Hacker News「19% 是 AI 生成」是检测器的判定，不是事实统计。<\/b>Pangram 的准确率和判定阈值都没公开，而且所有此类工具都分不清「AI 生成」和「AI 润色」。标题里必须出现「检测工具判定」这几个字，否则一定被杠。",
+    "<b>Grok 那条的「四成成功率」样本只有约 20 次，且是研究方自测。<\/b>「过滤器不检查代码执行中间层」是研究者的推测（leading theory），不是已验证机制。这两点分开写。",
+    "<b>日期最容易写错的三处<\/b>：Grok 漏洞是 <b>6 月 3 日<\/b>上报、<b>8 月 19 日<\/b>仍可复现，不是 8 月才发现的；澳洲联邦银行是 <b>2025 年<\/b>的事（7 月裁、8 月 21 日撤回），别写成今年；CRS 报告的数据截止是 <b>2023 年<\/b>，那时候 AI 机房大扩张还没起来，别拿它描述「现在」。",
+    "<b>Relay 是「买人不买公司」（acquihire），不是被 Google 收购。<\/b>写成「Google 收购 Relay」是事实错误。区别在于收购伴随资产和责任转移，招人不伴随——这也正是用户被晾在那儿的原因。",
+    "<b>Canonical 那个 C→Rust 是三年期博士课题，不是产品，也没有任何成功率数字。<\/b>标题写成「Canonical 要用 AI 重写 Ubuntu」就是编。同时 The Register 自己表达了强烈怀疑，双方观点都要给。",
+    "<b>Aivre 的「省 82% 时间」是厂商宣传，且论坛用户指出前提是「把所有小工具都用上」。<\/b>引用这个数字必须带上前提条件，否则等于替厂商打广告。",
+    "<b>Huzzah 目前是实验状态，没有任何量化数据<\/b>——没有速度对比、没有正确率、没有用户规模。它是一篇想法文章。别写成「新工具实测」。",
+    "<b>MPA 和字节签的是谅解备忘录（MOU），不是有强制力的合同<\/b>，条款和赔付机制均未公开。任何对「协议内容」的解读都是猜。真正能写的是「签约方是版权方而不是创作者本人」这个结构问题。"
    ]
   }
  ]
