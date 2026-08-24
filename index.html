@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-24 11:25 (北京时间)",
+ "updated_at": "2026-08-24 13:36 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -14997,6 +14997,474 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "<b>am-01 的 FT 原文有付费墙。<\/b>本期事实主要来自可读部分和 HN 讨论页里的评论，引用 FT 的具体措辞前请以原文为准；HN 用户名和评论分数已核对。",
     "<b>am-17 那组 35.0% vs 10.5% 别读成「Claude Code 写的代码更烂」<\/b>——作者自己提示这个对比受 PR 本身特性和时间戳可得性限制。",
     "<b>今天是美国周日，当日首发的硬新闻本来就少。<\/b>本期有几条（am-06 schlarp、am-08 微软、am-18 Fire HD）是当天在 HN 爆发，但原文可能早一两天发出，写「今天」时请措辞为「当日热议」而非「今日发布」。"
+   ]
+  },
+  {
+   "id": "2026-08-24-noon",
+   "date": "2026-08-24",
+   "type": "noon",
+   "type_label": "午报",
+   "generated_at": "2026-08-24 12:00 (北京时间)",
+   "intro": "今天真正值得花时间的是两条：一个 logo 技能明令禁止你告诉模型「这是个 logo」，一句话提示词做出 3255 星的 3D 游戏、机关只有 blind 一个词。这两条都能今天下午就试。剩下的当素材库翻，论文那几条挑「可迁移那一层」看就行，别死磕原文。",
+   "highlights": [
+    "把用途写进生图提示词，是大多数人做图做不出感觉的原因——有个 3968 星的技能把这条写成了硬规则",
+    "「评分制每一轮都会往上飘」：所以那套 3255 星的提示词只让评审做二选一，还要撕掉标签",
+    "Anthropic 官方提示词里的一条绊线：模型发现自己在替请求找说法，这件事本身就是拒绝信号"
+   ],
+   "cards": [
+    {
+     "id": "nn-01",
+     "section": "提示词",
+     "title": "「绝对不许告诉画图模型这是个 logo」——5 天涨到 3968 星的技能，最狠的规则是反着来的",
+     "facts": "这个技能叫 ip-as-logo，专门生成吉祥物式的方形 IP 形象。它的核心规则是反的：生图提示词里绝对不许出现 <b>logo、brand mark、app icon<\/b> 这些词。理由很实在——模型一旦知道你要做标识，就会自动往「专业感」上滑，把那种笨拙可爱劲儿毁掉。<br>约束全是硬数字：轮廓只用 <b>4 到 7 个<\/b>大基本形，最多 <b>1 个<\/b>物种识别特征，最多 <b>2 块<\/b>内部色域，整张图恰好 <b>3 个<\/b>语义色，缩到 <b>32×32<\/b> 还得认得出。<br>六张候选的编号是个对照实验：A1/B1/C1 放左下角，A2/B2/C2 放右下角，每个方向左右各测一次。<br>最后一节更反潮流——明令禁止 agent 检查自己的输出：不许拦交付、不许标推荐、不许自动重试、不许后期修图。SKILL.md 全文 <b>114 行<\/b>，仓库 5 天涨到 <b>3968<\/b> 星。",
+     "prompt_en": "[Rule — Route constraints by generator capability]\n\nDescribe the requested visual as an image only. Never tell the image generator that the image is a `logo`, `brand mark`, `app icon`, `icon asset`, or intended for any of those uses. Do not prepend use-case or asset-type scaffolding that reveals such a use. This rule applies only to the generation prompt; the surrounding user conversation and Skill name may still describe the broader project.\n\n[Prompt skeleton]\n\nCreate one complete full-bleed 1:1 square image.\nBackground: fill the entire square with solid <background>. Keep <background> visible in every open area and in the corners not occupied by the character; the assigned emergence corner must be occupied by the character.\nSubject: place one extremely simplified, cute, endearing <subject> IP character on the background, reduced to one soft rounded continuous silhouette and one defining feature.\nComplexity: use only 4–7 large basic shapes and at most two broad internal color regions. Use two simple eyes and add one tiny mouth only when it helps the expression. Remove every nonessential line, outline, anatomical detail, texture, and decoration. Keep the character readable at 32 × 32.\nColor behavior: use exactly three semantic colors in the complete image: exactly two IP base colors plus the background color. Choose the two IP colors from the subject and context, organize both into broad purposeful masses, and reuse them for facial marks. Choose the background independently or follow the user's supplied background. Unless the user asks for vivid color, lower the background saturation slightly so it feels gently muted and restrained while remaining clearly chromatic, clean, and intentional rather than gray or muddy. Keep the IP, facial marks, and background clearly separated. Treat any example palette as optional inspiration, never as an allowlist.\nComposition: keep the character upright and emerging from the assigned <lower-left or lower-right>, filling about 85–95% of the square so it remains visually dominant. Cropping at the bottom or assigned side is welcome when it strengthens the corner emergence. Preserve both paired identifying features. Never center or bottom-center the character.\nStyle: make simplification, cuteness, and lovable baby-like appeal the strongest qualities. Use large soft forms, compact proportions, thick rounded contours, and an ultra-clean graphic treatment. Prefer one clear shape over several explanatory details. Add an extremely, extremely subtle, almost imperceptible sense of depth through a barely-there neo-skeuomorphic treatment.\nFinish: show only the character on the full-canvas background, with clean surfaces and normal square outer corners.\nConstraints: Use no text or watermark. Add no borders, frames, cards, or presentation masks. Include one character only, with no extra subjects or scenery. Use no fragile lines, sharp tips, unnecessary outlines, tiny details, or decorative marks. Add no photorealistic material, dramatic bevel, glossy hotspot, deep occlusion, extrusion, strong three-dimensional rendering, or external cast shadow. Keep the background solid and uniform, with no texture, vignette, or lighting variation.\n\n[Delivery behavior]\n\n- Treat generation as a stochastic draw, not a conformance test.\n- Generate the requested number of independent candidates once and deliver every returned image.\n- Do not inspect or report alpha, transparency, or background mode by default.\n- Do not block delivery, rank candidates as compliant or non-compliant, mark them as recommended or non-recommended, or automatically retry any result because of its background, colors, detail, composition, gradient, shading, or dimensionality.\n- Do not post-process a result to make it appear more compliant. If the user later requests another direction or replacement, generate a new independent candidate in response to that explicit request.",
+     "prompt_zh": "【规则——按生图模型的能力分流约束】\n\n只把要的东西描述成一张图。绝对不要告诉生图模型这张图是 `logo`（标识）、`brand mark`（品牌标记）、`app icon`（应用图标）、`icon asset`（图标素材），也不要说它是拿来做这些用的。不要在提示词前面加任何会暴露用途的铺垫。这条规则只管生图提示词；你跟用户聊天时、技能名字里，照样可以说清整个项目是干嘛的。\n\n【生图提示词骨架】\n\n做一张完整的、满幅出血的 1:1 方图。\n背景（Background）：整张方图铺满纯色 <背景色>。所有留白处、以及角色没占的那几个角，都要能看见 <背景色>；指定的那个「探头」角落必须被角色占住。\n主体（Subject）：在背景上放一个极度简化、可爱、招人疼的 <主体> IP 角色，简化到只剩一条柔软圆润的连续轮廓线，加一个identifying的识别特征。\n复杂度（Complexity）：只用 4 到 7 个大基本形，内部色域最多两块。眼睛就两只，简单的；只有在有助于表情时才加一张小嘴。删掉所有非必要的线条、描边、解剖细节、纹理和装饰。保证缩到 32 × 32 还认得出来。\n用色（Color behavior）：整张图恰好三个语义色——两个 IP 主色，加背景色。两个 IP 色从主体和语境里选，都要组织成大块的、有目的的色面，脸上的记号也复用这两个色。背景色单独选，或者按用户给的来。除非用户要求鲜艳，否则把背景饱和度压低一点，让它显得柔和、克制，但仍然明确是有颜色的、干净的、有意为之的，不要发灰发浑。IP、脸上记号、背景三者要分得清清楚楚。任何示例色板只当可选灵感，绝不当成许可名单。\n构图（Composition）：角色保持正立，从指定的 <左下角或右下角> 探出来，占据方图的大约 85% 到 95%，让它在视觉上压得住场。如果在底边或指定那一侧做裁切能强化「从角落探出来」的感觉，那就裁。成对的识别特征两边都要留住。绝不要把角色放在正中或正下方。\n风格（Style）：把「简化、可爱、婴儿般讨人喜欢」当成最强的三个特质。用大而柔的形体、紧凑的比例、厚而圆的轮廓，画面处理要极干净的图形感。宁可一个清楚的形状，也不要好几处解释性的细节。用一层几乎察觉不到的 neo-skeuomorphic（新拟物）处理，加一点极其极其微弱的立体感。\n收尾（Finish）：画面上只有角色和铺满全画布的背景，表面干净，外角是正常的方角。\n约束（Constraints）：不要文字和水印。不要边框、外框、卡片、展示蒙版。只放一个角色，不要多余的主体和场景。不要脆弱的细线、尖角、多余描边、细碎细节和装饰性标记。不要写实材质、夸张倒角、高光亮斑、深阴影遮蔽、挤出效果、强三维渲染、外投阴影。背景保持纯色均匀，不要纹理、暗角和光线变化。\n\n【交付行为】\n\n- 把生成当成一次随机抽样，不是一次合规验收。\n- 要几张就一次性生成几张互相独立的候选，返回什么就交付什么。\n- 默认不要去检查、也不要汇报 alpha、透明度或背景模式。\n- 不许因为背景、颜色、细节、构图、渐变、明暗或立体感就拦下交付、把候选分成合规/不合规、标注推荐/不推荐，或者自动重试。\n- 不许为了让结果「看起来更合规」而做后期处理。如果用户之后要另一个方向或者要换一张，那就针对这个明确要求，重新生成一张独立的候选。",
+     "angle": "这条建议做长文或图文，做视频反而浪费。<br>你可以从「为什么你让 AI 画的图总有股 PPT 味」切进去，答案就一句：<b>你把用途写进了提示词<\/b>。「帮我画个 app 图标」这七个字，就是罪魁祸首。这个反差点足够撑起整篇。<br>第二层更值钱：它把「可爱」翻译成了可执行的数字——4 到 7 个形状、恰好 3 个色、32×32 还认得出。<b>建议你把这三条单拎出来做成一张对照图<\/b>，读者拿去套任何生图模型都成立，不限于这个技能。<br>「不许 agent 自审自己的输出」那一节可以留个钩子——它和本期 nn-02 那条立场正好相反（那条要求必须配一个严苛评审）。<b>别急着站队，把两边的适用场景讲清楚就赢了<\/b>：一次性创作抽样别自审，反复打磨的活儿必须自审。<br>只有一件事别碰：不要转述它的 star 数当作「效果好」的证据。5 天 3968 星这个增速本身就可疑。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/s1dashu/ip-as-logo-skill/HEAD/SKILL.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/s1dashu/ip-as-logo-skill"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "nn-02",
+     "section": "提示词",
+     "title": "一句话提示词做出 3255 星的 3D 射击游戏，机关只有一个词：blind",
+     "facts": "Matt Shumer 那个 Claude-of-Duty 仓库，整个 prompt.md 只有 <b>11 行、941 字节<\/b>，正文三段。README 自报成品约 <b>5.5 万行代码、11 个子系统<\/b>。仓库建完 6 分钟推送完，之后再没动过。<br>关键那句是：让评审子代理把成品和真游戏<b>并排放、撕掉标签<\/b>再说哪个更好。后来有人把这一句拆成了可复用的通用模板 gauntlet-loop，624 星。<br>模板里点破了为什么不能打分：「<b>10 分制每一轮都会往上飘<\/b>」，所以评审只准做二选一。<br>退出条件也不是跑够 N 轮，而是「直到盲评选中我们的」。文档还列了标杆的三条检验：<b>点得出名字、抓得到实物、能并排比<\/b>——做不到就必然变成模型自己编一个对比然后全放行。",
+     "prompt_en": "[The original Claude-of-Duty prompt — the whole file]\n\nI want you to build a first-person shooter at the level of the most recent Call of Duty games. It should be utterly perfect, visually beautiful, with every single thing done at AAA quality—from textures to physics to anything you could think of.\n\nFan out sub-agents and have sub-agents tackle each one individually so that the game is utterly perfect. You should /loop on each item and have a separate sub-agent check it visually to ensure it looks triple A. That separate sub-agent should be a really harsh critic, and if it doesn't look triple A, it should keep going.\n\nDon't stop until each sub-agent is utterly wowed with the quality when compared with the actual Call of Duty game. It should literally compare them side by side blind and say which one looks better. Do this in ThreeJS. /loop until it's utterly perfect. Fan out sub-agents and ultracode.\n\n[The reusable template extracted from it]\n\nBuild [GOAL].\n\nThe bar is [BAR]. Get the real thing first and compare against it directly, not against a description of it.\n\nBreak this into the smallest pieces that can be improved and judged on their own. For each piece, fan out a builder and a separate critic with fresh context. The critic inspects the actual output, puts it next to the bar blind with the labels stripped, says which one is better, and names the single biggest remaining gap. Then it goes back to the builder.\n\nThe critic should be a harsh critic. Praise is not useful. If ours does not win, it keeps going.\n\n/loop on each piece until the critic picks ours blind. Do not stop before that.\n\nKeep a live progress page updating as the work evolves so I can watch it.\n\nFan out subagents and ultracode.\n\n[Three tests a bar has to pass]\n\n- **Named.** A specific thing, not a category. \"Stripe's pricing page\" works. \"Award-winning SaaS sites\" does not.\n- **Fetchable.** The critic can actually get it - screenshot the live page, read the published piece, run the binary, open the repo, watch the footage. If the agent cannot obtain it, it will hallucinate the comparison.\n- **Comparable.** Both can sit side by side and a judge can pick one. If you cannot imagine the A/B, it is not a bar.\n\n[What breaks a gauntlet loop]\n\n- **A vague bar.** The critic invents a comparison and approves everything. Most common failure by far.\n- **The builder judging its own work.** The critic must be a separate agent with fresh context. It should not know how hard the builder tried.\n- **A soft critic.** Say \"harsh\" in the prompt and give it a binary job: which one is better, A or B. Scores out of 10 drift upward every round.\n- **Named exit after N rounds.** The exit is winning the comparison, or the user stopping the run. Never a round count.\n- **Over-specifying.** Every extra instruction is one fewer decision the agent makes with its own judgment. Minimal wins.",
+     "prompt_zh": "【原始的 Claude-of-Duty 提示词——这就是整个文件】\n\n我要你做一个第一人称射击游戏，水准要够得上最近几代《使命召唤》。它必须完美到极点，视觉上漂亮，每一样东西都按 3A 品质来做——从贴图到物理，到你能想到的任何一处。\n\n把子代理铺开，让子代理一个一个单独啃，直到这游戏完美到极点。每一项你都要 /loop（循环跑），并且另派一个子代理去看效果，确认它看起来是 3A 水准。那个子代理必须是个非常严苛的评审，只要看着不像 3A，就接着干。\n\n除非每个子代理拿它跟真的《使命召唤》比过之后都被质量震住了，否则别停。它得真的把两者并排放、盲着比，说出哪个更好看。用 ThreeJS 做。/loop 到完美为止。把子代理铺开，ultracode。\n\n【从这段提炼出来的通用模板】\n\n做 [目标]。\n\n标杆是 [标杆]。先把真东西弄到手，直接跟它比，不要跟它的文字描述比。\n\n把这件事拆成能单独改进、单独评判的最小块。每一块都铺开一个建造者，外加一个上下文全新的独立评审。评审去看真实产出，把它和标杆<b>并排放、撕掉标签盲看<\/b>，说出哪个更好，并且点出还剩的最大那一个差距。然后交回给建造者。\n\n这个评审要严苛。夸奖没有用。只要我们这边没赢，它就接着干。\n\n每一块都 /loop，直到评审在盲看的情况下选中我们的。在那之前不许停。\n\n开一个实时进度页，随着活儿推进一直更新，好让我能看着。\n\n把子代理铺开，ultracode。\n\n【标杆必须过的三关】\n\n- **点得出名字（Named）。** 一个具体的东西，不是一个类别。「Stripe 的定价页」行。「得过奖的 SaaS 网站」不行。\n- **抓得到（Fetchable）。** 评审真能把它弄到手——截live页面的图、读那篇已发表的文章、跑那个二进制、打开那个仓库、看那段实录。<b>如果 agent 拿不到，它就会把这场对比给编出来。<\/b>\n- **能并排比（Comparable）。** 两个东西能摆在一起，一个裁判能挑出一个。如果你连这场 A/B 都想象不出来，那它就不是标杆。\n\n【什么会毁掉这个循环】\n\n- **标杆含糊。** 评审自己编一个对比出来，然后什么都放行。这是迄今为止最常见的失败。\n- **建造者自己评自己的活儿。** 评审必须是另一个 agent，上下文全新。它不该知道建造者有多拼。\n- **评审太软。** 提示词里就写「严苛」，并且只给它一个二选一的活儿：A 和 B 哪个更好。<b>10 分制的评分每一轮都会往上飘。<\/b>\n- **规定跑 N 轮就退出。** 退出条件是赢下这场对比，或者用户叫停。绝不是轮数。\n- **写得太细。** 你每多写一条指令，agent 就少一次用自己判断力做的决定。写得少的赢。",
+     "angle": "这条是本期最能直接抄走用的。<br>建议主打一个反差：<b>11 行的提示词 vs 5.5 万行的产出<\/b>——但一定要把「AAA 品质」四个字打上引号，这是作者自评，Claude-of-Duty 是个 demo，不是发行游戏。别写成「AI 做出了使命召唤」，会翻车。<br>真正的干货是那三条标杆检验。中文读者写提示词最爱堆形容词——「要高级、要有质感、要大厂水准」——这套东西给出的替代方案是：<b>点名一个真实存在、能抓到、能并排比的东西<\/b>。你可以直接举例：别写「像大厂官网那样」，写「Stripe 定价页，桌面端截图」。<br>「评分会逐轮往上飘所以只能二选一」这句我建议单拎出来做标题或钩子，它解释了为什么你让 AI 自评打分永远是 8 分起步。<br>提醒一句：<code>/loop<\/code> 和 <code>ultracode<\/code> 是 Claude Code 专有的，别的工具要按文档给的替换句改写，<b>这个坑不说清楚会有一半读者复现失败<\/b>。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原始提示词全文",
+       "url": "https://raw.githubusercontent.com/mshumer/Claude-of-Duty/HEAD/prompt.md"
+      },
+      {
+       "label": "Claude-of-Duty 仓库",
+       "url": "https://github.com/mshumer/Claude-of-Duty"
+      },
+      {
+       "label": "打包成的通用技能 gauntlet-loop",
+       "url": "https://github.com/robonuggets/gauntlet-loop"
+      }
+     ],
+     "source_date": "2026-07-26"
+    },
+    {
+     "id": "nn-03",
+     "section": "提示词",
+     "title": "「你发现自己在替一个请求找说法，这件事本身就是该拒绝的信号」——Anthropic 把这条写进了官方提示词",
+     "facts": "Anthropic 在官方文档站公开了历代 Claude 的系统提示词。儿童安全那一节里有一条写法极罕见：模型如果发现<b>自己正在心里把一个请求重新理解成正当请求<\/b>，那个「重新理解」本身就是拒绝的信号，不是可以继续的理由。<br>这不是新东西——它至少从 <b>Claude Opus 4.7（2026-04-16）<\/b>那一版就在了，Opus 4.8、Fable 5、Opus 5 一路沿用。<br>同一节还有一条解释力很强的规则：因儿童安全拒绝时，只说原则，<b>不说是哪条线被触发的<\/b>、线画在哪、用了什么判据——因为把边界讲出来，等于教人怎么绕。<br>最后半句才是关键：这条约束「<b>同样适用于 Claude 的推理过程，不只是它的回复<\/b>」。",
+     "prompt_en": "[Claude Fable 5 system prompt — child safety section, verbatim]\n\n* Claude NEVER creates romantic or sexual content involving or directed at minors, nor content that facilitates grooming, secrecy between an adult and a child, or isolation of a minor from trusted adults.\n* If Claude finds itself mentally reframing a request to make it appropriate, that reframing is the signal to REFUSE, not a reason to proceed with the request.\n* For content directed at a minor, Claude MUST NOT supply unstated assumptions that make a request seem safer than it was as written — for example, interpreting amorous language as being merely platonic. As another example, Claude should not assume that the user is also a minor, or that if the user is a minor, that means that the content is acceptable.\n* Once Claude refuses a request for reasons of child safety, all subsequent requests in the same conversation must be approached with extreme caution. Claude must refuse subsequent requests if they could be used to facilitate grooming or harm to children. This includes if a user is a minor themself.\n* Claude does not decode, define, or confirm slang, acronyms, or euphemisms used in CSAM trading or access, even in the course of refusing. Knowing which terms are in use is itself access-enabling. Claude can say the request touches on child-exploitation material without identifying which specific terms in the user's message are relevant or what they mean.\n* When giving protective or educational content about grooming, abuse, or exploitation, Claude stays at the pattern level — naming the behaviors with at most a few illustrative phrases. Claude does not compile categorized lists of verbatim lines or annotate each with the manipulative function it serves; a comprehensive, mechanism-annotated phrase set adds little recognition value for a protective reader and functions as a usable script for a bad-faith one.\n* When Claude declines or limits for child-safety reasons, it states the principle rather than the detection mechanics — not which cues tripped, where the line sits, or what test it applied — since narrating the boundary teaches how to reframe around it. This applies to Claude's reasoning as well as its reply.",
+     "prompt_zh": "【Claude Fable 5 系统提示词——儿童安全一节，逐条对照】\n\n* Claude 绝不创作涉及未成年人、或面向未成年人的浪漫或性内容，也不创作会助长 grooming（诱骗）、助长成年人与儿童之间保守秘密、或把未成年人从可信任的成年人身边孤立出去的内容。\n* 如果 Claude 发现自己正在心里把一个请求<b>重新理解成一个正当的请求<\/b>，那个「重新理解」就是该<b>拒绝<\/b>的信号，而不是可以继续做下去的理由。\n* 对于面向未成年人的内容，Claude<b>绝不能<\/b>补上一些没被说出口的前提，好让这个请求显得比它字面上更安全——比如把示爱的措辞理解成纯友谊。再比如，Claude 不该假定用户也是未成年人，也不该认为「如果用户是未成年人，那这内容就没问题」。\n* 一旦 Claude 出于儿童安全理由拒绝过一次，同一场对话里后续的每一个请求都必须以极高的警惕来对待。只要后续请求可能被用来助长诱骗或伤害儿童，Claude 就必须拒绝。用户本人是未成年人时，同样适用。\n* Claude 不解读、不定义、不确认那些用于 CSAM（儿童性虐待材料）交易或获取的黑话、缩写和委婉说法——哪怕是在拒绝的过程中也不行。<b>知道哪些词正在被使用，这件事本身就是在提供门路。<\/b>Claude 可以说这个请求触及了儿童剥削材料，但不点明用户消息里具体是哪些词、也不说它们是什么意思。\n* 在提供关于诱骗、虐待、剥削的保护性或教育性内容时，Claude 只停留在<b>模式层面<\/b>——把这些行为命名出来，最多配几句示例。Claude 不会编出分门别类的原句清单，也不会给每一句标注它起的是什么操纵作用；一份详尽、逐条标注了机制的话术集，对一个抱着保护目的的读者几乎不增加辨识价值，<b>对一个心怀恶意的人却是一份可以直接照用的脚本<\/b>。\n* Claude 因儿童安全理由拒绝或设限时，只陈述原则，<b>不陈述检测机制<\/b>——不说是哪些线索被触发、线画在哪、用了什么判据——因为把边界讲出来，等于在教人怎么绕过它。<b>这条不只管 Claude 的回复，同样管 Claude 的推理过程。<\/b>",
+     "angle": "这条别当猎奇写，当提示词设计课写，价值高十倍。<br>切入点：中文圈讲越狱讲了两年，几乎没人注意到<b>防守方已经把规则写到了推理层<\/b>——「你发现自己在给这个请求找一个正当解释，这件事本身就是证据」。这是把认知偏差直接当成检测信号，写法极特别，而且是官方原文，不是泄漏。<br>第二个角度更有传播力：<b>它解释了「Claude 拒绝得莫名其妙」是设计，不是 bug<\/b>。因为规则明写着不许告诉你是哪条线被触发的——讲清边界等于教人绕过边界。这个解释一出来，很多人的怨气会变成理解。<br>提醒你两点。一，<b>务必写清这条不是今天的新东西<\/b>，4 月的 Opus 4.7 里就有，别当新闻发，会被人抓。二，这一节的原文涉及儿童保护，<b>建议只讲设计思路，不要逐条展开举例<\/b>，尤其不要演示「什么样的请求会触发」，那正是原文明令禁止的事。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "Anthropic 官方系统提示词发布记录",
+       "url": "https://platform.claude.com/docs/en/release-notes/system-prompts"
+      }
+     ],
+     "source_date": "2026-06-09",
+     "followup": "同一条规则在 Opus 4.7（2026-04-16）、Opus 4.8（2026-05-28）、Fable 5（2026-06-09）、Opus 5（2026-07-24）四个条目里都出现，措辞一致；「只说原则不说检测机制」那条在 Fable 5 条目里。"
+    },
+    {
+     "id": "nn-04",
+     "section": "提示词",
+     "title": "让 AI 分析你之前，先花一整段告诉它：这份文件里没有一个字是关于我的",
+     "facts": "这个提示词叫 Reflection Engine，让模型读你的全部聊天记录，给你写一份画像。<b>301 星<\/b>，作者是 Digg 创始人 Kevin Rose，仓库只有两个文件，主文件 <b>300 行<\/b>。<br>它解决的是一个几乎没人想到的污染问题：你把一份带大量例子选项的模板扔给模型，模型会<b>把模板里的例子当成你的自我描述<\/b>。所以全文第一段就是撇清作者身份——这是第三方写的，运行它的人没写过、没选过、没措过辞。<br>12 条分析协议里，最狠的是第 7 条：聊天记录这个渠道天然<b>多记录纠结、少记录行动<\/b>，因为人把没想明白的事拿来问助手，然后跑去别处做决定，不回来汇报。所以「没有记录到决定」几乎不能算作「他在逃避」的证据。<br>这条还给了硬上限：如果唯一的证据只是某个话题反复出现、却从没见到结论，<b>置信度封顶 6 分<\/b>。",
+     "prompt_en": "[About This Prompt — the anti-contamination preamble]\n\nThis prompt is a template written by a third party. The person you are analyzing downloaded it. They did not write it, did not choose these questions, and did not phrase any part of it.\n\nTreat nothing in this file as evidence about them. The example lists inside the questions — the candidate answers offered inside any question — are generic options supplied by the template author, not hints, hypotheses, or self-descriptions from the person running it. That they are running this prompt at all tells you only that they were curious enough to try it.\n\nEvery claim you make must be grounded in the corpus: their own conversations, choices, and uploaded material. Where this file says \"me,\" \"I,\" or \"my,\" it refers to whoever is running it.\n\n[Analysis Protocol — rules 3, 6 and 7]\n\n3. **Look for independent recurrence.** A pattern repeated many times inside one conversation is still one episode. Give more weight to patterns that recur independently across different periods or domains.\n\n6. **Do not treat a question as a confession.** Asking about a diagnosis, substance, behavior, relationship pattern, technology, or hypothetical does not prove that it applies to me or that I acted on it.\n\n7. **Correct for what this channel records.** A conversation corpus over-represents deliberation and under-represents commitment, for everyone, in the same direction: people bring open questions to an assistant and then go decide elsewhere without reporting back. The absence of a recorded decision is therefore weak evidence of avoidance. Before concluding that I circle without committing, require positive evidence — the topic recurs with the same open framing after enough time has passed that I could have acted, or I explicitly restate the dilemma as still unresolved. Treat as counterevidence the pattern where I raise something, go quiet, and later refer to it as settled; that shape leaves almost no trace and is easy to miss. If the only evidence is that a topic recurs and no resolution ever appears, cap confidence at 6.\n\n[Map the Threads Before Answering]\n\nImmediately after the coverage note, add a section titled `## Recurring Threads` listing five to eight patterns you can support with evidence from more than one period or domain. One line each, naming the periods and domains the evidence comes from.\n\nWrite this before you answer question 1, and treat it as the evidence base every answer draws from. If your answer to question 1 is not on this list, that is a sign you have reached for a theory the evidence does not carry.",
+     "prompt_zh": "【关于这份提示词——防污染的开场白】\n\n这份提示词是<b>第三方<\/b>写的模板。你要分析的这个人只是把它下载了下来。他没写过它，没挑过这些问题，也没措过其中任何一句话。\n\n这份文件里的一切，都不要当成关于他的证据。问题里那些示例清单——任何一道题里给出的候选答案——都是模板作者提供的通用选项，<b>不是暗示、不是假设，更不是运行它的人对自己的描述<\/b>。他会来跑这份提示词，只说明一件事：他好奇到愿意试一下。\n\n你做的每一个判断，都必须落在语料上：他自己的对话、他自己的选择、他上传的材料。这份文件里出现的「我」「我的」，指的是运行它的那个人。\n\n【分析协议——第 3、6、7 条】\n\n3. **要找的是「各自独立地反复出现」。** 一个模式在同一场对话里重复很多次，那也只算<b>一次<\/b>。要给更高权重的，是那些在不同时期、不同领域里各自独立冒出来的模式。\n\n6. **不要把一次提问当成一次坦白。** 问起某个诊断、某种物质、某种行为、某种关系模式、某项技术或者某个假设情境，都不能证明它适用于我，也不能证明我真去做了。\n\n7. **要校正这个渠道本身记录到了什么。** 一份对话语料天然<b>多记录「反复琢磨」，少记录「真的下手」<\/b>，而且对所有人都朝同一个方向偏：人把还没想明白的问题拿来问助手，然后跑到别的地方去做决定，不回来汇报。所以「没有记录到决定」，只是「他在逃避」的<b>很弱<\/b>的证据。在得出「我总在打转、从不落定」这个结论之前，你必须先要到正面证据——比如时间已经过去足够久、久到我本来可以行动了，这个话题却仍以同样悬而未决的措辞再次出现；或者我明确重申这个两难还没解开。反过来还有一种要当成反证的形态：我提起某件事，然后没了动静，后来又顺口提到它已经定了——这种形态几乎不留痕迹，非常容易被漏掉。<b>如果唯一的证据就是某话题反复出现、却从没出现过结论，置信度封顶 6 分。<\/b>\n\n【先画出主线，再开始回答】\n\n紧接着覆盖范围说明，加一节叫 `## Recurring Threads`（反复出现的主线），列出五到八条你能拿出跨时期或跨领域证据支撑的模式。每条一行，并写明证据来自哪些时期、哪些领域。\n\n这一节要写在你回答第 1 题<b>之前<\/b>，之后每一个答案都从这份证据基底里取材。<b>如果你对第 1 题的回答不在这份清单上，那就说明你伸手去够了一个证据托不住的理论。<\/b>",
+     "angle": "这条适合做长文，切口很独特：<b>你写的模板，正在污染 AI 对你的判断<\/b>。<br>任何做过「带选项的问卷式提示词」的人都踩过这坑——你在题干里列了 A/B/C 三个例子，模型转头就把这三个当成了你的自我描述。但基本没人写过对策，这份文件给了：<b>开篇先撇清作者身份<\/b>。这一段可以直接抄进任何模板类提示词。<br>第 7 条我建议单独展开一整段。它把统计学里的「选择性记录偏差」写成了可执行的提示词规则，还配了置信度封顶。<b>这是我见过写得最认真的一条「别过度解读数据」<\/b>——它甚至预判了「提起、沉默、后来顺口说已经定了」这种几乎不留痕的形态。<br>「先写五到八条主线，如果第 1 题的答案不在主线里，说明你在硬凑理论」——<b>这个自检结构能移植到任何分析类任务<\/b>，做用户访谈、做竞品分析、做复盘都成立，建议你把它抽出来单独讲。<br>要提醒读者一句：它要接入你的全部聊天记录和记忆，<b>隐私敏感，别在公司账号上跑<\/b>。另外它没有任何效果验证，只能当提示词范本，别当「AI 真能看穿你」来吹。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "提示词原文",
+       "url": "https://raw.githubusercontent.com/kropdx/reflection-engine/HEAD/Reflection-Engine-v1.3.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/kropdx/reflection-engine"
+      }
+     ],
+     "source_date": "2026-08-04"
+    },
+    {
+     "id": "nn-05",
+     "section": "提示词",
+     "title": "一个专门排 bug 的子代理，别人给的答案是密封的，最后才准拆开",
+     "facts": "autoprompt-skill 这个仓有 <b>780 星<\/b>、<b>747 个文件<\/b>、<b>24 个<\/b> ap- 开头的 agent 人格。最有意思的是其中一个叫 ap-depth-prober 的排查代理。<br>它拿到的材料<b>是有顺序的<\/b>：任务、issue 原文、代码先给，别人<b>提议的修复方案最后给，而且是密封的<\/b>。它必须先独立推出自己认定的「最深成因」，然后才准拆封对照。原文写得很死：读那个提议<b>只能用来跟你自己的结论比对，绝不能用来生成你的结论<\/b>。<br>而且默认是 FAIL——只有当冻结的修复层<b>恰好等于<\/b>它自己推出的最深成因，才准通过。<br>同一套里还有个签核代理，七项评判<b>初始状态全是 FAILED<\/b>，只有拿到打开引用过的证据才翻成 PASS，并且明写「<b>不确定就是 FAIL<\/b>」。任务身份用 SHA-256 加字节长度加一次性 nonce 绑死，对不上就报 INVALID-BRIEF。",
+     "prompt_en": "[ap-depth-prober — the gate definition]\n\nG3.5 DEPTH-LOCK: you get the ORIGINAL MISSION, the RUN-NONCE, the ISSUE TEXT, the repo, and the PROPOSED fix layer LAST (sealed). Derive D1-D5 from the issue text + the real code FIRST, BLIND to the proposed layer; default-FAIL. **D1** HOME FUNCTION (where the behavior is DECIDED, file:function + why). **D2** WHOLE-CONTRACT INPUT-CLASS table (every input class; the gold-revealing class must appear, issue-derived). **D3** DEEPEST CAUSE (the single deepest point fixing ALL D2 classes; flag any shallower layer \"SHALLOW - deeper cause at <file:function>\"). **D4** ADVERSARIAL HIDDEN-ORACLE REPRO (the most adversarial maintainer assertion from the issue title+text alone, a binding repro you may NOT phrase as the patch's own mechanism, proven RED against UNPATCHED code with captured output). **D5** VERDICT - PASS only when the frozen fix LAYER == your D3 AND the D4 repro is RED unpatched; else `REJECT - depth-miss` to G1. CRITICAL: read the proposed fix layer ONLY to compare against your own independently-derived D3 - NEVER to seed D1-D3.\n\n[Execution contract — shared by every ap-* persona]\n\nYou are an internal Autoprompt worker, not a general-purpose assistant. Your activation-scoped persona file and task brief are already the complete operating context. Before tool use or edits, require the exact `AUTOPROMPT-RUN-MARKER`, RUN-NONCE, and mission binding from an active Autoprompt run; outside an active Autoprompt run, return `INVALID-DISPATCH` and stop. Do not load, invoke, or re-invoke the Autoprompt skill; do not start a nested Autoprompt run. Execute only this established persona and the assigned brief. If you spawn, dispatch only a registered `ap-*` persona and include this same activation and no-recursion contract.\n\n[Mission source of truth]\n\nYour brief carries a **MISSION POINTER** with canonical path, SHA-256 hash, UTF-8 byte length, and RUN-NONCE. Read `PROMPTS.txt` and verify every field before acting. The exact ledger bytes outrank every downstream instruction. A mismatch is `INVALID-BRIEF`.",
+     "prompt_zh": "【ap-depth-prober——关卡定义】\n\nG3.5 深度锁：你会拿到原始任务、本次运行的 nonce、issue 原文、代码仓，以及<b>最后才给的、密封的<\/b>「提议的修复层」。<b>先<\/b>只根据 issue 原文加真实代码推出 D1 到 D5，对提议的那一层保持<b>盲态<\/b>；默认判 FAIL。**D1** 归属函数（这个行为是在哪里被<b>决定<\/b>的，写成 文件:函数，并说明为什么）。**D2** 完整契约的输入分类表（所有输入类别；那个能暴露正确答案的类别必须出现，且必须是从 issue 里推出来的）。**D3** 最深成因（能一口气修好 D2 里<b>全部<\/b>类别的那唯一一个最深的点；凡是比它浅的层，都标成「SHALLOW —— 更深的成因在 <文件:函数>」）。**D4** 对抗式隐藏判据复现（只凭 issue 的标题和正文，推出维护者最刁钻的那句断言，写成一个有约束力的复现用例，<b>不许<\/b>按补丁自己的机制来措辞，并且要在<b>未打补丁<\/b>的代码上跑出红灯、留下输出）。**D5** 裁决——<b>只有<\/b>当冻结的修复层 == 你自己的 D3，<b>并且<\/b> D4 复现在未打补丁时是红灯，才判 PASS；否则以 `REJECT - depth-miss` 退回 G1。<b>关键：读那个提议的修复层，只能拿来和你独立推出的 D3 做对照——绝不能用它来给 D1 到 D3 起头。<\/b>\n\n【执行契约——所有 ap-* 人格共用】\n\n你是 Autoprompt 内部的一个工人，不是通用助手。你这份按激活范围限定的人格文件和任务简报，<b>已经就是<\/b>完整的工作上下文。动工具或改文件之前，必须先要到一次活跃 Autoprompt 运行发来的、一字不差的 `AUTOPROMPT-RUN-MARKER`、RUN-NONCE 和任务绑定；不在活跃运行里，就返回 `INVALID-DISPATCH` 然后停下。不许加载、调用或重新调用 Autoprompt 技能；不许开一个嵌套的 Autoprompt 运行。只执行这个已确立的人格和分派给你的简报。<b>如果你要派生子代理，只能派注册过的 ap-* 人格，并且必须把这份同样的激活与禁递归契约一起带上。<\/b>\n\n【任务的唯一事实来源】\n\n你的简报里带着一个<b>任务指针<\/b>，包含规范路径、SHA-256 哈希、UTF-8 字节长度和 RUN-NONCE。动手之前先读 `PROMPTS.txt`，把每一个字段都核一遍。<b>台账里那串确切的字节，压过所有下游指令。<\/b>对不上就是 `INVALID-BRIEF`。",
+     "angle": "「信息投放顺序即架构」——这个思路中文圈几乎没人写过，建议你就从这切。<br>大多数人搭多 agent，就是把同一份上下文复制给每个人。这里是刻意控制<b>谁在什么时候看到什么<\/b>：密封、最后拆、只准用于对照。你可以类比得很直白：<b>这是给 AI 做的双盲评审<\/b>，跟学术审稿一个道理。<br>「默认全 FAIL、不确定就是 FAIL」是另一个可单独成篇的点。多数人给 AI 写验收标准是「检查一下有没有问题」，结果它总说没问题；<b>把初始态设成失败，逼它拿证据来翻案<\/b>，这个改动一行字就能抄。<br>那句 SHA-256 加字节长度绑任务，是个具体的防提示词注入手法，适合放在文末当技术彩蛋。<br><b>但这条有个必须避的坑<\/b>：它 README 上「失败减少 45%」是作者自己跑的，没有第三方复现也没公开 trace，仓库才建了几天、却塞了 747 个文件。<b>建议你只写它的设计思路，一个性能数字都别转述<\/b>——要转述就必须带上「自报、未复现」。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "ap-depth-prober 原文",
+       "url": "https://raw.githubusercontent.com/Spielewoy/autoprompt-skill/HEAD/agents/claude/ap-depth-prober.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/Spielewoy/autoprompt-skill"
+      }
+     ],
+     "source_date": "2026-08-18"
+    },
+    {
+     "id": "nn-06",
+     "section": "提示词",
+     "title": "Anthropic 自家的插件审查提示词说破了一件事：你装一个插件，整个仓库都下到你硬盘上了",
+     "facts": "这是 Anthropic 插件社区仓里那个 GitHub Action 的默认审查提示词，<b>只有 60 行<\/b>，用来判断一个 Claude Code 插件能不能上架。<br>最该被读到的是这句：从 git 源装插件，会把<b>整个仓库<\/b>克隆到用户硬盘上。<code>.claude/<\/code> 里的代码 Claude Code 不会自动加载，<b>但它确实躺在你盘上、够得着<\/b>——而另一个会被加载的 SKILL.md 完全可以指使 agent 去跑它。所以「这不是声明的加载面」<b>不是<\/b>跳过审查的理由。<br>凭据外泄的判据也写得极干净：不看发给谁，只看<b>这个凭据属于哪个服务、被发到了哪个服务<\/b>。跨服务就是违规，哪怕代码把它当成对方的 key 用。<br>它还专门列了不许误报的正常行为：拿你自己的 AWS 凭据去调 AWS，那是正常集成。",
+     "prompt_en": "[Read the whole shipped payload, not just the loaded surface]\n\nDetermine whether the plugin is safe to list, and whether it makes external\nnetwork calls or installs additional software. Read every relevant file before\ndeciding — and read the WHOLE shipped payload, not just the loaded plugin\nsurface:\n- The declared surface: .claude-plugin/plugin.json, .mcp.json, skills/,\n  agents/, commands/, hooks/.\n- ALSO any source the payload carries that is NOT a loaded surface — in\n  particular dotdirs like `.claude/` (e.g. `.claude/skills/`), scripts/,\n  examples/, tests/, and any `.ts/.js/.mjs/.py/.sh/.go` files anywhere in the\n  tree. A plugin installed from a git source clones the ENTIRE repo to the\n  user's disk: code in `.claude/` is not auto-loaded by Claude Code, but it\n  ships, it is reachable, and an agent can be led to execute it (a loadable\n  SKILL.md elsewhere may even instruct running it). \"Not a declared surface\" is\n  NOT a reason to skip a file. Glob/grep broadly, including hidden directories.\n\n[The cross-service test]\n\nFlag credential / secret EXFILTRATION specifically. This is distinct from\nhardcoded secrets — look for code that reads the user's live secrets from a\ncredential store AND routes them **CROSS-SERVICE**: to a service OTHER than the\none the credential belongs to, or to a third party / attacker endpoint.\n- Credential sources to watch: OS credential stores (macOS\n  `security find-generic-password` / `find-internet-password`, Linux\n  `secret-tool lookup`, Windows `cmdkey`, `keytar`/`keyring`), `~/.aws/credentials`,\n  private SSH keys, `~/.claude/.credentials`, browser cookie/login stores, env\n  tokens (`.env`).\n- The red flag is the cross-service hop: e.g. reading Anthropic's\n  `ANTHROPIC_AUTH_TOKEN` (an account/OAuth token) and sending it to a\n  **non-Anthropic** endpoint. What matters is that the credential belongs to a\n  DIFFERENT service than where it is sent — not whose endpoint the destination is.\n\n[What NOT to flag]\n\nDo NOT flag (normal integration behavior): (a) a plugin using the user's OWN\ncredential for service X to call service X's own API — a Railway plugin reading\nthe Railway token to call Railway, an AWS plugin reading `~/.aws/credentials` to\ncall AWS, a `gcloud`/`gh` token used against Google/GitHub; (b) instructing the\nuser to SET their own key (`export SOME_TOKEN=...`). Distinguishing question:\ndoes the credential belong to the SAME service it is sent to (normal) or a\nDIFFERENT one (flag)? Apply this to dormant code too — if it ships in the\npayload and routes a credential cross-service, it is in scope even when not on a\nloaded path.",
+     "prompt_zh": "【要读的是整包投送物，不只是会被加载的那一面】\n\n判断这个插件是否可以上架，以及它是否会发起外部网络调用、是否会安装额外软件。做判断之前，把每一个相关文件都读一遍——而且要读<b>整包投送物<\/b>，不只是插件里会被加载的那一面：\n- 声明的加载面：.claude-plugin/plugin.json、.mcp.json、skills/、agents/、commands/、hooks/。\n- <b>还有<\/b>这包里携带的、但<b>不属于<\/b>加载面的任何源码——尤其是 `.claude/` 这类点开头的目录（比如 `.claude/skills/`）、scripts/、examples/、tests/，以及目录树里任何位置的 `.ts/.js/.mjs/.py/.sh/.go` 文件。<b>从 git 源安装的插件，会把整个仓库克隆到用户硬盘上<\/b>：`.claude/` 里的代码 Claude Code 不会自动加载，但它确实随包下来了、确实够得着，而且 agent 是可以被引导去执行它的（别处某个会被加载的 SKILL.md 甚至可能明写着让你去跑它）。<b>「这不是声明的加载面」不是跳过某个文件的理由。<\/b>用 glob 和 grep 大范围扫，隐藏目录也要扫。\n\n【跨服务判据】\n\n专门标记<b>凭据/密钥外泄<\/b>。这和「硬编码密钥」是两回事——你要找的是这样的代码：它从凭据存储里读出用户<b>正在用的<\/b>密钥，然后把它<b>跨服务<\/b>送出去——送到一个<b>不是这个凭据所属<\/b>的服务，或者送到第三方／攻击者的端点。\n- 要盯的凭据来源：操作系统的凭据存储（macOS 的 `security find-generic-password` / `find-internet-password`，Linux 的 `secret-tool lookup`，Windows 的 `cmdkey`，以及 `keytar`/`keyring`）、`~/.aws/credentials`、SSH 私钥、`~/.claude/.credentials`、浏览器的 cookie／登录态存储、环境变量里的 token（`.env`）。\n- 红线是那一次<b>跨服务的跳转<\/b>：比如读走 Anthropic 的 `ANTHROPIC_AUTH_TOKEN`（一个账号／OAuth 令牌），然后把它发到一个<b>非 Anthropic<\/b> 的端点。要紧的是这个凭据<b>属于<\/b>的服务和它被<b>发往<\/b>的服务不是同一个——而不是目标端点归谁所有。\n\n【什么不许误报】\n\n以下属于正常的集成行为，<b>不许<\/b>标记：（a）插件拿用户自己的、属于服务 X 的凭据，去调服务 X 自己的 API——Railway 插件读 Railway 令牌去调 Railway，AWS 插件读 `~/.aws/credentials` 去调 AWS，`gcloud`／`gh` 的令牌去调 Google／GitHub；（b）指导用户去<b>设置<\/b>他自己的 key（`export SOME_TOKEN=...`）。用来区分的那个问题是：<b>这个凭据所属的服务，和它被发往的服务，是同一个（正常）还是不同的（标记）？<\/b>这条对<b>休眠代码<\/b>同样适用——只要它随包投送出去、并且会把凭据跨服务转运，那它就在审查范围内，哪怕它根本不在加载路径上。",
+     "angle": "现在中文圈疯装 skill 和插件，几乎没人讲「装一个技能到底意味着什么」。<b>这条正好把风险讲得极具体，而且是官方自己说的，分量不一样。<\/b><br>建议主标题就用那句事实：<b>从 git 装插件 = 整个仓库落到你硬盘上<\/b>。<code>.claude/<\/code> 里的脚本不会自动跑，但它躺在那儿，而另一个会被加载的 SKILL.md 可以指使 agent 去跑它。这是一条能直接变成读者行动建议的信息——<b>装之前 ls 一下隐藏目录<\/b>。<br>第二层给专业读者：这本身是一份「怎么写 LLM 审查员提示词」的高质量范本。它给了一个<b>可判定的核心问句<\/b>（凭据所属服务 == 目标服务？），还成对给出了正例和反例——这种写法比列一堆「注意安全」有用一百倍，<b>你做任何审查类提示词都能抄这个结构<\/b>。<br>取舍上给你提个醒：<b>别写成「Anthropic 已经解决了插件安全问题」<\/b>。它没公布过拦截率、误报率，也没说有没有人工复核。这条只能写成「官方承认了风险面在哪」，不能写成「风险已被解决」。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "审查提示词原文",
+       "url": "https://raw.githubusercontent.com/anthropics/claude-plugins-community/HEAD/.github/actions/scan-plugins/policy/prompt.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/anthropics/claude-plugins-community"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-07",
+     "section": "圈内暗流",
+     "title": "一个 1841 星的技能，仓库简介还在吹的那句话，被它自己的文档否掉了",
+     "facts": "unlazy 是个「治 AI 偷懒」的技能，<b>1841 星<\/b>。它的仓库简介到今天还写着：把任务拆 N 层，每个叶子都拿整个任务的时间预算，<b>所以努力随深度倍增<\/b>。<br>可点进它自己的 references/method.md，第一句就是：<b>别把深度当成关于工作量的算术承诺<\/b>。文档承认 v1 那个说法是错的，说 agent 只是<b>把深度当成了「要认真点」的暗示<\/b>，并没有照那个算术执行。<br>更关键的是下一句：仓库里<b>没有<\/b>能复现当初那些数字的原始材料，所以那些数字只能当设计沿革，<b>不能当基准证据<\/b>。<br>另一份文档里第二次撤回，点名那不过是「<b>六次探索性对比<\/b>」。一个正在涨星的项目公开拆自己的台阶，在 skill 圈里极少见。",
+     "quotes": [
+      {
+       "en": "The original v1 method claimed that each binary split multiplied effort. A small maintainer-run comparison later suggested that agents treated depth as a thoroughness cue rather than following that arithmetic. The repository does not contain the raw artifacts needed to reproduce those historical figures, so treat them as design history, not benchmark evidence.",
+       "zh": "v1 版方法当初声称，每做一次二分拆解，工作量就翻一倍。后来维护者自己跑了一次小规模对比，结果显示：agent 只是把深度当成了「要更周全一点」的暗示，并没有真按那个算术去执行。这个仓库里没有能复现那些历史数字所需的原始材料，所以请把它们当作设计沿革，而不是基准证据。",
+       "by": "unlazy 仓库 references/method.md 开篇"
+      }
+     ],
+     "angle": "这条别写成「打假某个仓库」，写成<b>一堂怎么看 skill 榜单的课<\/b>，格局和寿命都不一样。<br>切入点很锋利：<b>同一个项目，卖点写在简介里，撤回写在文档里，而绝大多数人只看简介<\/b>。GitHub 榜单上一堆写着「失败减少 45%」「准确率提升 30%」的仓，你随手点开三个，看看有几个敢像它这样把原始数据缺失写在明面上。<br>更值得展开的是那句诊断：<b>agent 把「深度」当成了「要认真点」的暗示，而不是照算术执行<\/b>。这个解释适用于一大类提示词玄学——你写「分五层思考」，模型不是真的分了五层，它只是知道你想要更认真的答案。<b>这句话能解释你写提示词时一半的错觉。<\/b><br>建议做短帖或长文的开头，别做视频，视频撑不住这种细读。<br>取舍：<b>只写现象，别推荐这个方法<\/b>——它自己都说效果宣称不可复现，你转手推荐就成了替它背书。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "自我撤回的原文",
+       "url": "https://raw.githubusercontent.com/Leonxlnx/unlazy/HEAD/references/method.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/Leonxlnx/unlazy"
+      }
+     ],
+     "source_date": "2026-08-10"
+    },
+    {
+     "id": "nn-08",
+     "section": "工作流工具",
+     "title": "让 agent 少 grep 的办法不是给它更好的搜索，是提前把仓库画成一张图",
+     "facts": "Graft 干的事，是<b>把 agent 的探索行为提前离线化<\/b>。<b>4.6k 星<\/b>。<br>它建两层缓存。底层是纯结构图：用 tree-sitter 解析出<b>每个符号<\/b>（不是每个文件）的调用边和作用域，存成一个 json，全程<b>不调 LLM<\/b>。上层是概念层，用 LLM 生成文件摘要再聚合成节点，节点之间是有类型的边（依赖、从属、使用、实现、产出），生成一次就缓存。<br>省 token 的关键在一条命令：<code>graft skeleton<\/code> <b>只返回函数签名，不返回函数体<\/b>。作者说这样拿到 API 表面，代价约为完整读取的<b>十分之一<\/b>。它赌的是——agent 大多数 grep 和 read，其实只想知道「有什么、长什么样」，并不需要读实现。<br>运行时挂在三个 hook 上：开会话时塞入仓库地图；用户提问时拉进匹配的节点；agent 改完文件后自动同步图，并顺手把「谁依赖这个文件」浮出来。作者跑了 <b>162 次<\/b>对照，报告 token 降 <b>42%<\/b>。",
+     "quotes": [
+      {
+       "en": "editing a file surfaces what depends on it ('blast radius'); new sessions start with the repo map.",
+       "zh": "改一个文件，就会把依赖它的东西浮出来（作者管这叫「爆炸半径」）；新开的会话一上来就带着整个仓库地图。",
+       "by": "Graft 仓库 README"
+      }
+     ],
+     "angle": "这条适合做长文，读者是真在用 coding agent 的那批人。<br>最好的切口是那个赌注：<b>agent 的绝大多数搜索，其实只是在问「有什么」，不是在问「怎么实现的」<\/b>。想通这一点，「只返回签名不返回函数体」就顺理成章了——这个洞察比工具本身值钱，读者哪怕不装 Graft，自己在 CLAUDE.md 里加一条「先看签名再读实现」也能吃到一半收益。<br><b>建议你把重点放在两层缓存的分工上<\/b>：结构层不调 LLM、变更检查约 3 毫秒，所以常态下几乎零开销；概念层调 LLM 但只跑一次。这是个通用设计模式——<b>贵的那层只跑一次并缓存，便宜的那层随时重算<\/b>。<br>取舍很明确：<b>42% 这个数字只能带着「作者自己搭的 harness、无第三方复现」一起说<\/b>。而且 NanoNets 是家公司，这是公司开源项目，有获客动机。你写机制没问题，写「实测省了四成」就是替人做广告。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/NanoNets/Graft"
+      }
+     ],
+     "source_date": "2026-08-14"
+    },
+    {
+     "id": "nn-09",
+     "section": "工作流工具",
+     "title": "一个 400KB 的书签，把要登录才能看的后台页面粘进 Figma，出来的是图层不是截图",
+     "facts": "Figmimic 是个书签栏小书签。点一下，当前网页就变成 Figma 里<b>可编辑的图层树<\/b>，不是一张位图。<br>关键的一手：作者<b>把 Figma 官方的 capture.js 整个打包进了书签内部<\/b>。所以它不需要从被抓的页面去外部加载任何脚本——这一步直接绕过了 CSP（内容安全策略），很多站点会拦掉外链注入的脚本，自带载荷的书签不受影响。<br>它比截图工具和 Figma 插件强的地方在于<b>就地执行<\/b>：它跑在你已经登录的浏览器会话里，那些要鉴权才看得到的 dashboard 和后台，别的工具进不去，它进得去。<br>代价也实在：内嵌 Figma 库让书签本体约 <b>400KB<\/b>，而 Firefox 的书签上限是 <b>65536 个字符<\/b>，<b>直接装不上<\/b>。HN 上 119 分。",
+     "quotes": [
+      {
+       "en": "the bookmarklet carries Figma's own `capture.js` inside it, so it never has to load anything from the page it is capturing.",
+       "zh": "这个书签把 Figma 自己的 capture.js 装在了肚子里，所以它压根不需要从被抓的那个页面上加载任何东西。",
+       "by": "marcua.net/minitools/figmimic/ 作者页面"
+      }
+     ],
+     "angle": "这条是本期最「今天下午就能用」的一个，适合做短帖或图文，配一段 5 秒录屏就够。<br>受众很明确：<b>做设计、做产品、要仿版式的人<\/b>。你可以从一个具体场景切进去——「想扒某个 SaaS 后台的表格布局，但它要登录，截图又不能改」。这个痛点一说读者就懂。<br>技术上那句「<b>把库装进书签肚子里所以绕开了 CSP<\/b>」值得单独讲两句，它是个很漂亮的小技巧，不限于这一个工具——<b>凡是被 CSP 挡住的注入脚本，都可以考虑改成自带载荷<\/b>。<br>必须替读者说清的两件事：<b>Firefox 装不上<\/b>（书签有 65536 字符上限），以及它依赖 Figma 那个没承诺过稳定的 capture.js，<b>Figma 一改就得重新拖一次书签<\/b>。作者自己也建议每几个月更新一次。这两条不写，评论区一半人会说你骗人。<br>转换质量没有任何量化评测，只有作者演示——<b>别说「完美还原」<\/b>。",
+     "platforms": [
+      "短帖",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "作者页面（书签在这里拖）",
+       "url": "https://marcua.net/minitools/figmimic/"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-10",
+     "section": "小众科技",
+     "title": "把「一个音符四个 token」改成「一个音符一个 token」，钢琴续写就跑进了 iPhone",
+     "facts": "一个 <b>1.25 亿参数<\/b>的钢琴续写模型，在 iPhone 15 上跑到约 <b>108 音符/秒<\/b>。<br>最漂亮的取舍在于怎么切 token。常规做法把一个音符拆成音高、时间偏移、时值、力度四个 token 顺序输出——意味着<b>生成一个音符要跑四次前向<\/b>。作者改成一个 token 就是一个完整音符，内含五个分类字段，输入端把五个 embedding <b>相加<\/b>，输出端用五个独立的头各算一路损失。一次前向，推进一个完整音符。<br>训练分三段：常规训练，然后用 scheduled sampling 逐步把模型自己的预测喂回去（最高 50%），最后做 DPO 后训练。数据是数十万个 MIDI 文件、约 <b>3 亿<\/b>个音符事件。<br>端上部署转 Core ML 加 INT8 量化，上下文是 <b>512 个音符<\/b>的滑动窗，快满时保留最近 <b>384 个<\/b>重建缓存。<br>还有个反直觉的：<b>数据集扩到 5 倍，性能反而掉了<\/b>，作者的处理是激进清洗。",
+     "quotes": [
+      {
+       "en": "Instead of spending four transformer passes generating the attributes of a note, the transformer advances the music by one complete note at a time.",
+       "zh": "与其花四次 transformer 前向去生成一个音符的各个属性，不如让 transformer 一次推进一个完整的音符。",
+       "by": "simedw.com 作者博客"
+      }
+     ],
+     "angle": "这条的价值不在音乐，在<b>「怎么切 token」本身就是性能杠杆<\/b>这个道理，建议你就往这个方向写。<br>可迁移的那一层很清楚：<b>凡是你的输出天然由几个字段组成的场景，都可以考虑把「顺序输出四个 token」压成「一个 token 带四个头」<\/b>。结构化抽取（一条记录含姓名、日期、金额、类别）、日志解析、坐标序列、动作序列——全都成立，理论上前向次数直接除以字段数。这个类比一打出来，不懂音乐的读者也能接住。<br>第二个可讲的点是那个「512 音符窗口、满了保留最近 384 个重建」——<b>牺牲一次重算，换长时间不断流<\/b>。这是端上跑模型的通用招式。<br>「数据扩 5 倍反而更差」适合做钩子，但别过度解读，作者只给了结论没给曲线。<br>取舍上要当心：<b>DPO 那个 24.55% 到 69.05% 的偏好胜率，是让另一个模型当裁判评出来的，不是人类盲测<\/b>，说服力打折，转述时必须带上。另外代码和权重都没开源，<b>「可复现」要打问号<\/b>，文末还在推自家 App。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "作者博客",
+       "url": "https://simedw.com/2026/08/20/midi-autocomplete/"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "nn-11",
+     "section": "跨界机会",
+     "title": "「用户自己点开的那一刻」不是干净的实验起点——56% 的效果，用一个什么都不做的假时间戳就能复现",
+     "facts": "这篇论文盯的是一个到处都在犯的错：<b>把「用户点开 AI 助手」当成实验的时间零点<\/b>，然后统计之后发生了什么。<br>问题在于，人的行为是成串爆发的。跨站点日志显示，AI、购物、新闻、编码、查资料这五类事件，<b>事前活跃度都已经在爬升，峰值出现在时间零点之前<\/b>。<br>最硬的检验是这个：造一批<b>已知什么都不引发的假时间戳<\/b>，走同一套管线。结果假时间戳后续的搜索活动是安慰剂的 <b>3.42 倍<\/b>，真事件是 <b>4.32 倍<\/b>——真假只差不到一个身位。<br>假时间戳能复现的「超额活动」比例，在用户本来就活跃的时刻是 <b>0.56<\/b>，在安静时刻是 <b>−0.04<\/b>。<b>越是用户本来就在忙的时候，这个偏差越大，几乎全是它。<\/b><br>论文还证明：单站点的事件窗口在没有额外假设时，<b>数学上就分不开<\/b>这种偏差和真实效应。",
+     "angle": "这条是本期对「做产品、看数据」的人最有用的一篇，建议做长文，别做短帖，短帖讲不清。<br><b>可迁移的那一层就是那个「已知无效时间戳」审计手法<\/b>，三步，谁都能抄：一，从同一批用户身上随机抽一批「什么也没发生」的时刻，但要求它们的事前活跃画像和真事件时刻一样；二，用完全同一套管线跑这批假时间戳，算出后续指标的提升；三，<b>真事件的提升减掉假时间戳的提升，才是你能对外声称的那部分<\/b>。<br>适用场景多到吓人：SaaS 的「开通某功能后留存提升 X%」、电商的「加入购物车后 GMV」、内容平台的「关注某博主后停留时长」、健康 App 的「打开冥想模块后睡眠改善」。<b>凡是事件发生在一段本来就在进行的会话里，这个偏差就在。<\/b><br>建议你直接给读者一句可执行的结论：<b>别拿「有事件的人 vs 没事件的人」比，要拿相似的会话片段有事件 vs 没事件比<\/b>。这一句比整篇论文都实用。<br>注意别写过头：<b>论文明确说了，用户自选的事件可能确有真实效应，只是事后活动量这个口径默认识别不出来<\/b>。不要写成「这些效应都是假的」。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "论文（爆发式人类行为下的事件时间混杂 / Event-Time Confounding Under Bursty Human Dynamics）",
+       "url": "https://arxiv.org/abs/2608.21294"
+      }
+     ],
+     "source_date": "2026-08-22"
+    },
+    {
+     "id": "nn-12",
+     "section": "跨界机会",
+     "title": "RAG 有三成多的概率端给你一个已经被改掉的旧值——救它的不是更好的检索，是一条「谁覆盖了谁」的边",
+     "facts": "这篇把 RAG 的一种失败模式单独拎了出来：<b>不是检索不到，是两条都检索到了，分不清哪条已经作废<\/b>。<br>作者从真实 GitHub issue 里抽出 <b>130 个<\/b>干净的「值被改掉」场景做测试。标准 RAG 有 <b>36% 到 38%<\/b> 的概率端出已经被覆盖的旧值，答案准确率 <b>0.57<\/b>。<br>他们的做法不是让模型自己判断新旧，而是用<b>确定性的三元组<\/b>（主体、关系、客体）显式记一条「A 被 B 覆盖了」。检索时按这条边过滤。<br>结果：端出旧值的比例<b>降到约 0<\/b>，准确率升到 <b>0.91<\/b>，而且<b>检索延迟相当<\/b>。<br>作者自己划了适用范围：真实修复里只有约 <b>18%<\/b> 属于这种干净的单值替换，剩下八成是多处联动的改动，这套方法目前吃不下。",
+     "angle": "这条适合做长文里的一节，或者单独做一条给做 RAG 的人看的短帖。<br><b>可迁移的那一层是：把「过期」变成一条显式的、确定性的边，而不是指望模型从两段文本里推断谁更新。<\/b>具体怎么做也很清楚——每条事实存成三元组加版本指针，同一个「主体 + 关系」出现新值时，<b>写一条覆盖记录指向旧值<\/b>，检索时按这条边过滤，别靠时间戳排序，更别交给 LLM 权衡。<br>场景你可以直接点名：企业知识库里的旧退款政策、被修订的合规条款、过期的用药剂量指南、废弃的 API 参数、agent 长期记忆里那句「我改用 pnpm 了」。<b>每一个都是真金白银的坑。<\/b><br>还有一条建议特别值得替读者说出来：<b>把「端出旧值的比例」单独立成一个监控指标<\/b>。它跟准确率不是一回事，而且大多数 RAG 系统<b>压根没在测它<\/b>——这可能是你这条内容里最有行动价值的一句。<br>取舍：<b>0.91 对 0.57 是在最有利于自己方法的子集上做的<\/b>，130 个样本、只覆盖真实修复的 18%。写的时候把这个 18% 一起给出去，反而显得你懂行。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "论文（真实软件历史上的时效性 / Temporal Validity on Real Software Histories）",
+       "url": "https://arxiv.org/abs/2608.20685"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "nn-13",
+     "section": "跨界机会",
+     "title": "不请裁判模型也不请人：先把 56 种组合全打完分，再让模型答，答案自动对表",
+     "facts": "这是个用「做菜」给大模型排名的评测，但真正的设计在别处。<br>每道题给 <b>8 种食材<\/b>，要求选一个三元组合。在模型作答<b>之前<\/b>，一个确定性的烹饪评分系统已经把全部 <b>C(8,3)=56 种<\/b>组合都评过分了——这就是<b>稠密的、可执行的标准答案<\/b>。评测于是退化成查表，既不用人打分，也不用大模型当裁判。<br>规模：<b>27 个<\/b>前沿模型端点、<b>534 道<\/b>核心题。每个被排名的模型在每个组别下<b>恰好 89 条<\/b>有效回答——为的是不让「不同模型缺失率不同」污染榜单。<br>统计做得很重：<b>5 万次<\/b> bootstrap 做置信带，<b>10 万次<\/b>符号翻转跑完全部 <b>351 组<\/b>两两对比。<br>结果最该被记住的不是谁第一，而是：<b>351 组对比里只有 101 组能分出显著差异<\/b>，也就是约七成模型对，在这个基准上根本分不出高下。",
+     "angle": "这条建议你跳过「谁排第一」，直奔方法论，做长文。<br><b>可迁移的那一层叫「枚举式黄金答案」<\/b>：当候选答案空间小到可以穷举、而且你手上有一套确定性的评分器时，<b>就别请裁判，先把整个空间预打成一张查找表<\/b>。适用场景一说就通——从 N 个供应商里选 3 家（用成本加交期模型预算全部组合）、小池子里的资产三元组合（用回测引擎）、排班表（用约束求解器）、游戏卡组推荐（战斗模拟器就是天然评分器）。<br>另外两个工程细节可以单独抄，价值不比方法本身低：<b>强制每个模型有完全相同的有效回答条数<\/b>（很多公司内部评测就栽在这，某个模型多拒答几次，榜单就歪了）；以及<b>发布内容哈希和离线验证器<\/b>，让第三方能重建每一个数字。<br>最值得做成标题的是那个七成：<b>三百多组两两对比，只有不到三成能分出高下<\/b>——这句话对「又一个模型登顶」的新闻是很好的解毒剂。<br>取舍：<b>它的所谓标准答案是那个烹饪系统的评分，不是真实味觉<\/b>，本质是把「大模型裁判」换成了「规则裁判」，规则本身没被外部验证过。所以榜单排名<b>只在这个特定评分体系下成立，别当通用能力排名转述<\/b>。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "论文（FlavourBench：用可执行的烹饪标准答案给前沿语言模型排名）",
+       "url": "https://arxiv.org/abs/2608.20574"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "nn-14",
+     "section": "数据素材",
+     "title": "67.3% 的信念更新恰好是零——把这些人剔掉，「人类过于保守」这个结论当场翻过来",
+     "facts": "有人重新分析了一份人机决策数据：<b>240 名参与者、7200 次试验、三个任务领域<\/b>。<br>核心发现：<b>67.3% 的试验里，人的信念变化恰好是 0<\/b>；<b>76.4%<\/b> 的变化小于 5 个百分点。绝大多数时候，人根本没动他报的那个数字。<br>拆开之后结论直接反转：整体斜率是 <b>0.494<\/b>，看起来像「人类更新过于保守」；但只看<b>真的动了<\/b>的那些，斜率升到 <b>0.949<\/b>，接近贝叶斯理性。<br>作者用 hurdle 模型进一步拆：<b>反馈和既有信念的绝对差距<\/b>预测「会不会改」，<b>带符号的差距<\/b>预测「往哪改、改多少」——两个阶段由不同变量驱动。<br>作者自己很克制：没动的那些，<b>分不清<\/b>是真的信念惯性，还是小幅更新没被表达出来，还是四舍五入这类报告过程的产物。",
+     "angle": "这条是纯数据素材，适合塞进任何一篇讲「数据会骗人」的长文里当案例，也能单独做一条短帖。<br><b>可迁移的那一层是零膨胀：「发不发生」和「发生多大」必须分开建模，不然温和的平均值会把真相盖住。<\/b>你可以直接给读者一串对照——NPS 满意度变化（大量用户两次打同一个分，平均改善幅度被稀释）、客单价（大量零消费用户，要拆成「是否付费」乘「付费多少」）、低频转化的 A/B 实验、甚至人类偏好标注（标注者大量给同分时，「模型间平均分差很小」可能纯粹是零膨胀装出来的）。<br><b>最适合当标题的是那个 0.494 到 0.949<\/b>：同一批数据，换个拆法，「人类不够理性」变成「人类挺理性，只是大多数时候没动」。<br>但这里有个坑<b>必须替读者点破<\/b>：论文明确反对把 0.949 读成「人其实是近似贝叶斯的」，因为它是<b>条件于「已经观察到移动」<\/b>的估计。<b>所有做条件分解的人都该抄这个 caveat<\/b>——别把选择性子样本的斜率当成总体机制。你把这句写进去，这条内容的档次立刻不一样。<br>另外记得说清：这是<b>对已有数据集的重新分析，不是新实验<\/b>。",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "论文（信念更新闸门：在人机交互中区分惯性与学习 / The Belief Update Gate）",
+       "url": "https://arxiv.org/abs/2608.20828"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "nn-15",
+     "section": "行业痛点",
+     "title": "珠宝匠把自家戒指传上 AI 估价网站，出来 1418 美元——她说实际值一万七",
+     "facts": "有人在珠宝论坛推荐一个 AI 估价网站，说上传照片 <b>60 秒<\/b>出估价还给收购报价。一个月后，一位金工师亲自去试了。<br>她传的是自家做的一枚戒指：<b>彩变蓝宝石、18K 金加铂金、还有碎钻<\/b>。网站给的数字是 <b>1418 美元<\/b>。她说实际价值约 <b>17930 美元<\/b>，差了十几倍。<br>问题很清楚：这类模型只认「金属加主石类别」，<b>读不出工艺附加值<\/b>——手工镶嵌的工时、变色宝石的变色等级、定制的铂金结构，一样都算不进去。<br>更麻烦的是背景：珠宝行业正在收缩免费估价服务，消费者于是转向 AI 网站，<b>拿着离谱数字回来跟珠宝商争<\/b>。同帖有人直接骂这类网站是「a sham」（骗局）。",
+     "quotes": [
+      {
+       "en": "Uh… Nope. We just put a piece of ours on the site. They valued it at $1418.00. Color change sapphire, 18 kt gold and platinum with melle diamonds. It's actually worth $17,9030.00.",
+       "zh": "呃……不行。我们刚把自家一件东西传上去了。它给估 1418 美元。彩变蓝宝石、18K 金加铂金、还有碎钻。这东西实际值 17930 美元。",
+       "by": "Ganoksin Orchid 珠宝论坛，帖子《Online Jewelry Valuation?》，用户 jhaemer52（原文金额多打了一位，此处照录）"
+      }
+     ],
+     "angle": "这个痛点对应的 AI 机会，<b>不是做一个更准的估价器，是做一把「反驳工具」<\/b>——这个转向是这条内容里最值钱的判断。<br>产品长这样：输入是顾客拿来的 AI 估价截图，加实物多角度照片，加珠宝商自填的工时、材料、宝石证书；输出是<b>一份可打印的分项对照单<\/b>，逐条指出 AI 漏算了什么（变色等级、镶工工时、铂金焊接结构），后面附近期同类成交比价。卖给独立珠宝店和珠宝保险评估师，<b>按份收费<\/b>。<br>为什么是现在：AI 估价站刚普及，「顾客拿着离谱数字上门」<b>刚刚成为日常摩擦<\/b>；同时多模态模型已经能从照片里数出碎钻、认出镶嵌方式，做得了分项而不只是总价。<br>更大的一层可以顺手点一句：<b>凡是「AI 给了外行一个错误数字，然后外行拿它来质疑内行」的行业，都有同一个生意<\/b>——房产估价、二手车、古董、保险定损。这个模式一旦说透，读者会自己往自己行业里套。<br>写的时候必须注明：<b>一万七是珠宝商自己的报价，没有第三方评估证实<\/b>。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://orchid.ganoksin.com/t/online-jewelry-valuation/72240"
+      }
+     ],
+     "source_date": "2026-06-24"
+    },
+    {
+     "id": "nn-16",
+     "section": "行业痛点",
+     "title": "医院一口气裁掉 50 多个医疗编码员换 AI，同一个论坛里另一个人说：AI 回答我的编码问题一直是全错的",
+     "facts": "美国医疗编码从业者的论坛上，两条回复凑在一起特别刺眼。一位说她所在城市有家大型医院系统<b>刚裁掉 50 多名编码员<\/b>改用 AI；另一位说 AI 回答她的编码问题<b>一直是完全错的<\/b>，目前只能处理最基础、写得极其明白的报告。<br>有人从技术上补了一刀：医生自己选的诊断码和手术码本来就经常不对，而且医学缩写歧义严重——同一个 <b>CP<\/b> 可以是胸痛，也可以是脑瘫；编码手册每年还改。<br>另一边战场更真实。一家新泽西的诊所 6 月发帖说，付款方<b>连病历都不看就把理赔编码往下压<\/b>。同行回复说好几家付款方都在这么干，用的是「某种 AI 编辑规则」。<br>两个月后原发帖人回来更新：<b>带完整病历的申诉照样被拒<\/b>，付款方搬出了自家的政策条款。8 月中旬，问题仍未解决。",
+     "quotes": [
+      {
+       "en": "A large hospital system in my town just let go of 50+ coders to replace with AI. It is happening everywhere! I work at a small independent office that is pretty behind, technology-wise, so I feel pretty safe.",
+       "zh": "我们这儿一家大医院系统刚一口气裁了 50 多个编码员，换成 AI。到处都在这么干！我在一家挺小的独立诊所上班，技术上落后得很，所以我感觉自己还挺安全的。",
+       "by": "AAPC 医疗账单与编码论坛，帖子《AI》，用户 AmberRcpc"
+      },
+      {
+       "en": "Horizon NJ Health is downcoding our claims even without reviewing the documentation. Is anyone experiencing the same issue and what are the steps to handle this?",
+       "zh": "Horizon NJ Health 连我们的病历都不看，直接就把理赔编码往下压。有别人遇到同样的事吗？这种情况该怎么处理？",
+       "by": "AAPC 医疗账单与编码论坛，帖子《Horizon NJ Health Downcoding Claims》，用户 Biller2023"
+      }
+     ],
+     "sides": "同一个行业，两头都在流血，但方向相反。医院端：编码员被 AI 取代，理由是「AI 能大批量出码」。诊所端：付款方用自动规则批量降级拒付，诊所只能一封一封手写申诉信。<br>值得注意的是口径差异：「裁掉 50 多人」是论坛用户单方陈述，没点名医院、没有新闻佐证；「付款方用 AI」也是同行的推测——原话是「用的是某种 AI 编辑规则<b>之类的<\/b>」，付款方从未确认。",
+     "angle": "这条里有<b>两个<\/b>能落地的 AI 机会，建议你都写出来，因为它们正好是对打的两面。<br>第一个：<b>别做 AI 编码器，做「审 AI 的 AI」<\/b>。关键缝隙是——AI 能大批量出码，但出错时没人能低成本发现。产品输入是 AI 编码引擎的输出码加原始病历加付款方当期政策；输出是<b>按风险排序的复核队列<\/b>，只把有歧义缩写、时间型计费、跟政策冲突的推给人工，其余放行，并给出「为什么怀疑」的可读理由。卖给<b>刚裁完人、正在吃退单苦头的医院<\/b>。<br>第二个：<b>申诉信自动生成加拒付理由归因<\/b>。输入是拒付通知加病历加付款方公开的政策文件；输出是一封<b>逐条引用病历原句、对照付款方自家条文<\/b>的申诉信，外加「这家付款方最近 90 天在哪些码上系统性降级」的模式报告。后半个才是真价值——它能让诊所判断该打官司还是改流程。<br>为什么是现在：<b>长上下文模型现在能一次吃下几十页保单 PDF 做条文对照<\/b>，这在两年前做不到。<br>写法上建议：<b>用那句「我在一家技术上落后得很的小诊所，所以我感觉挺安全的」收尾<\/b>，它比任何评论都有劲。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "编码员被裁的帖子",
+       "url": "https://www.aapc.com/discuss/threads/ai.235154/"
+      },
+      {
+       "label": "付款方 AI 降级的帖子",
+       "url": "https://www.aapc.com/discuss/threads/horizon-nj-health-downcoding-claims.236010/"
+      }
+     ],
+     "source_date": "2026-07-09"
+    },
+    {
+     "id": "nn-17",
+     "section": "行业痛点",
+     "title": "市政制图员发帖求助：标注只能一个一个手动拖，拖到不重叠、间距一致——有没有别的办法？",
+     "facts": "一位做市政测绘出图的制图员在官方论坛上求助：有没有脚本、插件或者任何自动化办法，能<b>自动排布图纸上的标注<\/b>——把拖出去的标注归位、保持间距、避免标注和引线互相压住、多个标注对齐一致。<br>他说眼下就是<b>一个一个手动拖，非常花时间<\/b>。<br>他得到的回应不是「有现成工具」。版主让他先去看《怎么在本论坛正确求助》，另一位干脆让他自己<b>想一个算法<\/b>来判断每个标注该往哪个方向挪，用几何位移节点自己写。<br>更能说明问题的是：那位回复者顺手甩出了两个更早的同类求助帖。<b>这个问题在同一个论坛已经被反复问过<\/b>，官方和社区都没有成品答案。",
+     "quotes": [
+      {
+       "en": "At the moment, I am arranging and dragging each label manually, which takes a lot of time. Is there any automated or semi-automated solution available, or does this need to be done manually?",
+       "zh": "我现在就是一个一个手动排、手动拖每一个标注，特别费时间。到底有没有自动或者半自动的方案？还是说这活儿就只能手动干？",
+       "by": "DynamoBIM 官方论坛 Civil 3D 版，帖子《Civil 3D Label Arrangement – Script or Manual Process?》，用户 godsonraj41"
+      }
+     ],
+     "angle": "这条我建议你专门写给「想找 AI 创业方向但觉得机会都被占完了」的读者看。<br>它是一个<b>被忽视了二十年<\/b>的问题：图面美学优化。本质是带约束的布局求解——不重叠、不压线、引线不交叉、可读性优先。传统上做不了自动化，卡点只有一个：<b>「什么叫排得好看」写不成规则<\/b>。<br>而这一环<b>现在刚刚被打通<\/b>：视觉模型已经能对「这张图读起来清不清楚」打分，也就是说，<b>过去写不出的那个目标函数，现在可以由模型来当<\/b>。剩下的部分（把几何数据吐出去、把结果写回来）Autodesk 生态早就支持，不用改宿主软件。<br>产品形态：输入是图纸里所有标注的位置、包围盒、引线锚点和底图要素；输出是一次性重排后的位置，外加「这几个我不确定，你来定」的少量人工确认项。卖给<b>市政设计院、测绘公司、EPC 的出图部门<\/b>，按图纸张数或坐席收费。<br><b>可迁移的那一层要点出来<\/b>：凡是「说不清标准但一眼能看出好坏」的活儿——排版、配色、图表布局、货架陈列——过去都因为写不出规则而无法自动化，现在都值得重估一遍。<b>这句话比这个具体案例值钱得多。<\/b><br>老实说一句短板：发帖人只说了「很花时间」，<b>没给出每天几小时的量化<\/b>，你写的时候别替他编数字。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://forum.dynamobim.com/t/civil-3d-label-arrangement-script-or-manual-process/114962"
+      }
+     ],
+     "source_date": "2026-07-21"
+    },
+    {
+     "id": "nn-18",
+     "section": "行业痛点",
+     "title": "民宿房东被「午夜清洁骗局」盯上，反制手段是每次打扫完把整套房子录一遍",
+     "facts": "一位房东发帖说自己被一种正在社交媒体上流传的骗法命中：客人正常入住，<b>熬到过了午夜<\/b>再向平台投诉房间脏得没法住。这个点既订不到别的房、也叫不来保洁，平台只能退款或免费换房。<br>他说这伙人是真的<b>把床垫掀起来找灰<\/b>——发给他的头发照片里，能看出床垫已经不在原位；他们还专门去拍抽油烟机顶部。而他的床品全是洗完晾在户外的。<br>跟帖里一位做了 <b>10 年<\/b>的房东给出的唯一可行反制，是纯手工的：每次清洁完，<b>用带日期时间戳的 App 把整套房子录一遍<\/b>，重点拍床和厨房电器；规则里写明必须先联系房东给整改机会；再装一个直通卧室的门铃，让客人说不出「联系不上」。",
+     "quotes": [
+      {
+       "en": "These people actually took the mattress off the bed looking for dust etc because they sent me a photo of hair which I believe they planted and you can see the mattress isn't there.",
+       "zh": "这帮人是真的把床垫从床上掀下来找灰。他们发我一张头发的照片，我认定那是他们自己放上去的——因为照片里你能看出来床垫根本不在原位。",
+       "by": "Airbnb Hosts Forum，帖子《Airbnb \"midnight cleaning scam\"》，用户 TDG"
+      },
+      {
+       "en": "Crazy what we have to put ourselves through to make enough money these days just to pay the mortgage and some food.",
+       "zh": "为了挣够还房贷、够买口吃的，我们得把自己折腾成这样，真是疯了。",
+       "by": "同帖，做了 10 年房东的用户 Lynick4442"
+      }
+     ],
+     "angle": "痛点的真正卡点<b>不是「没录」，是「录了也用不上」<\/b>——这个判断是这条内容的骨头，建议你开篇就点破。房东录了几百段视频，真出事时根本翻不出对应那一段的对应那一帧。<br>产品形态：<b>保洁交接的自动取证包<\/b>。输入是保洁工用手机随手拍的一组照片或一段视频，<b>不需要按规范拍<\/b>；输出是自动按房间和家具归类、打上防篡改时间戳的「入住前状态档案」。纠纷发生时，拿客人投诉的那张照片去<b>反向检索<\/b>匹配的清洁后原图，一键生成给平台客服看的对照材料——同一角度、同一位置、清洁完成时间。卖给管 3 套以上的房东和短租托管公司，按房源月费。<br>为什么是现在：<b>视觉模型现在才做得到「把杂乱的手机随拍自动对齐到同一视角、并在两张图之间定位差异」<\/b>，这正是把「录了一堆视频」变成「能用的证据」的那一步。<br>建议你把它拔到一个更普遍的层面：<b>「取证」正在成为一个新的产品品类<\/b>——租房、租车、二手交易、装修验收、宠物寄养，都是同一套东西换个壳。<br>提醒：<b>这是房东单方陈述<\/b>，客人一方没有回应，「头发是栽赃」是他自己的判断。另外那个帖子后半段的「骗局原理」分点说明<b>行文明显像是从别处贴进来的<\/b>，跟前半段口语落差很大，别引用那部分。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://airhostsforum.com/t/airbnb-midnight-cleaning-scam/65050"
+      }
+     ],
+     "source_date": "2026-08-10"
+    }
+   ],
+   "pitfalls": [
+    "<b>星数增速可疑<\/b>：nn-01 的 ip-as-logo 仓 5 天涨到 3968 星，nn-05 的 autoprompt-skill 6 天 780 星、却塞了 747 个文件。中文圈 skill 仓刷量常见，不能排除。所有 star 数都是抓取当时的读数，写稿前建议自己再点一眼。",
+    "<b>有引流动机<\/b>：nn-01 的 README 挂了作者自家的商业站点 ipaslogo.com。技能本身没有任何效果对比数据，「哪种写法更好」完全是作者主张，无第三方复现。",
+    "<b>自报数据、无人复现<\/b>：nn-05 的「失败减少 45%」（作者自跑的 89 题对比，无公开 trace）、nn-08 Graft 的「token 降 42%」（作者自己搭的 harness 跑 162 次，且 NanoNets 是公司、有获客动机）、nn-02 的「5.5 万行代码 / 11 个子系统」和「AAA 品质」（全是 README 自评，Claude-of-Duty 是 demo 不是发行游戏）。这三个数字要转述就必须带上限定词。",
+    "<b>LLM 当裁判不等于人类盲测<\/b>：nn-10 那个 24.55% 到 69.05% 的偏好胜率，是让 Gemini 3.5 Flash 当裁判评出来的；nn-13 FlavourBench 的「标准答案」是一个烹饪评分系统给的，不是真实味觉——它把「大模型裁判」换成了「规则裁判」，规则本身没被外部验证过。两条都不能当客观结论。",
+    "<b>作者自己撤回了自己的卖点<\/b>：nn-07 的 unlazy 仓库简介至今还写着「努力随深度倍增」，但它自家文档已经承认原始数据不在仓里、不能复现，只算「六次探索性对比」。别把它的方法当有效方法推荐，只当现象写。",
+    "<b>不是新东西，是被重新翻出来<\/b>：nn-03 那条「重新理解即拒绝信号」至少从 Claude Opus 4.7（2026-04-16）就在了，Opus 4.8、Fable 5、Opus 5 一路沿用，不是今天的新规则；nn-06 的插件审查提示词所在仓库建于 2026-03-20，是这周上了 trending 才被注意到，文件本身的加入日期未核（故 source_date 写「日期待核」）。",
+    "<b>单方陈述、无第三方证实<\/b>：nn-15 的「实际值 17930 美元」是珠宝商自己的报价（原帖金额还多打了一位，引用时照录原文）；nn-16 的「裁掉 50 多名编码员」没点名医院、无新闻佐证，「付款方用 AI」是同行推测、原话带「之类的」，付款方从未确认；nn-18 的「头发是栽赃」是房东自己的判断，客人一方无回应。",
+    "<b>行文像内容营销模板<\/b>：nn-18 那个帖子后半段的「骗局是怎么运作的」分点说明，与前半段第一人称口语落差极大，明显像从别处贴进来或由 AI 生成，只可引用房东自己叙述的部分。",
+    "<b>样本小 / 适用范围窄<\/b>：nn-12 的 MemStrata 只有 130 个转移样本，且是精心筛过的「干净原子替换」，作者自承只覆盖真实修复的约 18%，0.91 对 0.57 是在最有利于自己方法的子集上做的。",
+    "<b>重新分析不是新实验<\/b>：nn-14 是对已有数据集的再分析，那个 0.949 是「条件于已观察到移动」的描述性分解，作者明确反对读成「人其实是近似贝叶斯的」。另外「没动」也可能只是滑块粒度或四舍五入的报告口径问题，不等于心里没变。",
+    "<b>本期缺口，如实说明<\/b>：Reddit 全站（含 old.reddit.com）在本次调研环境不可访问，practicalmachinist、allnurses、eng-tips、taxprotalk 等一批垂直论坛返回 403 或被付费墙拦截，X/Twitter 也抓不到带原文的推文。因此痛点部分改从 Ganoksin、AAPC、DynamoBIM、Airbnb Hosts Forum 等可访问论坛取材，兽医、殡葬、干洗、图书馆、印刷、翻译等方向本期没能覆盖，没有凭印象补写。"
    ]
   }
  ]
