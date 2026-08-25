@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-25 13:31 (北京时间)",
+ "updated_at": "2026-08-25 21:20 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -17058,6 +17058,473 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "<b>「新发现」其实是旧事<\/b>：本期几条痛点素材的原帖不是新的——心理师那帖 8 月 6 日，卡车滞留费那帖 5 月 25 日开、6 月底才有最后一条回复，教会调查是 4 月 27 日。当素材用没问题，但别在标题里暗示是今天发生的。",
     "<b>召回率的坑<\/b>：CLAUDE.md 那篇论文规则抽取召回率只有 66.3%，意味着三分之一的规则压根没进统计，而漏掉那批到底偏向哪一边不明。4.4% 这个数字方向是对的，但别当成精确值反复引用。",
     "<b>数字和标题对不上<\/b>：本期没收但你可能刷到的 Kern（1.5MB 容器运行时），作者本人在 Hacker News 上承认自己编译出来是 1.91MB，1.52MB 是 CI 用特定优化产出的；他还主动说明顶层几个工具的冷启动差异其实都在测量噪声范围内。这种自曝短板的项目反而值得信，但引数字要引对的那个。"
+   ]
+  },
+  {
+   "id": "2026-08-25-evening",
+   "date": "2026-08-25",
+   "type": "evening",
+   "type_label": "晚报",
+   "generated_at": "2026-08-25 21:30 (北京时间)",
+   "intro": "今天真正值得花时间的只有一件：微软画图那个隐形水印，早上只知道「像素被改了」，晚上查清了改的是什么——一串服务器发下来的 GUID，还能把你前后几次生成串成一条线。剩下的挑两篇论文看：整仓迁移 520 次跑只成了 28 次，AI 帮你写完题你自己反而变差。融资和芯片可以扫一眼就过。",
+   "highlights": [
+    "微软画图的隐形水印不是「AI 生成」四个字，是一串能追到人的 GUID——本地出图也照打",
+    "整仓库迁移这件事，8 个前沿模型跑 520 次，只有 28 次三关全过",
+    "美国国家漏洞库的 CWE 标签，只有 49.70% 跟代码对得上——一堆安全 benchmark 建在这上面"
+   ],
+   "cards": [
+    {
+     "id": "ev-01",
+     "section": "今日深挖",
+     "title": "微软画图的隐形水印，藏的不是「这是 AI 画的」，是一串能追到你的编号",
+     "facts": "早上那篇逆向只说清了一半：一张 512×512 的图，<b>193376 个像素<\/b>被改过，占 <b>73.7%<\/b>。晚上查明白了改的是什么。<br><br>埋进去的是一个 <b>16 字节的 GUID<\/b>，前面加一字节 <code>0x4c<\/code>、后面加一字节校验和，凑成 18 字节、<b>144 个比特<\/b>，每个比特至少要成功写进 <b>3 个<\/b>图块才算数。图小于 <b>192×192<\/b> 就不写。<br><br>关键在这个 GUID 从哪来。它不是本地算的，是你打提示词的时候，微软的审核服务器回给你的。返回体里同时有 <code>watermarkId<\/code>（埋进像素的那个）和 <code>promptGenerationId<\/code>（另一个）。你再生成一次，画图会把上一次的 <code>promptGenerationId<\/code> 当作 <code>lastPromptGenerationId<\/code> 一起发过去。前后两次，服务器那边是能连起来的。<br><br>最要命的一点：Copilot+ PC 上，出图是在本地 NPU 上跑的 Stable Diffusion。可提示词照样要先发去远端过审、拿回 GUID，写水印失败画图就直接失败。「本地生成」不等于「不联网」。",
+     "sides": "<b>微软怎么说<\/b>：官方文档写的是「我们做内容过滤」，以及生成的图「会带 C2PA 清单，帮助用户识别这是 AI 生成的图像」。C2PA 是一套跨厂商的内容溯源标准，本身是公开的、正当的。截至 The Register 发稿，微软没有回应置评请求。<br><br><b>研究者怎么说<\/b>：Vector 35 的 Xusheng Li 的指控不是「微软偷偷埋了东西」，而是<b>披露不充分<\/b>——文档没说清 C2PA 清单里那个软绑定字段（<code>\"alg\": \"com.microsoft.invismark.1\"<\/code>）装的是一个跟你的提示词绑定的 GUID，也没说本地生成路径的水印 ID 是远端审核发的。他的原话是微软「hasn't sufficiently clarified」。<br><br><b>事实与推测要分开<\/b>：像素改了 73.7%、GUID 16 字节、前后请求会串号——这些是逆向出来的事实，可复现。「微软能凭这个反查到具体某个人」是<b>推测<\/b>，取决于服务器侧留了什么日志，外部无从证实，别当结论写。<br><br><b>时间线<\/b>：8 月 24 日 xusheng.dev 发出逆向长文，当天冲上 HN 首页（765 分 / 375 评论）；8 月 25 日 The Register 跟进，标题落在「linked to user IDs」；同期背景是欧盟《AI 生成内容透明度行为准则》要求机器可读标记，8 月 2 日起在欧盟上市的新模型都得支持。<br><br><b>可能后续<\/b>：一是微软补文档或改行为，二是欧盟那边被拿去当「透明度做过头变成追踪」的案例，三是有人做出剥离工具——水印是像素域的，抗压缩但不抗重绘。",
+     "quotes": [
+      {
+       "en": "Your prompt is sent to Microsoft for moderation, and the returned GUID is encoded into the pixels.",
+       "zh": "你的提示词会被发到微软那边过审，然后它回给你的那个 GUID，被编码进了像素里。",
+       "by": "Xusheng Li，Vector 35，转引自 The Register"
+      },
+      {
+       "en": "will contain C2PA manifest helping users identify that it is an AI generated image",
+       "zh": "会带上 C2PA 清单，帮助用户识别这是一张 AI 生成的图像",
+       "by": "微软官方文档，转引自 xusheng.dev"
+      }
+     ],
+     "angle": "<b>这条建议做长文，而且只做一个角度：「合规」和「追踪」中间那条线在哪。<\/b>别写成微软阴谋论——C2PA 是公开标准，欧盟确实在逼所有人打标记，微软照做没错。真正的题眼是：法规要的是「让人知道这图是 AI 画的」，微软给的是「一个能把你多次生成串起来的唯一编号」。这两件事的技术成本差不多，隐私后果差很远。<br><br>结构给你排好：先讲 73.7% 像素被改这个抓眼球的数字 → 再拆 GUID 从哪来（这是全篇最反直觉的一段：本地出图也要联网拿号）→ 再讲串号机制 → 最后落到「透明度立法正在制造新的追踪面」。<br><br><b>不要碰的<\/b>：别推「微软在建用户画像」，没证据；别写「微软偷偷摸摸」，人家文档里写了，只是写得含混。你的立场应该是「披露不够，不是偷埋」，这个立场稳，也更难被打脸。<br><br>配图直接画：一条时间线，提示词 → 审核服务器 → 返回 watermarkId + promptGenerationId → 本地 NPU 出图 → 写水印 → 下一次带上 lastPromptGenerationId。这张图讲完，读者就懂了。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原始逆向长文",
+       "url": "https://xusheng.dev/posts/reversing/mspaint_invisible_watermark/main/"
+      },
+      {
+       "label": "The Register 跟进",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/25/microsoft-ai-watermarks-in-paint-and-photos-are-linked-to-user-ids-researcher-finds/5292034"
+      }
+     ],
+     "source_date": "2026-08-25",
+     "followup": "今日早报收过 xusheng.dev 那篇逆向，当时的落点是「七成多的像素被动过」。今天新增的是水印内容本身（服务器下发的 GUID）、跨次请求的串号机制，以及 The Register 的独立跟进。"
+    },
+    {
+     "id": "ev-02",
+     "section": "反共识",
+     "title": "那个靠押注 AI 股一战成名的对冲基金，被 SEC 盯上了",
+     "facts": "Situational Awareness 是 Leopold Aschenbrenner 创立的对冲基金。他二十几岁，OpenAI 前员工，靠一份同名长文在圈内出名。<br><br>7 月底那波 AI 股回调，据报道让这家机构「蒸发了数十亿美元的价值」。<br><br>8 月，SEC 开始查。做法是向给该基金做交易监管、提供资金支持的银行发传票，要求「保留任何相关信息」。<br><br>基金方面回应说会「全力配合任何监管要求」，并称高知名度基金受到监管关注属于意料之中。<b>目前没有任何一方被指控存在违法行为。<\/b>",
+     "sides": "<b>看空这条新闻的人会说<\/b>：SEC 向银行发传票是常规动作，不等于立案指控，更不等于有问题；大基金遭遇回撤也不稀奇。这些说法在事实层面站得住。<br><br><b>看重这条新闻的人会说<\/b>：查的对象不是交易本身，是给它加杠杆的银行——监管想看的是资金链，不是持仓。这个方向选得很说明问题。<br><br><b>口径提醒<\/b>：「蒸发数十亿美元」是媒体转述的报道口径，不是基金披露的数字，也没说清是净值损失还是名义敞口。这两个概念差得很远，别当成亏损额引用。",
+     "angle": "<b>这条别做「AI 泡沫破了」，那是懒人写法。<\/b>建议从一个更小、更准的切口进：AI 叙事的最强代言人自己下场做多，然后被监管查资金链。Aschenbrenner 那份《Situational Awareness》在国内圈子里传得很广，很多人的 AGI 时间表就是从那份文档来的——现在作者本人在市场上验证了一次，结果是这样。<br><br>短帖就写一句反问：一份把 AGI 时间表写得那么确定的文档，作者拿真金白银押上去，为什么结果是被 SEC 发传票？<br><br><b>务必写清「未被指控违法」<\/b>，这句不加，你这条就是在造谣。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-03",
+     "section": "反共识",
+     "title": "整个仓库的技术债迁移，8 个前沿模型跑 520 次，只有 28 次全过",
+     "facts": "这篇新 benchmark 叫 SWE Refactor Bench，20 个「整仓库迁移」任务，覆盖 4 类技术债。<br><br>它的立论很狠：现有 benchmark 只看行为对不对，不看<b>迁移到底有没有真的发生<\/b>。所以它加了三关——迁移审计、行为测试、agent 复核。<br><br>结果：<b>520 次跑，只有 28 次（5.4%）三关全过<\/b>。<b>20 个任务里 13 个一次都没被解出来。<\/b>最好的模型 Claude Opus 5 拿 <b>47.0 / 100<\/b>。<br><br>更有意思的是那 340 次过了迁移审计的：<b>58% 完成到 99% 的检查项，只有 26% 做到 100%<\/b>。差的就是最后那一点点。<br><br>任务类型之间差距巨大：改构建工具链得 <b>31.4 分<\/b>，换编程语言只有 <b>5.6 分<\/b>。",
+     "sides": "<b>作者一方<\/b>：520 次跑、8 个模型、26 种「模型 × 推理强度」组合，样本量在同类 benchmark 里算扎实。<br><br><b>可以质疑的地方<\/b>：三关全过是个很严的门槛，「99% 完成」在真实工程里往往已经能交付了，剩下 1% 人来收尾。用 5.4% 这个数字去说「agent 干不了迁移」，是拿满分线当及格线。<br><br><b>口径<\/b>：47.0/100 是这套评分体系下的综合分，不是通过率，别跟 5.4% 混在一起说。20 个任务的规模也偏小，单个任务的难度设置对总分影响很大。",
+     "angle": "<b>你可以从「58% 做到 99%，只有 26% 做到 100%」这一条切<\/b>——这比 5.4% 有用得多，也更贴近你读者的真实体感：agent 大改一遍，看着全好了，最后总有几处没动。这个「最后一公里」才是可讲的。<br><br>建议做成图文，两张图：一张 520 → 340 → 28 的漏斗，一张构建工具链 31.4 分 vs 换语言 5.6 分的对比。第二张能直接回答一个很常见的问题：什么活能交给 agent，什么活别想。<br><br><b>别做<\/b>「AI 写代码不行」的标题党。这篇测的是整仓迁移，不是日常写功能，两回事。",
+     "platforms": [
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23564"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-04",
+     "section": "数据素材",
+     "title": "美国国家漏洞库的漏洞类型标签，只有 49.70% 跟代码对得上",
+     "facts": "一群研究者做了个叫 CWEAgent 的自动审计工具，把 <b>2017 到 2026 年、15556 个开源项目 CVE<\/b> 的 CWE 标签逐条拿去跟真实漏洞代码对。<br><br>结果：<b>只有 49.70% 完全吻合<\/b>。另有 <b>31.37%<\/b> 属于「分类体系本身有歧义，这么标也说得通」。<b>3.63%<\/b> 被判定为跟代码证据矛盾的明显错误。<br><br>而且误标模式<b>随时间在变差<\/b>，不是随机噪声——他们归纳出六种反复出现的错误模式。<br><br>为什么要紧：CWE 标签被用来做漏洞检索、扫描器评测、<b>benchmark 构造<\/b>、机器学习安全工具的训练标签，还有漏洞优先级排序。",
+     "sides": "<b>发布方<\/b>：论文 arXiv:2608.21977，2026 年 8 月 22 日提交，方法叫 seclometry，从根因、触发条件、被破坏的安全属性、利用方式、影响五个维度做语义比对。样本 15556 个开源 CVE，时间跨度 2017–2026。<br><br><b>口径必须说清<\/b>：49.70% + 31.37% + 3.63% = 84.70%，<b>剩下 15.30% 摘要里没交代归到哪一类<\/b>。你引用的时候不能默认它是「错的」，也不能默认它是「对的」。下面这张图里我把它单独标了出来。<br><br><b>另一个要小心的<\/b>：判官是 LLM agent，不是人工复核。「只有 49.70% 正确」严格说是「只有 49.70% 与 CWEAgent 的代码级判断一致」。谁对谁错，这篇论文自己也是一方。",
+     "angle": "<b>这条是今天最好的数据素材，做成图文发。<\/b>切入点别选「NVD 不靠谱」，选「你信的那个安全 benchmark，底下是这个」——很多安全类模型评测的标准答案就是 NVD 标签，标签本身一半对不上，评测分数的意义就要打问号。<br><br>下面那张堆叠条你可以直接拿去用，颜色写死了，深浅底都能读。灰色那段一定要保留并标注，这是你专业度的体现——别人转这条数据的时候八成会把它悄悄抹掉凑成 100%。",
+     "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 200\" width=\"600\" height=\"200\" role=\"img\" aria-label=\"NVD CWE 标签审计结果堆叠条形图\"><rect x=\"0\" y=\"0\" width=\"600\" height=\"200\" fill=\"#F7F7F5\"/><text x=\"20\" y=\"28\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"15\" font-weight=\"700\" fill=\"#1A1A1A\">15556 个开源 CVE 的 CWE 标签，跟代码对了一遍<\/text><text x=\"20\" y=\"48\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"11\" fill=\"#6B7280\">来源：arXiv:2608.21977，CWEAgent 自动审计，2017–2026<\/text><rect x=\"20\" y=\"64\" width=\"278.3\" height=\"40\" fill=\"#2E7D64\"/><rect x=\"298.3\" y=\"64\" width=\"175.7\" height=\"40\" fill=\"#C8952B\"/><rect x=\"474\" y=\"64\" width=\"85.7\" height=\"40\" fill=\"#8A8F98\"/><rect x=\"559.7\" y=\"64\" width=\"20.3\" height=\"40\" fill=\"#C0392B\"/><text x=\"159\" y=\"89\" text-anchor=\"middle\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"13\" font-weight=\"700\" fill=\"#FFFFFF\">49.70%<\/text><text x=\"386\" y=\"89\" text-anchor=\"middle\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"13\" font-weight=\"700\" fill=\"#FFFFFF\">31.37%<\/text><text x=\"517\" y=\"89\" text-anchor=\"middle\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"12\" font-weight=\"700\" fill=\"#FFFFFF\">15.30%<\/text><rect x=\"20\" y=\"126\" width=\"12\" height=\"12\" fill=\"#2E7D64\"/><text x=\"38\" y=\"136\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#1A1A1A\">完全吻合<\/text><rect x=\"130\" y=\"126\" width=\"12\" height=\"12\" fill=\"#C8952B\"/><text x=\"148\" y=\"136\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#1A1A1A\">分类有歧义，也说得通<\/text><rect x=\"20\" y=\"150\" width=\"12\" height=\"12\" fill=\"#8A8F98\"/><text x=\"38\" y=\"160\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#1A1A1A\">摘要未交代归属<\/text><rect x=\"180\" y=\"150\" width=\"12\" height=\"12\" fill=\"#C0392B\"/><text x=\"198\" y=\"160\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#1A1A1A\">与代码证据矛盾：3.63%<\/text><text x=\"20\" y=\"186\" font-family=\"-apple-system,Helvetica,Arial,sans-serif\" font-size=\"11\" fill=\"#6B7280\">注：前三项之和为 84.70%，剩余 15.30% 论文摘要中未说明归类，此处单列，不并入任何一方。<\/text><\/svg>",
+     "platforms": [
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.21977"
+      }
+     ],
+     "source_date": "2026-08-22"
+    },
+    {
+     "id": "ev-05",
+     "section": "论文",
+     "title": "给仓库写的技能会悄悄过期：57 个仓库、105 次版本更新，没有一次不让老技能失效",
+     "facts": "这篇叫 Repo2Skill-Evo，问的问题很实在：给 agent 写的仓库专用「技能」，仓库一升级，它还准吗？<br><br>研究者把每一次版本迁移当成一道「技能维护题」，让 agent 去改过期内容、保留还有效的部分。<b>57 个真实仓库、105 次版本迁移、6 个前沿 agent。<\/b><br><br>结论一句话：<b>每一次版本迁移，都会让 V1 那套技能失效一部分<\/b>——没有例外。<br><br>agent 修得怎么样？在一套「既看有没有漏改、又看有没有乱改」的指标下，平均 F1 只有 <b>29.9% 到 69.7%<\/b>。<br><br>两种翻车方式：改得太保守，漏掉的过期内容原封不动留在那；改得太狠，召回上去了但把还有效的也删了。",
+     "sides": "<b>论文的口径<\/b>：F1 是 macro avg@3，基于「补丁对照的删除指标」算的，不是通过率。29.9%–69.7% 是六个 agent 的区间，不是某一个模型的分数。<br><br><b>可以质疑的<\/b>：「技能失效」由谁判定？由论文自己构造的 patch-grounded 标准判定。这套标准偏严——文档里一句表述过时，可能实际并不影响 agent 干活。",
+     "angle": "<b>这条对你的读者最有用，因为它戳的是「写了 CLAUDE.md 就一劳永逸」这个幻觉。<\/b>切入点：你辛辛苦苦给项目写的那份 agent 说明书，是有保质期的，而且过期了不会报错，只会继续给出旧答案。<br><br>建议做成短帖 + 一条可操作的建议：把「技能/规则文件」跟依赖版本绑在一起，升级依赖的时候顺手复查一遍。这比讲论文本身有价值。<br><br>跟 8 月 25 日午报那条「481 个 CLAUDE.md 里只有 4.4% 的禁令背后真有闸」连起来讲，是同一个主题的两面：写了不一定有用，有用了也不一定还有效。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.21964"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-06",
+     "section": "反共识",
+     "title": "「大模型编包名」这个数字被高估了：Python 的幻觉率虚高 9.4 个百分点",
+     "facts": "包幻觉，指模型写代码时 import 一个根本不存在的库——攻击者可以抢注这个名字投毒。<br><br>这篇论文先打了前人一巴掌：以前的研究<b>把标准库模块也算成了幻觉<\/b>，导致 Python 的幻觉率<b>虚高 9.4 个百分点<\/b>。<br><br>然后测了 7 种防御手段、<b>8 个模型、4 种语言<\/b>（Python、JavaScript、Ruby、Rust）。<br><br>RAG 最有效，在 <b>32 组配置里的 18 组<\/b>降低了幻觉率。但综合「防住多少」和「还能不能用」，最划算的居然是最朴素的贪心解码。<br><br>换成对抗场景——提示词里塞进编造的包名——幻觉率<b>最高涨 45 个百分点<\/b>。Ruby 最脆，飙到 <b>80.9% 到 95.2%<\/b>。",
+     "sides": "<b>这条的价值在于两个方向都打<\/b>：一边说「以前的恐慌数字有水分」，一边说「真被攻击的时候比你想的更糟」。别只引一半。<br><br><b>口径<\/b>：9.4pp 只针对 Python，别推广到别的语言。80.9%–95.2% 是 Ruby 在<b>对抗提示<\/b>下的区间，不是日常使用的水平——这个数字被单独摘出来传的话，是很典型的断章取义。",
+     "angle": "<b>建议做成一条纠错帖，你的立场是「两边都别信极端值」。<\/b>标题可以走「你看到的包幻觉率，有一部分是统计口径造出来的」。<br><br>做长文的话，Ruby 那个 80.9%–95.2% 值得单独展开：为什么小生态的语言更容易被编出假包名？这是个能讲清楚也能讲得有意思的问题。<br><br><b>不要写<\/b>「RAG 是最优解」——论文明说综合权衡下贪心解码更划算，写反了就翻车。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.22652"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-07",
+     "section": "论文",
+     "title": "AI 帮你做题的时候你更强，撤掉之后你更弱——而且越便宜的帮助伤得越深",
+     "facts": "加州大学欧文分校几位研究者做了个对照实验，任务是逻辑谜题。他们的巧思是：<b>把「用 AI」这件事标上价格，然后调价格<\/b>。<br><br>两条结论：<b>帮助越便宜，人用得越勤<\/b>；在学习阶段接受了 AI 帮助的人，<b>撤掉 AI 之后表现更差<\/b>。<br><br>他们用贝叶斯潜在能力模型把三件事拆开算——一开始能力多强、用完 AI 之后表现多好、这个人自身能力变化了多少。<br><br>核心那句：<b>自己独立琢磨得越多，潜在能力涨得越多。<\/b><br><br>论文被 HCOMP 2026 接收。",
+     "sides": "<b>支持这个结论的一方<\/b>：实验是随机对照，还把「使用意愿」这个混淆变量用价格给控住了，设计比一般的问卷调查扎实。<br><br><b>要泼的冷水<\/b>：任务是逻辑谜题，不是写代码、不是写文案。谜题这种一次性、有唯一解的任务，跟真实工作差得远。摘要里也<b>没有给出被试人数和效应量<\/b>——你引用的时候必须说「未披露样本量」。<br><br>另外这是「撤掉 AI 之后」的表现。如果一个人以后干活时 AI 一直在，这个衰减到底算不算损失，是个价值判断，不是数据能回答的。",
+     "angle": "<b>这条要跟今天 HN 上那篇《Coding expertise is going to collapse from AI reliance》（522 分）配着做<\/b>——一篇是实验数据，一篇是从业者的直觉，正好一个当证据一个当情绪。<br><br>切入角度建议选「价格」这个变量，别选「AI 让人变笨」。后者已经被讲烂了，前者是新的：把 AI 调用变便宜，本身就是在改变人的学习行为。这对做产品的人有直接启发——免费额度不是纯粹的善意。<br><br><b>必须写清楚样本量没披露<\/b>，否则这条会被人拿去当「实锤」传，你要为它负责。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23543"
+      },
+      {
+       "label": "HN 相关讨论",
+       "url": "https://news.ycombinator.com/from?site=larsfaye.com"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-08",
+     "section": "行业痛点",
+     "title": "估价师论坛在传一个说法：AI 会把估价师变笨，就像它已经把程序员变笨了",
+     "facts": "AppraisersForum 上一个叫 Tom D 的持证住宅估价师发帖，论点是：AI 对程序员干过的事，接下来会对估价师干一遍。<br><br>他的原话：「初级开发者来的时候会用 ChatGPT，却调不明白一个简单的循环。」还有「开发者正在忘掉基础 API，丢掉对自己代码库的心智模型，离开 AI 拐杖就在复杂系统里找不着北。」<br><br>他还引了一条更狠的：企业上自动化「不只是为了砍岗位，尤其是为了压工资」。<br><br>跟帖不多。一个人说数据获取变容易本来就一直在改变这行；另一个人接着担心 AI 自我增强之后连人都不需要了。",
+     "sides": "<b>这条最有价值的地方，恰恰是它的不严谨。<\/b>Tom D 把两项研究当成论据：一项说是「Anthropic 的研究显示 AI 辅助让编码水平下降」，一项说是「MIT 的 Daron Acemoglu 关于自动化压工资的研究」。<br><br>第一项<b>找不到对应的公开研究<\/b>——Anthropic 发过多份关于 Claude 使用情况的报告，但把结论概括成「AI 辅助让编码水平下降」，是论坛用户的转述，不是原文。<b>你要引用的话必须写成「一位从业者称」，不能写成「Anthropic 研究显示」。<\/b><br><br>第二项，Acemoglu 是麻省理工经济学家，2024 年诺贝尔经济学奖得主，关于自动化与劳动份额的研究确实存在，但那些研究讲的是工业自动化，不是生成式 AI。<br><br>另一边：ev-07 那篇逻辑谜题的对照实验，倒是给这个直觉提供了真的实验证据。所以论点未必错，只是他手上的证据链是断的。",
+     "angle": "<b>这条建议你做成一期「一手素材 + 事实核查」的内容，这是你能建立差异化的地方。<\/b>大部分同行会直接拿「Anthropic 研究表明 AI 让程序员变笨」当标题发出去——你反过来做：先呈现这个正在各行各业口口相传的说法，再指出它引的两条证据一条查无实据、一条张冠李戴，最后补上真正靠得住的那篇实验（ev-07）。<br><br>好处是双份：既讲了行业焦虑，又立了一次专业信誉。<br><br><b>别嘲笑发帖人。<\/b>他的直觉方向可能是对的，只是转述链条出了问题——这在中文互联网上更严重，值得顺带讲一句。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "AppraisersForum 原帖",
+       "url": "https://appraisersforum.com/forums/threads/ai-will-dumb-down-appraisers-as-it-has-the-coders-who-service-it.242723/"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-09",
+     "section": "数据素材",
+     "title": "LinkedIn 那个「这看着像 AI 垃圾」的按钮，三周被点了 100 万次",
+     "facts": "LinkedIn 7 月底上线了一个举报按钮，任何登录用户都能给一条帖子打上「Seems like AI slop」。<br><br><b>三周，点击超过 100 万次。<\/b><br><br>LinkedIn 首席产品官 Hari Srinivasan 给了两个数字：发 AI 生成内容的人，浏览量比按钮上线前<b>少了约 40%<\/b>；平台此前靠自动检测每天能抓到<b>数十万条<\/b> AI 垃圾评论。他还说近几个月拦下了「数十亿次」自动化尝试。<br><br>他同时强调：<b>没有任何单独一条反馈会直接影响一条帖子的分发<\/b>，分发靠多个信号。",
+     "sides": "<b>全部数字来自 LinkedIn 自己，没有第三方复核。<\/b>这一句必须写进你的稿子。<br><br><b>「100 万次」缺失的口径<\/b>：是点击数还是去重后的帖子数？同一个人反复点算几次？误报比例多少？报道里一个都没有。<br><br><b>「浏览量少 40%」缺失的口径<\/b>：跟谁比、比什么时间段、AI 生成内容怎么判定的、样本多大——都没说。而且这个数字对平台是有利的，属于典型的「自证有效」。<br><br><b>反方声音<\/b>：报道里提到有用户怀疑，这个按钮其实是在众包标注「什么样的内容读起来像人写的」，用来训练 AI，而不是真在治理垃圾。这是猜测，但值得写进去。<br><br>另外 LinkedIn 明确区分「用 AI 写」和「AI 垃圾」——前者被允许。这个边界谁来划，报道没讲。",
+     "angle": "<b>这条的好素材不是那 100 万次，是「口径全缺」这件事本身。<\/b>建议你做成一期「怎么读平台自报数据」的示范：把三个数字一个个拆开，问「跟谁比」「怎么算的」「谁受益」。<br><br>做图的话别画柱状图——数字之间不可比。画一张「问号表」：左边列数字，右边列缺失的口径，一目了然。这种图在中文内容里很少见，转发率会不错。<br><br><b>不要拿这条去论证「AI 内容正在被清理」。<\/b>你手上只有平台的一面之词，站不住。",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/24/users-mash-linkedins-ai-slop-button-1m-times-in-3-weeks/5291802"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-10",
+     "section": "小众科技",
+     "title": "把家里闲置的旧 Mac 挂上去接推理单，一台一个月一两百美元",
+     "facts": "西雅图的 Eigen Labs 做了个叫 Darkbloom 的分布式推理网络，专门吃 Apple 芯片的 Mac。<br><br>怎么跑：请求走 OpenAI 兼容 API 进一个跑在机密虚拟机（AMD SEV-SNP）里的 Go 调度器，调度器通过 WebSocket 把活派给各家的 Mac，本地用 MLX 在 GPU 上算。跑推理的 Swift 进程做了加固——<code>PT_DENY_ATTACH<\/code> 挡调试器，Hardened Runtime 挡内存读取 API。<br><br>钱的部分：<b>单机月均 120 到 200 美元<\/b>，全年区间 <b>192 到 4983 美元<\/b>。按模型分，Qwen 3.6 35B A3B 的机器月入最高，<b>399 美元<\/b>。电费估算<b>每月约 2 美元<\/b>。<br><br>网络规模：公布时 <b>250 台在线<\/b>、注册超 <b>900 台<\/b>，累计服务 <b>4200 万次<\/b>请求、<b>45 亿<\/b> token。<b>年化经常性收入 10.2 万美元<\/b>。",
+     "sides": "<b>数字之间对不上，这才是重点。<\/b>ARR 10.2 万美元，除以 12 约 8500 美元/月；可 250 台在线机器按月均 120–200 美元算，光支出就要 3 万到 5 万美元。这两个数不可能同时成立在同一个口径上——要么 ARR 只算了一部分收入，要么 120–200 美元是少数高负载机器的水平。<br><br><b>「全年 192 到 4983 美元」这个区间跨了 26 倍<\/b>，说明绝大多数机器挣的是下限那头。宣传时用的是 120–200 美元的「平均」，你引用时最好用区间。<br><br><b>没有任何延迟和吞吐数据<\/b>。一个分布式推理网络不给延迟指标，这是个大缺口。<br><br><b>隐私机制是「操作系统级阻挡」，不是加密计算<\/b>——提供机器的人拿不到你的输入，靠的是 macOS 内核不让读进程内存，不是数学保证。这两者的强度差得很远。",
+     "angle": "<b>这条别做成「教你用旧 Mac 挣钱」的攻略，那是收割流量。<\/b>建议做成「算一笔账」：把 ARR、在线机器数、月均收入三个数摆在一起，让读者自己看出来对不上。<br><br>真正有意思的角度是：前沿实验室最贵的模型卖不动（8 月 24 日晚报那条 FT 报道），而开源权重模型的推理需求大到要靠众筹旧 Mac 来接。这两件事放一起，说明的是同一件事——需求跑到中低端去了。<br><br>做视频的话，「电费一个月 2 美元」这个数字要标成估算，不同电价差好几倍。",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/24/conjure-cash-with-old-macs-by-linking-them-to-ai-inference-borg/5292002"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-11",
+     "section": "小众科技",
+     "title": "Shopify 创始人写了个 Git 服务器：整个仓库放对象存储，本地磁盘只是缓存",
+     "facts": "walgit，Rust 写的，单个二进制，没有数据库，没有持久状态。仓库直接存在 S3 或 GCS 上。<br><br>核心思路一句话：<b>把对象存储里的一份预写日志当作唯一真相，磁盘上的仓库只是缓存。<\/b><br><br>怎么保证一致：每次 push 存成不可变对象，靠一次 manifest 的 CAS（比较并交换）达成共识；读的时候先用条件 GET 去桶里校验。<b>不用数据库、不选主、不要法定人数<\/b>，多个实例可以同时读写同一批仓库，实例本身随时可扔。<br><br>还有个狠的：仓库<b>可以比机器还大<\/b>，靠 HTTP range 请求远程读。<br><br>功能齐得出人意料：Smart HTTP v0/v2、Bundle-URI 加速 clone、Git LFS、Web 界面、JSON API、按仓库的 push 策略、OIDC 登录、webhook。MIT 协议，<b>1.4k star<\/b>。",
+     "sides": "<b>作者自己写明了架构灵感来自 Cursor 那篇《Git at any scale》<\/b>——就是 8 月 24 日早报那条「AI agent 造的一次性小仓库把 Git 压垮了，Cursor 干脆重写了 Git 服务端」。一个是商业公司的内部系统，一个是个人开源实现。<br><br><b>但要说清<\/b>：walgit 的 README 里<b>没有把 AI agent 当作主要动机<\/b>，讲的是「在普通机器上托管 monorepo」。把它说成「为 agent 而生」是过度解读。<br><br>1.4k star 是我查看时的数字，会变。",
+     "angle": "<b>你可以从「同一个问题，两条路」切<\/b>：Cursor 因为 agent 把 Git 压垮了才重写服务端，一个独立开发者出于完全不同的动机做出了架构相似的东西。这说明 Git 在对象存储时代的那个瓶颈是真实的，不是 AI 特有的。<br><br>建议做长文，技术含量足够：预写日志 + CAS 这套在数据库圈是老办法，搬到 Git 上是新组合。「仓库比机器大也能读」这个特性单拎出来就是个好标题。<br><br><b>别写成「Shopify 官方出品」<\/b>，这是个人仓库。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/tobi/walgit"
+      }
+     ],
+     "source_date": "日期待核",
+     "followup": "承接 8 月 24 日早报的 Cursor 重写 Git 服务端一条：walgit 明确写了架构灵感来自 Cursor 那篇文章，是同一个问题的独立开源解法。"
+    },
+    {
+     "id": "ev-12",
+     "section": "科技资讯",
+     "title": "M5 Ultra：512GB 统一内存、1.2TB/s 带宽——本地跑大模型的门槛又降了一档",
+     "facts": "苹果 8 月 25 日发了 M6 和 M5 Ultra。<br><br><b>M6<\/b>：2 纳米，12 核 CPU（2 超大核 + 4 性能核 + 6 能效核），12 核 GPU 每核带神经加速器，双 16 核神经引擎。统一内存最高 <b>32GB<\/b>，带宽 <b>170GB/s<\/b>。多线程比 M5 快 <b>1.2 倍<\/b>，比 M1 快 <b>2.4 倍<\/b>；AI 相关的 GPU 算力比 M5 涨 <b>30%<\/b>。<br><br><b>M5 Ultra<\/b>：四芯片 UltraFusion 拼装，最高 36 核 CPU、80 核 GPU、32 核神经引擎。统一内存最高 <b>512GB<\/b>，带宽 <b>1.2TB/s<\/b>——比 M3 Ultra 高 <b>50%<\/b>。单线程比 M3 Ultra 高 <b>1.25 倍<\/b>，多线程 <b>1.3 倍<\/b>，AI 峰值 GPU 算力 <b>4.5 倍<\/b>。<br><br>M6 上 Mac mini，M5 Ultra 上 Mac Studio，当天发布。",
+     "sides": "<b>全部为苹果自报，没有第三方复核。<\/b>「4.5 倍 AI 峰值算力」这类说法通常带前提条件——峰值、特定精度、特定负载，苹果新闻稿里没展开。<br><br><b>1.2TB/s 是内存带宽，不是算力。<\/b>对本地跑大模型来说，带宽经常比算力更卡脖子，所以这个数字确实是关键指标——但它和「4.5 倍算力」是两个维度，不能混着夸。<br><br><b>发布稿里没有价格。<\/b>512GB 那个配置的价格没公布之前，「便宜地跑大模型」这句话是说不出口的。<br><br><b>参照<\/b>：512GB 统一内存意味着 FP8 精度下能装下 4000 亿参数量级的权重，或者 FP16 下 2000 亿量级——理论上，不算 KV 缓存和激活。",
+     "angle": "<b>这条只做一个点：512GB 统一内存 + 1.2TB/s 带宽对本地推理意味着什么。<\/b>别做参数罗列，苹果发布会稿子满天飞，你写不出增量。<br><br>建议等价格出来再发深度稿。现在可以先发一条短帖，就问一句：一台机器能装下 4000 亿参数量级的权重，那接下来「必须上云」的理由还剩几条？<br><br>顺便跟 ev-10 那条旧 Mac 推理网络对照着讲——同一天，苹果在往上顶天花板，另一群人在把地板上的旧机器捡起来用。这个对照本身就是选题。<br><br><b>别把「4000 亿参数」写成实测<\/b>，那是我按 FP8 粗算的理论上限，要标明是估算。",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "苹果新闻稿",
+       "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-13",
+     "section": "跨界机会",
+     "title": "澳大利亚音乐榜开始把 AI 歌拒之门外，判定标准是「训练数据合不合法」",
+     "facts": "澳大利亚唱片业协会 ARIA 本周起执行新规，成为<b>第一个<\/b>采纳国际唱片业协会 IFPI 那套原则的机构。<br><br>被排除的不是「用了 AI」，是<b>用了未经授权拿艺人录音训练出来的 AI 服务<\/b>做出来的作品。<br><br>IFPI 的五条门槛：所用的生成式 AI 服务「获得了适当授权且合法」；作品「实质上由人类创作」；不引发「操纵性担忧」；符合版权与人格权法律；AI 的使用「向消费者做了适当标示」。<br><br>这套原则是索尼、环球、华纳共同参与制定的。",
+     "sides": "<b>ARIA 首席执行官 Annabelle Herd 的说法<\/b>：艺人本来就在用 AI 工具，榜单应该给这留出空间；但拿艺人录音训练出来的服务整首整首地生成音乐，是另一回事。<br><br><b>可以质疑的地方<\/b>：「实质上由人类创作」和「操纵性担忧」这两条<b>没有量化标准<\/b>，谁来判、怎么判，公开信息里没有。执行层面等于给了协会很大的自由裁量空间。<br><br><b>另一边的立场<\/b>（报道中未直接引述）：AI 音乐工具方通常主张训练属于合理使用，且榜单排除等于事实上的市场封锁。<br><br><b>数据缺口<\/b>：报道里<b>没有给出 AI 音乐目前在流媒体或榜单中的占比<\/b>。所以这条新规影响多大，现在无法量化。",
+     "quotes": [
+      {
+       "en": "Artists already use AI tools in their work, the charts can and should evolve to keep room for that, but music generated wholesale by services built on artists' recordings is a different matter.",
+       "zh": "艺人本来就在创作里用 AI 工具，榜单可以、也应该跟着变，给这种做法留出空间；但那种建立在艺人录音之上的服务整首整首地生成出来的音乐，是另一码事。",
+       "by": "Annabelle Herd，ARIA 首席执行官"
+      }
+     ],
+     "angle": "<b>这条是给做音乐、做内容变现的读者的，切口选「授权链」而不是「AI 好不好」。<\/b>ARIA 划的这条线很聪明：不管你用没用 AI，只管你用的 AI 是拿什么喂出来的。这个思路一旦被别的榜单、平台、发行渠道抄走，「模型的训练数据来源」就会从道德问题变成商业准入条件。<br><br>你可以直接对读者说：如果你在用 AI 做音乐或配乐并且想走正规发行，从现在起要开始留意工具方有没有公开授权来源。这是个能落到具体动作上的建议。<br><br><b>务必写清「第一个」的含义<\/b>：ARIA 是第一个采纳 IFPI 原则的，不是第一个限制 AI 音乐的——这两个说法不一样，写错了会被行业里的人挑出来。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/25/australias-record-industry-wont-chart-tunes-recorded-in-the-key-of-ai/5292074"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-14",
+     "section": "提示词",
+     "title": "让 agent 写一个 bash 向导，去带人做那些只有人能做的步骤",
+     "facts": "Matt Pocock 技能库里的 <code>wizard<\/code>，8 月新加的。解决的问题很具体：配第三方服务、填 CI 密钥、点一个你不熟的后台——这些步骤 agent 干不了，但每次重新跟 AI 解释一遍又很烦。<br><br>它的答案是：<b>让 agent 生成一个 bash 脚本，由脚本带着人一步步走。<\/b>脚本负责开网页、说清点哪里复制什么、接住值、写进 <code>.env<\/code> 或 GitHub secret、每步确认、显示还剩几步。<br><br>三条最见功力的规矩：一，<b>模板库里的代码一个字都不许手改<\/b>，agent 只负责规划步骤；二，<b>不知道当前界面长什么样就直接说不知道<\/b>，去问用户或查文档，绝不编造步骤；三，<b>写完不许自己跑一遍<\/b>——它会开浏览器、会卡在等人输入，只能静态推演。",
+     "prompt_en": "---\nname: wizard\ndescription: Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don't invoke this for steps the agent can perform itself.\n---\n\n# Wizard\n\nA **wizard** is a bash script that walks a human, step by step, through a manual procedure that's tedious to do by hand and tedious to re-explain to an AI every time. It opens each URL, says exactly what to click and copy, captures the values, writes them where they belong (`.env`, GitHub secrets), confirms at every stage, and shows how many stages are left. It might configure third-party services, run a one-off migration, or move the project from one state to another.\n\nThe delightful UX is already solved by [template.sh](template.sh): stage-by-stage progress, confirmation gates, cross-platform URL opening (including WSL), hidden secret entry, idempotent `.env` upserts, `gh secret`/`gh variable` writes, and a closing summary. **Your job is only to scope the procedure and author its stages.** The library above the `STAGES` marker is identical in every wizard; that consistency is the point: never hand-edit it.\n\nA wizard is ephemeral by default: built for one run, saved to a scratch or `scripts/` path, deleted when the job's done. Commit it only when the user wants a repeatable setup path that should live in the repo.\n\n## Process\n\n### 1. Scope the procedure\n\nWork out every manual step the human must take and every value that gets captured along the way. Read the repo first, don't ask cold:\n\n- For setup: `.env`, `.env.example`, `.env.*`, `README`, `docker-compose*`, framework config, and `.github/workflows/*` (every `secrets.*` / `vars.*` reference is a value the wizard must produce).\n- For a migration or transition: the current state, the target state, and the irreversible actions between them.\n\nThen show the user the ordered list of stages and the values each produces, and confirm: they may add, drop, or reorder.\n\n**Done when:** every stage is named in order, and for each captured value you know (a) where the human gets it, (b) where it's written (`.env`, a GitHub secret, both, or nowhere; some stages are pure actions), and (c) whether it's secret (hidden entry) or public.\n\n### 2. Map each stage's journey\n\nFor each stage, write the precise path a human follows: which URL to open, what to do there, where a value is shown, which variable it fills: e.g. \"Dashboard → Developers → API keys → Reveal test key → copy\". Where you don't actually know the current UI or the exact command, say so and ask the user or check the docs: never invent steps that may not exist.\n\n**Done when:** every stage traces to concrete instructions a stranger could follow.\n\n### 3. Author the wizard\n\nCopy `template.sh` to the target path. Replace the example stage with one `stage` per step, in dependency order. Use the library helpers: `stage`, `say`/`step`, `open_url`, `ask`/`ask_secret`, `write_env`, `set_secret`/`set_var`, `pause`/`confirm`. Set `TOTAL_STAGES` to the number of stages you wrote.\n\nHold the bar the template sets: open the URL before asking for its value, use `ask_secret` for anything secret, `write_env` every persisted value, `set_secret` only the values CI actually needs, and `confirm` before any irreversible action. Each `stage` clears the screen so only the current step is visible: keep a stage to one focused task so nothing the human needs scrolls away. Don't touch the library above the marker.\n\n### 4. Verify and hand off\n\n- `bash -n <script>`; run `shellcheck` if available.\n- `chmod +x <script>`.\n- Don't run it end-to-end yourself: it opens browsers and blocks on human input. Trace it statically instead: every value from step 1 is captured and lands where step 1 said, and every `set_secret` name exactly matches a `secrets.*` reference in CI.\n- Tell the user how to run it. If it's a repeatable setup path, commit it and link it from the README so the next person runs the script instead of asking an AI.",
+     "prompt_zh": "【头部元信息】\nname: wizard\ndescription: 生成一个交互式 bash 向导（wizard），带着人走完那些只有人才能做的步骤。适用场景：开通基础设施、配置凭据或 CI secrets、在你不熟的第三方后台里点来点去、跑一次性的迁移或切换。agent 自己能干的步骤，不要调用这个技能。\n\n【什么是 wizard】\n所谓「向导」，就是一个 bash 脚本，一步一步带着人走完一段手工流程——这段流程手工做很烦，每次重新跟 AI 解释一遍也很烦。脚本会替你打开每个网址，明确告诉你点哪里、复制什么，接住这些值，写到该写的地方（`.env`、GitHub secrets），每个阶段都做确认，还会显示还剩几个阶段。它可以用来配第三方服务、跑一次性迁移，或者把项目从一个状态搬到另一个状态。\n\n【为什么不许改模板】\n好用的交互体验 template.sh 已经解决了：分阶段进度、确认关卡、跨平台开网址（含 WSL）、密码式隐藏输入、幂等的 `.env` 写入（upsert，有则更新无则新增）、`gh secret` / `gh variable` 写入，以及收尾总结。**你的活只有两件：界定流程范围，编写它的各个阶段。** `STAGES` 标记以上的那段库代码，在每个 wizard 里都完全一样；这种一致性本身就是目的——绝不许手改。\n\n【默认是用完即弃的】\nwizard 默认是一次性的：为一次运行而生，存到临时目录或 `scripts/` 下，活干完就删。只有当用户想要一条该长住仓库里、可重复执行的安装路径时，才提交它。\n\n【流程 · 第 1 步：界定范围】\n把人必须手动做的每一步、以及沿途会拿到的每一个值，全部理出来。先读仓库，别上来就问：\n- 装配类：`.env`、`.env.example`、`.env.*`、`README`、`docker-compose*`、框架配置，以及 `.github/workflows/*`（里面每一处 `secrets.*` / `vars.*` 引用，都是这个向导必须产出的一个值）。\n- 迁移或切换类：当前状态、目标状态，以及两者之间那些不可逆的操作。\n然后把排好序的阶段清单、以及每个阶段产出的值拿给用户看，请他确认：他可以增、删、调序。\n**做到什么算完成：** 每个阶段都按顺序命名好了；每一个要采集的值，你都清楚 (a) 人从哪里拿到它，(b) 它写到哪里（`.env`、GitHub secret、两者都写，或者哪都不写——有些阶段是纯动作），(c) 它是密钥（要隐藏输入）还是公开值。\n\n【流程 · 第 2 步：画出每个阶段的路径】\n每个阶段都要写清楚人要走的确切路线：打开哪个网址、在那儿做什么、值显示在哪里、填进哪个变量。比如「Dashboard → Developers → API keys → Reveal test key → 复制」。**凡是你其实不知道当前界面长什么样、或者不确定确切命令的地方，就直说，去问用户或者查文档——绝不许编造可能根本不存在的步骤。**\n**做到什么算完成：** 每个阶段都能落到一个陌生人照着就能做的具体指令上。\n\n【流程 · 第 3 步：写这个向导】\n把 `template.sh` 复制到目标路径。把示例阶段换成一个步骤一个 `stage`，按依赖顺序排。用库里现成的帮助函数：`stage`、`say`/`step`、`open_url`、`ask`/`ask_secret`、`write_env`、`set_secret`/`set_var`、`pause`/`confirm`。把 `TOTAL_STAGES` 设成你实际写的阶段数。\n守住模板定下的规矩：**先开网址、再问它对应的值**；凡是密钥一律用 `ask_secret`；每一个要留存的值都用 `write_env` 写下来；`set_secret` 只写 CI 真正需要的那些；任何不可逆操作之前先 `confirm`。每个 `stage` 都会清屏，只留当前这一步可见——所以一个阶段只放一件事，别让人需要看的信息被滚走。标记以上的库代码，不要碰。\n\n【流程 · 第 4 步：验证并交付】\n- 跑 `bash -n <script>` 做语法检查；有 `shellcheck` 就跑一下。\n- `chmod +x <script>`。\n- **不要自己从头到尾跑一遍**：它会打开浏览器，还会卡在等人输入。改成静态推演：第 1 步列的每个值都被采集到了，也都落到了第 1 步说的地方；每一个 `set_secret` 的名字，都跟 CI 里的 `secrets.*` 引用一字不差。\n- 告诉用户怎么运行它。如果这是一条可重复的安装路径，就提交进仓库，并在 README 里给个链接——这样下一个人是去跑脚本，而不是再去问一次 AI。",
+     "angle": "<b>这条对你的读者是能直接抄走用的，建议做成图文或短视频，重点讲三条规矩背后的判断。<\/b><br><br>最值得展开的是第二条：「不知道界面长什么样就直说，绝不编造步骤」。这一句其实是在给 agent 的幻觉设闸——大部分人写提示词只会说「要准确」，这里给的是一个具体触发条件加一个具体动作。这个写法可以迁移到任何领域。<br><br>第三条「写完不许自己跑」也很妙：它承认了 agent 有一类东西天生验证不了，于是明确规定改用静态推演，并给出推演清单。这比笼统地说「要仔细检查」有用一百倍。<br><br><b>你可以直接对读者说<\/b>：把 wizard 这个思路搬到你自己的工作流里——凡是 agent 干不了、又要反复解释的手工活，让它一次性生成一个带你走的脚本，而不是每次重讲。这个套路适用范围比写代码宽得多。",
+     "platforms": [
+      "图文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/wizard/SKILL.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-15",
+     "section": "论文",
+     "title": "编码 agent 的「过程评测」，测的可能根本不是你以为的那件事",
+     "facts": "这篇论文的标题就是结论：动作、任务、步骤，是三个不同层级，现有评测把它们混成了一锅。<br><br>他们做了个叫 SCAE 的估计器，基于 agent 执行过程的结构因果模型，用回放的办法算——前缀条件识别、回放/干预式估计、受控的信息操纵，三招合一。<br><br>在 <b>12 个仓库、499 条「找文件」轨迹<\/b>上跑出三个发现：<br>一，agent 的动作主要由<b>执行过程留下的线索<\/b>驱动，不是由代码结构关系驱动；<br>二，不确定性存在于<b>任务这一层<\/b>，不在单个步骤上；<br>三，那些看完整条轨迹再打分的裁判模型，存在<b>系统性的对撞偏倚<\/b>——它经常在量「语义上相不相关」，而不是「这一步到底起没起作用」。",
+     "sides": "<b>「对撞偏倚」（collider bias）是统计学概念<\/b>：因为同时看到了原因和结果，反而在两件本来无关的事之间造出了假关联。裁判模型看完整条成功轨迹再回头给每一步打分，就会掉进这个坑。<br><br><b>规模有限<\/b>：499 条轨迹、12 个仓库，而且只测「文件定位」这一种任务。结论能不能推广到别的 agent 任务，论文没有回答。<br><br><b>SCAE 本身也是一套新方法<\/b>，没有被第三方复现过。它说别人测错了，但它自己的正确性同样待验。",
+     "angle": "<b>这条给做 agent 评测、或者靠「让模型当裁判」跑流程的读者，价值很大。<\/b>切入点：你让 GPT 看完 agent 的完整执行记录再给每一步打分，这个做法本身有统计缺陷，而且缺陷方向是固定的——偏向给「看起来相关」的步骤高分。<br><br>建议做长文，把对撞偏倚讲清楚。这个概念在中文技术内容里几乎没人讲，讲明白了很加分，而且能一直复用。<br><br><b>别把它写成「所有 LLM-as-judge 都不可信」<\/b>，论文说的是「看完整轨迹再逐步打分」这一种用法有问题，范围要收住。",
+     "platforms": [
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.22960"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-16",
+     "section": "论文",
+     "title": "agent 一旦动手，就开始替自己找补——「惯性偏见」被单独拎出来测了",
+     "facts": "问题描述得很准：模型一旦生成了某个动作或结论，再去评判<b>这个动作带来的结果<\/b>时，就不客观了。作者管这叫惯性偏见（inertia bias）。<br><br>他们做了个基准叫 IBIS 专门量它，又做了个 NIS-Agent 来治——办法是在两个最容易出问题的节点做<b>上下文隔离<\/b>：网页初筛，和最终答案校验。<br><br>结果：在 GAIA、WebWalkerQA、BrowseComp、BrowseComp-zh 四个基准上表现有竞争力，同时 <b>token 成本降 33%<\/b>。<br><br>还有一个更抓眼球的：一个专门针对惯性偏见训练的 <b>8B 模型<\/b>，达到了 <b>GPT-4o 的水平<\/b>。论文被 EMNLP 2026 接收。",
+     "sides": "<b>「8B 追平 GPT-4o」这句要谨慎<\/b>。原文说的是「在抗惯性偏见这件事上」达到可比水平，不是通用能力追平。而且 GPT-4o 是 2024 年的模型——拿 2026 年的小模型跟它比，参照系选得很宽容。<br><br><b>「token 成本降 33%」的基线是谁<\/b>，摘要没说清。降 33% 相对于哪个具体方案，差别很大。<br><br><b>作者一方的贡献是真的<\/b>：把「模型评判自己动作的后果」单独定义成一个可测量的偏差，并给出基准，这在方法论上有价值——以前这个问题都是混在「自我一致性」里模糊带过。",
+     "angle": "<b>这条建议你换个说法讲，别用「惯性偏见」这个学术词开头。<\/b>直接说人话：你让 agent 搜完资料自己判断「搜到的够不够」，它会倾向于说够——因为那是它自己搜的。<br><br>治法也很实用：在关键判断点上换一个「没看过前面过程」的上下文来判。这个思路你的读者做工作流的时候可以直接用，不需要训练模型。<br><br>可以跟 8 月 24 日午报那条「专门排 bug 的子代理，别人给的答案是密封的」放一起讲，是同一个直觉的两次独立发现。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23045"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-17",
+     "section": "反共识",
+     "title": "查模型有没有歧视，现在的查法本身就是错的——它分不清歧视和合理推断",
+     "facts": "现在主流的公平性审计怎么做：改一下输入里的人口统计信息，看模型的决定变不变。变了就算有问题。<br><br>这篇论文说这个做法根本立不住：<b>决定变了，可能是歧视，也可能是基于证据的合理推断<\/b>，同一个信号分不出来。<br><br>他们的做法是在有真值数据的临床排序任务上，把代理变量的<b>因果效应精确算出来<\/b>，再拿模型的实际依赖程度去对。四个模型都测了。<br><br>核心发现：<b>模型对代理变量的依赖，严重跟不上证据本身的强度<\/b>。同一个审计信号，可以对应三种完全不同的结论——过度依赖、合理依赖、依赖不足。<br><br>还有一条：想靠「社会标签」类的提示词框定去压住代理变量的使用，效果很不稳；<b>只要给几个上下文示例，所有测试模型的代理依赖都会复活<\/b>。<br><br>最后一句最狠：<b>光看准确率，完全发现不了这些问题。<\/b>",
+     "sides": "<b>作者立场<\/b>：Zengqing Wu 和 Chuan Xiao，2026 年 8 月 24 日提交，涵盖 AI、计算语言学、计算机与社会三个分类。<br><br><b>「依赖不足」这个结论会让两边都不舒服<\/b>：讲公平的一方不爱听「模型有时候该用这个变量却没用」，讲效用的一方不爱听「模型有时候用过头了」。这恰恰说明它不是在站队。<br><br><b>范围限制<\/b>：任务是临床排序，因为这个领域能拿到真值。别的高风险场景（信贷、招聘）有没有同样结论，论文没测。<br><br><b>方法本身的前提<\/b>：要算「精确的因果代理效应」，你得先有一份可信的真值数据。大部分现实场景里这个前提不成立——所以这套审计方法短期内很难普及。",
+     "angle": "<b>这条是今天最反共识的一篇，建议做长文，题目就叫「你司的 AI 公平性审计，可能什么都没测出来」。<\/b><br><br>切入点选那个「三种结论对应同一个信号」的发现——它一句话说清了现有审计方法的根本缺陷，而且很容易讲明白：模型看到某个人口统计特征就改了判断，这既可能是偏见，也可能是它读出了这个特征背后真实存在的相关性，光看「变没变」根本分不出来。<br><br>「加几个示例就能让被压制的代理依赖复活」这一条要单独强调——很多人以为在系统提示词里写几句「不要考虑性别年龄」就完事了，这篇给了反证。<br><br><b>要写清楚适用范围只在临床排序<\/b>，别推广到招聘、信贷。这是这条最容易翻车的地方。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.22887"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-18",
+     "section": "圈内暗流",
+     "title": "前 Yandex 搜索负责人拿了 2600 万美元，专门给 AI agent 建一个不给人看的搜索引擎",
+     "facts": "Keenable 刚出隐身状态，<b>2600 万美元种子轮<\/b>，Accel 领投，Conviction 和一批天使跟投。<br><br>立论：AI 读得完整页网页，还需要原文来做溯源——这跟人类用搜索引擎是两种需求，不该共用一套基础设施。<br><br>创始人来头不小。Andrey Styskin 在俄罗斯搜索巨头 Yandex 管过搜索、AI 和云；之后在亚马逊做 Alexa 的网页搜索基础设施。联合创始人 Matthias Petri 是德国 AI 科学家，跟他在亚马逊共事过。<br><br>数字：索引<b>超过 1000 亿份文档<\/b>；团队 <b>15 名工程师<\/b>，分布在美欧，年底想翻倍；API 已在数家 AI 实验室和推理服务商的生产环境里跑。<br><br>Styskin 说他们的技术差异化在于「非常快地把搜索空间缩小」，因为网页级规模的成本压力全在这。",
+     "sides": "<b>市场机会是真的<\/b>：Accel 合伙人 Zhenya Loginov 的说法是，AI 玩家在网页级搜索基础设施上「几乎没有选择」。谷歌和微软确实为了避免蚕食自家业务，在限制或关停搜索 API。<br><br><b>风险也是真的，创始人自己承认<\/b>：建一个大规模索引「贵得让人肉疼」。2600 万美元对上 1000 亿文档的索引，这笔账怎么算得平，是个真问题。<br><br><b>「1000 亿份文档」是公司自报<\/b>，没有第三方核实，也没说清「文档」的定义——网页、段落、还是分块后的片段，量级差好几倍。<br><br><b>竞争对手<\/b>：Brave 和 Exa。这两家都比 Keenable 起步早。",
+     "angle": "<b>别把这条写成融资播报，那没人看。<\/b>切入点选那个反直觉的判断：搜索引擎的用户正在从人变成 agent，而这两类用户要的东西根本不一样——人要十条链接和摘要，agent 要整页原文和可引用的出处。<br><br>顺着这个往下讲一层：谷歌关掉搜索 API 是为了保住广告，而这恰恰把整块 agent 搜索的市场让了出来。这是「创新者的窘境」在 2026 年的一个活样本，Styskin 自己也是这么说的。<br><br><b>短帖版本<\/b>就写一句：一个前 Yandex 的人，正在建一个不给人看的搜索引擎。<br><br>数字一律标「公司自报」。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/25/accel-backed-keenable-is-indexing-the-web-for-ai-agents/"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-19",
+     "section": "工作流工具",
+     "title": "AI 生成的代码故意做成「复制粘贴跑不了」——有人真去做了这个实验",
+     "facts": "这篇论文管它叫「AI 代码交接问题」：代码从聊天框搬进真实工程，中间那一步太顺滑了，顺滑到人根本不看。<br><br>他们的提案叫「软屏障」（soft barriers）：不挡你用 AI，只是让复制粘贴不能直接跑。具体做法是<b>用 Unicode 扰动<\/b>——肉眼看着完全正常，粘过去语法就不合法。<br><br>还造了个指标叫 CPR（Copy-Paste Resistance）：正确解里，被扰动之后变成语法非法的那一部分占多少。<br><br>在 HumanEval 和 MBPP 上测了 <b>4 个模型、4 类扰动手法<\/b>，另做了 <b>18 人<\/b>的试点用户研究，看人的行为会不会从「直接搬」转向「读一遍再改」。<br><br>结论谨慎：<b>输出层的屏障能做到很高的复制粘贴阻力，但效果高度依赖具体模型和任务。<\/b>",
+     "sides": "<b>作者自己划了范围<\/b>：明说 Unicode 扰动<b>不是<\/b>可上生产的方案，这只是一次探索性实验，目标是引出「怎么设计透明的 AI 代码交接机制」这个更大的问题。适用场景他们点了三个：教学、代码评审、安全敏感开发。<br><br><b>18 人的试点<\/b>，规模太小，只能看方向，不能当结论。<br><br><b>最大的争议在方向本身<\/b>：故意给用户添堵，这在产品设计里通常被当成反模式。反对的人会说，真正想偷懒的人会去掉扰动，被拦住的只有本来就认真的人——这个质疑论文没有正面回答。",
+     "angle": "<b>这条你可以做得很有意思，因为它反的是整个行业的方向——所有人都在让 AI 的输出更好用，这帮人在研究怎么让它更难用。<\/b><br><br>切入点选那个「摩擦力」的设计哲学：把「不许复制粘贴」从一条规定，变成一个物理上做不到的事。这个思路本身比 Unicode 扰动这个具体手法有意思得多。<br><br>可以跟 ev-07 那篇「AI 帮完你自己反而变差」连起来：一篇说明了问题，一篇在试解法。两条合起来能撑一期完整的内容。<br><br><b>一定要写明作者说这不能上生产<\/b>，否则会有人真去用，然后骂你。",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.22638"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-20",
+     "section": "小众科技",
+     "title": "自己造技能的 agent：87 道题上比「没技能」高 19.9 个点，追平人工写的",
+     "facts": "SkillAlchemy 想解决的是：没有人类专家、也没有现成执行记录的时候，怎么造出可复用的 agent 技能。<br><br>它的办法是「以准入为中心」：先靠<b>对比性证据<\/b>找出任务描述里没写、但影响行为的隐含要求，再判断每条推导出来的流程<b>适用边界到哪<\/b>，最后打包成结构化技能。<br><br>在 SkillsBench v1.1 的 <b>87 道任务<\/b>上：比完全不给技能的通过率高 <b>19.9 个百分点<\/b>，比最强的自动化基线高 <b>8.6 个百分点<\/b>，<b>与人工精心整理的技能持平<\/b>。",
+     "sides": "<b>「追平人工」是这条的看点，也是最该被质疑的地方<\/b>：人工技能的质量取决于是谁写的、花了多少时间，论文里没交代这批人工技能的来源和标准。基线不同，「追平」的含金量差很远。<br><br><b>SkillsBench v1.1 是个新基准<\/b>，87 道任务的规模不大，覆盖面也没说清。<br><br><b>+19.9pp 和 +8.6pp 都是相对提升<\/b>，绝对通过率是多少，摘要没给。这个缺失挺关键——从 20% 涨到 39.9%，和从 60% 涨到 79.9%，说明的问题不一样。",
+     "angle": "<b>跟今天的 ev-05（技能会悄悄过期）配着看，就是一条完整的线：技能能自动造出来了，但造出来之后会随着仓库升级悄悄失效，而 agent 维护它的能力只有 29.9%–69.7% 的 F1。<\/b><br><br>建议就按这个结构做一期：自动生成解决了「从无到有」，可没人解决「从有到旧」。这个判断是你的，不是论文的，但两篇论文的数据支持它。<br><br><b>别单发这条。<\/b>单看它就是一篇普通的「我们的方法涨了 X 个点」的论文，没什么可讲的。价值全在跟 ev-05 的对照里。",
+     "platforms": [
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23417"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-21",
+     "section": "反共识",
+     "title": "越狱不靠奇怪的符号了，靠多轮聊天慢慢说服——成功率 87.3%",
+     "facts": "PsychJail 换了个路子：不做单轮提示词优化，改用心理学里的说服理论做多轮攻击。<br><br>它把攻击者的动作拆成三块——改变语义（Change-of-Meaning）、选择策略、写出实际发出去的那句话，然后用强化学习按整条对话轨迹给奖励，去优化这个策略。<br><br>结果：在四个对齐过的目标模型上，<b>平均攻击成功率 87.3%<\/b>，高于同类基线。<br><br>更有意思的是他们归纳出四种「模型指纹」——不同模型吃不同的说服套路：<b>讲道理型、认权威型、叙事单一型、什么都吃型<\/b>。",
+     "sides": "<b>要看清这是什么类型的结果<\/b>：87.3% 是论文自报的、在自己设定的攻击场景和自己选的四个目标模型上跑出来的。目标模型是哪四个、越狱成功怎么判定，摘要都没说。<b>不同越狱论文的成功率不可比<\/b>，这是这个领域的通病。<br><br><b>价值在哪<\/b>：「模型指纹」这个发现比成功率数字更有意思——它说明各家的对齐训练在防御倾向上有系统性差异，而这个差异是可以被摸清楚并针对性利用的。<br><br><b>作者的立场<\/b>：论文定位是红队研究，指出多轮交互场景（教育、医疗、政策咨询）的防御被长期低估。这个论点站得住——现在几乎所有安全评测都是单轮的。",
+     "angle": "<b>这条建议做短帖，就讲「四种模型指纹」，别讲成功率。<\/b>成功率这种数字在越狱论文里满地都是，读者早麻了；「不同模型吃不同的说服套路」这个观察是新的，也更容易讲得有画面感。<br><br>顺着可以引到一个更大的问题：现在的安全评测基本都是一轮问一轮答，可真实的使用场景——陪聊、辅导、咨询——全是多轮的。防御和评测的场景对不上，这个缺口比某个具体的越狱方法重要得多。<br><br><b>不要写具体攻击方法<\/b>，也不要点名哪个模型是「什么都吃型」——论文没公开这个对应关系，别猜。",
+     "platforms": [
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23028"
+      }
+     ],
+     "source_date": "日期待核"
+    }
+   ],
+   "pitfalls": [
+    "<b>微软水印那条，最容易翻车的一句是「微软能追到你是谁」。<\/b>逆向能证明的是：水印里是一串服务器下发的 GUID，且前后请求会通过 lastPromptGenerationId 串号。服务器侧留没留能关联到账号的日志，外部无从证实。写成「具备追踪能力」可以，写成「已经在追踪你」就是造谣。",
+    "<b>73.7% 这个像素修改率有前提<\/b>：是在一张 512×512 的合成 BGRA 测试图上测出来的（193376 / 262144）。换一张真实照片、换一个尺寸，比例会变。别写成「所有 AI 生成图都有七成多像素被改」。",
+    "<b>SWE Refactor Bench 的 5.4% 和 47.0 分是两个口径，绝不能同图。<\/b>5.4% 是「520 次跑里三关全过的比例」，47.0 是 Claude Opus 5 在这套评分体系下的综合分（满分 100）。把它们并排画成柱状图是最典型的翻车方式。",
+    "<b>NVD 那条的 49.70% + 31.37% + 3.63% 只有 84.70%，剩下的 15.30% 论文摘要没交代归属。<\/b>凑成 100% 是最常见的处理方式，也是错的。另外「只有 49.70% 正确」严格说是「只有 49.70% 与 CWEAgent 的代码级判断一致」——判官是个 LLM agent，它自己也是一方，不是中立仲裁。",
+    "<b>包幻觉那条的 80.9%–95.2% 是 Ruby 在对抗提示下的区间，不是日常水平。<\/b>这个数字被单独摘出去传的可能性极高。同理，9.4 个百分点的虚高只针对 Python，别推给别的语言。还有一条反直觉的要记牢：论文的结论是<b>贪心解码<\/b>综合最划算，不是 RAG——写反了会被人当场纠正。",
+    "<b>逻辑谜题那篇（AI 让人变弱）摘要里没有披露被试人数和效应量。<\/b>没有样本量的对照实验结论，只能写「一项对照实验发现」，不能写「研究证实」。任务是逻辑谜题，跟写代码、写文案的迁移性论文自己也没论证。",
+    "<b>估价师论坛那条里，「Anthropic 的研究显示 AI 辅助让编码水平下降」查无实据。<\/b>这是论坛用户 Tom D 的转述，找不到对应的公开研究。引用时必须写成「一位从业者称」。Acemoglu 那条也要小心：他确实是 2024 年诺贝尔经济学奖得主，但相关研究讲的是工业自动化对工资的影响，不是生成式 AI——张冠李戴的风险很高。",
+    "<b>LinkedIn 的三个数字全部来自平台自报，无第三方复核，且全部对平台有利。<\/b>「100 万次」没说是点击数还是去重帖子数；「浏览量少 40%」没说对照组、时间窗口和 AI 内容的判定方式。任何一条单独拎出来当结论都不成立。",
+    "<b>Darkbloom 的数字内部对不上，这一点必须写出来而不是忽略。<\/b>ARR 10.2 万美元 ÷ 12 ≈ 8500 美元/月，可 250 台在线机器按月均 120–200 美元算支出就要 3 万–5 万美元。同时「全年 192 到 4983 美元」跨了 26 倍，说明「月均 120–200 美元」是被少数高负载机器拉起来的。用平均数当典型收入，是这条最容易误导人的地方。",
+    "<b>Darkbloom 的隐私保护是操作系统级阻挡（PT_DENY_ATTACH + Hardened Runtime），不是加密计算。<\/b>写成「你的数据被加密保护」是错的——那是「macOS 不让别的进程读这块内存」，安全强度完全不同。",
+    "<b>苹果的性能数字全是自报，「AI 峰值 GPU 算力 4.5 倍」这类说法通常有未公开的前提（精度、负载、峰值口径）。<\/b>另外 1.2TB/s 是内存带宽、不是算力，跟「4.5 倍算力」是两个维度，不能放同一张图对比。发布稿里<b>没有价格<\/b>，任何「性价比」结论现在都写不了。「512GB 能装 4000 亿参数」是按 FP8 的粗略估算，必须标明是估算，且没算 KV 缓存和激活。",
+    "<b>ARIA 是「第一个采纳 IFPI 原则的机构」，不是「第一个限制 AI 音乐的榜单」。<\/b>这两句话差很多，写错了会被行业内的人当场指出。另外报道里<b>完全没有 AI 音乐在流媒体或榜单中的占比数据<\/b>——别自己找个别处的数字凑上去，口径对不上。IFPI 那五条门槛里的「实质上由人类创作」和「操纵性担忧」都没有量化标准，写「有明确标准」是错的。",
+    "<b>惯性偏见那篇的「8B 模型达到 GPT-4o 水平」是在抗惯性偏见这一项上，不是通用能力。<\/b>而且 GPT-4o 是 2024 年的模型，拿它当 2026 年的参照系本身就宽松。「token 成本降 33%」没说清基线是谁，引用必须带上「相对基线未明确」。",
+    "<b>代理变量那篇（ev-17）的实验只在临床排序任务上做，因为那里有真值数据。<\/b>推广到招聘、信贷、教育是这条最大的翻车点——论文没测，你也不能替它测。这篇的正确说法是「现有审计方法在这类任务上分不清歧视和合理推断」，不是「AI 公平性审计全是假的」。",
+    "<b>越狱那篇的 87.3% 无法与其他越狱论文横向比较<\/b>：目标模型是哪四个、越狱成功怎么判定，摘要都没写。不同论文的攻击成功率定义各不相同，放一张图里比是这个领域最常见的错误。另外「四种模型指纹」跟具体厂商的对应关系论文没有公开，别猜、别点名。",
+    "<b>arXiv 论文的日期，凡是我标了「日期待核」的，就是摘要页没显示提交日期。<\/b>arXiv 编号前四位（2608）只代表 2026 年 8 月，不代表具体哪天。写成「今日发布」是常见错误——很多是几天前提交、今天才出现在 recent 列表里。",
+    "<b>walgit 是个人开源项目（tobi），不是 Shopify 官方产品；README 里也没把 AI agent 当作主要动机。<\/b>写成「Shopify 为 AI agent 打造」是双重错误。1.4k star 是查看时的快照，会变，标数字要带时间。",
+    "<b>Keenable 的「超过 1000 亿份文档」是公司自报，且没定义「文档」是网页、段落还是分块片段<\/b>——三种口径之间差好几倍。融资 2600 万美元对上这个索引规模，成本账怎么平，创始人自己都说「贵得肉疼」，别当成已验证的商业模式写。",
+    "<b>Unicode 软屏障那篇，作者明说不是可上生产的方案。<\/b>漏掉这句，会有人真去用，然后代码库里到处是不可见字符。18 人的试点用户研究只能看方向，不能当行为学结论。",
+    "<b>SkillAlchemy 的 +19.9pp 和 +8.6pp 都是相对提升，绝对通过率摘要没给。<\/b>「追平人工整理的技能」这句里，人工技能是谁写的、按什么标准写的，论文没交代——基线不明的「追平」，含金量说不清。",
+    "<b>今天有一条我查了但没收：某处流传的 Claude Code「fable-5」系统提示词泄漏文件。<\/b>抓回来的内容里出现了明显与提问上下文串味的段落，无法确认是原文还是抓取污染。这种情况一律不收——泄漏类内容一旦引错，是最难挽回的翻车。"
    ]
   }
  ]
