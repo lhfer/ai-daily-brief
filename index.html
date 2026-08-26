@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-26 14:03 (北京时间)",
+ "updated_at": "2026-08-26 21:21 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -18692,6 +18692,558 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "<b>预印本，未经同行评审<\/b>：铅管审计、资历腐坏两条都是 arXiv 预印本。尤其铅管那篇，作者自己就写明「零方差本身不构成不当行为」，转述时别把它写成「造假被抓」。",
     "<b>律所出品，有业务导向<\/b>：六州 AI 拒赔立法的汇总来自一家律所的客户资讯，法案编号和生效日期可信，但「趋势判断」那部分带明显的获客动机，引用时只取条文不取评论。",
     "<b>Reddit 本轮全线不可用<\/b>：old.reddit.com 被拒、多数子版块需登录，r/smallbusiness、r/Construction、r/therapists 等本期一条都没能进去。行业痛点三条改从招牌行业论坛、英国房产媒体和博客评论区取材，这一点在此说明，不是遗漏。另有一批蓝领行业论坛（lawnsite、contractortalk、hvac-talk 等）被付费墙挡住，下轮需要换取材路径。"
+   ]
+  },
+  {
+   "id": "2026-08-26-evening",
+   "date": "2026-08-26",
+   "type": "evening",
+   "type_label": "晚报",
+   "generated_at": "2026-08-26 20:30 (北京时间)",
+   "intro": "今晚只有两件事值得你花时间：一是数据中心的反弹已经从民意变成了程序——EPA 想砍掉公众意见环节，而反对者那边已经出现死亡威胁，这条我给你做成了深挖大卡；二是那个匿名模型 Ox-Alpha 终于摊牌了，是智谱的 GLM，今晚开源。其余的挑着看，论文那几条适合攒素材，不急着今天发。",
+   "highlights": [
+    "今日深挖：数据中心反弹进入程序层面——EPA 提议取消空气许可证的公众意见要求，同一周有官员因反对数据中心收到死亡威胁",
+    "Ox-Alpha 揭盅：智谱 Z.ai 向彭博确认这是新一代 GLM，今晚放权重。这条从 8 月 20 日追到今天，可以收尾了",
+    "一篇论文把「提示词技巧」测出了保质期：越新的 GPT 模型，结构化提示带来的收益越小甚至转负，而 Qwen 还在吃 Few-Shot 的红利"
+   ],
+   "cards": [
+    {
+     "id": "ev-01",
+     "section": "今日深挖",
+     "title": "数据中心反弹已经不是民意问题了：一边是 EPA 想砍掉公众意见，一边是反对者收到死亡威胁",
+     "facts": "<p>今天美国这条线上同时冒出两个方向相反的动作，值得放一块儿看。<\/p><p>一边，EPA 提议改规则：空气污染许可证不再强制公示、不再强制征求公众意见，改由各州自己决定要不要办。联邦不要求，州就可以直接省掉。Tom's Hardware 说这个改动<b>一年内<\/b>生效。<\/p><p>另一边，反对的势头也在硬化。全美已有<b>超过 500 个<\/b>市镇对数据中心建设加了限制。2026 年头几个月里，<b>75 个以上<\/b>、总额约<b>1300 亿美元<\/b>的项目被挡下。同一批报道里还写到：有地方官员因为反对数据中心收到死亡威胁甚至遭枪击，部分议会干脆取消投票、关闭公众评论环节。<\/p><p>政治上也开始有人算账。德州州长 Abbott 8 月 24 日说数据中心「基本上是自掘坟墓」。德州农业专员 Sid Miller 更早就放话：共和党会因为数据中心反弹丢掉选举。俄克拉荷马州 Yukon 市长已经在面对罢免。<\/p><p>但同一周，也有人出来泼冷水。分析写手 Andy Masley 8 月 25 日发文说：这场反弹的性质被讲错了——它不是反 AI、也不是反大厂，就是很朴素地反「我家门口这个东西」。<\/p>",
+     "sides": "<p><b>反对方（时间线）：<\/b>2026-08-05 Yukon 市长面临罢免；08-06 Sid Miller 预警选举风险；08-24 州长 Abbott「自掘坟墓」；08-24 国会研究局数据：美国数据中心一年耗水 <b>170 亿加仑<\/b>，十年翻三倍；08-26 EPA 松绑提案与「500+ 市镇限制 / 死亡威胁」报道同日冲上讨论区。<\/p><p><b>「反弹被误读了」一方（Andy Masley，个人博客，非同行评议）：<\/b>他的论据是——大厂本身民意不差，只有 <b>5%–8%<\/b> 的人「强烈反对」谷歌／亚马逊／微软，Facebook 净好感度还有 <b>+13%<\/b>；可数据中心的净支持是<b>约 -60%<\/b>。同样是盖房子，亚马逊仓库支持率 <b>65%<\/b>，数据中心只有 <b>24%<\/b>。他引 Fox News 2026 年 7 月民调：<b>48%<\/b> 把用水列为首要担忧；引盖洛普 2026 年 5 月：解释反对理由时 <b>75%<\/b> 压根没提 AI，<b>45%–51%<\/b> 讲的是水、电、环境。他还引了一项调查：告诉受访者水会循环利用之后，支持度跳了 <b>31 个百分点<\/b>。他的结论是：这是对具体项目的具体不满，不是对 AI 的意识形态审判。<\/p><p><b>口径提醒（重要）：<\/b>上面这些百分比来自至少四家不同机构、四种不同问法、四个不同时间点，Masley 是把它们摆在一篇文章里做论证，不是一次统一调查的结果。<b>千万不要把 -60%、65%、24%、48%、75%、31 个百分点画进同一张图<\/b>。「75% 没提 AI」是开放式提问的编码结果，跟单选题的百分比不是一回事。「1300 亿美元被挡下」是媒体统计口径，不是政府披露。EPA 那条我只见到 Tom's Hardware 的转述，没拿到 EPA 提案原文条款号，引用时请写「据 Tom's Hardware 报道」。<\/p><p><b>可能的后续：<\/b>提案有公示期，环保组织和州检察长大概率会提意见甚至起诉；德州、俄克拉荷马、弗吉尼亚这几个高密度州的地方选举，会是第一次真实计票的检验。<\/p>",
+     "quotes": [
+      {
+       "en": "I think the data center backlash is mostly about data centers.",
+       "zh": "我觉得数据中心引发的反弹，说到底就是冲着数据中心本身来的。",
+       "by": "Andy Masley，个人博客标题，2026-08-25"
+      }
+     ],
+     "angle": "<p>这条给你的是一整期的量，别做成一条快讯。<\/p><p>建议你走「程序」这条线，别走「环保」那条线——环保口径已经被写烂了，而且数字乱。真正没人讲透的是：当一个东西民意支持率 -60%，制度层面发生了什么？答案是公众意见环节正在被从流程里删掉，而不是被说服。这个框架中国读者也能代入。<\/p><p>结构可以这么排：先抛「500+ 市镇、1300 亿被否」两个数字建立势能，再切到 EPA 提案——反弹越大，越要拆掉表达反弹的通道。然后把 Masley 那套反驳完整放进来，别削弱它，他其实说得对：这不是反 AI。最后落到那个最尴尬的事实上——反对者收到死亡威胁，议会关闭公众评论，双方都在退出「讲道理」这个层面。<\/p><p>取舍上：<b>只做美国这一条线，不要顺手扯中国的数据中心<\/b>，口径完全不通，一扯就翻车。图表只画一个东西——「亚马逊仓库 65% vs 数据中心 24%」，这两个数来自同一份材料同一套问法，是全篇唯一能安全同图的一对。<\/p>",
+     "platforms": [
+      "长文",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "EPA 拟取消数据中心污染许可的公众意见要求（Tom's Hardware）",
+       "url": "https://www.tomshardware.com/tech-industry/data-centers/u-s-govt-moves-to-suppress-pushback-on-data-centers-by-removing-requirements-for-public-input-on-pollution-epa-change-would-allow-air-pollution-permits-without-publicizing-them"
+      },
+      {
+       "label": "500+ 市镇限建、反对者遭死亡威胁（Tom's Hardware）",
+       "url": "https://www.tomshardware.com/tech-industry/data-centers/death-threats-hit-data-center-opponents-as-towns-cancel-votes-and-close-public-comment"
+      },
+      {
+       "label": "「这场反弹就是冲着数据中心来的」（Andy Masley）",
+       "url": "https://blog.andymasley.com/p/i-think-the-data-center-backlash"
+      },
+      {
+       "label": "Abbott：数据中心自掘坟墓（Business Insider）",
+       "url": "https://www.businessinsider.com/greg-abbott-texas-data-centers-backlash-2026-8"
+      },
+      {
+       "label": "盖洛普：本地数据中心民调",
+       "url": "https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx"
+      }
+     ],
+     "source_date": "2026-08-26",
+     "followup": "8-24 晚报报过国会研究局的耗水数据和「三份民调 70/61/45」。今天是新进展：从民意层面进到了立法程序和人身安全层面，值得回头做大。"
+    },
+    {
+     "id": "ev-02",
+     "section": "反共识",
+     "title": "Ox-Alpha 摊牌了：是智谱的 GLM，今晚开源权重",
+     "facts": "<p>那个匿名了六天的免费模型，今天有答案了。<\/p><p>智谱（Z.ai）向彭博确认：Ox-Alpha 就是新一代 GLM，并且<b>今晚<\/b>放出权重。<\/p><p>回顾一下时间线：<b>8 月 20 日<\/b>它以「Stealth」这个通用标签出现在 OpenRouter 上，没有公司名、没有新闻稿、没有 logo，靠免费和 100 万上下文窗口迅速冲到使用量榜前列。<\/p>",
+     "sides": "<p><b>已确认的事实：<\/b>智谱对彭博的确认、以及「今晚发权重」这个说法，都出自彭博 2026-08-26 的报道。<\/p><p><b>之前的推测（现在被证实了，但当时只是推测）：<\/b>8 月 25 日 dejan.ai 那篇扒皮用两条独立路径指向智谱；此前也有报道称 Stripe CEO 为它站台、而 Stripe 正在收购它的分发平台。这些当时都是外部推断，不是公司披露，写的时候请把「谁在什么时候确认了什么」分清楚。<\/p><p><b>还没确认的：<\/b>参数量、架构、许可证条款、以及所谓「对标 DeepSeek」的具体基准分——这些截至发稿都没有官方数字。任何流传的跑分现在都属于第三方自测，别当官方成绩引。<\/p>",
+     "angle": "<p>这条你可以直接收尾了，从 8 月 20 日追到今天，正好是一个完整的故事。<\/p><p>但别写成「中国模型又赢了」。真正的看点是发行策略：<b>先匿名放出来跑用量，攒够声量再认领<\/b>。这一招绕开了「中国模型」这个标签在西方开发者那里的第一反应——他们先用了六天，用爽了，才知道是谁做的。这个玩法比模型本身更值得讲。<\/p><p>取舍：<b>别碰跑分，权重今晚才放，明后天才会有第三方复核。<\/b>今天谈分数一定翻车。你今天只谈「怎么发」，等复核出来再做第二条谈「多强」。<\/p>",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "彭博：智谱确认 Ox Alpha 是 GLM 新版本",
+       "url": "https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek"
+      },
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49446422"
+      }
+     ],
+     "source_date": "2026-08-26",
+     "followup": "8-24 早报报过「匿名模型两天烧 2.23 万亿 token」，8-25 午报报过 dejan.ai 的扒皮。今天官方认领，是实质进展。"
+    },
+    {
+     "id": "ev-03",
+     "section": "反共识",
+     "title": "DHH 那个 Linux 发行版被安全圈公开点名：不是不安全，是「在演」安全",
+     "facts": "<p>Omarchy 是 Rails 之父 DHH 做的一个 Arch Linux 发行版，圈里热度很高。今天一篇批评文冲上 Hacker News 前排，<b>172 分、191 条评论<\/b>。<\/p><p>作者列了两个具体问题：视频标题里能注入 bash 命令；所有通知都能在你机器上执行任意 bash。版本指向 <b>Omarchy 4.0<\/b>。<\/p><p>他最狠的一句不是技术，是态度：Omarchy 不是不重视安全，是在「扮演」重视安全。<\/p>",
+     "sides": "<p><b>批评方（happyfellow，个人博客，2026-08-25）：<\/b>除了上面两条，社区此前还整理过——防火墙 UFW 配了规则但根本没运行（v3.0.2 及更早的 ISO）；LLMNR 默认开着；登录失败重试放宽到 10 次而不是常见的 3 次；用 curl | sh 装而不走包管理器。有人对代码库跑静态检查，报出 451 处 shell 脚本错误。作者判断：「我不会惊讶于很多公司禁止它。」<\/p><p><b>项目方一侧：<\/b>DHH 公开表示会给负责任披露的人署名致谢，第一份功劳给了一个报 Docker 权限问题的人；他也在最近的小版本发布里点名了安全团队的修复工作。他对反对声的态度是欢迎，把批评者称作免费的红队。<\/p><p><b>需要区分的事实与观点：<\/b>「视频标题 bash 注入」「通知可执行任意 bash」是作者的技术断言，<b>没有 CVE 编号，我也没看到官方确认或补丁公告<\/b>。「451 处 shell 错误」是社区跑工具的结果，不等于 451 个漏洞——shellcheck 一类工具的告警绝大多数是风格问题。「Omarchy 在演安全」是观点，不是事实。<\/p>",
+     "quotes": [
+      {
+       "en": "Omarchy doesn't treat security as important. They do role-play taking security seriously.",
+       "zh": "Omarchy 并不真的把安全当回事。他们只是在扮演一副很重视安全的样子。",
+       "by": "happyfellow，《Merchants of Insecurity》，2026-08-25"
+      },
+      {
+       "en": "There are bangers like video title bash injection or all notifications being able to run arbitrary bash on your machine.",
+       "zh": "还有些很炸裂的，比如视频标题里能注 bash 命令，比如所有通知都能在你机器上跑任意 bash。",
+       "by": "happyfellow，同上"
+      }
+     ],
+     "angle": "<p>这条的价值不在 Omarchy，在「明星项目的安全债」这个母题。你的读者里没几个人跑 Arch，但很多人在用同一逻辑的东西——一个大 V 做的、体验极好的、curl | sh 一键装的工具链。<\/p><p>切法：<b>从「便利性是怎么一步步吃掉安全默认值的」进<\/b>。防火墙配了规则但没启动，这个细节比任何抽象说教都好用——它长得就像安全，只是没在跑。这跟很多人的 AI 工作流一模一样：写了一堆规则文件，从来没验证过模型有没有真的照做。<\/p><p>取舍：<b>不要下「Omarchy 不安全」的结论<\/b>，你没能力验证，而且 DHH 那边确实在收漏洞、在修。你只做「争议本身」和「便利换安全」这个框架，把双方原话都放上，判断留给读者。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "Merchants of Insecurity（原文）",
+       "url": "https://blog.happyfellow.dev/merchants-of-insecurity/"
+      },
+      {
+       "label": "Omarchy 官方安全手册",
+       "url": "https://omarchy.org/manual/security/"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-04",
+     "section": "圈内暗流",
+     "title": "Debian 正在投票决定要不要禁 AI 写的代码——八个选项，从彻底封杀到随便用",
+     "facts": "<p>Debian 把「能不能用 LLM 写代码贡献」交给全体开发者投票，<b>八个<\/b>选项一次性上票。<\/p><p>两端分别是：把禁令写进社会契约、彻底不收 AI 代码；和允许 AI 辅助，但要满足六个条件（法律兼容、许可、责任归属、披露、批量改动须先讨论、保密）。<\/p><p>中间还有六种活法，包括「只在 Debian 自己的事务上允许」「Debian 是人做的：工具可以用，AI 直接产出不算贡献」，以及一条完全从环境角度出发的「尽量别用」。<\/p><p>项目负责人 Sruthi Chandran 已把截止时间延了<b>一周<\/b>。截至 The Register 发稿，收到的票<b>不到 350 张<\/b>。<\/p>",
+     "sides": "<p><b>强硬派：<\/b>Ian Jackson 支持的那个选项主张彻底禁，理由是可操作性——与其定一堆没法验证的条件，不如直接不收。另有一派把理由完全放在环境破坏上，和代码质量无关。<\/p><p><b>务实派：<\/b>承认已经有人在用了，禁了也管不住，不如定规矩，把责任压在贡献者身上——出问题算你的，不算 AI 的。<\/p><p><b>数据口径提醒：<\/b>「不到 350 张」是 The Register 发稿时的快照，投票还在进行，<b>不是最终结果，别当结论引<\/b>。每个选项的附议人数在 6 到 17 人之间，这是提案门槛，不是支持度。Debian 用的是 Condorcet 计票，最终胜出的很可能是某个中间选项，而不是票数最高的那个——写的时候别用「哪个选项票最多」这种说法。<\/p>",
+     "angle": "<p>这条特别适合做成一期「制度怎么处理 AI」的样本，比任何公司政策都有价值——因为它是公开投票，八个选项的措辞你都能读到。<\/p><p>建议你干脆把八条逐条译成中文摆出来，做成一张图。<b>这就是一份现成的「AI 代码使用规范」选项菜单<\/b>，你的读者里做团队管理的人可以直接拿去改。这个实用价值远大于「Debian 吵架了」这个新闻价值。<\/p><p>取舍：<b>别等结果<\/b>。结果出来那天大家都会报，没差异化。你现在做「选项本身」，反而是独家角度。另外注意，「环境破坏」那个选项在中文语境里会被读成搞笑，其实它是欧洲开源社区一条很主流的线，值得单独解释半段。<\/p>",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "The Register：Debian 就 AI 代码发起八选一投票",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/26/debian-polls-its-developers-on-whether-to-burn-the-bots-tame-the-bots-or-let-em-loose/5292270"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "ev-05",
+     "section": "圈内暗流",
+     "title": "OpenAI 数据中心负责人也走了——Business Insider 数到今年第 13 个高管",
+     "facts": "<p>数据中心负责人 Chris Malone 上周离职，他 2025 年 3 月才加入，之前在 Meta 和谷歌。<\/p><p>OpenAI 的回应是：最近「重组」了基础设施组织，以配合工作的规模和节奏，业务交给 VP Sachin Katti。<\/p><p>Business Insider 统计，2026 年至今 OpenAI 已有<b>13 位<\/b>高管离开。<\/p>",
+     "sides": "<p><b>今年的离职名单（据 TechCrunch 整理）：<\/b>4 月 Sora 负责人 Bill Peebles、CMO Kate Rouch；7 月产品与业务负责人 Fidji Simo（转顾问）、伦理负责人 Chloé Bakalar；7 月底 Preparedness 团队解散；8 月 9 日 COO Brad Lightcap；8 月中 CRO Denise Dresser（在任仅 <b>8 个月<\/b>）；上周数据中心负责人 Chris Malone。<\/p><p><b>公司口径 vs 外部口径：<\/b>OpenAI 自己的说法是「重组」，不是流失。「13 位」是 Business Insider 的统计口径，包含了主动离职、转顾问、团队解散等不同情况，<b>不是公司披露的数字<\/b>，也没有公开的分母（OpenAI 从没披露过高管总人数），所以算不出流失率。谁要拿这个去算百分比，一定是编的。<\/p><p><b>背景（属于分析，不是事实）：<\/b>TechCrunch 把这波跟 2027 年 IPO 推迟、估值和盈利压力放在一起讲。这是记者的关联，不是任何一方的表态。<\/p>",
+     "angle": "<p>做这条，重点别放在「人心散了」上，那是最偷懒的写法。<\/p><p>看职位构成：<b>走的是 COO、CRO、CMO、产品负责人、数据中心负责人——全是「把技术变成生意」那一层<\/b>，研究岗基本没动。这个结构性差异才是故事：一家公司如果留得住研究员、留不住做商业化的人，说明什么？<\/p><p>可以做成一张时间线图，横轴 4 月到 8 月，标出每个职位。素材现成，图也好看。但<b>务必在图上标「据 Business Insider / TechCrunch 统计，非公司披露」<\/b>，这条不标一定被人挑。<\/p>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch：OpenAI 再失一位数据中心高管",
+       "url": "https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-06",
+     "section": "反共识",
+     "title": "一个假智库专门写给 AI 看：一周发 100 多篇报告，全无署名，页脚小字写着谁出的钱",
+     "facts": "<p>一家叫 Hanover Institute for Public Policy 的「智库」<b>8 月 6 日<\/b>前后突然出现，一周内发了<b>100 多篇<\/b>关于以色列、巴勒斯坦和反犹主义的报告。<\/p><p>所有报告都没有作者署名。网页最底下一行小字写着：受以色列政府广告局委托，由 Piro, Inc. 制作。<\/p><p>Piro 这家美国广告公司自己网站上把这套业务叫做「AI Story Optimization」——直译就是「面向 AI 的故事优化」。<\/p><p>报告长得很像正经研究：有脚注、有目录、语气中立。Responsible Statecraft 拿 GPTZero 测了 12 篇样本，<b>11 篇<\/b>被高置信度判定为 AI 生成。<\/p>",
+     "sides": "<p><b>调查方说法：<\/b>Responsible Statecraft、404 Media、cybernews 等媒体先后报道，《卫报》今天（8-26）跟进，标题直接写「以色列出资建立的假美国智库试图操纵 AI 做宣传」。报道称 Piro 从以色列政府拿到 <b>90 万美元<\/b>。反垃圾邮件组织 Spamhaus 已把 hanoverinstitute.com 列入域名黑名单。<\/p><p><b>需要小心的地方：<\/b>「专门为了骗 AI」这个动机判断，主要证据是 Piro 自己的业务描述加上报告的行文风格，<b>属于合理推断，不是直接证据<\/b>。「90 万美元」这个数字我在多家二手报道里见到，没查到一手合同文件。GPTZero 这类检测器的误判率一直有争议，「11/12 篇是 AI 写的」只能当旁证，不能当定论。以色列政府方面公开回应我没找到。<\/p><p><b>和早报那条的区别：<\/b>今天早报报过 OpenAI 端掉一个俄罗斯宣传号。那是平台方主动执法，对象是账号；这一条是媒体调查，对象是一个对外公开的网站，目的是让内容进到 AI 的知识来源里。<b>两件事机制完全不同，别混着写。<\/b><\/p>",
+     "angle": "<p>这条你可以做得比大多数中文号狠，因为大家都会往地缘政治上写，那是死路——太敏感，也不是你的场。<\/p><p>你要写的是那个技术机制：<b>「面向 AI 的内容优化」正在成为一门生意，而且已经有明码标价<\/b>。过去做舆论要买水军、买热搜，现在只要产出一批语气中立、格式规整、带脚注的 PDF，等着模型抓走就行。成本低到离谱，而且没有平台可以下架——它就是一个正常网站。<\/p><p>取舍：<b>只讲机制，不站队，具体到「假智库的内容长什么样」——有目录、有脚注、语气中立、没有作者。<\/b>这四条特征就是给读者的识别清单，比任何评论都有用。谁出的钱、为谁说话，你一句带过，链接给足，让读者自己去看。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "卫报：以色列出资的假智库试图操纵 AI（2026-08-26）",
+       "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda"
+      },
+      {
+       "label": "Responsible Statecraft 的原始调查",
+       "url": "https://responsiblestatecraft.org/israel-influence-chatgpt/"
+      },
+      {
+       "label": "404 Media：一个合成智库在影响 AI 搜索结果",
+       "url": "https://www.404media.co/israel-is-running-a-synthetic-think-tank-to-influence-ai-search-results/"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "ev-07",
+     "section": "数据素材",
+     "title": "澳洲禁令生效八个月，未成年人的社媒使用又爬回去了——但两套数据得分开看",
+     "facts": "<p>澳大利亚从 2025 年 12 月 10 日起禁止 16 岁以下用社交媒体，是全球第一个这么干的国家。<\/p><p>今天家长控制软件公司 Qustodio 放出数据：禁令刚落地时各平台使用率齐跌，之后一路回爬，有些应用已经接近禁令前水平。<b>13 至 15 岁<\/b>用 TikTok 的比例回到 <b>25.9%<\/b>，只比禁令前低 1 个多百分点。<b>10 至 12 岁<\/b>那档，差距只剩 <b>0.06 个百分点<\/b>。<\/p><p>官方那边更早也给过数字。澳洲电子安全专员（eSafety）的调查显示，<b>八成以上<\/b>未满 16 岁的孩子仍在用社交媒体；10 到 15 岁里，<b>58%<\/b> 在今年 3 月每天都在用，禁令前这个数是<b>约 60%<\/b>。<\/p>",
+     "sides": "<p><b>两套数据的口径完全不同，绝对不能画进同一张图：<\/b><\/p><p>① Qustodio：私营家长控制软件公司，样本是装了它家软件的澳洲儿童设备（<b>公司未公开样本量<\/b>），指标是「当月内至少有一次连续使用该 app 超过 5 分钟」的孩子占比，按月统计。这是自愿安装的商业样本，本身就偏向「家长比较管得住」的家庭，不是全国代表性抽样。<\/p><p>② eSafety：政府监管机构的正式调查，指标是「每日使用」的自报比例。同一份报告还显示，超过半数孩子说压根没遇到年龄核验，<b>18%<\/b> 被系统误判为 16 岁以上，<b>37%<\/b> 自己填了个更大的年龄。<\/p><p><b>另外注意：<\/b>Qustodio 的 25.9% 是「TikTok 单个应用」，eSafety 的 58% 是「任一社交媒体」，一个是单品，一个是总量。文章里说 WhatsApp 使用也在涨，但 WhatsApp 不在禁令范围内，这条不能算「禁令失效」的证据。<\/p><p><b>Qustodio 的解释（属于观点）：<\/b>全球在线安全专家 Yasmin London 给了两种可能——孩子在用 VPN 或者谎报年龄，也可能就是限制本身没起作用。<\/p>",
+     "quotes": [
+      {
+       "en": "They could be accessing these platforms with VPNs, or obfuscating their ages.",
+       "zh": "他们可能是挂 VPN 上去的，也可能是把年龄填糊弄过去了。",
+       "by": "Yasmin London，Qustodio 全球在线安全专家"
+      }
+     ],
+     "angle": "<p>这条是今晚最好的图表素材，但正因为它好用，最容易做错。<\/p><p><b>做法：一张图，两栏，各自比各自，中间画一条竖线隔开。<\/b>左边只放 eSafety 的 60% → 58%，右边只放 Qustodio 的 25.9%。千万别把 58 和 25.9 并排画柱子，那是两个物种。我下面直接把图给你嵌好了，颜色和标注都写死了，可以直接用。<\/p><p>内容角度我建议你切「年龄核验为什么必然失效」：<b>超过一半孩子根本没遇到核验，18% 被系统判成成年人<\/b>——这两个数字才是硬伤所在，比「禁令没用」这个结论有信息量得多。中国这边也在讨论未成年人模式，这条是现成的国际对照。<\/p><p>取舍：别写成「澳洲失败了」。禁令生效才八个月，eSafety 自己也只是给了中期数据。你写「第一份中期成绩单，以及它暴露了什么技术难题」，比唱衰稳得多，也更耐读。<\/p><svg viewBox='0 0 720 300' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='澳洲未成年社交媒体禁令：两套口径的数据对比'><rect x='0' y='0' width='720' height='300' fill='none'/><text x='0' y='16' font-family='system-ui,-apple-system,sans-serif' font-size='14' fill='#9AA3B0'>澳洲 16 岁以下社媒禁令：两套数据，两种口径，各比各的<\/text><line x1='352' y1='36' x2='352' y2='268' stroke='#9AA3B0' stroke-width='1' stroke-dasharray='4 4'/><text x='0' y='52' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#4A7FB5'>① eSafety 官方调查｜10–15 岁｜每日使用任一社媒<\/text><text x='0' y='84' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>禁令前<\/text><rect x='72' y='72' width='198' height='18' fill='#4A7FB5'/><text x='278' y='86' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#4A7FB5'>约 60%<\/text><text x='0' y='114' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>2026-03<\/text><rect x='72' y='102' width='191' height='18' fill='#4A7FB5' opacity='0.72'/><text x='271' y='116' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#4A7FB5'>58%<\/text><text x='0' y='146' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>八成以上未满 16 岁者仍在使用<\/text><text x='0' y='166' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>过半未遇年龄核验｜18% 被判为 16+｜37% 自报虚岁<\/text><text x='384' y='52' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#E08A3C'>② Qustodio 家长控制软件｜13–15 岁｜TikTok 单品<\/text><text x='384' y='84' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>最新<\/text><rect x='440' y='72' width='86' height='18' fill='#E08A3C'/><text x='534' y='86' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#E08A3C'>25.9%<\/text><text x='384' y='114' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>禁令前<\/text><rect x='440' y='102' width='90' height='18' fill='none' stroke='#E08A3C' stroke-width='1' stroke-dasharray='3 3' opacity='0.8'/><text x='538' y='116' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>原文只说「高 1 个多百分点」，未给绝对值<\/text><text x='384' y='146' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>10–12 岁档：与禁令前仅差 0.06 个百分点<\/text><text x='384' y='166' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>口径：当月至少一次连续使用 &gt; 5 分钟｜样本量未公开<\/text><line x1='0' y1='196' x2='720' y2='196' stroke='#9AA3B0' stroke-width='1' opacity='0.35'/><text x='0' y='218' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#C0553A'>⚠ 左右两组数字来自不同机构、不同年龄段、不同统计口径，禁止跨栏对比或合并成一根柱子。<\/text><text x='0' y='240' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>禁令生效日：2025-12-10｜数据发布：eSafety（2026 年 7–8 月）、Qustodio（2026-08-26）<\/text><text x='0' y='260' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>WhatsApp 使用量同期上升，但 WhatsApp 不在禁令范围内，不可作为「禁令失效」的证据。<\/text><\/svg>",
+     "platforms": [
+      "图文",
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "France24：禁令后澳洲未成年社媒使用回升",
+       "url": "https://www.france24.com/en/live-news/20260826-social-media-use-on-the-rise-among-australian-under-16s-after-ban-data"
+      },
+      {
+       "label": "The Conversation：eSafety 报告——八成以上孩子仍在用",
+       "url": "https://theconversation.com/more-than-80-of-kids-still-using-social-media-despite-ban-new-esafety-report-finds-288808"
+      },
+      {
+       "label": "eSafety 官方：社交媒体年龄限制",
+       "url": "https://www.esafety.gov.au/about-us/industry-regulation/social-media-age-restrictions"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "ev-08",
+     "section": "数据素材",
+     "title": "62% 的美国成年人说自己不懂统计——而 90% 说「要是我懂，我会多用」",
+     "facts": "<p>宾州州立大学的一项调查，<b>1000<\/b> 名美国成年人，论文发在 PLOS One，<b>2026 年 8 月 20 日<\/b>刊出。<\/p><p><b>25%<\/b> 说自己完全不懂统计，<b>37%<\/b> 说只有很有限的了解，加起来 <b>62%<\/b>。<\/p><p>只有 <b>11%<\/b> 说自己在日常决策里会经常用到统计。<\/p><p>但<b>90%<\/b> 表示，如果自己更懂一点，会更多地用它。<\/p>",
+     "sides": "<p><b>口径必须写清楚：<\/b>这四个数字全部是<b>自我报告<\/b>，不是能力测试。「我觉得我不懂统计」和「我真的不懂统计」是两回事，两个方向的偏差都可能存在——有人会低估自己，也有人会高估。<\/p><p>调查方是一家市场研究公司（论文未点名），样本 1000 人，抽样方法和加权方式我没在新闻稿里看到。研究的问题最初来自 2025 年在纳什维尔举行的 Joint Statistical Meetings，也就是说题目是统计学家自己拟的，这本身可能带入专业视角的偏差。<\/p><p><b>不要外推：<\/b>这是美国样本，跟中国读者的情况没有可比性，别写成「大众普遍不懂统计」。<\/p>",
+     "quotes": [
+      {
+       "en": "Statistical literacy is critical when research is invoked in news reports, social media or policy debates that affect people's lives.",
+       "zh": "当研究结论被搬进新闻报道、社交媒体，或者被拿去左右影响人们生活的政策辩论时，看得懂统计就变得至关重要。",
+       "by": "Mark Ramos，宾州州立大学助理研究教授"
+      }
+     ],
+     "angle": "<p>这条本身是个不错的图表素材，但真正的用法是把它当引子，接到 AI 上。<\/p><p>建议你这么切：<b>62% 的人自认看不懂统计，而现在他们每天在读的，是一堆由 AI 生成、塞满百分比的内容。<\/b>今晚这期里就有现成的例子——那个假智库，产品特征就是「有脚注、有表格、语气中立」，专门长成能唬住人的样子。两条并起来做一条，比单独做任何一条都有力。<\/p><p>取舍：<b>别做成「教你看懂统计」的科普<\/b>，那种内容满地都是，你也不占优势。你做「为什么现在开始，看不懂统计的代价变高了」，这个角度是新的。图我给你嵌好了，直接用。<\/p><svg viewBox='0 0 720 240' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='美国成年人自评统计素养分布'><rect x='0' y='0' width='720' height='240' fill='none'/><text x='0' y='16' font-family='system-ui,-apple-system,sans-serif' font-size='14' fill='#9AA3B0'>「你懂统计吗？」——1000 名美国成年人的自我评价<\/text><rect x='0' y='40' width='180' height='34' fill='#C0553A'/><rect x='180' y='40' width='266' height='34' fill='#E08A3C'/><rect x='446' y='40' width='274' height='34' fill='#4A7FB5' opacity='0.55'/><text x='8' y='63' font-family='system-ui,-apple-system,sans-serif' font-size='13' fill='#FFFFFF'>完全不懂 25%<\/text><text x='188' y='63' font-family='system-ui,-apple-system,sans-serif' font-size='13' fill='#FFFFFF'>了解有限 37%<\/text><text x='454' y='63' font-family='system-ui,-apple-system,sans-serif' font-size='13' fill='#FFFFFF'>其余 38%<\/text><line x1='0' y1='84' x2='446' y2='84' stroke='#C0553A' stroke-width='2'/><text x='0' y='102' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#C0553A'>自认「无或有限」合计 62%<\/text><text x='0' y='142' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#9AA3B0'>日常决策中经常用到统计<\/text><rect x='0' y='152' width='79' height='16' fill='#4A7FB5'/><text x='87' y='165' font-family='system-ui,-apple-system,sans-serif' font-size='13' fill='#4A7FB5'>11%<\/text><text x='384' y='142' font-family='system-ui,-apple-system,sans-serif' font-size='12' fill='#9AA3B0'>「如果我更懂一点，我会更多地用它」<\/text><rect x='384' y='152' width='302' height='16' fill='#4A7FB5'/><text x='694' y='165' font-family='system-ui,-apple-system,sans-serif' font-size='13' fill='#4A7FB5'>90%<\/text><line x1='0' y1='190' x2='720' y2='190' stroke='#9AA3B0' stroke-width='1' opacity='0.35'/><text x='0' y='210' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>来源：宾州州立大学，PLOS One，2026-08-20｜样本：1000 名美国成年人｜口径：全部为自我报告，非能力测试<\/text><text x='0' y='228' font-family='system-ui,-apple-system,sans-serif' font-size='11' fill='#9AA3B0'>抽样与加权方法未在新闻稿中披露；题目源自 2025 年 Joint Statistical Meetings，由统计学家拟定。<\/text><\/svg>",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "宾州州立大学新闻稿",
+       "url": "https://www.psu.edu/news/research/story/more-half-adults-us-say-they-lack-basic-statistical-understanding"
+      }
+     ],
+     "source_date": "2026-08-20"
+    },
+    {
+     "id": "ev-09",
+     "section": "论文",
+     "title": "提示词技巧是有保质期的：GPT 越新，结构化提示越没用，而 Qwen 还在吃 Few-Shot 的红利",
+     "facts": "<p>《提示工程技巧在 LLM 版本间的老化》（Aging of Prompt Engineering Techniques Across LLM Versions），ICSME 2026 收录。<\/p><p>做法：拿 <b>5<\/b> 种技巧（Zero-Shot、Few-Shot、思维链 CoT、对比思维链 CCoT、改编版 Program-of-Thought）去测 <b>6<\/b> 个指令微调模型，两两配成三组新旧对照——GPT-3.5-Turbo/GPT-4o、Qwen2-7B/Qwen2.5-7B、Mistral-7B/Mistral-Large。<\/p><p>数据集是 CodePromptEval 的清洗子集，<b>218<\/b> 个上下文丰富的 Python 函数，一共跑了 <b>19620<\/b> 次生成，用 pass@k 判功能正确性。<\/p><p>结论分三家：GPT 新版本从结构化提示里拿到的边际收益在递减，甚至变成负的；Qwen 依然从 Few-Shot 和 CCoT 里获益明显；Mistral 混合——CCoT 一直有用，CoT 和 PoT 的好处在衰减。<\/p>",
+     "sides": "<p><b>作者的解释（属于推断）：<\/b>新 GPT 把推理脚手架「内化」了，所以你再手动搭一遍反而是干扰。这个解释合理，但论文没有直接证据，只是从结果反推。<\/p><p><b>必须注意的限制：<\/b>① 这是对 Khojah 等人 2025 年研究的<b>部分复现<\/b>，不是全新独立研究。② 测的模型全是相对老的一批——GPT-4o、Qwen2.5-7B、Mistral-Large，<b>没有测 2026 年的前沿模型<\/b>，所以不能直接推到 GPT-5.6 或 Claude Opus 5 上。③ 任务单一，只有函数级代码生成，换成写文案、做分析，结论未必成立。④ 论文自己也承认评估维度窄，只看功能正确性，没看代码质量。<\/p>",
+     "quotes": [
+      {
+       "en": "Effective prompting strategies must be adapted per model family and generation rather than transferred unchanged.",
+       "zh": "有效的提示策略必须按模型家族、按代次分别调整，不能原封不动地搬过去用。",
+       "by": "论文摘要，arXiv:2608.24641"
+      }
+     ],
+     "angle": "<p>这条我特别推荐你做，因为它戳的是一个整个行业都在假装不存在的问题：<b>你收藏的那些提示词技巧，正在悄悄过期。<\/b><\/p><p>而且它给了一条可操作的建议——不是「哪个技巧最好」，是「按模型家族分开管你的提示词库」。GPT 系越新越不需要你手把手教；Qwen 系还吃老一套。这句话你的读者今晚就能用上。<\/p><p>取舍：<b>标题千万别写成「思维链失效了」<\/b>，论文没这么说，而且它测的模型都不是最新的。老实写「在他们测的这批模型上」，你的可信度比夸张标题值钱得多。<\/p><p>另外，这条可以和 8 月 25 日晚报那条「给仓库写的技能会悄悄过期」串成一条线做长文：<b>AI 时代所有沉淀下来的经验，都自带一个你看不见的失效日期。<\/b>这个主题够撑一期。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.24641",
+       "url": "https://arxiv.org/abs/2608.24641"
+      }
+     ],
+     "source_date": "2026-08-25",
+     "followup": "与 8-25 晚报「57 个仓库、105 次版本更新，没有一次不让老技能失效」（arXiv:2608.21964）是同一主题的两个侧面，可合并做长文。"
+    },
+    {
+     "id": "ev-10",
+     "section": "论文",
+     "title": "47 个平台查了一遍：没有一个能默认证明「你评测的那个东西，就是你部署的那个东西」",
+     "facts": "<p>《从可追溯到可辩护：智能体软件工程中的问责结构》（From Traceability to Justifiability: Accountability Structures in Agentic Software Engineering）。<\/p><p>作者只用公开材料，查了 <b>47<\/b> 个交付平台（20 个 CI/CD、27 个模型服务/智能体平台），每页都按内容哈希和日期存证，两轮评分，第二轮盲评。<\/p><p>结果：在 <b>188<\/b> 个双评单元格里，<b>没有一个平台<\/b>的默认记录能给出「行为四元组」（模型版本、指令、工具定义、检索与运行时配置）的内容寻址标识。盲评那一轮，这一列在 47 个平台上全是零。<\/p><p>另一半：从 <b>30<\/b> 个公开仓库里看，<b>15<\/b> 个用了证明工具的仓库中有 <b>7<\/b> 个只发源码不发产物，它们声明的绑定关系压根没法在声明的地方验证。<\/p>",
+     "sides": "<p><b>作者的核心主张：<\/b>整个行业的记录停在「可追溯」这一级，够不到「可辩护」——也就是那个能真正拦住一次上线的级别。<\/p><p><b>反方视角（论文自己也提到）：<\/b>27 个智能体平台里有 <b>16<\/b> 个把「不可变的名义版本号」当成了默认答案。作者认为这只是把可变指针藏在一个整数后面，制品供应链早就证明这一层不够用。平台方大概会说：够用了，实践中没人需要哈希级别的绑定。<\/p><p><b>方法论限制：<\/b>① 全部基于<b>公开文档<\/b>，平台的私有能力、企业版功能不在其中，「默认不提供」不等于「不能提供」。② 单人研究，两轮评分是同一个人做的（第二轮盲评），不是多人独立编码。③ 30 个仓库的两轮一致率是 23/30 和 19/30，<b>后一轮只有六成多的一致率<\/b>，这个数字论文自己列出来了，引用时要一起带上。<\/p>",
+     "angle": "<p>这篇写得很硬，摘要几乎读不动，但里面那个问题问得极好，值得你翻译成人话：<\/p><p><b>你在测试环境里跑通的那个 agent，和线上正在跑的那个 agent，你能证明它俩是同一个吗？<\/b>换了个提示词、悄悄升了个模型版本、多挂了一个工具——现在的平台默认都不会记。你以为你有日志，其实你只有一堆整数版本号。<\/p><p>切法建议：从一个具体场景进——出了事故，你要复盘，你打开平台的记录，发现记录里没有任何东西能唯一确定当时到底跑的是什么。然后再上论文的数字：47 个平台，一个都没有。<\/p><p>取舍：<b>「188 个单元格」「内容寻址」这些词全部别用<\/b>，读者不需要。你只用两个数：47 个平台、0 个。剩下的用大白话讲。<\/p>",
+     "platforms": [
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.23610",
+       "url": "https://arxiv.org/abs/2608.23610"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-11",
+     "section": "反共识",
+     "title": "「你没法拿螺丝刀撬开一个大模型」——一篇论文说，AI 不是在让编程民主化，是在收权",
+     "facts": "<p>论文标题就是那句话：《You Can't Open an LLM With a Screwdriver: The De-Democratization of Software》，直译是「你没法用螺丝刀打开一个大模型：软件的去民主化」。俄勒冈州立和弗吉尼亚联邦大学几位作者，已被 ACM AI Leadership Summit 2026 收录。<\/p><p>它要驳的是那句流行说法：AI 让人人都能写代码，所以编程民主化了。<\/p><p>作者的拆法是把「接触权」和「控制权」分开。接触权指更多人能生成代码样的东西；控制权指有能力检查、评估、集成、维护和治理这些东西，让它成为可靠软件。<\/p><p>结论：AI 确实拓宽了接触权，但控制权可能反而<b>更集中<\/b>——集中到那些懂代码、懂工程实践、掌握基础设施和部署管线的人手里。<\/p>",
+     "sides": "<p><b>作者立场：<\/b>AI 没有消灭软件工程的专业性，只是把它挪了位置——挪到了「意图规约」上：编排和治理 AI 的行为、评估软件表现、整合系统。<\/p><p><b>这篇的性质要说清楚：<\/b>它是一篇 <b>vision paper（观点论文）<\/b>，依据是一场专家研讨，<b>没有实验、没有样本量、没有可复现的数据<\/b>。它提供的是框架，不是证据。任何人拿它当「研究表明」都是误用。<\/p><p><b>另一方会说什么：<\/b>低代码和 SaaS 时代也有过一模一样的论证，事后看，接触权的扩大确实创造了大量新岗位。「控制权集中」这个判断目前还没有量化验证。<\/p>",
+     "quotes": [
+      {
+       "en": "AI does not eliminate software engineering expertise but shifts where that expertise becomes most critical.",
+       "zh": "AI 并没有消灭软件工程的专业能力，它只是改变了这份能力最要紧的位置。",
+       "by": "论文摘要，arXiv:2608.24720"
+      }
+     ],
+     "angle": "<p>「接触权 vs 控制权」这一刀切得干净，你可以直接拿来当一期的骨架。<\/p><p>最好的切入点是你的读者自己：<b>会用 AI 写代码的人变多了，能对这些代码负责的人变多了吗？<\/b>没有。所以真实结果不是人人都是程序员，而是能审代码的那少数人，议价能力反而变强了。这个结论对做内容的人同样成立——会用 AI 写稿的人满地都是，能判断稿子对不对的人还是那么几个。<\/p><p>取舍：<b>务必标明这是观点论文，没有数据。<\/b>别用「研究发现」，用「有研究者提出」。这条你自己的判断和例子要占大头，论文只是给了个说法，撑不起一整篇。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.24720",
+       "url": "https://arxiv.org/abs/2608.24720"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-12",
+     "section": "论文",
+     "title": "「AI 精神病」该不该算一种病？五位精神科作者的答案是：先别急着立名字，但机制得管起来",
+     "facts": "<p>《一个人的回音室：AI 精神病该不该成为一个独立的临床实体？》（An Echo Chamber of One），作者来自英国的精神科与信息学团队。<\/p><p>「AI 精神病」这个说法指的是：在跟聊天机器人高强度互动之后，出现或加重精神病性症状，最常见的是妄想。<\/p><p>作者给的机制解释是两件事叠加：一是模型的<b>谄媚<\/b>（sycophancy）——顺着你说、夸你，这是偏好微调练出来的；二是越来越拟人的产品设计。两者合起来，就成了一个双向的「一个人的回音室」，能放大并共同构建出不寻常的信念。<\/p><p>作者的结论是不给结论：正反两面都列，然后提三条现在就该做的事。<\/p>",
+     "sides": "<p><b>支持立为独立诊断的理由：<\/b>能改善病例识别、支持针对性干预、给研究定标准、便于上市后监测，也能给开发者和监管方施压。<\/p><p><b>反对的理由：<\/b>目前证据只有媒体报道、个案报告和早期观察数据，<b>现在就把一个综合征坐实，风险很大<\/b>；现有的诊断体系本来就能把「使用 AI」当成一个促成因素来处理；「AI 精神病」这个名字本身就预设了因果关系，而因果并没有被证明；还会带来污名；而且一个以精神病为中心的标签，会遮住 AI 相关心理健康问题的更广谱系。<\/p><p><b>作者的三条建议：<\/b>① 精神科评估时加一份「技术史」问诊；② 模型上线前对谄媚和妄想强化做基准测试；③ 上线后做持续监测。<\/p><p><b>写的时候要小心：<\/b>这是<b>观点综述，不是流行病学研究<\/b>，全文<b>没有患病率、没有病例数<\/b>。谁要说「AI 精神病影响了多少人」，那个数字不是从这篇来的。<\/p>",
+     "quotes": [
+      {
+       "en": "Regardless of whether AI-associated psychosis earns a place in psychiatric nosology, the phenomenon it describes demands coordinated attention now.",
+       "zh": "不管「AI 相关精神病」最后能不能在精神疾病分类里占到一个位置，它所描述的那个现象，现在就需要各方一起认真对待。",
+       "by": "论文摘要，arXiv:2608.23937"
+      }
+     ],
+     "angle": "<p>这个话题在中文平台上已经被写成了纯情绪流量，你有机会做一版认真的。<\/p><p>最值得讲的是那条机制链，而且它可以讲得很具体：<b>模型爱顺着你说，这不是 bug，是被人类偏好数据一次次奖励出来的结果。<\/b>再叠上拟人化的产品设计，就变成一个只有你一个人的回音室——你说什么它都接着往下编。这个解释比任何耸动标题都可怕，因为它说明这是训练目标的产物，不是意外。<\/p><p>取舍：<b>坚决不要报道任何具体个案，也不要引用任何患病率数字<\/b>——这篇论文一个都没给，网上流传的都来路不明。你只做机制和那场「该不该命名」的争论。结尾落在那三条建议上：上线前测谄媚，上线后做监测。这是能落地的东西。<\/p><p>另外可以回扣 8 月 24 日早报那条——「你说是自己的经历它就闭嘴」，同一个谄媚机制的另一面。<\/p>",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.23937",
+       "url": "https://arxiv.org/abs/2608.23937"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-13",
+     "section": "论文",
+     "title": "别再手调 agent 的外壳了：让它自己读失败日志，把外壳当代码来改",
+     "facts": "<p>AutoSaddler，微软等机构的工作，HuggingFace 每日论文榜今天 <b>47<\/b> 赞。<\/p><p>要解决的问题很实在：agent 在长任务上不可靠，加个外部「外壳」（harness，指提示词、工具配置、控制逻辑那一整套）能显著改善，但这个外壳一直靠人手调，搜索空间大得离谱。<\/p><p>做法是把调外壳变成一个离线学习问题：诊断失败轨迹 → 把外壳当成代码生成结构化补丁 → 用验证集挑选要不要采纳这次更新，然后小批量迭代。<\/p><p>成绩：在 GAIA2、SWE-Bench Pro、Terminal-Bench 2.0 上分别比各自的基线外壳提升 <b>9.0<\/b>、<b>9.6<\/b>、<b>10.0<\/b> 个百分点。<\/p>",
+     "sides": "<p><b>口径提醒：<\/b>这三个数字都是<b>相对各自基线外壳的提升<\/b>，不是绝对分数，也不是三个基准之间的横向比较。<b>9.0、9.6、10.0 三个数看着很齐，但分别来自三个不同基准、三套不同基线，不能画成一张对比图。<\/b><\/p><p><b>还没有的：<\/b>没有第三方复现，没有和人工精调外壳的对照（也就是说，不知道它是不是真的比一个有经验的人调得更好，只知道比「原来那个」好）。计算成本论文摘要里没给。<\/p>",
+     "angle": "<p>这条别当论文报，当工具方法论报。<\/p><p>核心那句话你可以直接送给读者：<b>把 agent 的外壳当成代码来管——它有版本、有 diff、有回归测试，而不是一个你凭手感反复改的文本框。<\/b>今天绝大多数人调 CLAUDE.md 和系统提示词，用的还是「改一改感觉好像好了」这种方式，没有验证集，没有回滚。<\/p><p>取舍：<b>普通人复现不了这套东西<\/b>（要跑三个基准、要有失败轨迹语料），所以别写成教程。你写「思路」——留下失败日志、建一个小验证集、每次改动都过一遍——这三步个人是能做的。这才是这条对读者的实际价值。<\/p><p>可以和今天另一篇 Recuris（本期下一条）放一起做，两篇是同一个方向的两种解法。<\/p>",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.23041",
+       "url": "https://arxiv.org/abs/2608.23041"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "ev-14",
+     "section": "论文",
+     "title": "给 agent 拆出两种记忆：一种记「我现在做到哪了」，一种记「我以前会什么」",
+     "facts": "<p>Recuris，普林斯顿等机构。核心思路是把 agent 的记忆拆成两层：工作记忆负责跟踪任务进度，并据此从经验记忆里挑技能；经验记忆存的是会做的事。<\/p><p>好处在于：技能调用是按「当下需要什么」来选，而不是翻整段历史。历史一长，任务状态就被淹了，技能也就调错了。<\/p><p>成绩：<b>4<\/b> 个长任务基准、<b>10<\/b> 个模型，在 <b>37<\/b> 组已完成的「模型×基准」配对里有 <b>35<\/b> 组成功率提升。tau-bench 上给 GPT-5.6 Sol 加 <b>17.8<\/b> 分，给 Claude Opus 5 加 <b>15.6<\/b> 分，把 Opus 5 推到 <b>87.9%<\/b>。SkillFlow 上给 Qwen3.6-27B/35B 分别加 <b>16.6<\/b> 和 <b>13.5<\/b> 分。<\/p><p>最长的那批任务上，增益扩大到 <b>+32.2<\/b> 分；常见的长程失败模式最多下降 <b>80%<\/b>。<\/p>",
+     "sides": "<p><b>这些数字必须带口径：<\/b>全部是<b>论文作者自测<\/b>，无第三方复核。「+17.8 分」是相对无 Recuris 的基线，不是模型的绝对分。<b>87.9% 这个数只在 tau-bench 上成立，绝不能当作 Opus 5 的通用能力分。<\/b><\/p><p><b>论文自己也承认的口子：<\/b>37 组是「已完成的」配对，说明有配对没跑完——为什么没跑完，摘要里没说。「最多下降 80%」是取了最好的那个数，不是平均值。<\/p><p><b>成本呢：<\/b>两层记忆加上元智能体的验证式更新，token 开销肯定不低，摘要里一个字没提。凡是不谈成本的效果提升，都要打个问号。<\/p>",
+     "angle": "<p>这条的看点不在分数，在那个拆法本身，而且它跟你自己用 AI 的方式直接相关。<\/p><p><b>「进度」和「技能」是两种记忆，不该塞在同一个上下文里。<\/b>大部分人现在的做法是把所有东西——项目背景、写作偏好、当前任务、之前的对话——一股脑丢给模型，然后奇怪它为什么越聊越跑偏。原因就是任务状态被历史淹没了。<\/p><p>切法建议：先讲现象（长对话越聊越笨），再给这个拆法，最后给一个非技术读者能用的版本——单开一个文件只记「我现在做到哪、下一步是什么」，每轮更新它；把「我的偏好、我的方法」放在另一个地方，不要混。<\/p><p>取舍：<b>那些分数一个都别当标题<\/b>。厂商自测、单基准、无复核，三个雷全占了。你只用它来证明「这个拆法有效」，不用它来排名模型。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv:2608.24876",
+       "url": "https://arxiv.org/abs/2608.24876"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "ev-15",
+     "section": "工作流工具",
+     "title": "RAG 根本没那么复杂：六成的场景，全文检索加一次查询改写就够了",
+     "facts": "<p>一篇今天在 Hacker News 上排到前排的文章（<b>174 分<\/b>），作者 Rafael Pierre 的主张很直接：绝大多数团队把 RAG 做复杂了。<\/p><p>他按复杂度从低到高排了六档：① 只用全文检索 BM25，不需要任何机器学习；② 加一层查询改写，让模型先把问题改写好再去搜，每次约 <b>0.001 美元<\/b>；③ 混合检索——BM25 出候选，向量重排；④ 查询时现场做嵌入；⑤ 冷热分层，热门文档预先嵌入，冷门的现场算；⑥ 全量预嵌入。<\/p><p>他给的分布判断是：<b>60%<\/b> 的系统只需要全文检索加改写，<b>25%<\/b> 需要混合检索，<b>10%<\/b> 需要全量预嵌入，只有 <b>5%<\/b> 真的需要定制方案。<\/p><p>几个具体数：现场嵌 50 篇文档，每次查询多 <b>200 到 500 毫秒<\/b>；访问分布遵循二八律，<b>20%<\/b> 的文档吃掉 <b>80%<\/b> 的流量。<\/p>",
+     "sides": "<p><b>这是个人经验判断，不是测量结果。<\/b>「60/25/10/5」这四个数是作者的估计，<b>没有样本、没有调查、没有数据支撑<\/b>，属于行业老手的手感。引用时必须写成「作者估计」，不能写成「数据显示」。<\/p><p><b>反方会说：<\/b>BM25 对同义词和跨语言检索是硬伤，中文场景尤其明显——分词方式不同，BM25 的表现和英文没有可比性。作者这套建议的默认语境是英文文档。<\/p><p><b>他自己也承认的：<\/b>模型下线（deprecation）是预嵌入方案的大坑——模型一换，整个库要重嵌一遍。这个论点是成立的，而且经常被忽略。<\/p>",
+     "quotes": [
+      {
+       "en": "Don't be the person who builds the 5% solution for a 60% problem.",
+       "zh": "别做那种人：明明是个 60% 的常规问题，非要上一套只有 5% 场景才用得着的方案。",
+       "by": "Rafael Pierre，《RAG Is Simpler Than You Think》"
+      }
+     ],
+     "angle": "<p>这条实用性高，而且是一条正经的反共识——过去两年所有人都在教你怎么把 RAG 做得更花，很少有人教你什么时候不做。<\/p><p>建议你做成一张决策图：六档方案 + 各自的适用条件 + 各自的代价。<b>读者拿到手就能对号入座<\/b>，这是今晚最容易转发的素材。<\/p><p>取舍：<b>那四个百分比一定要标「作者估算」<\/b>，而且我建议你在图上把它们做小、做灰，别当主角——它们没有依据，只是手感。真正硬的是那两个技术判断：现场嵌入 50 篇文档加 200 到 500 毫秒延迟，以及换模型要重嵌整个库。这两条是可验证的工程事实。<\/p><p>另外提醒一句：<b>他的建议默认是英文文档场景<\/b>，中文用 BM25 效果差很多，你要是不加这句，评论区第一条就是这个。<\/p>",
+     "platforms": [
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "RAG Is Simpler Than You Think（原文）",
+       "url": "https://lighthousenewsletter.com/p/rag-is-simpler-than-you-think"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-16",
+     "section": "工作流工具",
+     "title": "一个提交一个 PR：把 Gerrit 那套审查方式搬到 GitHub、GitLab、Gitea 上",
+     "facts": "<p>Maiao，一个命令行工具，<b>128<\/b> 星，今天在 Hacker News 上被讨论了 <b>58<\/b> 条。<\/p><p>它干的事：把一串线性提交拆成一叠互相依赖的 PR，<b>每个提交一个 PR<\/b>，自动堆叠。审查的人一次只看一个改动，不用面对一个巨型 PR。<\/p><p>用 Gerrit 那套 Change-ID 追踪改动，配合 <code>git commit --fixup<\/code> 处理修补；上游 PR 合并之后，整叠自动 rebase。<\/p><p>支持 GitHub（接了原生的 Stacks）、GitLab、Gitea、Forgejo、Bitbucket Cloud，还有 Cursor Origin，从 remote 地址自动识别是哪家。<\/p>",
+     "sides": "<p><b>要说清楚的：<\/b>这是社区维护的一个 fork，原来 Adevinta 那个仓库已经不再活跃维护了。<b>128 星是个很小的项目<\/b>，别当成成熟基础设施推荐给人上生产。<\/p><p>「堆叠 diff」这套方法论本身不新，Meta 和谷歌内部用了很多年，外面也有 Graphite、spr 等竞品。Maiao 的差异点是跨平台，不绑定某一家。<\/p>",
+     "angle": "<p>这条你可以从今天早报那条 vllm 的事故切进来——AI 审查当场标红了 eval()，人类维护者说「先合了不然模型上不了线」，一年后成了 CVE。<\/p><p><b>问题的根子在于 PR 太大：一个几千行的 PR，谁看谁都会点「先合了」。<\/b>堆叠 PR 是对这个问题的直接回应——把改动切到「一眼能看完」的粒度，审查才可能真的发生。<\/p><p>而这件事在 agent 时代变得更紧迫：8 月 24 日早报那条 24.8 万个 PR 的研究说，agent 写、agent 审，中位 1.2 分钟就过。人被挤出回路，不只是因为 agent 快，也是因为人根本审不动那么大的东西。<\/p><p>取舍：<b>别做成 Maiao 的工具测评<\/b>，它太小众，128 星。你做「堆叠 PR 这个方法」，把 Graphite 那类成熟工具也一起提，Maiao 只当引子。这样内容寿命长得多。<\/p>",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "Maiao（GitHub）",
+       "url": "https://github.com/runetes/maiao"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-17",
+     "section": "小众科技",
+     "title": "str.lower() 竟然能变成一个安全漏洞——因为它跟着 Python 走，规范却停在 2002 年",
+     "facts": "<p>CVE-2026-17084，出在 Python 标准库的 stringprep 模块和 idna 编解码器上。<\/p><p>问题是这样的：域名国际化（IDNA 2003）依赖的 StringPrep 规范，明确要求用 <b>Unicode 3.2.0<\/b> 的规则做大小写折叠。但 CPython 的实现直接调了 <code>str.lower()<\/code>，而它跟的是当前解释器自带的那版 Unicode。<\/p><p>作者给的例子：字符「Ꭰ」（U+13A0）。把「ᎠᎠ」做 IDNA 编码，按规范应该得到 <code>xn--58da<\/code>，但用 <b>Unicode 17.0.0<\/b> 的折叠规则，出来的是 <code>xn--kz9aa<\/code>。同一个域名，两个结果。<\/p><p>讽刺的是，CPython 里本来就有个 <code>unicodedata.ucd_3_2_0<\/code> 模块，就是干这个用的，只是这段代码没调它。<\/p>",
+     "sides": "<p><b>修法：<\/b>没有去动 <code>str.lower()<\/code> 本身（那会牵一发动全身），而是把 Unicode 17.0.0 和 3.2.0 折叠结果不一致的码点全找出来，做成例外表。<\/p><p><b>实际风险有多大：<\/b>作者的文章讲的是原理和修复过程，<b>没有给出已知的在野利用案例<\/b>。这类不一致理论上可以用来做域名混淆，但从「存在不一致」到「能打」中间还有很多步。写的时候别把它渲染成一个正在被利用的高危洞。<\/p>",
+     "angle": "<p>这条是今晚最好的「小而深」素材，而且道理能迁移得很远。<\/p><p>一句话概括：<b>你调的那个函数每年都在悄悄变，而你依赖的规范二十四年没动过。<\/b>Unicode 一直在加字符、改规则，<code>str.lower()<\/code> 忠实地跟着走；StringPrep 规范却把自己钉死在 2002 年的 Unicode 3.2。两条线一分开，安全边界就裂了。<\/p><p>你的读者里非程序员居多，但这个结构他们能懂——而且今晚有个现成的对照：本期那篇讲提示词技巧老化的论文，说的是同一件事的另一个版本。<b>底层在动，你写死的那套规则不知道。<\/b>两条并起来做，比单做任何一条都好。<\/p><p>取舍：<b>别去解释 Punycode 和 Unicode 折叠的细节<\/b>，你会写不完，读者也不需要。你就用「Ꭰ」那个例子——同一个域名，两种编码结果——一句话讲完，然后全力讲那个结构性问题。<\/p>",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "When str.lower() is a security vulnerability in Python",
+       "url": "https://sethmlarson.dev/when-str-lower-is-a-security-vulnerability"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-18",
+     "section": "小众科技",
+     "title": "一个 Zig 写的单文件数据库，把图遍历、向量检索和全文搜索塞进了同一个查询引擎",
+     "facts": "<p>LatticeDB，今天 Show HN 上 <b>165 分<\/b>，GitHub <b>414<\/b> 星。用 Zig 写，<b>零外部依赖<\/b>。<\/p><p>定位是嵌入式、单文件、不用起服务、不用配置——本地应用直接查关联数据，图、向量、全文三种检索共用一个查询层。<\/p><p>有 ACID 事务，用预写日志保证持久性；向量走 HNSW 索引，全文走 BM25 加倒排索引。<\/p><p>作者给的性能数：节点查找 <b>0.13 微秒<\/b>；100 万条向量做检索，平均 <b>0.83 毫秒<\/b>，recall@10 达到 <b>100%<\/b>；100 篇文档的全文检索 <b>19 微秒<\/b>；10 万节点上做两跳图遍历 <b>39 微秒<\/b>。<\/p>",
+     "sides": "<p><b>这些数字全部是作者自测，无第三方复核，测试硬件未说明。<\/b>其中最需要警惕的是「100 万向量、recall@10 = 100%」——HNSW 是<b>近似<\/b>最近邻算法，召回率能刷到 100% 通常意味着参数调得极保守，或者测试查询集偏简单。<b>这个数不能拿去和别家的 HNSW 实现比。<\/b><\/p><p>另外，「全文检索 19 微秒」的语料只有 <b>100 篇文档<\/b>，这个规模下任何实现都很快，这个数基本没有参考价值。「0.13 微秒」的节点查找大概率是内存命中，也不代表冷启动表现。<\/p><p><b>项目成熟度：<\/b>414 星，Zig 生态本身也还小。当有意思的技术方案看可以，别推荐给人做生产。<\/p>",
+     "angle": "<p>这条对你的读者来说，价值在那个产品判断，不在 Zig。<\/p><p><b>过去做一个「能记住东西的 AI 应用」，你要起一个向量库、一个图库、一个搜索服务，三套东西。现在有人在试着把它们塞进一个文件里。<\/b>这个方向如果成了，本地 AI 应用的门槛会掉一大截——不用后端，不用运维，一个文件带着走。<\/p><p>切法：从「为什么本地 AI 应用做起来这么费劲」进，讲清楚那三套服务的负担，再引出这个思路。今天本期还有 Perplexity 推本地 agent 那条，两条可以合成一期讲「AI 正在往本地退」。<\/p><p>取舍：<b>那几个性能数字一个都别单独当标题<\/b>，尤其是「100% 召回」，懂行的人一眼就知道有问题，你引了会掉价。要提就完整带上「作者自测、100 篇文档、硬件未说明」。<\/p>",
+     "platforms": [
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "LatticeDB（GitHub）",
+       "url": "https://github.com/jeffhajewski/latticedb"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "ev-19",
+     "section": "小众科技",
+     "title": "浏览器里那些矢量图形，现在能整个丢给显卡的几何放大单元去做了",
+     "facts": "<p>《Warnock：驾驭 GPU 几何放大能力做矢量图形》，作者 Mark J. Kilgard 和 Brian Barran，发在 ACM 计算机图形与交互技术会刊，2026 年 7 月，第 9 卷第 57 篇。<\/p><p>名字是纪念已故的 John Warnock——最早把 2D 矢量图形系统化的那个人，也是 Adobe 和 PostScript 的创始人之一。<\/p><p>技术上：用 GPU 的曲面细分和网格着色器，把路径渲染中的几何展开这一步——填充和描边都算——<b>完全交给 GPU<\/b>，输入只是一个紧凑的 GPU 缓冲区。<\/p><p>背景是：GPU 本来是为 3D 设计的，现在被反过来用来渲染 2D 矢量图形，而这套能力已经在全球的浏览器和各种应用里大规模部署了。<\/p>",
+     "sides": "<p><b>这是同行评议的正式论文，不是厂商白皮书<\/b>，可信度高。但摘要层面我没拿到具体的性能对比数字，「比现有方案快多少」需要读全文才知道，别凭想象填数。<\/p><p>Kilgard 是英伟达长期做路径渲染（NV_path_rendering）的人，<b>这个方向他本来就是利益相关方<\/b>，看结论时值得留意。<\/p>",
+     "angle": "<p>这条跟 AI 没关系，但正因为没关系，它是好东西——你的读者被 AI 内容轰炸得够久了，偶尔给一条「纯技术、有历史感」的，反而记得住。<\/p><p>最好的切法是那个纪念：<b>John Warnock 定义了 2D 矢量图形该怎么算，四十年后，人们把这套算法搬到了本来为 3D 造的芯片上。<\/b>这是一个很漂亮的技术史闭环，讲出来有味道。<\/p><p>取舍：<b>建议你只做短帖，别做长文<\/b>——图形学的细节展开会劝退大部分读者，而这条的价值本来就在那个故事，不在技术。三百字讲完，配一张矢量图形的示意，够了。<\/p>",
+     "platforms": [
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "ACM 论文页",
+       "url": "https://dl.acm.org/doi/10.1145/3820012"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "ev-20",
+     "section": "小众科技",
+     "title": "那个「可执行文件就是 SQLite 数据库」的人又更进一步：现在它能写自己了",
+     "facts": "<p>fzakaria 的续篇。前一篇证明可执行文件可以做成 SQLite 数据库，这一篇要证明的是另一半：<b>数据库是可以往里写的<\/b>。<\/p><p>他做了个概念验证叫 self-httpd——一个完整跑起来的 web 服务器，程序代码、网站内容、路由表、访客日志，全在同一个文件里。线上跑着，地址是 selfdb.exe.xyz。<\/p><p>机制：靠 Linux 的 <code>binfmt_misc<\/code>，把这个数据库文件交给一个自定义解释器 self-exec；解释器从数据库表里把各个段映射进内存，然后跳到入口点。程序跑起来之后通过 <code>argv[0]<\/code> 打开自己这个文件，事务性地读写自己的数据。<\/p><p>三张表：routes 存网站内容，visits 记请求日志，presses 记用户交互。页面上实时显示从自己查出来的统计：<b>13<\/b> 个段、<b>179<\/b> 个符号、<b>105<\/b> 处重定位、<b>2<\/b> 个依赖库、<b>3<\/b> 条路由、<b>12<\/b> 张表。<\/p>",
+     "sides": "<p><b>作者自己就说这是概念验证。<\/b>没有基准测试，没有性能数据，依赖 Linux 特有的 <code>binfmt_misc<\/code>，不跨平台。<b>没有任何生产可用性的主张，你也别替他加。<\/b><\/p><p>安全上显然有问题——一个能改写自己可执行文件的进程，是所有安全模型都不允许的事。文章里没有讨论这一层。<\/p>",
+     "angle": "<p>这条你要是做，做的是那个「概念的美感」，不是实用性。<\/p><p><b>一个程序，跑着跑着把访客日志写进了自己身上。<\/b>这句话本身就够一条短帖了。中文技术圈很少有人做这种纯粹的「好玩」内容，你做反而稀缺。<\/p><p>取舍：<b>坚决不要写「这可能是未来的部署方式」<\/b>之类的话，作者自己都没说，说了就是硬吹。就写「有人做了个特别怪的东西」，把那六个数字（13 个段、179 个符号……）念一遍，那种「它在查自己」的感觉自然就出来了。<\/p><p>8 月 24 日晚报报过他的上一篇，这次是实质推进——从只读变成了可写，值得回头补一条。<\/p>",
+     "platforms": [
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "Actually Queryable Executables",
+       "url": "https://fzakaria.com/2026/08/24/actually-queryable-executables"
+      },
+      {
+       "label": "线上演示",
+       "url": "https://selfdb.exe.xyz"
+      }
+     ],
+     "source_date": "2026-08-24",
+     "followup": "8-24 晚报报过前一篇《你的可执行文件就是个 SQLite 数据库》。这次从「可查询」推进到「可写入」，是实质进展。"
+    },
+    {
+     "id": "ev-21",
+     "section": "科技资讯",
+     "title": "Perplexity 也来做本地 AI 了——推荐的硬件，正好是那家可能要投它 300 亿的公司做的",
+     "facts": "<p>Perplexity 今天发了个叫 Portable Computer 的东西：本地 AI 智能体平台，跑在英伟达 DGX Spark 工作站上，需要时再调云端。<\/p><p>它包含一套 agent 外壳、一个编排器和本地模型。搭配的模型是英伟达 Nemotron 3.5 Lightning（<b>300 亿<\/b>参数）、Qwen 3.6（<b>350 亿<\/b>）、Qwen 3.8（<b>270 亿<\/b>）。<\/p><p>官方说法：本地推理不用付按 token 计费的 API 钱，能省不少；私密的 token 也不会传出去。<\/p><p>它给的对比结论是：在多项测试里追平或超过 Hermes 和 Pi，在 BrowseComp 和 ParseBench-100 上速度最快。<\/p>",
+     "sides": "<p><b>这里有一个必须点破的关系：<\/b>就在昨天（8 月 25 日），有报道称英伟达正在洽谈投资 Perplexity，估值超过 <b>300 亿美元<\/b>。今天 Perplexity 发的本地平台，指定跑在英伟达的 DGX Spark 上，搭配的首推模型是英伟达自家的 Nemotron。The Register 也直接点出了这层关系。<\/p><p><b>这不等于说产品是假的<\/b>——本地推理省钱和保护隐私这两点是真实的技术优势。但「为什么偏偏推荐这套硬件」这个问题，现在有了一个不属于技术的答案。<\/p><p><b>跑分口径：<\/b>「追平或超过 Hermes 和 Pi」「BrowseComp 和 ParseBench-100 上最快」全部是 <b>Perplexity 自己发布的对比<\/b>，<b>无第三方复核<\/b>，测试配置、量化精度、硬件规格均未见披露。速度快慢在本地推理里跟量化方式关系极大，不给这些参数的跑分基本没法读。<\/p><p><b>另外注意：<\/b>DGX Spark 是一台工作站，不是普通消费级设备。「本地 AI」在这里不等于「你家电脑就能跑」，成本门槛得单说。<\/p>",
+     "quotes": [
+      {
+       "en": "significant cost savings, since local inference avoids per-token API fees",
+       "zh": "能省下相当可观的成本，因为本地推理不用付按 token 计费的 API 钱。",
+       "by": "Perplexity 官方说明，转引自 The Register"
+      }
+     ],
+     "angle": "<p>这条你别做产品介绍，做「利益关系」这条线，但要做得公道。<\/p><p>结构建议：先讲产品是什么、本地推理的好处是真的；再把时间线摆出来——8 月 25 日传英伟达要投 300 亿，8 月 26 日 Perplexity 发布指定跑英伟达硬件、首推英伟达模型的产品；最后不下结论，把问题留给读者：<b>当推荐方和被推荐方在谈一笔 300 亿的投资，这个推荐还剩多少信息量？<\/b><\/p><p>这个框架比骂人有力得多，也安全得多。<\/p><p>取舍：<b>那些跑分一个都别引<\/b>，厂商自测、没有配置、没有第三方——三条全占。真要提，就整段引完再整段拆掉，别单独摘一句「超过 Hermes」当卖点。另外提醒读者 DGX Spark 是工作站不是家用机，别让人误以为自己那台笔记本就能跑。<\/p>",
+     "platforms": [
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "The Register：Perplexity 也来做本地 AI",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/26/now-perplexity-is-trying-to-get-into-the-local-ai-action/5292449"
+      }
+     ],
+     "source_date": "2026-08-26",
+     "followup": "8-25 早报报过「英伟达在谈投 Perplexity，估值超 300 亿」。今天出现了产品层面的关联，值得回头串一条。"
+    }
+   ],
+   "pitfalls": [
+    "<b>今晚最大的雷：数据中心那一堆民调百分比。<\/b>-60% 净支持、亚马逊仓库 65% vs 数据中心 24%、Fox News 48%、盖洛普 75% 和 45–51%、「告知循环用水后 +31 个百分点」——这些来自至少四家机构、四种问法、四个时间点，是 Andy Masley 在一篇博客里拼起来做论证用的。<b>全期唯一能安全同图的只有「亚马逊仓库 65% vs 数据中心 24%」这一对。<\/b>其余任何两个数放进同一张图都是翻车。",
+    "<b>「75% 没提 AI」不是选择题的结果<\/b>，是盖洛普开放式提问的编码结果。它和同一份报告里其他单选题的百分比不是一个统计物种，不能并列。",
+    "<b>澳洲那两套数据必须分开画。<\/b>eSafety 是政府调查、10–15 岁、每日使用任一社媒（约 60% → 58%）；Qustodio 是家长控制软件公司、13–15 岁、TikTok 单品、口径是「当月至少一次连续用超 5 分钟」（25.9%），<b>样本量未公开<\/b>。把 58 和 25.9 并排画柱子是硬错。另外 Qustodio 只说「比禁前低 1 个多百分点」，没给禁前绝对值，<b>不要自己减出一个 27% 来当数据用<\/b>。",
+    "<b>WhatsApp 使用量上升不能算「禁令失效」的证据<\/b>——它压根不在澳洲这次禁令的范围内。这个坑很多外媒自己都踩了。",
+    "<b>Ox-Alpha 今晚才放权重，今天谈跑分必翻车。<\/b>智谱只确认了「是 GLM 新版本」和「今晚发权重」，参数量、架构、许可证、基准分一概没有官方数字。现在流传的任何分数都是第三方自测。所谓「对标 DeepSeek」是彭博的描述，不是公司的性能声明。",
+    "<b>Debian 的「不到 350 张票」是 The Register 发稿时的快照，投票还在进行。<\/b>写成结论就是错的。另外 Debian 用 Condorcet 计票，最终胜出的常常不是首选票最多的那个选项，<b>别用「哪个方案票最高」这种说法<\/b>。每个提案后面的「6 到 17 人附议」是上票门槛，不是支持率。",
+    "<b>OpenAI「13 位高管离职」是 Business Insider 的统计口径，不是公司披露。<\/b>它把主动离职、转顾问、团队解散混在一起算。而且 OpenAI 从未公开过高管总人数，<b>谁给你一个「流失率百分之多少」，那个数一定是编的。<\/b>公司自己的说法是「重组」。",
+    "<b>Omarchy 那两个漏洞（视频标题 bash 注入、通知可执行任意 bash）没有 CVE 编号，我也没见到官方确认或补丁公告<\/b>，是批评者的技术断言。「451 处 shell 脚本错误」是社区跑静态检查工具的告警数，<b>绝不等于 451 个漏洞<\/b>——这类工具的告警绝大多数是风格问题。「Omarchy 在演安全」是观点。DHH 那边确实在收漏洞、给报告者署名致谢，写的时候要给。",
+    "<b>「AI 精神病」那篇论文里一个患病率数字都没有<\/b>，它是观点综述，证据基础是媒体报道和个案报告，作者自己在文中反复强调这一点。网上任何「多少人受影响」的数字都不是从这篇来的。<b>也别报道具体个案<\/b>，容易出事。",
+    "<b>Recuris 的 87.9% 只在 tau-bench 上成立，不是 Claude Opus 5 的通用能力分。<\/b>「+17.8 分」是相对无 Recuris 基线的提升，不是绝对分。而且「37 组已完成配对」这个措辞说明有配对没跑完，摘要没解释原因。「常见失败模式下降 80%」取的是最好那个数，不是平均值。全部为作者自测，无第三方复核，成本一字未提。",
+    "<b>AutoSaddler 的 9.0 / 9.6 / 10.0 三个数看着很齐，但来自三个不同基准、三套不同基线，不能画成一张对比图<\/b>，也不能说「平均提升约 9.5 个百分点」。",
+    "<b>提示词老化那篇测的是 GPT-4o、Qwen2.5-7B、Mistral-Large 这批相对老的模型，没有测 2026 年的前沿模型。<\/b>标题写成「思维链失效了」是错的。而且它是对 2025 年一项研究的部分复现，任务只有函数级代码生成，评估只看功能正确性。",
+    "<b>《You Can't Open an LLM With a Screwdriver》是 vision paper，依据是一场专家研讨，没有实验、没有样本量。<\/b>用「有研究者提出」，不要用「研究发现」。",
+    "<b>LatticeDB「100 万向量 recall@10 = 100%」这个数最好别引。<\/b>HNSW 是近似算法，召回刷到 100% 通常意味着参数极保守或查询集偏简单，不能跟别家的 HNSW 比。「全文检索 19 微秒」的语料只有 100 篇文档，这个规模下没有参考价值。全部作者自测，硬件未说明。",
+    "<b>RAG 那篇的「60% / 25% / 10% / 5%」是作者个人估算，没有样本、没有调查。<\/b>必须写「作者估计」。另外他默认的是英文文档场景，<b>中文分词下 BM25 的表现和英文完全不可比<\/b>，不加这句评论区第一条就打你脸。",
+    "<b>Perplexity 那几个跑分（追平 Hermes 和 Pi、BrowseComp 最快）是厂商自测，无第三方复核，量化精度和硬件配置均未披露。<\/b>本地推理的速度跟量化方式关系极大，不给参数的跑分没法读。另外 DGX Spark 是工作站不是消费级设备，<b>「本地 AI」在这里不等于「你家电脑能跑」<\/b>。",
+    "<b>假智库那条的因果链要拆开写。<\/b>「Piro 受以色列政府广告局委托」是网站页脚自己写的（事实）；「专门为了影响 AI」是从 Piro 的业务描述和文章风格推出来的（推断）；「90 万美元」我只在二手报道里见到，没查到一手文件；GPTZero 判定「11/12 篇是 AI 生成」只能当旁证，这类检测器误判率一直有争议。以色列官方回应未见。<b>另外别和今天早报那条 OpenAI 端掉俄罗斯宣传号混着写<\/b>——一个是平台执法查账号，一个是媒体调查一个公开网站，机制完全不同。",
+    "<b>EPA 那条我只拿到 Tom's Hardware 的转述，没有 EPA 提案原文和条款号。<\/b>务必写「据 Tom's Hardware 报道」。同一家的另一篇里，标题写「2026 年前三个月」、URL 里写「前四个月」，<b>「75 个项目、1300 亿美元被挡下」这个时间范围本身就对不上，引用时要么标『前三到四个月，媒体统计口径不一』，要么干脆不用这个数。<\/b>",
+    "<b>日期容易写错的三处：<\/b>澳洲禁令生效日是 <b>2025 年 12 月 10 日<\/b>（不是 2026 年）；Warnock 论文是 <b>2026 年 7 月<\/b>发表的，今天只是被翻上 Hacker News，别写成「今日发布」；Ox-Alpha 首次出现在 OpenRouter 是 <b>8 月 20 日<\/b>，官方认领是 <b>8 月 26 日<\/b>，这两个日期别串。",
+    "<b>本期有四条只有单一来源：<\/b>EPA 提案（仅 Tom's Hardware）、Omarchy 漏洞（仅批评者本人博客）、RAG 那篇的百分比分布（仅作者本人）、LatticeDB 性能（仅作者自测）。这四条都不适合做成斩钉截铁的标题，用「有人指出」「作者称」这类措辞。",
+    "<b>fzakaria 那个自写自读的可执行文件，作者明确说是概念验证，没有基准测试，只跑在 Linux 上。<\/b>别替他加「未来的部署方式」这类话，他自己一个字都没说。"
    ]
   }
  ]
