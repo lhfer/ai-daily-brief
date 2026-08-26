@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-25 21:20 (北京时间)",
+ "updated_at": "2026-08-26 08:33 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -17525,6 +17525,617 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "<b>Unicode 软屏障那篇，作者明说不是可上生产的方案。<\/b>漏掉这句，会有人真去用，然后代码库里到处是不可见字符。18 人的试点用户研究只能看方向，不能当行为学结论。",
     "<b>SkillAlchemy 的 +19.9pp 和 +8.6pp 都是相对提升，绝对通过率摘要没给。<\/b>「追平人工整理的技能」这句里，人工技能是谁写的、按什么标准写的，论文没交代——基线不明的「追平」，含金量说不清。",
     "<b>今天有一条我查了但没收：某处流传的 Claude Code「fable-5」系统提示词泄漏文件。<\/b>抓回来的内容里出现了明显与提问上下文串味的段落，无法确认是原文还是抓取污染。这种情况一律不收——泄漏类内容一旦引错，是最难挽回的翻车。"
+   ]
+  },
+  {
+   "id": "2026-08-26-morning",
+   "date": "2026-08-26",
+   "type": "morning",
+   "type_label": "早报",
+   "generated_at": "2026-08-26 08:00 (北京时间)",
+   "intro": "今天两件事值得花时间。一是 OpenAI 自研芯片的第一份跑分，SemiAnalysis 一边喊它赢了所有人，一边在正文里埋了四条免责声明——拆通稿的料全在那儿。二是实测 31 个 Agent Skills 的论文：你往 CLAUDE.md 里塞的东西，多半在拖后腿。其余融资和 IPO 故事，扫一眼数字就行。",
+   "highlights": [
+    "OpenAI 芯片 Jalapeño 首份跑分，而写稿的 SemiAnalysis 自己承认：数字是 OpenAI 给的，最关键那套测试没跑",
+    "31 个公开 Agent Skill 实测：通过率掉 1.3%–4.2%，token 涨 72%–394%，只有不到三分之一的组合划算",
+    "AI 代码审查当场标红了 eval()，人类维护者说「先合了不然模型上不了线」——一年后它成了 CVE"
+   ],
+   "cards": [
+    {
+     "id": "am-01",
+     "section": "AI 资讯",
+     "title": "OpenAI 自研芯片交出第一份跑分，而写稿的人自己埋了四条免责声明",
+     "facts": "<b>8 月 25 日<\/b>，Hot Chips 大会最后一场，OpenAI 公布了自研推理芯片 Jalapeño 的首批基准。SemiAnalysis 的说法是：它打赢了他们测过的每一颗英伟达、AMD 和谷歌芯片。规格是台积电 N3P 工艺、单芯片 <b>13.4 PFLOPs<\/b>（MXFP4 低精度）、<b>216GB HBM4<\/b> 显存、带宽 <b>15.4TB/s<\/b>。对上英伟达 GB200/GB300 机柜，吞吐高 <b>1.5 到 1.9 倍<\/b>，延迟低 <b>1.7 到 3.6 倍<\/b>。今年底小批量，2027 年才爬产。",
+     "sides": "同一篇稿子里写着：所有数字都是 OpenAI 给的，SemiAnalysis 只在实验室现场看了跑，没自己跑完整套；他们最看重的 AgentX（长上下文、多轮）测试压根没跑。他们还自己承认，拿 Blackwell 当对手「不完整也不公平」，真正的同代对手是同样用 HBM4 的 Rubin。而这次跑的 8k 输入、1k 输出，是最好调的那种负载。",
+     "quotes": [
+      {
+       "en": "First, all numbers are provided to us by OpenAI. We verified the InferenceX runs in person in the lab, but we did not run the full suite of InferenceX benchmarks nor have we seen AgentX results.",
+       "zh": "首先，所有数字都是 OpenAI 提供给我们的。我们在实验室现场核验了 InferenceX 的运行，但我们没跑完整套 InferenceX 基准，也没看到 AgentX 的结果。",
+       "by": "SemiAnalysis 原文"
+      },
+      {
+       "en": "We believe that comparison to Blackwell is somewhat incomplete and unfair. Jalapeño is really competing against chips like Rubin that also use HBM4.",
+       "zh": "我们认为拿它跟 Blackwell 比有点不完整、也不公平。Jalapeño 真正的对手是 Rubin 这类同样用 HBM4 的芯片。",
+       "by": "SemiAnalysis 原文"
+      }
+     ],
+     "angle": "别跟着「OpenAI 芯片吊打英伟达」的标题走。这条最值钱的地方是：吹的人和拆的人是同一个人，四条免责声明明明白白写在正文里。你可以做一篇「怎么读一份厂商送来的跑分」——数字谁给的、谁跑的、跑的什么负载、对手是不是同代，四问下去这篇稿子自己就散了。长文最合适；短帖只发那句 all numbers are provided to us by OpenAI 就够狠。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "SemiAnalysis 原文",
+       "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia"
+      },
+      {
+       "label": "The Register 拆规格",
+       "url": "https://www.theregister.com/systems/2026/08/25/openais-upcoming-jalapeno-chip-looks-like-itll-be-an-inference-beast/5292052"
+      },
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-02",
+     "section": "圈内暗流",
+     "title": "Anthropic 要跟 IPO 投资人讲一个 30 万亿美元的市场，比 SpaceX 讲的还大",
+     "facts": "<b>8 月 25 日<\/b>《华尔街日报》报道，Anthropic 准备告诉投资人：它的潜在收入空间超过 <b>30 万亿美元<\/b>。SpaceX 上市前给的数字是 <b>28.5 万亿<\/b>。算法是把「AI 模型能干的全部工作」折算成年收入。同一批报道说，这次 IPO 最高想募 <b>1000 亿美元<\/b>，目标估值约 <b>2 万亿美元<\/b>；公司第二季度收入翻了一倍多，到 <b>116 亿美元<\/b>。",
+     "sides": "30 万亿是 TAM，不是收入预测。TAM 的定义是「这个市场 100% 份额全归你时的年收入」。给个参照：全球一年 GDP 在 110 万亿美元这个量级，也就是说这个数字相当于人类产出的四分之一还多。纽约大学估值教授 Damodaran 早前评 SpaceX 那个数时就说过，AI 的 TAM 已经到头了还在往外推。",
+     "quotes": [
+      {
+       "en": "reaching the end of what's plausible and pushing beyond",
+       "zh": "已经到了还说得过去的尽头，并且还在继续往外推",
+       "by": "Aswath Damodaran（纽约大学估值教授，评 AI 行业的 TAM 口径）"
+      }
+     ],
+     "angle": "几乎所有中英文标题都把 TAM 写成「潜在收入」，这本身就是选题。你可以做一期「看懂 AI 公司的三个数字」：TAM 30 万亿、单季收入 116 亿、目标估值 2 万亿，三个数摆一起，中间隔着多少想象力一眼就看出来。配上前两天 FT 那条「最强模型卖不动」，反差更足。别做成唱衰，做成一堂读数字的课。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "Yahoo Finance 转 WSJ",
+       "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-pitches-ipo-investors-30-172107288.html"
+      },
+      {
+       "label": "Reuters 转述",
+       "url": "https://www.investing.com/news/stock-market-news/anthropic-expected-to-tell-investors-it-sees-over-30-trillion-in-potential-revenue-wsj-reports-4875772"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-03",
+     "section": "科技资讯",
+     "title": "X 一纸律师函，活了七年的 Nitter 当天下线，GitHub 仓库当天存档",
+     "facts": "<b>8 月 24 日<\/b>，X Corp. 向 Nitter 项目和各个实例发出停止侵害函，要求永久关掉 nitter.net 和 GitHub 仓库、停用 Twitter 和 X 商标、删掉所有 X 数据和会话凭证，限三个工作日书面确认。截止时间卡在 <b>8 月 25 日美东下午 5 点<\/b>。作者 Zedeus 当天存档了仓库，网站下线，开发停止。X 援引的法条包括德州《计算机有害访问法》和《兰哈姆法》。",
+     "sides": "HN 那条帖子拿了 <b>564 分、401 条评论<\/b>，吵的重点不是技术。很多人说本地议会、政府部门只在 X 上发公告，Nitter 一死等于「看本地通知必须先注册一个 X 账号」。也有人算过账：真要打这场官司，律师费大概在 2 万到 10 万美元之间。",
+     "quotes": [
+      {
+       "en": "On 24 August 2026 cease and desist letters were sent by X Corp. demanding a permanent takedown of Nitter instances and the project's repository.",
+       "zh": "2026 年 8 月 24 日，X Corp. 发来停止侵害函，要求永久下架 Nitter 的各个实例以及项目仓库。",
+       "by": "Nitter 仓库 README（作者 Zedeus）"
+      },
+      {
+       "en": "nitter.net is offline and development has stopped for the time being. I'm seeking legal advice and won't be commenting further.",
+       "zh": "nitter.net 已经下线，开发暂时停止。我正在咨询律师，不再多说了。",
+       "by": "Zedeus，对 TechCrunch"
+      }
+     ],
+     "angle": "别只写「开源项目被大厂告死」。真正的切口是：X 一边靠 Grok 吃全网数据，一边用反爬法条把一个只读前端弄没。顺着写「公共信息被关进私人围墙」——政府公告只发一个平台、平台又只对登录用户开放，这个结构国内也有对应场景。短帖发一句「活了七年，一封信，一天」就够。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/25/x-sends-cease-and-desist-to-open-source-project-nitter-over-alleged-scraping/"
+      },
+      {
+       "label": "GitHub 仓库（已存档）",
+       "url": "https://github.com/zedeus/nitter"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49437283"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-04",
+     "section": "反共识",
+     "title": "AI 代码审查当场标红了 eval()，人类维护者说「先合了不然模型上不了线」——一年后它成了 CVE",
+     "facts": "这是昨天那篇「模型能靠输出 token 控制宿主机」的实锤源头，有人把原始 PR 翻了出来。<b>2025 年 7 月 22 日<\/b>，vLLM 的一个 PR 给 Qwen3-Coder 加工具调用解析器，把模型生成的参数直接丢进了 <b>eval()<\/b>。Gemini Code Assist 机器人当场自动审查、标了严重漏洞。维护者还是强行合并了。后来它成了 <b>CVE-2025-9141<\/b>，影响 0.10.0 到 0.10.1，任何已认证用户都能远程执行代码。",
+     "quotes": [
+      {
+       "en": "The use of `eval()` on model-generated output is a critical security vulnerability as it can lead to arbitrary code execution.",
+       "zh": "对模型生成的内容使用 `eval()` 是一个严重的安全漏洞，可能导致任意代码执行。",
+       "by": "Gemini Code Assist（vLLM PR #21396 的自动审查意见）"
+      },
+      {
+       "en": "I'm force merging this to unblock model usage, after lint.",
+       "zh": "我强行合了，先把这个模型解锁再说，lint 过了就行。",
+       "by": "simon-mo（vLLM 维护者，合并说明）"
+      }
+     ],
+     "angle": "这条比「AI 会不会审代码」的口水战有用一百倍。大家吵的是 AI 审得准不准，这里 AI 审对了，被人按掉了，一年后变成 CVE。你可以从「AI 审查意见的政治学」切：机器人提的意见没有人格、没有社交成本，所以最容易被 override。建议只做这一个案例，配 PR 截图，别扩写成 AI 安全综述。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "vLLM PR #21396（含审查意见和合并说明）",
+       "url": "https://github.com/vllm-project/vllm/pull/21396"
+      },
+      {
+       "label": "Boyd Kane 的原文（已收录，此为背景）",
+       "url": "https://boydkane.com/essays/llms-could-control-their-host-machines-by-exploiting-inference-engines"
+      }
+     ],
+     "source_date": "2026-08-25",
+     "followup": "已收录的 boydkane 文章（8-25 午报）只写了「去年有个真 CVE 是这么来的」。新进展是有人翻出原始 PR：AI 审查器当时就标红了，是人类主动无视的。文章是 2026 年 8 月 25 日，PR 合并和 CVE 都在 2025 年。"
+    },
+    {
+     "id": "am-05",
+     "section": "论文",
+     "title": "31 个公开 Skill 实测：通过率掉了，token 最多涨四倍（《信号还是噪声？》，Signal or Noise?）",
+     "facts": "他们在 <b>50 个项目、1000 个有序任务<\/b>上，测了 <b>31 个公开的 WebDev Skill<\/b>。结论：注入对口的 Skill 让平均 Pass@2 <b>掉了 1.3% 到 4.2%<\/b>，任务完成深度变浅，token 成本 <b>涨了 72% 到 394%<\/b>。真正划算的「Skill × 项目」组合只有 <b>17% 到 36%<\/b>。他们还设了一个「长度一样但内容无关」的对照组，把两种拖累拆开了：一种是被长度分心，一种是被内容误导。",
+     "quotes": [
+      {
+       "en": "Across four models, target Skill injection reduces mean Pass@2 by 1.3% to 4.2%, lowers task completion depth, and increases token cost by 72% to 394%, with gains in only 17% to 36% of Skill-project pairs.",
+       "zh": "在四个模型上，注入目标 Skill 让平均 Pass@2 下降 1.3% 到 4.2%，任务完成深度也变浅，token 成本上涨 72% 到 394%，只有 17% 到 36% 的「Skill—项目」配对是正收益。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "这是今天最该做的一篇。整个中文圈这半年都在教人怎么写 CLAUDE.md、怎么攒 skill 库，这篇直接说大部分时候在帮倒忙，而且有对照组撑着。建议你做实操向：把自己在用的 skill 挨个拿掉跑一遍，记下 token 和成功率，写成「我删掉七个 skill 之后」。比纯讲论文有用得多。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 2608.23067",
+       "url": "https://arxiv.org/abs/2608.23067"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "am-06",
+     "section": "提示词",
+     "title": "泄漏的官方 verify 技能，第一条规矩是：验证代码改动的时候，不许跑测试、不许查类型",
+     "facts": "<b>8 月 25 日<\/b>，Claude Code 一批内置技能被扒进泄漏仓库，其中 verify 这份最狠。它的主张是：验证等于<b>运行时观察<\/b>——把应用编译出来、跑起来、一路开到改动那段代码真正执行的地方，把看到的东西截下来，那才叫证据。跑测试只证明你会跑 CI。文件开头还写着 <b>disable-model-invocation: true<\/b>，也就是模型自己不能调它，只能人手动触发。全文约 6500 词。",
+     "prompt_en": "**Verification is runtime observation.** You build the app, run it, drive it to where the changed code executes, and capture what you see. That capture is your evidence. Nothing else is.\n\n**Don't run tests. Don't typecheck.** Running them here proves you can run CI — not that the change works. Not as a warm-up, not \"just to be sure,\" not as a regression sweep after. The time goes to running the app instead.\n\n**When in doubt, FAIL.** False PASS ships broken code; false FAIL costs one more human look. Ambiguous output is FAIL with the raw capture attached — don't interpret.",
+     "prompt_zh": "（以下三段为全文节选，原文约 6500 词）\n\n【第一段 · 什么才算验证】\n**验证就是运行时观察（runtime observation）。** 你要把应用编译出来、跑起来、一路开到改动的那段代码真正执行的地方，然后把你看到的东西截下来。那份截取就是你的证据。别的都不算。\n\n【第二段 · 明确禁止】\n**不要跑测试。不要做类型检查（typecheck）。** 在这儿跑它们，只能证明你会跑 CI（持续集成），证明不了这个改动能用。不许拿它当热身，不许「保险起见跑一下」，事后也不许当回归扫一遍。这点时间要花在把应用真跑起来上。\n\n【第三段 · 拿不准就判失败】\n**拿不准的时候，判 FAIL（失败）。** 误判成通过，会把坏代码放进生产；误判成失败，只不过让人多看一眼。输出含糊就判 FAIL，把原始截取附上——不许自己去解读。",
+     "angle": "整个行业的直觉是「让 agent 跑测试自证」，官方技能里写的却是反着来。你可以做一期「测试通过 ≠ 改动能用」，把 verify 那套「表面」清单讲清楚：命令行程序就去看终端，服务端就去打 socket，界面就去截图，agent 配置就去把那个 agent 跑一遍。这条也能直接改造成你自己的 review 流程。口径标清：第三方泄漏仓库，不是官方文档。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "泄漏原文（raw）",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/claude-code/skills/verify/SKILL.md"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-07",
+     "section": "AI 资讯",
+     "title": "Claude 和 Cowork 的记忆合池了，而且没有「只让其中一个记住」的开关",
+     "facts": "<b>8 月 25 日<\/b>宣布，当天生效。Claude 聊天和 Cowork 现在共用一套记忆，你在聊天里说过的事，Cowork 直接就知道。记忆也从「聊完再总结」改成了对话过程中持续更新。免费版、Pro、Max 全部默认开启。健康、种族、宗教、政治、性别认同这些默认不存，可以自己打开；身份证号、社保号、犯罪记录则永远不存。Claude Code 的记忆暂时还是分开的。",
+     "sides": "The Register 的批评点很直接：你可以整个关掉记忆、可以用小号、可以开无痕、可以逐条删，但没有任何一个选项能让这两个产品的记忆分开。工作场景和私人聊天被强制放进同一个池子。",
+     "quotes": [
+      {
+       "en": "Claude will always remember what it learned in one area, even when you're engaging with it in another.",
+       "zh": "Claude 在一个地方学到的东西，会一直记着，哪怕你是在另一个地方用它。",
+       "by": "Anthropic 官方说明"
+      }
+     ],
+     "angle": "别写成产品更新。切口是「记忆合池」这件事本身——你在 Claude 里聊过的私事，会跟着 Cowork 走进你的工作流。给读者三个能立刻做的动作：翻一遍记忆页面看它到底记了什么、把敏感话题那个开关确认一遍、重要工作单独开个号。图文最合适，配截图。",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/"
+      },
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/25/claude-and-cowork-now-share-what-they-know-about-you/5292412"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-08",
+     "section": "提示词",
+     "title": "泄漏的 Claude Code 系统提示词开头是一张表：high 到 xhigh 是三倍跳，max 干脆不发这个标签",
+     "facts": "系统提示词泄漏仓库 asgeirtj/system_prompts_leaks 在 <b>8 月 24 日<\/b>更新了 claude-code-fable-5.md，文件最开头直接放了一张对照表：档位设成 low，内部注入的标签值是 <b>10<\/b>；medium 是 <b>20<\/b>；high 是 <b>40<\/b>；xhigh 是 <b>120<\/b>；max 则完全不发这个标签。整份文件五六万字符量级。",
+     "prompt_en": "| Effort setting | `<reasoning_effort>` value |\n|---|---|\n| low | 10 |\n| medium | 20 |\n| high | 40 |\n| xhigh | 120 |\n| max | no tag |\n\nYou are Claude Code, Anthropic's official CLI for Claude.\n\nYou are an interactive agent that helps users with software engineering tasks.",
+     "prompt_zh": "【第一段 · 档位对照表】\n| 努力档位（Effort setting） | 实际注入的 `<reasoning_effort>` 值 |\n|---|---|\n| low（低） | 10 |\n| medium（中） | 20 |\n| high（高） | 40 |\n| xhigh（超高） | 120 |\n| max（最高） | 不发这个标签 |\n设计意图：思考预算不是均匀的档位，是一条越往上越陡的曲线。low 到 high 才翻两番，high 到 xhigh 一步跳三倍；到了 max 干脆把标签拿掉，等于不设上限。\n\n【第二段 · 身份】\n你是 Claude Code，Anthropic 官方的 Claude 命令行工具（CLI）。\n\n【第三段 · 角色】\n你是一个交互式 agent（代理程序），帮用户完成软件工程任务。",
+     "angle": "这张表值钱在它把一个平时看不见的旋钮量化了。你可以做一期「Claude Code 的 effort 档到底差多少」：讲清 high 到 xhigh 是三倍、max 是不封顶，再配一个实测——同一个任务在四个档位各跑一次，记账单也记结果。这种「官方没说、泄漏里写着」的选题在小红书和即刻都很吃。口径务必标清：这是第三方泄漏仓库，不是官方文档。",
+     "platforms": [
+      "图文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "泄漏原文（raw）",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/claude-code/claude-code-fable-5.md"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "am-09",
+     "section": "AI 资讯",
+     "title": "汤森路透自研法律大模型：两年花了 4000 万美元，最后那次训练只花 45 万",
+     "facts": "<b>8 月 24 日<\/b>发布，模型就叫 Thomson。训练素材是 Westlaw、Practical Law、Checkpoint 和路透社的档案，加几百位领域专家打磨，而且只用掉了公司内容的<b>不到 10%<\/b>。公司说两年在人和算力上花了约 <b>4000 万美元<\/b>，但最终那次训练 run 压到了约 <b>45 万美元<\/b>。先上线在 CoCounsel 的批量文档审阅功能里；其他任务继续调第三方前沿模型。",
+     "sides": "法律科技博主 Bob Ambrogi 把七项基准挨个看了一遍：Thomson 没赢下大多数项。最老牌的 LegalBench 上，Gemini 3.1 Pro 和 GPT-5.5 都比它高；推理项 0.684 落后，编程项 0.399 垫底。测试条件也不对等——Thomson 开了 test-time scaling（多花推理时间换分数），而 GPT-5.5 是按非推理模式跑的。所有分数都由汤森路透自报，没有第三方复核。",
+     "quotes": [
+      {
+       "en": "These benchmark results are entirely self-reported on the part of Thomson Reuters, with no mention of any independent third-party verification.",
+       "zh": "这些基准结果完全是汤森路透自己报的，通篇没提任何独立第三方复核。",
+       "by": "Bob Ambrogi，LawSites"
+      }
+     ],
+     "angle": "「45 万美元训出对标前沿的模型」是一句注定被转烂的话。你可以做拆解：4000 万和 45 万分别买的是什么——前者是数据、人和试错，后者只是最后那一次跑。再把 Ambrogi 那张基准表摆出来。还有个更狠的对照：汤森路透自己 6 月那份行业调查里，<b>78%<\/b> 的客户说 AI 带来的质量提升很关键，只有 <b>6%<\/b> 说自己一直真的拿到了。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "SiliconANGLE 报道",
+       "url": "https://siliconangle.com/2026/08/24/thomson-reuters-launches-proprietary-ai-model-for-legal-work/"
+      },
+      {
+       "label": "LawSites 拆基准",
+       "url": "https://www.lawnext.com/2026/08/thomson-reuters-says-its-homegrown-ai-model-now-rivals-the-frontier-labs-i-take-a-closer-look-at-the-benchmarks.html"
+      },
+      {
+       "label": "汤森路透 Future of Professionals 2026（78% vs 6% 出处）",
+       "url": "https://www.thomsonreuters.com/en/institute/reports/future-of-professionals-2026"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "am-10",
+     "section": "小众科技",
+     "title": "拿到 C2PA 最高安全等级的相机，被一个人用 root 漏洞拆穿了",
+     "facts": "<b>8 月 25 日<\/b>，David Buchanan 发文说安卓这套 C2PA 内容凭证的安全模型根子上是坏的，而且补不了。谷歌 Pixel 相机拿到的是 C2PA 目前定义的最高等级 Assurance Level 2。他给了两条路：一条是打满补丁的 Pixel 上仍有一键 root 漏洞 <b>CVE-2026-43499<\/b>，拿到 root 就能让硬件安全模块给任意内容签出真签名；另一条是低成本故障注入，直接绕过补丁等级。关键在于设备的密钥证明只能看 bootloader 状态和补丁级别，<b>看不出这台机器已经被 root 过<\/b>。",
+     "quotes": [
+      {
+       "en": "an attacker does not need the raw key material! As root, they can ask StrongBox to use these keys to sign whatever data they like, and produce C2PA forgeries.",
+       "zh": "攻击者根本不需要拿到密钥本身！只要有 root，他就能让 StrongBox 用这些密钥去签任何他想签的数据，伪造出 C2PA 凭证。",
+       "by": "David Buchanan"
+      },
+      {
+       "en": "Hardware vulnerabilities in existing devices cannot be patched",
+       "zh": "已经出厂的设备上的硬件漏洞，是打不了补丁的",
+       "by": "David Buchanan"
+      }
+     ],
+     "angle": "这条跟前两天那个微软画图隐形水印是一组。一边在拼命往图里塞看不见的凭证，一边有人证明凭证体系在现实里立不住。你可以做「AI 时代怎么证明一张照片是真的」，结论往悲观里写：签名只能证明「某台设备签过」，证明不了「这事真发生过」。顺手提一句最土的绕法——拿真相机对着屏幕拍一张。",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://www.da.vidbuchanan.co.uk/blog/android-c2pa.html"
+      },
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49439499"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-11",
+     "section": "数据素材",
+     "title": "麦肯锡说企业 AI「终于走上 ROI 之路」，而它自己的数字是：一年原地踏步",
+     "facts": "<b>8 月 25 日<\/b>发布的 State of AI 2026，样本是全球 <b>1719 位<\/b>专业人士和企业管理者。说 AI 对利润（EBIT）「多少有点影响」的占 <b>37%<\/b>，跟 2025 年那次「大致相同」。算得上「高绩效」的只有 <b>6%<\/b>——标准是 AI 至少贡献 5% 的 EBIT 且影响显著，这个比例同样一年没动。另一边，年收入超 10 亿美元的公司里，正在规模化铺 agent 的从 <b>27% 涨到 40%<\/b>。还有一条：去年受访者预期的 2025 年裁员规模，实际远没兑现。",
+     "angle": "这是一份现成的图文素材。把三组数字并排：投入在涨、agent 铺开在涨、能算到利润上的那部分一年不动。标题别用麦肯锡的口径，用它的数据。配上前两天那条「AI 裁员回滚 32%」，正好一条线。图文和短帖最合适，长文容易写成翻译稿。",
+     "platforms": [
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "The Register 报道",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/25/mckinsey-says-enterprise-ai-is-finally-on-the-road-to-roi/5292388"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-12",
+     "section": "行业痛点",
+     "title": "一个 AI 创业者跑去验房师论坛做调研，24 小时里被骂成「AI 牛仔」，最后自己也破防了",
+     "facts": "<b>8 月 24 日<\/b>晚，开发者在 InterNACHI 验房师论坛发帖，问大家写一份报告要多久、用什么工具，想验证一个 AI 报告生成器的需求。老验房师给了真数字：干净的小房子 <b>45 到 60 分钟<\/b>，问题多的大房子约 <b>1.5 小时<\/b>。然后风向就变了。有人说这些天你大概是第 <b>100<\/b> 个来问的，有人说先入会再说、不给非会员提供经验让人拿去赚钱。到 <b>8 月 25 日<\/b>下午，发帖人反过来骂论坛老人是「鼻涕虫」。",
+     "quotes": [
+      {
+       "en": "You are developing software and are about the 100th person in as many days seeking all of our valuable experience in order to accomplish the same thing. We (inspector community) are growing weary of AI cowboys slinging widgets at us.",
+       "zh": "你在做软件，而这些天里你大概是第 100 个来打听我们那点宝贵经验、想干同一件事的人。我们验房师这个圈子，已经烦透了 AI 牛仔拿小玩意儿往我们身上砸。",
+       "by": "InterNACHI 论坛回帖，2026-08-25"
+      },
+      {
+       "en": "Finalizing the report is the most important step in the inspection. Not sure why anyone would try to shortcut it.",
+       "zh": "把报告定稿是整个验房里最重要的一步。真不知道为什么有人想在这一步抄近道。",
+       "by": "InterNACHI 论坛回帖，2026-08-24"
+      },
+      {
+       "en": "I hope you are better at software development than you are at sales.",
+       "zh": "希望你写代码比卖东西强。",
+       "by": "InterNACHI 论坛回帖，2026-08-25"
+      }
+     ],
+     "angle": "「找垂直场景做 AI」这句话被说了两年，这是垂直场景那头的回声：他们已经被第 100 个人问过同样的问题，还给你起了个名字叫 AI cowboy。你可以做一期「为什么行业老人不愿意跟你聊」——不是保守，是被白嫖怕了。整个帖子二十楼看完，从提问到破防有完整弧线，很适合改成短视频脚本。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "InterNACHI 论坛原帖",
+       "url": "https://forum.nachi.org/t/how-much-time-does-report-writing-take-you-worth-building-a-faster-tool/270199"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-13",
+     "section": "反共识",
+     "title": "AI 编程真正拿走的不是手艺，是「这事做起来好难」这个信号",
+     "facts": "<b>8 月 24 日<\/b>，larsfaye 的文章《编程能力会因为依赖 AI 而崩塌》上了 HN，<b>536 分、533 条评论<\/b>。评论区最好的一条不在骂代码质量。它说：以前你上手一个功能，发现比想象中难，这个「难」本身就是信息——说明这功能可能不该做。现在模型高高兴兴一路写完了，没人感受到那股阻力，于是你也不会停下来想一想解的是不是对的问题。",
+     "quotes": [
+      {
+       "en": "Before, if I would start working / thinking on a problem and discover it was harder than anticipated, that often was a signal that the feature may not be worth it...But an LLM just happily chugs along and does it, no one feels the friction, which means you never stop up to think if you're solving the right problem, or in the right way.",
+       "zh": "以前我一上手想一个问题，发现比预想的难，这本身往往就是个信号：这功能可能不值得做……可现在模型乐呵呵地一路写下去就做完了，没有人感受到那股阻力，于是你再也不会停下来想一想：我解的是不是对的问题，用的是不是对的方法。",
+       "by": "HN 用户 matsemann"
+      },
+      {
+       "en": "Companies have dictates from leadership that 'if you're writing code manually, you're doing it wrong.'",
+       "zh": "公司高层下了命令：「你要还在手写代码，那就是你的问题。」",
+       "by": "HN 用户 ryandvm"
+      }
+     ],
+     "angle": "这条最适合你做长文，而且能跨界。「摩擦力是一种信息」这个说法可以直接搬到写作、做产品、做内容上——选题难写，往往说明它不值得写；素材凑不齐，往往说明这个角度不成立。AI 把这层阻力抹平之后，你丢掉的是一个筛子。建议从你自己的写作经验切进去，别停在程序员话题里。",
+     "platforms": [
+      "长文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "HN 讨论",
+       "url": "https://news.ycombinator.com/item?id=49421554"
+      },
+      {
+       "label": "原文",
+       "url": "https://larsfaye.com/articles/ai-coding-will-prevent-expertise"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "am-14",
+     "section": "提示词",
+     "title": "Claude Code 输入框那行灰字背后只有 30 行提示词，最狠的一条是「出错之后闭嘴」",
+     "facts": "同一批泄漏里有一份 prompt-suggestion.md，就是你在 Claude Code 输入框里看到的那行灰色建议背后的完整提示词。任务写得很直白：<b>猜用户会打什么，不是猜他该打什么<\/b>。判定标准就一句话——他看到这条会不会想「我正要打这个」。它列了五类绝对不许出的建议，还把「什么都不输出」写成了合法答案。全文三十行左右，可以整段读完。",
+     "prompt_en": "[SUGGESTION MODE: Suggest what the user might naturally type next into Claude Code.]\n\nFIRST: Look at the user's recent messages and original request.\n\nYour job is to predict what THEY would type - not what you think they should do.\n\nTHE TEST: Would they think \"I was just about to type that\"?\n\nEXAMPLES:\nUser asked \"fix the bug and run tests\", bug is fixed → \"run the tests\"\nAfter code written → \"try it out\"\nClaude offers options → suggest the one the user would likely pick, based on conversation\nClaude asks to continue → \"yes\" or \"go ahead\"\nTask complete, obvious follow-up → \"commit this\" or \"push it\"\nAfter error or misunderstanding → silence (let them assess/correct)\n\nBe specific: \"run the tests\" beats \"continue\".\n\nNEVER SUGGEST:\n- Evaluative (\"looks good\", \"thanks\")\n- Questions (\"what about...?\")\n- Claude-voice (\"Let me...\", \"I'll...\", \"Here's...\")\n- New ideas they didn't ask about\n- Multiple sentences\n\nStay silent if the next step isn't obvious from what the user said.\n\nStay silent if a suggestion could be unsafe or inappropriate — including any sensitive topic (security incidents, credentials, harm, private data). Even when the user is doing legitimate security or cybersecurity work, do not predict potentially unsafe actions.\n\nFormat: 2-12 words, match the user's style. Or nothing.\n\nReply with ONLY the suggestion, no quotes or explanation.",
+     "prompt_zh": "【第一行 · 模式声明】\n［建议模式：猜一猜用户接下来自然会往 Claude Code 里打什么。］\n\n【第二段 · 先看哪儿】\n第一步：去看用户最近几条消息，以及他最初提的要求。\n\n【第三段 · 任务定义】\n你的活儿是预测「他会打什么」——不是你觉得他该干什么。\n（设计意图：把补全从「给建议」拧成「做预测」，一字之差，方向反过来。）\n\n【第四段 · 判定标准】\n检验标准：他会不会想「我正要打这个」？\n\n【第五段 · 例子】\n用户说了「修 bug 再跑测试」，bug 修好了 → 「跑测试」\n代码写完之后 → 「试一下」\nClaude 给了几个选项 → 根据上下文，挑那个他多半会选的\nClaude 问要不要继续 → 「好」或者「继续」\n任务完成、下一步很明显 → 「提交」或者「推上去」\n刚出错或者刚会错意之后 → 沉默（让他自己判断、自己纠正）\n\n【第六段 · 要具体】\n要具体：「跑测试」好过「继续」。\n\n【第七段 · 绝对不许出的五类】\n绝不建议：\n- 评价类（「不错」「谢了」）\n- 提问类（「那……呢？」）\n- Claude 腔（「让我……」「我来……」「这是……」）\n- 他没提过的新点子\n- 超过一句话的\n\n【第八段 · 保持沉默的两种情况】\n如果从用户说的话里看不出明显的下一步，就沉默。\n如果这条建议可能不安全或不合适——包括任何敏感话题（安全事件、凭证、伤害、私人数据）——就沉默。哪怕用户做的是正经的安全或网络安全工作，也不要去预测有潜在风险的操作。\n\n【第九段 · 格式】\n格式：2 到 12 个词，跟着用户的语气走。或者什么都不出。\n\n【第十段 · 输出约束】\n只回建议本身，不要引号，不要解释。",
+     "angle": "这份最适合做中英对照的逐段拆解，因为它短到能一口气读完，而且每一条都能直接搬。三个值得单独讲的点：预测而不是建议；「出错之后闭嘴」；把「什么都不出」写成合法输出。第三条尤其反直觉——大部分人写提示词时，从不敢给模型一个「不说话」的出口。图文和短帖都吃得下。",
+     "platforms": [
+      "图文",
+      "短帖",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "泄漏原文（raw）",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/claude-code/prompts/prompt-suggestion.md"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-15",
+     "section": "圈内暗流",
+     "title": "三大唱片公司一起投了 Stable Diffusion 的母公司，还叫上了 EA",
+     "facts": "<b>8 月 25 日<\/b>，Stability AI 完成 <b>7600 万美元<\/b> B 轮，累计融资 <b>2.32 亿美元<\/b>。投资名单是环球音乐、索尼音乐、华纳音乐、艺电（EA）、AMD Ventures 和 Pacific Alliance Ventures。这不是突然发生的：环球 2025 年 10 月、EA 同月、华纳 11 月，都已经跟它签过共同开发工具的合作。版权战况这边，Getty Images 在英国那场官司 Stability 基本赢了，美国那场还在打。",
+     "quotes": [
+      {
+       "en": "an affirmation of our vision where generative AI empowers every producer, musician, and storyteller",
+       "zh": "这轮融资印证了我们的判断：生成式 AI 会成为每一位制作人、音乐人和讲故事的人手里的工具",
+       "by": "Prem Akkaraju，Stability AI CEO"
+      }
+     ],
+     "angle": "版权战争的结局可能不是判决，是入股。内容方发现告不动也拦不住，于是选择进股东名单。做一条时间线——2023 年起诉潮、2025 年合作潮、2026 年入股，比空谈「AI 版权」具体多了。有个坑要绕开：告 Stability 的是 Getty，别把三大唱片写成「当年起诉它的人」。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/25/stability-ai-maker-of-image-generator-stable-diffusion-raises-76-million-in-fresh-funding/"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-16",
+     "section": "跨界机会",
+     "title": "AI 帮普通人批量写申请，政府被淹了——而政府最快能用的对策，是加钱设门槛",
+     "facts": "一篇 <b>8 月 17 日<\/b>提交、19 日修订的论文给这个现象起了名字：agentic flooding（代理式洪灌）。说的是 AI 代理帮公众申请福利、提交意见，把政府服务的需求量冲爆。作者收集了跨 <b>11 个司法辖区的 84 个疑似案例<\/b>，认为这事今天已经在广泛发生，主要靠大模型廉价地批量生成文本。风险最高的是那种「经济上有吸引力、但流程复杂」的服务。",
+     "quotes": [
+      {
+       "en": "the fastest to deploy - friction-inducing measures like fees - often trade off equitable access to public services.",
+       "zh": "最容易马上部署的那类对策——比如收费这种制造摩擦的手段——往往是拿公共服务的公平可及性去换的。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "一条完整又反直觉的因果链：AI 帮穷人写申请 → 系统被淹 → 系统加收费门槛 → 穷人更进不去。这个结构可以直接搬到你熟悉的场景——被 AI 灌满的投稿箱、客服通道、招聘系统、评论区。建议做长文，主题就叫「提效的反噬」，别写成政务科普。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv 2608.16603",
+       "url": "https://arxiv.org/abs/2608.16603"
+      }
+     ],
+     "source_date": "2026-08-17"
+    },
+    {
+     "id": "am-17",
+     "section": "数据素材",
+     "title": "斯坦福那份「煤矿金丝雀」更新了：22 到 25 岁在 AI 高暴露岗位上，就业低了 19%",
+     "facts": "斯坦福数字经济实验室的论文最新版日期是 <b>8 月 12 日<\/b>，用 ADP 的高频薪资行政数据，覆盖数百万美国劳动者，数据截到 <b>2026 年 6 月<\/b>。核心结论：在 AI 高暴露职业里，<b>22 到 25 岁<\/b>工人的就业水平，比「如果跟上同龄低暴露职业」的基准低约 <b>19%<\/b>，而且这个缺口从 2025 年 8 月被首次记录以来一直在扩大。机制是<b>招得少了<\/b>，不是裁得多了；同一职业里的资深工人没出现同等下滑。",
+     "quotes": [
+      {
+       "en": "This operates primarily through reduced hiring of young workers rather than increased separations.",
+       "zh": "这主要是通过少招年轻人实现的，而不是靠多裁人。",
+       "by": "论文"
+      }
+     ],
+     "angle": "「招得少了，不是裁得多了」这一句就够撑一期。它解释了为什么裁员数据上看不出什么，但年轻人的体感很差——刀口在入口，不在存量。作者自己强调这是描述性指标、不是因果估计，你转的时候把这句也带上，顺手教读者怎么读这类研究，比单纯搬数字有价值。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "斯坦福数字经济实验室",
+       "url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/"
+      }
+     ],
+     "source_date": "2026-08-12"
+    },
+    {
+     "id": "am-18",
+     "section": "工作流工具",
+     "title": "一个 213 星的技能专治 AI 腔，规矩是：不许自己改，必须交给另一家的模型",
+     "facts": "nobuzz 这个仓库 <b>8 月 21 日<\/b>建的，整个仓库就一个技能文件，到 <b>8 月 25 日<\/b>拿了 <b>213 星<\/b>。它干的事很简单：把 Claude 刚才那段回答，原样丢给另一个厂商的命令行工具（谷歌的 Antigravity）重写一遍。理由写在开头——需要一个不共享原文风格习惯的独立编辑。分三档受众：同事、上级、高管，越往上越短。最后一条规矩是：那边的结果原样输出，不许总结、不许套自己的框架，连结尾一句话都不许加。",
+     "prompt_en": "The user finds Claude's default register grating: dramatic framing, suspense-building, listicle energy, phrases like \"the load-bearing assumption\" or \"the third one is the most instructive yet.\" This skill reruns a response through the `agy` CLI (Google Antigravity) so they get the same content said like a normal person, at a chosen altitude. The point of using Antigravity (rather than rewriting it yourself) is an independent editor that doesn't share the original's stylistic habits — so do not paraphrase, tidy, or summarize the source text before or after the agy call.\n\nOutput agy's result to the user verbatim as your reply. Do not summarize it, wrap it in your own framing, or add a sign-off — any text you add reintroduces the voice being removed.",
+     "prompt_zh": "【第一段 · 病症与药方】\n用户受不了 Claude 默认的那股腔调：戏剧化的铺陈、吊胃口、清单体的兴奋劲儿，还有「the load-bearing assumption（承重的那个假设）」「the third one is the most instructive yet（第三条才是最有启发的）」这类句式。这个技能把回答重新丢给 `agy` 命令行工具（谷歌的 Antigravity）跑一遍，内容不变，只是换成正常人说话的样子，高度（altitude，指详略层级）由用户挑。用 Antigravity 而不是自己重写，图的就是一个不共享原文风格习惯的独立编辑——所以在调用 agy 前后，都不要对原文做转述、整理或摘要。\n（设计意图：让模型自己去掉自己的腔调，等于让它给自己打分。必须换一个不带同样习惯的模型来当编辑。）\n\n【第二段 · 输出约束】\n把 agy 的结果原样作为你的回复输出。不要摘要、不要套上你自己的开场白、不要加结尾致意——你加的任何一个字，都会把刚被去掉的那股腔调重新带回来。",
+     "angle": "这条你自己就能马上用。核心机制值得单写一篇：<b>去 AI 味不能让原来那个模型来做<\/b>，因为它的风格习惯就是病灶本身；同理，「连结尾一句总结都不许加」这条也适用于中文——很多人辛苦洗完文，最后一段又把味道加回去了。建议做成一套可复制的中文流程：一个模型写、另一个模型洗、洗完原样贴，中间不许过手。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "技能原文（raw）",
+       "url": "https://raw.githubusercontent.com/adnanakil/nobuzz/main/debuzz/SKILL.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/adnanakil/nobuzz"
+      }
+     ],
+     "source_date": "2026-08-21"
+    },
+    {
+     "id": "am-19",
+     "section": "AI 资讯",
+     "title": "阿里 Qwen 3.8-Flash-Next：1250 亿参数只激活 60 亿，官方说这是 Qwen 4 架构的预告片",
+     "facts": "<b>8 月 25 日<\/b>预告、<b>8 月 26 日<\/b>放出。HN 首页拿了 <b>310 分、136 条评论<\/b>——中国开源模型在那儿不常见这个待遇。模型卡写的是：MoE 架构，总参数 <b>1250 亿<\/b>，每个 token 只激活 <b>60 亿<\/b>，另有 <b>510 亿<\/b>的 N-gram 嵌入，还有一套叫 Qwen Sparse Attention 的稀疏注意力。团队说它能力对标 Qwen3.7-Plus，训练成本却只有约<b>九分之一<\/b>，强项在写代码。定位很明确：给推理框架的开发者提前适配用的，不是成品旗舰。",
+     "sides": "HN 上的人拿几何平均那套老规矩算：√(125×6) ≈ 27，所以实际能力大概相当于一个 27B 的稠密模型。硬件门槛也说清了——它瞄的是 128GB 以上内存的机器，比如 Strix Halo、Mac Studio、DGX Spark，不是显卡集群。不少人真正想要的其实是个 35B-A3B 的小版本。",
+     "angle": "别跟着「1250 亿参数」喊。你可以做一期「看 MoE 模型要看的三个数」：总参数、激活参数、两者的几何平均。用这个模型当例子，讲清 MoE 省的是算力、不省的是内存。再补一个时机上的巧合——同一天 Perplexity 发本地版助手，官方推荐的本地模型里有两个是 Qwen。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "HN 讨论（含模型卡引用）",
+       "url": "https://news.ycombinator.com/item?id=49432317"
+      },
+      {
+       "label": "Hugging Face 页面",
+       "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+      },
+      {
+       "label": "Decrypt 报道",
+       "url": "https://decrypt.co/376530/alibaba-qwen-3-8-flash-next-preview-qwen-4"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-20",
+     "section": "AI 资讯",
+     "title": "OpenAI 端掉一个俄罗斯宣传号：假智库把福山和乔姆斯基挂成自家专家，36 篇文章 34 篇是抄的",
+     "facts": "<b>8 月 25 日<\/b>，OpenAI 封了一批来自俄罗斯、靠 VPN 绕开地区封锁的 ChatGPT 账号。做法是用俄语让模型起草英文社媒内容，投到 Substack、Telegram、X、Facebook 和 LinkedIn，还专门要求模型抹掉可能暴露「这是俄国人写的」的语言痕迹。核心是一个叫 International Burke Institute 的假智库，网站 <b>2025 年 2 月<\/b>注册、自称在以色列，专家名单上挂着福山和乔姆斯基。OpenAI 抽查了挂在这些「专家」名下的 <b>36 篇文章，其中 34 篇是从网上抄的<\/b>，有时还标错出处。招牌产品是一个「主权指数」，设计目的就是给俄罗斯打高分。",
+     "sides": "OpenAI 自己说这次触达的受众其实很小，按布鲁金斯那套传播规模量表只到第三档。The Register 同日报道的标题把这事的荒诞点破了。",
+     "quotes": [
+      {
+       "en": "Slop factory bans Russians for using slop factory to create slop",
+       "zh": "内容垃圾工厂封禁了一批俄国人，因为他们用这家内容垃圾工厂造内容垃圾",
+       "by": "The Register 报道标题"
+      }
+     ],
+     "angle": "中文圈写这类新闻容易停在「AI 被用来搞宣传」。更好的切口是那三个细节：域名注册日期、挂名的两位学者、36 篇里 34 篇是抄的。这说明这类操作的成本结构变了——不再需要写手，一个域名加一个抄袭脚本就够。顺着写「怎么一眼识破一个假智库」，给读者三个能查的动作：查域名注册时间、随机抽一段原文去搜、点开专家页看有没有联系方式。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "OpenAI 官方报告",
+       "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia/"
+      },
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/ai-and-ml/2026/08/25/slop-factory-bans-russians-for-using-slop-factory-to-create-slop/5292297"
+      },
+      {
+       "label": "CNBC",
+       "url": "https://www.cnbc.com/2026/08/25/openai-russia-chatgpt-influence-campaign.html"
+      }
+     ],
+     "source_date": "2026-08-25"
+    }
+   ],
+   "pitfalls": [
+    "<b>Jalapeño 的所有性能数字都是 OpenAI 提供的<\/b>，SemiAnalysis 只在实验室现场看过跑，没跑完整套基准，也没有 AgentX（长上下文多轮）结果。转载时务必带上这条限定，否则就是替通稿背书。",
+    "Anthropic 那个 <b>30 万亿美元是 TAM（潜在市场规模），不是收入预测，也不是估值<\/b>。多家英文标题写成 potential revenue，中文再转一手极易变成「Anthropic 预计收入 30 万亿」。",
+    "Qwen 3.8-Flash-Next 的 125B/6B、51B N-gram、「训练成本约九分之一」这些参数，来自发布前的模型卡（经 HN 帖子转引）。我们抓取时 Hugging Face 页面仍显示 Upcoming release、权重未上线，发稿前请以官方最终模型卡为准。",
+    "汤森路透那七项基准<b>全部由公司自报，没有第三方复核<\/b>；另外 LawSites 那篇分析页面返回的日期（8 月 4 日）与模型发布时间（8 月 24 日）对不上，引用时请以页面上的实际发布时间为准。",
+    "有低质量站点称汤森路透的 Thomson 模型基于阿里 Qwen 3.5，<b>我们没能在任何一手信源确认<\/b>，不要引用。",
+    "vLLM 那条的时间要分清：<b>文章是 2026 年 8 月 25 日，但 PR 合并和 CVE-2025-9141 都发生在 2025 年<\/b>，别写成「昨天的漏洞」。",
+    "斯坦福那篇论文作者本人强调这是描述性指标（所谓「煤矿里的金丝雀」），不是因果估计。另外「缺口从 15% 涨到 19%」这类版本间对比我们没在页面上核到，只确认了当前版本的 <b>19%<\/b> 和「自 2025 年 8 月首次记录以来持续扩大」。",
+    "am-06、am-08、am-14 三条提示词全部出自<b>第三方泄漏仓库 asgeirtj/system_prompts_leaks，不是 Anthropic 官方文档<\/b>。原文我们逐字抓取核对过，但「这是 Claude Code 内置技能」这个身份只有仓库单方面声明，写的时候务必标明来源性质。",
+    "star 数是抓取当时（北京时间 8 月 26 日凌晨）的读数：nobuzz 213 星。这类新仓库涨得快，发稿前请重新看一眼再写。",
+    "InterNACHI 论坛那几条引语出自公开帖子，但发帖人身份我们没有进一步核实，<b>建议只引内容、不点名字<\/b>。",
+    "两条本期没收、明天可跟：Meta 代号 <b>Hatch<\/b> 的付费助手和 10 月的 <b>Watermelon<\/b> 模型（源头是 The Information 看到的内部文件，属转述）；Perplexity 的本地版助手 Portable Computer（发布时间是北京时间 8 月 26 日 08:39，刚出本期时间窗）。"
    ]
   }
  ]
