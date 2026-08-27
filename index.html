@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-26 21:21 (北京时间)",
+ "updated_at": "2026-08-27 08:57 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -19244,6 +19244,528 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "<b>日期容易写错的三处：<\/b>澳洲禁令生效日是 <b>2025 年 12 月 10 日<\/b>（不是 2026 年）；Warnock 论文是 <b>2026 年 7 月<\/b>发表的，今天只是被翻上 Hacker News，别写成「今日发布」；Ox-Alpha 首次出现在 OpenRouter 是 <b>8 月 20 日<\/b>，官方认领是 <b>8 月 26 日<\/b>，这两个日期别串。",
     "<b>本期有四条只有单一来源：<\/b>EPA 提案（仅 Tom's Hardware）、Omarchy 漏洞（仅批评者本人博客）、RAG 那篇的百分比分布（仅作者本人）、LatticeDB 性能（仅作者自测）。这四条都不适合做成斩钉截铁的标题，用「有人指出」「作者称」这类措辞。",
     "<b>fzakaria 那个自写自读的可执行文件，作者明确说是概念验证，没有基准测试，只跑在 Linux 上。<\/b>别替他加「未来的部署方式」这类话，他自己一个字都没说。"
+   ]
+  },
+  {
+   "id": "2026-08-27-morning",
+   "date": "2026-08-27",
+   "type": "morning",
+   "type_label": "早报",
+   "generated_at": "2026-08-27 08:00 (北京时间)",
+   "intro": "今天真正值得花时间的只有两件：英伟达单季 962 亿、老黄一句「算力就是营收」，这句话会被引用一整年；还有智谱摊牌，匿名霸榜的 ox-alpha 就是 GLM-5.3-Flash，MIT 开源。其余的融资、离职、买卡都是同一个故事的注脚，扫一眼就行。论文那几条今天质量意外地高，尤其「给 agent 看报错反而让它重犯」那篇。",
+   "highlights": [
+    "英伟达 962 亿美元财报：黄仁勋把这轮泡沫总结成一句「compute is revenue」",
+    "智谱摊牌：匿名霸榜的 ox-alpha 就是 GLM-5.3-Flash，3200 亿参数、MIT 许可开源",
+    "论文：把失败的工具调用写进上下文，agent 重犯同一个错的概率从 0.06 涨到 0.54"
+   ],
+   "cards": [
+    {
+     "id": "am-01",
+     "section": "AI 资讯",
+     "title": "英伟达一个季度卖了 962 亿美元，老黄给这轮泡沫写好了口号",
+     "facts": "英伟达 8 月 26 日公布 FY2027 第二季度财报，营收 <b>962 亿美元<\/b>，同比涨 <b>106%<\/b>，环比涨 18%。数据中心一块就占了 <b>890 亿<\/b>，同比涨 117%。下季度指引 <b>1080 亿美元<\/b>（上下浮动 2%）。",
+     "sides": "同一天另一条消息：亚马逊将在 AWS 再部署 <b>200 万颗<\/b>英伟达 GPU，2027、2028 年交付，型号是 Blackwell Ultra、Rubin 和 Rubin Ultra。五个月前亚马逊才承诺「超过 100 万颗」，等于订单翻了三倍。金额双方都没披露，TechCrunch 按单价估是数百亿美元级。另注意财报有两个每股收益口径：GAAP 2.46 美元、非 GAAP 2.22 美元。",
+     "quotes": [
+      {
+       "en": "AI has reached its inflection point. It's doing useful work. Its tokens are productive and profitable. Now, compute is revenue.",
+       "zh": "AI 已经到了拐点。它在干真活。它产出的 token 有生产力、能赚钱。现在，算力就是营收。",
+       "by": "黄仁勋，英伟达创始人兼 CEO，财报通稿"
+      }
+     ],
+     "angle": "别去复述财报数字，那是财经号的活。你可以从「compute is revenue」这六个字切：一家卖铲子的公司，把「算力」和「营收」画上等号，等于宣布下游买家的账本已经不重要了——只要还在买卡，故事就成立。再对照一下本期第二条：Anthropic 六年 450 亿包算力，而机器要等到 2027 年底才通电。建议做长文，标题就用这句话的中译。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "英伟达财报通稿",
+       "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
+      },
+      {
+       "label": "亚马逊追加 200 万颗 GPU（TechCrunch）",
+       "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-02",
+     "section": "AI 资讯",
+     "title": "谜底揭晓：匿名霸榜的 ox-alpha 就是智谱 GLM-5.3-Flash，MIT 开源",
+     "facts": "进展：前几天还在被到处扒身份的匿名模型 ox-alpha，8 月 26 日被智谱（Z.ai）认领，正式发布为 <b>GLM-5.3-Flash<\/b>，<b>MIT 许可<\/b>放出权重。MoE 架构，总参数 <b>3200 亿<\/b>、激活 <b>180 亿<\/b>，30 万亿 token 多模态语料，上下文 <b>100 万<\/b>。DeepSWE v1.1 拿 63.4（上一代 GLM-5.2 是 46.2），AutomationBench 48.8（上一代 26.2）。",
+     "sides": "智谱自称在内部编码基准上接近 Claude Opus 4.8，但那是自评。第三方 Artificial Analysis 的 Intelligence Index v4.1.1 给它 57 分，同时算出每个任务约 0.045 美元。",
+     "angle": "这条的看点不是模型强不强，是发布节奏：先匿名扔进 OpenRouter 和 OpenCode 让人盲测出口碑，等社区自己扒身份扒到高潮，再认领 + 开源 + 极低定价。这是一套完整的营销剧本，中国实验室已经跑通了。你可以做一篇「匿名上榜」方法论的复盘，把前几天大家猜身份的过程当叙事线。别去做跑分对比，那个明天就过时了。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "TestingCatalog 报道",
+       "url": "https://www.testingcatalog.com/z-ai-launches-glm-5-3-flash-under-mit-license/"
+      }
+     ],
+     "source_date": "2026-08-26",
+     "followup": "跟进 8-24 早报「那个匿名免费模型两天烧了 2.23 万亿 token」与 8-26 晚报「Ox-Alpha 摊牌了：是智谱的 GLM」。本条为权重和参数正式落地。"
+    },
+    {
+     "id": "am-03",
+     "section": "圈内暗流",
+     "title": "Anthropic 六年 450 亿包下一家 2024 年才成立的英国公司",
+     "facts": "彭博先报、TechCrunch 跟进：Anthropic 与英国 AI 基建公司 Nscale 签了一笔 <b>450 亿美元、为期六年<\/b>的算力合同，用 Nscale 在西弗吉尼亚的数据中心，芯片是英伟达 Vera Rubin。算力要到 <b>2027 年底<\/b>才开始上线。Nscale 成立于 2024 年。这是 Anthropic 八个月里的第五笔大单：8 月 Volta 100 亿、7 月 AMD 50 亿、5 月 SpaceX 每月 12.5 亿产能、4 月亚马逊追加 5 吉瓦。",
+     "sides": "两家公司都没有官方确认，TechCrunch 的说法是「一位知情人士」。这个量级的合同只走消息人士渠道，本身就值得留意。",
+     "angle": "把这条和「Anthropic 要跟 IPO 投资人讲 30 万亿市场」（8-26 早报）串起来看，会更有意思：一边是 FT 说最强模型卖不动，一边是八个月签下五笔算力大单、最早的一笔 2027 年底才通电。这不是采购，是在给招股书攒一张「未来产能表」。建议做短帖，一句话点破就够，别展开分析——因为消息还没被官方确认。",
+     "platforms": [
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/26/anthropic-continues-compute-gobbling-streak-in-45-billion-deal-with-nscale/"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-04",
+     "section": "圈内暗流",
+     "title": "OpenAI 今年走了十几个高管，二把手、COO、CMO 全在名单上",
+     "facts": "TechCrunch 8 月 26 日专门写了一篇复盘：OpenAI 自年初以来已有<b>十几位<\/b>高管离职。点名的包括 Altman 的头号副手 Fidji Simo、COO Brad Lightcap、CMO Kate Rouch、团队负责人 Kevin Weil 和 Bill Peebles，以及 8 月 25 日刚曝出走的数据中心负责人 Chris Malone。TechCrunch 的解释是部分因健康原因、部分因重组——Altman 想砍掉烧钱的副业、聚焦营收。",
+     "quotes": [
+      {
+       "en": "I like to say that everyone reports to Greg at the end of the day.",
+       "zh": "我常说，说到底所有人都是向 Greg 汇报。",
+       "by": "Thibault Sottiaux，OpenAI API 与应用业务负责人"
+      }
+     ],
+     "angle": "这句「everyone reports to Greg」是全篇最值钱的一句——它把「重组」翻译成了「Brockman 重新收权」。你可以从这个角度切：一家马上要 IPO 的公司，在招股书前夜完成了一次权力回收，走的人恰好是过去两年被媒体捧成明星的那批。做长文的话，把这一年的离职时间线排成表，比逐个人物写更有说服力。",
+     "platforms": [
+      "长文",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/26/how-do-we-explain-openais-executive-exodus/"
+      }
+     ],
+     "source_date": "2026-08-26",
+     "followup": "跟进 8-26 晚报「OpenAI 数据中心负责人也走了」。本条是 TechCrunch 的整体梳理与内部权力解释。"
+    },
+    {
+     "id": "am-05",
+     "section": "圈内暗流",
+     "title": "AWS 买下 DuckDB 背后的公司，但特意声明「没买 DuckDB 本身」",
+     "facts": "8 月 26 日 AWS 官方博客宣布，已签署最终协议收购阿姆斯特丹的 <b>DuckLabs<\/b>，也就是 DuckDB 的开发公司，金额未披露。DuckDB 的两位创造者 Hannes Mühleisen 和 Mark Raasveldt 会继续带队。AWS 明确说不收购 DuckDB 开源项目本身，项目仍由独立的 DuckDB 基金会管理、保持 MIT 许可。",
+     "quotes": [
+      {
+       "en": "The DuckDB open-source project will also continue to be driven by the DuckLabs team, remain open source under the independent Foundation (the non-profit that oversees DuckDB), and available under the MIT license as it does today",
+       "zh": "DuckDB 开源项目仍将由 DuckLabs 团队推动，继续在独立基金会（监管 DuckDB 的非营利组织）之下保持开源，并像今天一样以 MIT 许可提供。",
+       "by": "AWS 官方博客"
+      }
+     ],
+     "angle": "「我们只买人不买项目」这句话，开源社区听过太多遍了。你可以做一条短帖，把历史上同样承诺过的收购列出来，让读者自己判断。要注意的是这次结构确实不太一样——项目版权本来就在基金会手里，AWS 想拿也拿不走，真正被买走的是全职维护者的时间。这个区别值得说清楚，别一上来就唱衰。",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "AWS 官方博客",
+       "url": "https://aws.amazon.com/blogs/big-data/aws-and-ducklabs-building-the-future-of-analytics-together/"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-06",
+     "section": "AI 资讯",
+     "title": "Meta 自研芯片 MTIA 400：比 Blackwell 快两成，比 Rubin 慢三倍",
+     "facts": "The Register 8 月 26 日拆解了 Meta 新一代加速器 MTIA 400。多 die 异构架构，两颗 3nm 计算 chiplet 在 1.7GHz 下给出 <b>12 PFLOPS<\/b> 的 MXFP4 算力，八堆 HBM3e 提供 <b>288GB<\/b> 显存、约 <b>9.2TB/s<\/b> 带宽。在训练用的高精度下比英伟达顶配 Blackwell 快约 <b>20%<\/b>、功耗相当；但比英伟达 Rubin 和 AMD MI455X 慢 <b>3 到 3.3 倍<\/b>。一个机柜 18 块计算刀片、共 72 颗加速器。",
+     "sides": "这颗芯片同时干两件事：训大模型、跑广告推荐推理。这种组合业内很少见，也说明 Meta 的算力账本里广告仍是大头。路线图上 2027 年出 MTIA 450，下半年出算力翻倍的 MTIA 500。",
+     "angle": "所有自研芯片新闻都值得用同一把尺子量：它打赢的是上一代英伟达，而英伟达已经在发下一代了。你可以从这个「永远慢一拍」的结构切进去，讲清楚大厂自研到底图什么——不是性能，是议价权和供应链安全。这个角度写视频脚本很顺，配一张三代芯片的时间轴图就行。",
+     "platforms": [
+      "长文",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "The Register",
+       "url": "https://www.theregister.com/systems/2026/08/26/metas-new-mtia-400-chip-has-a-split-personality-training-ai-and-serving-ads/5292727"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-07",
+     "section": "圈内暗流",
+     "title": "月之暗面想从微软、亚马逊、谷歌手里抽三成，卖 Kimi K3",
+     "facts": "路透独家：月之暗面（Moonshot AI）正在和微软、亚马逊、谷歌谈判，让三家云平台托管 Kimi K3，要求最高 <b>30%<\/b> 的收入分成。谈判还在早期，未必成。卡点在分成比例、数据访问权限和 token 用量的审计方式。如果谈成，将是中国 AI 公司与美国主要云厂商的第一笔重大分成协议。",
+     "angle": "重点不在「能不能上架」，在「谁定价」。要求 30% 分成，等于把自己摆在跟 OpenAI 同一张谈判桌上，而不是当一个便宜的开源替代品。你可以从这里切：中国模型出海的第二阶段，已经从「白送刷份额」转向「收租」。建议做短帖或即刻，一句话讲清 30% 这个数字意味着什么，别展开——毕竟还是消息人士级别。",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "路透（Yahoo Finance 转载）",
+       "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-chinas-moonshot-talks-microsoft-075340033.html"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-08",
+     "section": "圈内暗流",
+     "title": "盖茨要收机器人税：雇人得交工资税，买机器人当年就能抵扣",
+     "facts": "8 月 26 日盖茨在 Gates Notes 发了篇长文《A Turbulent AI Era and Critical Choices to Make》，提两条政策。一是对自动化征税，理由是现行税制本身就在补贴机器：雇人要交工资税，买机器人通常当年就能作为经营费用一次性抵扣。二是设立「Human Reserved」岗位，把一部分工作暂时划为 AI 禁区，比如告知病人坏消息。",
+     "quotes": [
+      {
+       "en": "if you're an employer and you hire someone, you pay payroll taxes on their earnings. But if you buy a robot, you can usually write it off right away as a business expense.",
+       "zh": "你作为雇主雇一个人，得为他的收入交工资税。但你买一台机器人，通常当年就能直接作为经营费用抵扣掉。",
+       "by": "比尔·盖茨，Gates Notes"
+      }
+     ],
+     "angle": "盖茨 2017 年提机器人税被群嘲过一轮，这次值得重讲的不是主张本身，是那句税制不对称——它把「企业为什么急着换 AI」从道德问题变成了会计问题，非常好懂，也非常适合做短视频开头。建议只做这一个点，别碰「Human Reserved 该保留哪些岗位」，那部分他自己也没给清单，容易写成空谈。",
+     "platforms": [
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "TechCrunch",
+       "url": "https://techcrunch.com/2026/08/26/bill-gates-wants-to-see-a-robot-tax-and-human-reserved-jobs-to-mitigate-harms-from-ai/"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-09",
+     "section": "论文",
+     "title": "把报错塞回上下文，agent 重犯同一个错的概率从 0.06 涨到 0.54",
+     "facts": "《越反馈越糟：小语言模型 agent 为什么会重复它刚看着失败的那次调用》（Feedback That Backfires），单作者 Esmail Gumaan，8 月 24 日提交。测的是所有 agent 框架都在做的事——把失败的工具调用和报错写进上下文。结果在 6 个 135M–1.7B 的模型、两个环境上，「纠错增益」全为负，约 <b>-1.03 nats<\/b> 每动作 token。固定候选集下重复失败调用的概率从 <b>0.06 升到 0.54<\/b>；贪心解码在 <b>19%<\/b> 的条目上逐 token 复现了失败调用，而失败之前是 0%。",
+     "sides": "反事实实验给出了原因：<b>83%<\/b> 的伤害来自失败调用本身的字面文本，而不是「它被标成失败」这个语义。把原样的调用换成运行时生成的失败描述，能消掉 76% 的问题。而加一句「不要重复」的显式指令，没用。",
+     "angle": "这条特别适合写给做 agent 的读者：你以为你在教它，其实你在给它做 few-shot。模型看到的不是「这个调用错了」，是「这段字符串刚刚出现过」。落地建议很硬——别把原始失败调用贴回去，改成一句人话描述。注意样本都是小模型（最大 1.7B），别直接推到前沿模型上，写的时候要标出来。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23651"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "am-10",
+     "section": "论文",
+     "title": "记忆功能测了个寂寞：跑分 78.8%，真聊天时只用上其中 7.9%",
+     "facts": "《MemUse：把记忆评测从直接问答推向自然融入》，8 月 25 日提交。作者做了一次 <b>4 个月<\/b>的真实部署，40 名用户、1872 次会话、7 种记忆配置。结果：现有基准的 Direct QA 准确率在 <b>19.7% 到 70.1%<\/b> 之间大幅波动，用户满意度却毫无变化。同一个系统 Direct QA 得 <b>78.8%<\/b>，在自然对话里只主动引用了其中 <b>7.9%<\/b> 的事实，差 <b>71 个百分点<\/b>。",
+     "sides": "作者的解释是两件事被混为一谈：基准测的是「被问到时能不能想起来」，对话要的是「察觉到相关，并自然地把旧上下文织进回答」。他们把后者做成了 Natural Integration 指标，只有这个跟满意度相关。语料和评分提示词都开源了。",
+     "angle": "这条能直接解释一个很多人有的体感：各家的记忆功能宣传都很猛，用起来却完全感觉不到。你可以从「跑分和体感为什么会脱钩」切，不用讲方法论，讲那 71 个百分点就够了。顺手可以联系 8-26 早报那条「Claude 和 Cowork 记忆合池」——记住多少和用出来多少，是两件事。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.24189"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-11",
+     "section": "论文",
+     "title": "Deep Research 出错，84.7% 要怪最后缝合的那个编排器",
+     "facts": "《该怪哪个 agent？》（Who is the Agent to Blame?），8 月 25 日提交。做法是对每次 agent 调用做局部检验——只拿它自己的输入比对它自己的输出，从而定位错误产生在哪一环，再分成四类：幻觉、依赖未引用的输入、输出没引用、引用不足。在三个排名靠前的开源 Deep Research 系统上跑下来，除了只做单文档摘要的 agent，其余几乎每个 agent 都错得很多。在 AI-Q 系统里，最终报告的错误有 <b>84.7%<\/b> 起源于编排器，其中约 <b>31%<\/b> 是幻觉，其余是引用问题。两个简单干预让引用召回涨了 <b>5%<\/b>，输出质量没下降。",
+     "sides": "论文自己的比喻很好用：多 agent 架构里信息像在玩传话游戏（telephone game），内容和引用都会在传递中被弄坏。",
+     "angle": "大家都在优化检索质量，结果瓶颈在最后那个「把大家的话缝起来」的环节。这个结论对做 AI 搜索产品的人很实用，也解释了为什么 Deep Research 类产品的引用总对不上。建议做长文，跟 8-25 午报那条泄漏的 Anthropic deep-research 提示词对照着写——那份提示词的 Verify 阶段正好就是在防这件事。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.24306"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-12",
+     "section": "论文",
+     "title": "端上小模型的置信度是废的：AUROC 0.47，69% 的假前提照答不误",
+     "facts": "《自信地错，且悄无声息》（Confidently Wrong, Silently So），8 月 24 日提交。作者对一个已经出厂、面向开发者开放的端侧基础模型做了可复现的可靠性审计。发现一种「任务不对称的校准失灵」：在 <b>69%<\/b> 的假前提问题上自信地编造答案，同时又拒绝了 <b>18%<\/b> 完全无害的输入。自报置信度饱和且无判别力，AUROC <b>0.47<\/b>、ECE <b>70<\/b>，是同级小模型里最差的。",
+     "sides": "更麻烦的是「表面不可区分」：拿 15 个用户能看见的特征训分类器去分「自信且对」和「自信但错」，AUROC 只有 <b>0.55<\/b>。也就是说推理时根本没有信号可供监督。不过一个不需要模型内部访问的黑盒一致性 wrapper，把自信编造从 <b>75% 降到 3%<\/b>，选择性准确率从 43% 提到 83%。",
+     "quotes": [
+      {
+       "en": "confident-correct and confident-wrong outputs are surface-indistinguishable",
+       "zh": "「自信且正确」和「自信但错误」的输出，在表面上无法区分。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "切入点是「端侧」二字：这类模型直接发到上亿台设备，没有服务端兜底，而它的置信度信号跟抛硬币差不多。写给普通读者可以只讲一件事——手机上那个本地 AI 说得越笃定，越不代表它对。论文没点名是哪家的模型，你转述时也别猜，保持「一个已出厂的端侧基础模型」这个说法。",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23663"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "am-13",
+     "section": "论文",
+     "title": "让 LLM 当创意评委，它系统性偏爱 AI 写的故事",
+     "facts": "《大模型创造力自动评测的极限》（The Limits of Automatic Evaluation of Creativity in Large Language Models），8 月 24 日提交。作者收集了人类对 WritingPrompts 数据集中人写与 AI 写短篇故事的评价，覆盖 <b>11 个<\/b>创造力维度，再跟自动指标和 LLM-as-a-Judge 对比。结论是两者严重错位：LLM 评委<b>系统性偏爱 AI 生成的故事<\/b>，稳定地更看重它们的文体特征，而不欣赏人类作品的不可预测性。常用自动指标与人类判断的相关性在两类文本上都<b>接近于零<\/b>。",
+     "quotes": [
+      {
+       "en": "LLM-based judges exhibit a systematic preference for AI-generated stories, consistently favoring their stylistic characteristics over the unpredictability and other qualities of human-authored texts.",
+       "zh": "LLM 评委系统性偏爱 AI 生成的故事，稳定地更看重它们的文体特征，而不是人类作品的不可预测性和其他品质。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "这条对内容创作者是有切身关系的：如果平台用 LLM 来筛内容、如果训练数据用 LLM 来打分，等于让模型按自己的口味做正反馈，人写的那种「不好预测」会被一轮轮筛掉。你可以从这里切一篇观点长文——AI 味不是被人类审美淘汰的，是被机器审美选择出来的。素材上正好能接 8-26 早报那条「专治 AI 腔的技能，规矩是不许自己改」。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23705"
+      }
+     ],
+     "source_date": "2026-08-24"
+    },
+    {
+     "id": "am-14",
+     "section": "论文",
+     "title": "让监督模型一次多审几步，只会让它更爱拒绝，不会更会分辨",
+     "facts": "《更爱拒绝，而非更能分辨》（More Rejective, Not More Discriminative），8 月 25 日提交。研究的是执行前监督：让一个会犯错的 LLM 监督者在不可逆操作前审查计划。核心问题是「一次审几个动作」这个单位该怎么定。作者做了 twin-prefix 框架，每个标准计划配一个注入了错误的前缀和一个只差一次写操作的干净孪生体，在 5 种嵌套长度上判断。结果：审查窗口越长，抓到的错越多，但<b>误拒率同步爬升<\/b>。判别力在 <b>1 到 2 个动作<\/b>时达到峰值，6 个评判模型、两个领域全都如此。",
+     "sides": "论文还指出了一个常见的评测陷阱：只看「抓到率」会骗人——全都拒绝，抓到率就是 100%。校准好的短单元相对 8 动作审查最多能恢复 <b>0.95<\/b> 的判别力，且没有任何替代策略能稳定胜过它。",
+     "angle": "反直觉的地方正好是选题点：直觉上「让审查者多看点上下文再判断」是好事，这篇给出了相反的量化结论，原因被追溯到「观察被剥夺」。对做 agent 权限系统的人是可直接落地的参数建议：审查粒度设 1-2 步。建议做短帖 + 一张「抓到率 vs 误拒率」的示意图，别写长文，太技术。",
+     "platforms": [
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "arXiv",
+       "url": "https://arxiv.org/abs/2608.23941"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-15",
+     "section": "提示词",
+     "title": "Claude Code 里藏着一个「无工具分身」：你插话，主进程根本不停",
+     "facts": "泄漏库 asgeirtj/system_prompts_leaks 在 8 月 25 日做了一次大重组，把 slash-commands 目录改名为 commands，露出了 /btw 的完整系统提示。整段只有十几行，却给这个分身钉死了三件事：<b>零工具、只有一轮、禁止说场面话<\/b>。最狠的一条是直接列出被禁的原句样本——「让我查一下」「我现在就…」都在黑名单里。",
+     "prompt_en": "<system-reminder>\nThis is a side question from the user. You must answer this question directly in a single response.\n\nIMPORTANT CONTEXT:\n- You are a separate, lightweight agent spawned to answer this one question\n- The main agent is NOT interrupted - it continues working independently in the background\n- You share the conversation context but are a completely separate instance\n- Do NOT reference being interrupted or what you were \"previously doing\" - that framing is incorrect\n\nCRITICAL CONSTRAINTS:\n- You have NO tools available - you cannot read files, run commands, search, or take any actions\n- This is a one-off response - there will be no follow-up turns\n- You can ONLY provide information based on what you already know from the conversation context\n- NEVER say things like \"Let me try...\", \"I'll now...\", \"Let me check...\", or promise to take any action\n- If you don't know the answer, say so - do not offer to look it up or investigate\n\nSimply answer the question with the information you have.\n<\/system-reminder>\n\n[USER_PROMPT]",
+     "prompt_zh": "〈system-reminder 标签〉——用「系统提醒」包住整段，让模型把它当成环境事实，而不是一条可以商量的用户请求。\n\n「这是用户的一个旁支问题（side question）。你必须在一次回复里直接答完。」——开头先钉死交互形状：一问一答，不留续轮。\n\n重要背景：\n- 「你是被专门派生出来回答这一个问题的、独立的轻量 agent。」——lightweight（轻量）这个词在暗示模型别摆大架势。\n- 「主 agent 并没有被打断，它仍在后台独立工作。」——消除模型「我打扰了别人」式的负疚措辞。\n- 「你共享对话上下文，但你是一个完全独立的实例（instance）。」——一句话把「能看到什么」和「你是谁」分开。\n- 「不要提及自己被打断、或自己之前在做什么——那个叙事框架（framing）本身就是错的。」——把错误叙事直接命名再否定，比单纯禁止有效。\n\n关键约束：\n- 「你没有任何工具可用——不能读文件、不能跑命令、不能搜索、不能采取任何行动。」——逐项列举而不是笼统说「无工具」，堵住模型自行脑补例外。\n- 「这是一次性回复，不会有后续轮次。」\n- 「你只能基于对话上下文里你已经知道的信息作答。」\n- 「绝不要说『我来试试……』『我现在就……』『让我查一下……』这类话，也不要承诺任何行动。」——给出被禁句式的样本，这是全段设计感最强的一处。\n- 「不知道就直说——不要提议去查、去调研。」\n\n「就用你手里的信息，直接回答这个问题。」\n\n〈/system-reminder〉\n\n[用户的提问]",
+     "angle": "这段可以直接抄进你自己的工作流：任何一个「只回答、不干活」的子任务，都该用这套写法——先声明身份和边界，再列出被禁的具体句式。重点讲给读者听的是最后那条：与其写「请简洁」，不如把你不想看到的原句一条条列出来。这个技巧对写公众号提示词教程特别好用，因为它一眼能看懂、当场能验证。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "泄漏原文 btw.md",
+       "url": "https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude-code/commands/btw.md?plain=1"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-16",
+     "section": "提示词",
+     "title": "「懒资深工程师」模式：写代码前先爬一架七级梯子，在第一个成立的档位停下",
+     "facts": "GitHub 上的 ponytail 项目本体就是一份 AGENTS.md。它给 AI 设了一个人设——<b>懒的资深工程师<\/b>，并且第一句就重新定义了「懒」：懒是高效，不是马虎。核心是一架七级梯子，写任何代码前逐级检查，在第一个成立的横档停下。还有一条最容易被忽略的补充：这架梯子是在你理解问题「之后」爬，不是用来替代理解。",
+     "prompt_en": "# Ponytail, lazy senior dev mode\n\nYou are a lazy senior developer. Lazy means efficient, not careless. The best code is the code never written.\n\nBefore writing any code, stop at the first rung that holds:\n\n1. Does this need to be built at all? (YAGNI)\n2. Does it already exist in this codebase? Reuse the helper, util, or pattern that's already here, don't re-write it.\n3. Does the standard library already do this? Use it.\n4. Does a native platform feature cover it? Use it.\n5. Does an already-installed dependency solve it? Use it.\n6. Can this be one line? Make it one line.\n7. Only then: write the minimum code that works.\n\nThe ladder runs after you understand the problem, not instead of it: read the task and the code it touches, trace the real flow end to end, then climb.\n\nBug fix = root cause, not symptom: a report names a symptom. Grep every caller of the function you touch and fix the shared function once — one guard there is a smaller diff than one per caller, and patching only the path the ticket names leaves a sibling caller still broken.\n\nRules:\n\n- No abstractions that weren't explicitly requested.\n- No new dependency if it can be avoided.\n- No boilerplate nobody asked for.\n- Deletion over addition. Boring over clever. Fewest files possible.\n- Shortest working diff wins, but only once you understand the problem. The smallest change in the wrong place isn't lazy, it's a second bug.\n- Question complex requests: \"Do you actually need X, or does Y cover it?\"\n- Pick the edge-case-correct option when two stdlib approaches are the same size, lazy means less code, not the flimsier algorithm.\n- Mark deliberate simplifications that cut a real corner with a known ceiling (global lock, O(n²) scan, naive heuristic) with a `ponytail:` comment naming the ceiling and upgrade path.\n\nNot lazy about: understanding the problem (read it fully and trace the real flow before picking a rung, a small diff you don't understand is just laziness dressed up as efficiency), input validation at trust boundaries, error handling that prevents data loss, security, accessibility, the calibration real hardware needs (the platform is never the spec ideal, a clock drifts, a sensor reads off), anything explicitly requested. Lazy code without its check is unfinished: non-trivial logic leaves ONE runnable check behind, the smallest thing that fails if the logic breaks (an assert-based demo/self-check or one small test file; no frameworks, no fixtures). Trivial one-liners need no test.\n\n(Yes, this file also applies to agents working on the ponytail repo itself. Especially to them.)",
+     "prompt_zh": "# Ponytail，懒资深工程师模式\n\n「你是一个懒的资深工程师。懒指的是高效，不是马虎。最好的代码是从未写下的代码。」——第二句先给「懒」重新下定义，防止模型往草率方向理解。\n\n写任何代码之前，在第一个成立的横档（rung）上停下：\n\n1. 这东西到底需不需要被造出来？（YAGNI，你不会需要它）\n2. 它在这个代码库里已经存在了吗？复用现成的 helper、util 或模式，别重写。\n3. 标准库已经做了这件事吗？用它。\n4. 平台原生特性覆盖了吗？用它。\n5. 已经装好的依赖能解决吗？用它。\n6. 这能写成一行吗？写成一行。\n7. 只有到这一步：写出能跑的最少代码。\n\n「这架梯子是在你理解问题之后爬，不是用来替代理解」：读任务和它触及的代码，端到端追一遍真实流程，然后再爬。\n\n修 bug 等于修根因，不是修症状：报告只指出一个症状。把你要动的那个函数的每个调用方都 grep 出来，在共享函数里修一次——在那儿加一道 guard（守卫判断），比每个调用方各加一道的 diff 更小；只补工单点名的那条路径，会留下一个兄弟调用方仍然是坏的。\n\n规则：\n\n- 不做没有被明确要求的抽象。\n- 能避免就不引入新依赖。\n- 不写没人要的样板代码（boilerplate）。\n- 删除优于新增。无聊优于聪明。文件越少越好。\n- 最短的、能跑的 diff 获胜——但前提是你已经理解了问题。改在错地方的最小改动不叫懒，那叫第二个 bug。\n- 质疑复杂请求：「你真的需要 X 吗，还是 Y 就够了？」\n- 当两种标准库写法体量相同时，选边界情况正确的那个：懒是指代码更少，不是指算法更脆。\n- 对那些确实抄了近路、且有已知天花板的刻意简化（全局锁、O(n²) 扫描、朴素启发式），用 `ponytail:` 注释标出天花板和升级路径。\n\n下列事情上不许懒：理解问题（选横档前先完整读、追真实流程——一个你自己都不懂的小 diff，只是伪装成高效的懒惰）、信任边界上的输入校验、防止数据丢失的错误处理、安全、可访问性（accessibility）、真实硬件所需的校准（平台从来不是规格书里的理想值，时钟会漂移，传感器会读偏），以及任何被明确要求的东西。没有配套检查的懒代码是没写完的：非平凡逻辑要留下「一个」可运行的检查，即逻辑一坏就会失败的那个最小的东西（基于 assert 的 demo 或自检，或者一个小测试文件；不要框架，不要 fixture）。平凡的一行代码不需要测试。\n\n（是的，这份文件同样适用于在 ponytail 仓库本身上干活的 agent。尤其适用于他们。）",
+     "quotes": [
+      {
+       "en": "The smallest change in the wrong place isn't lazy, it's a second bug.",
+       "zh": "改在错地方的最小改动不叫懒，那叫第二个 bug。",
+       "by": "ponytail AGENTS.md"
+      }
+     ],
+     "angle": "这份文件最值得学的不是那七级梯子，是它的防呆结构：先给关键词重新下定义、再给一条「什么时候不许照做」的例外清单、最后一句还把自己也纳入约束。你可以做一期「怎么写一份不会被模型钻空子的 AGENTS.md」，用它当范本逐条拆。别去转述它宣称的「少写 54% 代码」那组数字，那是仓库自测，条件很有限。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "AGENTS.md 原文",
+       "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/main/AGENTS.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/DietrichGebert/ponytail"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "am-17",
+     "section": "小众科技",
+     "title": "Tailscale 开源了一个 netcat：不用账号、不用登录、不用 IP",
+     "facts": "Tailscale 开源了 tailcat，仓库简介只有一句话。它不需要 Tailscale 账号、不需要登录、不需要 tailnet 或 IP 地址，双方只要带外交换一小段连接信息就能通。技术上是把 Tailscale 自己的几个开源组件重新拼了一遍：用户态 WireGuard 负责加密隧道，magicsock 负责在直连 UDP 和 DERP 中继之间复用，Netstack（gVisor 的用户态 TCP/IP 栈）负责终结连接。8 月 26 日在 Hacker News 首页。",
+     "quotes": [
+      {
+       "en": "Like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+       "zh": "像 netcat，但走 Tailscale 的数据平面，不走它的控制平面。",
+       "by": "tailscale/tailcat 仓库简介"
+      }
+     ],
+     "angle": "最有意思的是商业角度：Tailscale 的生意就是控制平面——账号、tailnet、ACL，而它开源了一个把控制平面整个砍掉的工具。你可以从这里切一篇「基础设施公司为什么要开源自己的护城河」。对读者的实用价值也很直接：临时给别人开一台机器一小时、给一个 agent 开一次性访问权限，不用再折腾账号。",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "GitHub",
+       "url": "https://github.com/tailscale/tailcat"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-18",
+     "section": "小众科技",
+     "title": "EVE Online 终于要离开 Python 2.7 了：在上面待了 16 年，攒了 240 万行",
+     "facts": "CCP 在 8 月 25 日的开发日志里宣布启动 Python 2.7 到 Python 3 的迁移，这是他们 2010 年升到 2.7 之后的第一次大版本变更，中间隔了 <b>16 年<\/b>。代码库约 <b>2 万个文件、240 万行<\/b> Python。第一次扫描的结果比想象中好：<b>95.9%<\/b> 的文件已经能在两个版本下同时编译，剩下的阻塞性语法只有约 <b>3300 行<\/b>——约 1500 个老式 print 语句、约 800 个 long 字面量（比如 123L）、约 600 个废弃的 except 写法、以及 <b>50 处<\/b> `<>` 运算符。",
+     "sides": "真正的活在另一处：还有大约 <b>2 万行<\/b>代码两个版本都能编译，但行为不一样。这部分没有自动化捷径，得人工逐条判断。CCP 自己的比喻是「一座山最后变成了一座又大又可测量的丘陵」。",
+     "angle": "这条是绝好的技术债科普素材，因为数字全是具体的、可视化的：50 个 `<>` 是一份跨越 16 年的考古报告。你可以做图文，把那几个数字排成一张「代码考古分层图」。观点层面可以接一句现在最相关的话——现在满世界的 AI 迁移工具都在解那 3300 行，没人解得了那 2 万行。正好对照 8-25 晚报「整个仓库的技术债迁移，520 次只有 28 次全过」。",
+     "platforms": [
+      "图文",
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "EVE Online 开发日志",
+       "url": "https://www.eveonline.com/news/view/the-move-to-python-3-begins"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-19",
+     "section": "行业痛点",
+     "title": "亚马逊关掉「人肉 AI」：跑了 21 年的 Mechanical Turk 9 月 30 日熄灯",
+     "facts": "亚马逊确认 AWS Mechanical Turk 将于 <b>2026 年 9 月 30 日<\/b>关闭，官方说法是「经过评估后做出的决定」。同一天关停的还有 SageMaker Ground Truth 和 Amazon Augmented AI，等于彻底退出人力数据基建。平台 2005 年上线，巅峰期有超过 <b>50 万<\/b>名零工接单做标注和转写。7 月 30 日就已经停止接收新客户。贝索斯当年管它叫 artificial artificial intelligence。",
+     "sides": "有一个细节让这件事更绕：2023 年一项研究发现，最多有 <b>46%<\/b> 的 MTurk 工人在用 AI 模型完成自己的任务——也就是说，这个平台在被 AI 取代之前，先被 AI 从内部掏空了数据质量。",
+     "quotes": [
+      {
+       "en": "artificial artificial intelligence",
+       "zh": "人造的人工智能",
+       "by": "杰夫·贝索斯，对 Mechanical Turk 的称呼"
+      }
+     ],
+     "angle": "这条的叙事闭环工整到近乎文学：一个把人假装成 AI 的生意，被真 AI 干掉了；而在被干掉之前，里面的人已经偷偷换成 AI 了。建议做视频或长文，主线就是这三层。别写成「AI 又取代了一批人」的老套稿子——真正的痛点是那 50 万人从来没有过雇佣关系，所以连「被裁」这个说法都用不上。",
+     "platforms": [
+      "长文",
+      "视频",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "Hacker News 讨论",
+       "url": "https://news.ycombinator.com/item?id=49457545"
+      },
+      {
+       "label": "The Register（7 月停止接收新客户）",
+       "url": "https://www.theregister.com/off-prem/2026/07/03/amazons-mechanical-turk-to-stop-accepting-new-customers-and-not-even-ai-can-save-it/5266274"
+      }
+     ],
+     "source_date": "2026-08-26"
+    },
+    {
+     "id": "am-20",
+     "section": "数据素材",
+     "title": "3700 人实验：AI 建议对的时候正确率 87%，建议歪了跌到 34%",
+     "facts": "德国拜罗伊特大学 Herweg、Greubel、Guhling 的研究，样本 <b>3700 人<\/b>，让参与者在两只成本不同的基金里选。没有建议时 <b>64%<\/b> 选对；AI 给出正确建议后升到 <b>87%<\/b>；AI 给出带偏见的建议后跌到 <b>34%<\/b>——比什么建议都不给还差 30 个百分点。金融知识最少的一组从 28% 提到 74%，而金融知识最好的一组在误导性建议面前正确率跌到 50% 以下。研究还发现，AI 的说服力强于人类顾问，而利益冲突披露并没有显著削弱它的影响。",
+     "quotes": [
+      {
+       "en": "Simply being transparent about the use of AI is therefore not enough.",
+       "zh": "因此，仅仅对「用了 AI」这件事保持透明，是不够的。",
+       "by": "Fabian Herweg，拜罗伊特大学"
+      }
+     ],
+     "angle": "这是一组罕见的、能同时支持正反两方的数字，正因如此特别适合做长文。你可以从「披露不够用」这句切：现在所有平台的合规做法都是标一句「本内容由 AI 生成」，而这个实验说，真正决定结果的是这个 AI 系统内置的目标是谁的目标。金融知识最好的那组照样被带偏，这一条尤其扎心——它否掉了「提高用户素养就能解决」的所有说法。注意标明这是 CESifo 工作论文，尚未同行评审。",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "Phys.org 报道",
+       "url": "https://phys.org/news/2026-08-ai-financial-advice-decisions-investors.html"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "am-21",
+     "section": "数据素材",
+     "title": "53% 被裁的人怀疑是 AI，只有 22% 的公司肯承认",
+     "facts": "Resume Genius 对 <b>1000 名<\/b>美国被裁员工的调查，8 月 26 日发布。<b>53%<\/b> 认为 AI 或自动化在自己失业中起了作用，其中 <b>22%<\/b> 说雇主明确确认过，<b>31%<\/b> 是自己猜的。只有 <b>15%<\/b> 被直接告知岗位由 AI 顶替；<b>37%<\/b> 拿到的官方理由是「削减成本」。",
+     "sides": "分行业看差距极大：科技业被裁者中 <b>75%<\/b> 认为跟 AI 有关，金融 73%，商业服务 72%；而医疗只有 46%、制造与建筑 44%、零售与餐旅 42%、教育 42%。分代际看，Z 世代 <b>66%<\/b>、千禧一代 52%、X 世代 46%——越年轻越倾向于把失业归因给 AI。",
+     "quotes": [
+      {
+       "en": "If AI or automation played a meaningful role in eliminating someone's position, employers should be upfront about it.",
+       "zh": "如果 AI 或自动化在裁掉某个岗位这件事上确实起了实质作用，雇主就该坦白说出来。",
+       "by": "Geoff Scott，Resume Genius 高级招聘经理"
+      }
+     ],
+     "angle": "这是一份自报口径的调查，不能当成「AI 裁掉了多少人」的证据——但它恰好测的是另一件更有意思的事：<b>「被 AI 取代」正在变成一种没人签字的死因<\/b>。53% 减 22%，那 31 个百分点就是猜疑本身。你可以从这个缺口切，讲清楚为什么公司宁可说「削减成本」也不说「AI」，以及这种沉默怎么反过来放大了恐慌。搭配 8-24 晚报那条「AI 裁员正在回滚，32% 岗位又招回来了」，是一组很完整的对照。",
+     "platforms": [
+      "长文",
+      "图文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "报道",
+       "url": "https://www.cpapracticeadvisor.com/2026/08/26/53-of-laid-off-workers-believe-ai-played-a-role-in-their-job-loss-but-most-were-never-told/189161/"
+      }
+     ],
+     "source_date": "2026-08-26"
+    }
+   ],
+   "pitfalls": [
+    "<b>时区提醒<\/b>：本期几乎所有 source_date 都是信源当地（美东/欧洲）的发布日期，即北京时间 8 月 26 日晚到 8 月 27 日凌晨。引用时若要写「昨天」「今天」，务必按北京时间重新表述。",
+    "<b>Anthropic–Nscale 450 亿<\/b>：Anthropic 和 Nscale 均未官方确认，彭博首发、TechCrunch 转述「一位知情人士」。写的时候必须带上「据彭博」，不要当成既成事实。",
+    "<b>月之暗面 30% 分成<\/b>：路透独家，同样是 sources say，谈判处于早期。原始路透页面我未直接打开，用的是 Yahoo Finance 的路透转载版。",
+    "<b>GLM-5.3-Flash 的跑分<\/b>：「接近 Claude Opus 4.8」是智谱自评的内部编码基准，不是第三方结论。第三方 Artificial Analysis 给的是 57 分。两个口径别混着用。",
+    "<b>盖茨「保留 40% 岗位」这个说法我没能核实<\/b>，只在二手聚合站看到，TechCrunch 原文和引语里都没有这个数字，本期已剔除。若要用，请先打开 Gates Notes 原文《A Turbulent AI Era and Critical Choices to Make》确认。",
+    "<b>ponytail 的日期与星数<\/b>：仓库最新提交时间和 star 数我未能可靠核实，网上流传的星数量级异常高，本期一律未写。AGENTS.md 原文是我直接抓 raw 文件逐字核过的，可放心引用。",
+    "<b>btw.md 属于第三方泄漏库<\/b>（asgeirtj/system_prompts_leaks），非 Anthropic 官方发布。原文我已直接核对，但「这就是 Claude Code 线上正在跑的版本」这一点无法证实，转述时建议写成「泄漏的」。",
+    "<b>拜罗伊特大学的财务建议实验<\/b>是 CESifo 工作论文（2026-08-25），未经同行评审。另外报道里「金融知识较低组在带偏见的银行 AI 下反而 85% 正确」这一条与主结论看起来矛盾，我未采用，你若要引用请先查原论文。",
+    "<b>Resume Genius 那份裁员调查是自报口径<\/b>——测的是员工的「认为」，不是实际归因。任何时候都不能写成「53% 的裁员是 AI 造成的」。",
+    "<b>MTurk 的 46% 工人用 AI<\/b> 这个数字出自 2023 年的一项研究，是旧数据，只能当背景，不要当成关停原因。",
+    "<b>本期未收的边缘料<\/b>：Meta 与美国多州约 170 亿美元未成年人诉讼和解（金额口径从 166.8 亿到 180 亿有四五个版本，未拿到和解文书，暂缓）；OpenAI 关于 Hugging Face 入侵事件的 37 页技术报告（OpenAI 官网页面抓取返回 403，1200 个 agent、7 万条消息等数字均为二手转述，建议核实后单独做一条）。"
    ]
   }
  ]
