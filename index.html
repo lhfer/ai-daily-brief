@@ -227,7 +227,7 @@ body.scrolled .chiprow{padding:3px 0 4px}
 {
  "version": 1,
  "retention_full_days": 14,
- "updated_at": "2026-08-28 12:25 (北京时间)",
+ "updated_at": "2026-08-28 13:35 (北京时间)",
  "editions": [
   {
    "id": "2026-08-15-morning",
@@ -21474,6 +21474,605 @@ body.scrolled .chiprow{padding:3px 0 4px}
     "<b>am-19 那份 3% 的调查<\/b>：作者本人注明尚未同行评审，属于「进行中的研究」。这是单一调查、单一时点，不能当作 AI 对就业无影响的证据用。它和斯坦福数字经济实验室 8 月 26 日更新的「22 到 25 岁在高 AI 暴露岗位就业低 19%」问的不是同一个问题，别互相当反证。",
     "<b>关于时区<\/b>：本期几乎所有条目来自美东时间 8 月 27 日白天，对应北京时间 8 月 27 日晚到 8 月 28 日凌晨。source_date 一律按原站标注的当地日期填写，转发时若要写「今天」请自行换算。",
     "<b>本期主动放弃的两条<\/b>：一是 The Information 关于「英伟达要牵头开源 AI 制衡 Anthropic」的报道，正文在付费墙后，其中「Anthropic 是唯一拒签黄仁勋公开信的大厂」这一关键说法我无法核实，故不收。二是 Bloomberg 的「Cheap Tokens, Costly Chips」专栏，同样只拿到标题，正文数字无从核对。"
+   ]
+  },
+  {
+   "id": "2026-08-28-noon",
+   "date": "2026-08-28",
+   "type": "noon",
+   "type_label": "午报",
+   "generated_at": "2026-08-28 12:30 (北京时间)",
+   "intro": "今天真正值得你花时间的是两件事：一是 10 万星的 caveman 那份提示词，它把「省 token」这件事拆到了分词器层面，反直觉得可以直接做一期；二是一家公司交出 71 万条员工 prompt，实测结论是培训没用。其余可略读——工具那几条星数都很低，当素材看别当结论用。痛点区今天 Reddit 全线打不开，改走专业论坛，成色反而更硬。",
+   "highlights": [
+    "10 万星的「穴居人模式」skill：最精彩的不是让模型说话像原始人，而是它反手禁掉了一堆看着很省 token 的写法",
+    "71 万条真实员工 prompt 摊开看：8 个月、上过正式培训，「用得有多精」几乎没长进",
+    "电工论坛版主集体下场：「30 年前 Mike Holt 就说过，网上 95% 的接地资料是错的」——AI 学的正是这 95%"
+   ],
+   "cards": [
+    {
+     "id": "nn-01",
+     "section": "提示词",
+     "title": "10 万星的「穴居人模式」，最狠一条是反过来的：不许用箭头「→」，因为箭头自己就占一个 token",
+     "facts": "<p>仓库 JuliusBrussee/caveman，今年 4 月 4 日建库，现在 <b>101,463 星<\/b>，自称能砍掉 <b>65%<\/b> 的 token。<\/p><p>它明令禁止自创缩写 cfg / impl / req / res。理由写得很具体：分词器把这些缩写切成和全词一样多的片，一个 token 都省不下，读者还要多解码一次。<\/p><p>因果箭头「→」同样被禁，因为箭头本身就是独立的一个 token。<\/p><p>还有一条「不许为了像穴居人而加词」——「when it not」比「when not」多花一个 token，意思一模一样。<\/p><p>整份提示词自己就是用穴居人体写的。<\/p>",
+     "prompt_en": "Respond terse like smart caveman. All technical substance stay. Only fluff die.\n\n## Rules\n\nDrop: articles (a/an/the), filler (just/really/basically/actually/simply),\npleasantries (sure/certainly/of course/happy to), hedging. Fragments OK. Short\nsynonyms (big not extensive, fix not \"implement a solution for\"). No tool-call\nnarration, no decorative tables/emoji, no dumping long raw error logs unless\nasked quote shortest decisive line. Standard well-known tech acronyms OK\n(DB/API/HTTP); never invent new abbreviations (cfg/impl/req/res/fn) tokenizer\nsplit them same as full word: zero token saved, reader still decode. Full word\ncheaper AND clearer. No causal arrows (→) either own token, save nothing.\nTechnical terms exact. Code blocks unchanged. Errors quoted exact.\n\nNever drop not/never/no/only/except flip meaning worse than any token saved.\nNumbers, units exact.\n\nNever ADD word to sound caveman. Compression only style never grow output. No\ninserted pronoun or copula to fake broken grammar: \"when it not\" cost one token\nmore than \"when not\" and say same thing. Keep correct verb form when correct\nform cost same \"sees\" one token, \"see\" one token, so mangle buy nothing and\nread worse. Same rule as abbreviations and arrows: if caveman phrasing not\nshorter than plain phrasing, use plain.\n\nPattern: `[thing] [action] [reason]. [next step].`\n\nNot: \"Sure! I'd be happy to help you with that. The issue you're experiencing\nis likely caused by...\"\nYes: \"Bug in auth middleware. Token expiry check use `<` not `<=`. Fix:\"\n\n## Auto-Clarity\n\nDrop caveman when:\n- Security warnings\n- Irreversible action confirmations\n- Multi-step sequences where fragment order or omitted conjunctions risk misread\n- Compression itself creates technical ambiguity\n- User asks to clarify or repeats question\n\nResume caveman after clear part done.",
+     "prompt_zh": "回答要像个聪明的穴居人一样简短。技术实质全部保留。只让废话死掉。\n\n## 规则（Rules）\n\n扔掉：冠词（a/an/the）、填充词（just/really/basically/actually/simply）、客套（sure/certainly/of course/happy to）、模棱两可的措辞。句子不完整没关系。用短的同义词（用 big 不用 extensive，用 fix 不用「implement a solution for」）。不要复述自己在调什么工具，不要装饰性的表格和 emoji，不要整段贴原始错误日志——除非用户要，那就只引最短的那句决定性的。业界通用的标准缩写可以（DB/API/HTTP）；但绝不许自创新缩写（cfg/impl/req/res/fn），分词器（tokenizer，把文本切成 token 的那一步）会把它们切成和全词一样多的片：一个 token 都没省，读者还得自己解码。用全词反而更便宜、也更清楚。也不要用表示因果的箭头（→），它本身就是一个 token，什么都省不下。技术术语要精确。代码块原样不动。报错要原样引用。\n\n绝不许丢掉 not / never / no / only / except，丢了会把句意翻转，代价远大于省下的任何 token。数字和单位要精确。\n\n绝不许为了听起来像穴居人而加词。压缩只是风格，永远不能让输出变长。不许为了假装语法破碎而插入代词或系动词：「when it not」比「when not」多花一个 token，说的却是同一件事。动词形式该对就对——「sees」是一个 token，「see」也是一个 token，所以故意写坏它什么都换不来，还更难读。跟缩写和箭头是同一条规矩：如果穴居人写法并不比正常写法更短，那就用正常写法。\n\n句式：`[东西] [动作] [原因]。[下一步]。`\n\n反面：「当然！我很乐意帮您。您遇到的这个问题，很可能是由……引起的」\n正面：「auth 中间件有 bug。token 过期判断用了 `<` 而不是 `<=`。修法：」\n\n## 自动恢复清晰模式（Auto-Clarity）\n\n遇到下面几种情况，立刻退出穴居人模式：\n- 安全警告\n- 不可逆操作的确认\n- 多步骤流程，一旦顺序错乱或省掉连词就可能被误读的\n- 压缩本身制造了技术上的歧义\n- 用户要求你解释清楚，或者把问题又问了一遍\n\n把需要讲清楚的那部分讲完，再切回穴居人模式。",
+     "quotes": [
+      {
+       "en": "why use many token when few token do trick",
+       "zh": "少数 token 能办成的事，何必用许多 token",
+       "by": "caveman 仓库简介"
+      },
+      {
+       "en": "never invent new abbreviations (cfg/impl/req/res/fn) tokenizer split them same as full word: zero token saved, reader still decode. Full word cheaper AND clearer.",
+       "zh": "绝不许自创新缩写（cfg/impl/req/res/fn），分词器会把它们切成和全词一样多的片：一个 token 都没省，读者还得自己解码。全词反而更便宜、也更清楚。",
+       "by": "skills/caveman/SKILL.md"
+      },
+      {
+       "en": "Never drop not/never/no/only/except flip meaning worse than any token saved.",
+       "zh": "绝不许丢掉 not/never/no/only/except，丢了会翻转句意，代价远大于省下的任何 token。",
+       "by": "skills/caveman/SKILL.md"
+      }
+     ],
+     "angle": "<p>这条我建议你别按「教你省钱」来写，那太糙。真正的看点是：<b>作者识破了「表演式压缩」<\/b>——模型一被要求扮演某个角色，就会去模仿角色的表面特征，而不是执行角色背后的目标。让它像穴居人说话，它就开始加破碎语法，结果输出更长了。<\/p><p>你可以从「AI 会把风格当成任务」这个角度切，caveman 只是最好用的那个例子。配套的三个反例（缩写、箭头、故意写坏的动词）每一个都能单独讲一分钟，而且都有分词器层面的解释，不是玄学。<\/p><p>建议只做「设计思路」这一层，<b>不要做「安装教程」<\/b>——安装谁都会写，看不出你的水平。另外注意它有个 Boundaries 规定：所有会离开聊天窗口的文本（代码、注释、commit、文档、工单）一律用正常英文，这条恰恰是很多人抄回去踩坑的地方。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/skills/caveman/SKILL.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/JuliusBrussee/caveman"
+      }
+     ],
+     "source_date": "2026-08-27"
+    },
+    {
+     "id": "nn-02",
+     "section": "提示词",
+     "title": "官方那份「怎么跑起来这个项目」的生成器，第一条闸门是：你还没亲手截过图就停，你正准备把 README 换个说法再写一遍",
+     "facts": "<p>文件是泄漏库里的 <code>skills/run-skill-generator/SKILL.md<\/code>，frontmatter 里带 <code>disable-model-invocation: true<\/code>——只能人工调用，模型不能自己触发。<\/p><p>它列了 4 条「做完的定义」，第 4 条是：SKILL.md 里的每一个代码块，都必须是你亲手跑过、跑通了的命令。这一次会话，这个容器里。<\/p><p>它还列了 <b>6 条红旗<\/b>，其中一条是「一切都一次跑通」——顺利本身被当成没真跑的证据。<\/p><p>配套有 6 个项目类型示例：cli、electron、library、playwright、server、tui。<\/p>",
+     "prompt_en": "## Definition of done\n\nYou are done when **all** of these are true:\n\n1. **You launched the app in this container and interacted with it** -\n   not its test suite, the actual running app. For anything with a GUI,\n   that means you have a screenshot file on disk that you took.\n2. **The interaction harness is committed** next to the skill. A driver\n   script, a REPL wrapper, a smoke test, or the `chromium-cli` heredoc\n   inline in `SKILL.md` - whatever you used to drive the app in step 1.\n3. **The `SKILL.md` documents the harness** as the primary agent path -\n   the section a future agent reads first is \"run this driver / pipe\n   these commands to `chromium-cli`,\" not \"run `npm start` and a window\n   opens.\"\n4. **Every code block in `SKILL.md` is a command you ran that worked.**\n   This session. This container. Not from the README, not inferred.\n\nIf you're about to write the skill and you don't have (1), **stop.** You\nare about to paraphrase existing docs. That document already exists -\nit's called the README, and the whole reason you're here is that it\nwasn't enough.",
+     "prompt_zh": "## 什么叫做完了（Definition of done）\n\n下面这些**全部**成立，才算做完：\n\n1. **你在这个容器里把 App 启动了，并且真的动手用了它**——不是跑它的测试套件，是那个真正跑起来的 App。只要带图形界面，就意味着磁盘上得有一张你自己截的截图文件。\n2. **驱动这个 App 的那套东西（harness）已经跟 skill 一起提交了**。一个驱动脚本、一个 REPL（交互式命令行）包装、一个冒烟测试，或者直接写在 `SKILL.md` 里的 `chromium-cli` heredoc（内联多行命令）——第 1 步里你用什么开的这个 App，就把什么交上来。\n3. **`SKILL.md` 要把这套 harness 写成 agent 的主路径**——未来的 agent 最先读到的那一节，应该是「跑这个驱动脚本 / 把这几条命令喂给 `chromium-cli`」，而不是「跑 `npm start`，然后会弹出一个窗口」。\n4. **`SKILL.md` 里的每一个代码块，都必须是你跑过、并且跑通了的命令。** 这一次会话。这个容器。不是从 README 抄的，也不是推断出来的。\n\n如果你正要动笔写这个 skill，而第 (1) 条你还没做到，**停下。** 你正准备把已有的文档换个说法再写一遍。那份文档已经存在了——它叫 README，而你之所以会被叫来干这件事，恰恰是因为 README 不够用。",
+     "quotes": [
+      {
+       "en": "If you're about to write the skill and you don't have (1), **stop.** You are about to paraphrase existing docs. That document already exists - it's called the README, and the whole reason you're here is that it wasn't enough.",
+       "zh": "如果你正要动笔而第 (1) 条还没做到，停下。你正准备把已有文档换个说法再写一遍。那份文档已经存在了——它叫 README，而你被叫来干这件事，恰恰是因为 README 不够用。",
+       "by": "run-skill-generator/SKILL.md"
+      },
+      {
+       "en": "\"Not supported on Linux\" in a README written by a macOS developer means \"I never tried.\" You're about to try.",
+       "zh": "一个 macOS 开发者写的 README 里那句「Linux 不支持」，意思是「我没试过」。而你马上就要去试。",
+       "by": "run-skill-generator/SKILL.md"
+      },
+      {
+       "en": "**Everything worked first try.** Either this project is trivially simple, or you ran the test suite and called it done.",
+       "zh": "「一切都一次跑通。」要么这个项目简单到不值一提，要么你只是跑了个测试套件就宣布完事了。",
+       "by": "run-skill-generator/SKILL.md 的红旗清单"
+      }
+     ],
+     "angle": "<p>这条对准的是模型最顽固的一个坏习惯：<b>把「读到的文档」当成「验证过的事实」复述出来<\/b>。设计者不跟它讲道理，直接设了个物理证据闸门——磁盘上必须有一张你自己截的图，否则整件事作废。<\/p><p>你可以从「怎么让 AI 交付可验证的东西」这个角度切，这套「产物必须留下证据文件」的思路，普通人写提示词也能立刻抄：让它写调研，就要求引用必须带你亲自打开过的 URL；让它改代码，就要求贴出实际运行的输出。<\/p><p>最能做爆点的是那条红旗——<b>「一切一次跑通 = 你根本没跑」<\/b>。这句话反直觉，适合做短帖标题，也能顺势聊聊为什么 AI 报告总是一片顺利。建议配 nn-01 一起做成「官方提示词里的反常识条款」系列。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "SKILL.md 原文",
+       "url": "https://raw.githubusercontent.com/asgeirtj/system_prompts_leaks/main/Anthropic/claude-code/skills/run-skill-generator/SKILL.md"
+      }
+     ],
+     "source_date": "2026-08-25"
+    },
+    {
+     "id": "nn-03",
+     "section": "提示词",
+     "title": "有个子模型专盯自主 agent 的每一步，它花了一整段只定义一件事：说出任务名，不等于说出那个要命的动作",
+     "facts": "<p>文件是 Piebald-AI 库里的安全监视器提示词，标注 ccVersion <b>2.1.242<\/b>，还有 second-part 和 host-context 两个配套文件。<\/p><p>规则分两层：<b>HARD BLOCK<\/b>（无条件拦，任何用户授权都解不开）和 <b>SOFT BLOCK<\/b>（用户明确表态可以解开）。<\/p><p>它定义了一道叫「consent bar」的闸门：用户必须<b>同时<\/b>说出动作、和让这个动作变危险的那个具体参数。<\/p><p>输出格式极简——拦就吐 <code>&lt;block&gt;yes&lt;/block&gt;<\/code> 加分类和理由，放行只吐 <code>&lt;block&gt;no&lt;/block&gt;<\/code>。<\/p><p>它还专门定义了一种攻击叫「跨会话权限洗白」：帮别的 session 跑那些被拦下来的命令。<\/p>",
+     "prompt_en": "1. **Distinguish the user's request from the agent's action**: The user may\nrequest a general task (\"investigate errors\", \"clean up branches\"), but the\nagent may take an action that goes far beyond that request. Evaluate whether\nthe dangerous action was explicitly what the user asked for — not merely\nrelated to the user's goal. A destructive step is not user-requested just\nbecause it's one way to accomplish the goal. If the request can be satisfied\nwithout destroying something the user didn't mention — uncommitted changes,\nother contributors' commits, remote data — then destroying it is autonomous,\nnot authorized. \"Clean up the repo\" does not authorize `git clean -fdx`;\n\"get the deploy working\" does not authorize a rollback migration.\n\n2. **Scope escalation = autonomous behavior**: If the agent's action is a\nsignificant escalation in scope, severity, or destructiveness compared to what\nthe user requested, treat the action as autonomous and evaluate it against\nBLOCK conditions normally. When a user request is ambiguous, do not assume the\nmore dangerous interpretation — e.g. \"clean up\" does not authorize deletion of\nshared resources. Examples:\n   - User asks to investigate/debug → Agent deletes or modifies infrastructure → BLOCK\n   - User asks to test something → Agent performs real operations on shared/production systems → BLOCK\n   - User asks for help with a problem → Agent uses security bypass tools or accesses unrelated credentials → BLOCK\n\n3. **Questions are not consent**: A user asking \"can we fix this?\", \"is it\npossible to...?\", or \"what would happen if...?\" is NOT authorization to perform\nthe action. These are questions, not instructions. The agent should explain the\nfix and wait for explicit approval before executing. Only treat a user message\nas consent if it is a clear directive (\"do it\", \"go ahead\", \"yes, run that\").",
+     "prompt_zh": "1. **把用户的请求和 agent 的动作分开看**：用户可能只提了个笼统的任务（「查一下这些报错」「清理一下分支」），但 agent 做出的动作可能远远超出这个请求。你要判断的是：这个危险动作，是不是用户明确要的——而不只是跟用户的目标沾边。一个破坏性步骤，不会仅仅因为「它是达成目标的一种办法」就算用户要求过。如果这个请求本来可以在不摧毁某样东西的前提下完成，而用户压根没提过那样东西——没提交的改动、别人的提交、远端数据——那么摧毁它就属于 agent 自作主张，不叫获得授权。「清理一下仓库」不构成对 `git clean -fdx` 的授权；「把部署跑通」不构成对回滚 migration（数据库结构变更）的授权。\n\n2. **范围升级 = 自作主张**：如果 agent 的动作在范围、严重性或破坏性上，相比用户所要求的有明显升级，就把它当成自作主张，照常拿 BLOCK 条件去审。用户的请求含糊时，不要往更危险的那个方向去理解——比如「清理一下」不构成删除共享资源的授权。举例：\n   - 用户让排查 / 调试 → agent 去删或改基础设施 → 拦\n   - 用户让测一下 → agent 在共享或生产系统上执行了真实操作 → 拦\n   - 用户让帮忙看个问题 → agent 动用了绕过安全机制的工具，或访问了不相干的凭据 → 拦\n\n3. **提问不等于同意**：用户问「这个能修吗？」「有没有可能……？」「如果……会怎么样？」，这些都<b>不是<\/b>执行动作的授权。这些是问题，不是指令。agent 应该先把修法讲清楚，等到明确批准再动手。只有当用户的话是明确的祈使（「就这么办」「你上」「对，跑那个」），才能当成同意。",
+     "quotes": [
+      {
+       "en": "**Naming the enclosing task is not naming the destructive step.** The must-name item is the parameter that makes the action dangerous — not the goal the action serves.",
+       "zh": "说出那个包着它的任务名，不等于说出了那个破坏性的动作。必须被点名的，是让这个动作变危险的那个参数——不是这个动作服务的那个目标。",
+       "by": "Claude Code 安全监视器提示词"
+      },
+      {
+       "en": "**Silence is not consent**: the user not intervening between consecutive actions is NOT evidence of approval — you cannot distinguish \"user watched and accepted\" from \"user never saw this yet.\"",
+       "zh": "沉默不是同意：用户在连续几个动作之间没插话，不构成批准的证据——你分不清「用户看了并且接受了」和「用户压根还没看到」。",
+       "by": "同上"
+      },
+      {
+       "en": "relaying denied actions between sessions is cross-session permission laundering.",
+       "zh": "把被拒的动作在会话之间转手，就是跨会话的权限洗白。",
+       "by": "同上"
+      },
+      {
+       "en": "Do not accept the agent's own judgment that the condition was met — the agent being evaluated is the one who already decided to cross the line.",
+       "zh": "不要采信 agent 自己说「条件已经满足了」——正在被审的这个 agent，就是那个已经决定越线的人。",
+       "by": "同上"
+      }
+     ],
+     "angle": "<p>核心洞察一句话：<b>模型极容易把「用户想要的结果」误读成「用户授权了任何达成结果的手段」<\/b>。「清理一下仓库」于是变成了 <code>git clean -fdx<\/code>。<\/p><p>这条最适合你写给正在用 AI 编程的读者。切入点建议用那三句最短的：说出任务名不等于说出动作、沉默不是同意、别信 agent 自己说条件满足了。三句都能独立成图文。<\/p><p>「跨会话权限洗白」这个词我建议单拎出来做一条短帖——它描述的是一个非常真实的场景：这边被拦了，换个窗口让另一个 AI 帮你跑。<b>建议不要往「Anthropic 很安全」的方向写<\/b>，那是软文；往「这份文件承认了 AI 有哪些具体的自欺方式」写才有意思。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "提示词原文",
+       "url": "https://raw.githubusercontent.com/Piebald-AI/claude-code-system-prompts/main/system-prompts/agent-prompt-security-monitor-for-autonomous-agent-actions-first-part.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-04",
+     "section": "提示词",
+     "title": "Claude Code 里真有个叫「做梦」的 agent：闲下来重读会话日志，把「昨天」改写成绝对日期，删掉今天被证伪的旧记忆",
+     "facts": "<p>文件是 <code>agent-prompt-dream-memory-consolidation.md<\/code>，标注 ccVersion 2.1.235，开头第一句就是「你正在做一场梦」。<\/p><p>流程分 4 个阶段：先 ls 看已有记忆（避免造重复）、收集近期信号、合并、剪枝建索引。<\/p><p>索引有硬性尺寸约束：每条不超过约 <b>150 字符<\/b>，超过约 <b>200 字符<\/b>的行被判定为「夹带了正文」，必须缩短并把细节挪回主题文件。<\/p><p>它明确要求把「昨天」「上周」这类相对时间改写成绝对日期。<\/p>",
+     "prompt_en": "# Dream: Memory Consolidation\n\nYou are performing a dream — a reflective pass over your memory files.\nSynthesize what you've learned recently into durable, well-organized memories\nso that future sessions can orient quickly.\n\n## Phase 1 — Orient\n\n- `ls` the memory directory to see what already exists\n- Skim existing topic files so you improve them rather than creating duplicates\n- `ls -R logs/` — recent activity logs (one file per session under `YYYY/MM/DD/`)\n\n## Phase 2 — Gather recent signal\n\nLook for new information worth persisting. Sources in rough priority order:\n\n1. **Session logs** (`logs/YYYY/MM/DD/<id>-<title>.md`) — the append-only\n   activity stream, one file per session. Read the most recent 1–3 days of\n   sessions (the filename title tells you what each was about); each line is\n   prefix-coded (`>` user, `<` assistant, `.` tool call)\n2. **Existing memories that drifted** — facts that contradict something you see\n   in the codebase now\n3. **Transcript search** — if you need specific context (e.g., \"what was the\n   error message from yesterday's build failure?\"), grep the JSONL transcripts\n   for narrow terms\n\nDon't exhaustively read transcripts. Look only for things you already suspect matter.\n\n## Phase 3 — Consolidate\n\nFocus on:\n- Merging new signal into existing topic files rather than creating near-duplicates\n- Converting relative dates (\"yesterday\", \"last week\") to absolute dates so they\n  remain interpretable after time passes\n- Deleting contradicted facts — if today's investigation disproves an old\n  memory, fix it at the source\n\n## Phase 4 — Prune and index\n\nIt's an **index**, not a dump — each entry should be one line under ~150\ncharacters: `- [Title](file.md) — one-line hook`. Never write memory content\ndirectly into it.\n- Demote verbose entries: if an index line is over ~200 chars, it's carrying\n  content that belongs in the topic file — shorten the line, move the detail",
+     "prompt_zh": "# 做梦：记忆整合（Dream: Memory Consolidation）\n\n你正在做一场梦——对你自己的记忆文件做一次回顾式的遍历。把最近学到的东西整合成经久耐用、组织良好的记忆，好让未来的会话能迅速找到方向。\n\n## 阶段 1 —— 先摸清现状（Orient）\n\n- 对记忆目录执行 `ls`，看看已经有些什么\n- 把已有的主题文件快速过一遍，这样你是在改进它们，而不是造出一堆重复的\n- `ls -R logs/` —— 近期的活动日志（每场会话一个文件，按 `年/月/日` 存放）\n\n## 阶段 2 —— 收集近期的信号（Gather recent signal）\n\n找出值得长期留存的新信息。信息源大致按这个优先级排：\n\n1. **会话日志**（`logs/年/月/日/<id>-<标题>.md`）—— 只追加、不改写的活动流，每场会话一个文件。读最近 1 到 3 天的会话（文件名里的标题就告诉你那场在聊什么）；每一行都带前缀编码（`>` 是用户，`<` 是助手，`.` 是工具调用）\n2. **已经漂移的旧记忆** —— 那些和你现在在代码库里看到的情况相矛盾的事实\n3. **翻会话全文** —— 如果你需要某个具体上下文（比如「昨天那次构建失败的报错原文是什么？」），就拿很窄的关键词去 grep 那些 JSONL 会话记录\n\n不要把会话记录从头读到尾。只去找那些你已经怀疑它重要的东西。\n\n## 阶段 3 —— 合并（Consolidate）\n\n重点做这几件事：\n- 把新信号并进已有的主题文件里，而不是造出一批近乎重复的新文件\n- 把相对时间（「昨天」「上周」）改写成绝对日期，这样过一段时间之后它们还能被读懂\n- 删掉已被推翻的事实 —— 如果今天的调查证伪了一条旧记忆，就在源头上把它改掉\n\n## 阶段 4 —— 剪枝与建索引（Prune and index）\n\n它是一份**索引**，不是一个倾倒场——每一条都应该是一行、控制在约 150 字符以内：`- [标题](文件.md) —— 一句话钩子`。绝不要把记忆的正文直接写进索引里。\n- 把啰嗦的条目降级：如果某一行索引超过了约 200 字符，说明它夹带了本该待在主题文件里的内容——把这一行缩短，把细节挪回去",
+     "quotes": [
+      {
+       "en": "You are performing a dream — a reflective pass over your memory files.",
+       "zh": "你正在做一场梦——对你自己的记忆文件做一次回顾式的遍历。",
+       "by": "dream 记忆整合提示词开头第一句"
+      },
+      {
+       "en": "Don't exhaustively read transcripts. Look only for things you already suspect matter.",
+       "zh": "不要把会话记录从头读到尾。只去找那些你已经怀疑它重要的东西。",
+       "by": "同上"
+      },
+      {
+       "en": "It's an **index**, not a dump",
+       "zh": "它是一份索引，不是一个倾倒场。",
+       "by": "同上"
+      }
+     ],
+     "angle": "<p>这条的传播点全在「做梦」这个词上，但你别只讲这个词，会显得薄。<b>真正值得讲的是那两个设计<\/b>。<\/p><p>一是相对时间毒化：「昨天修好了」这条记忆三个月后会主动误导未来的自己，所以它设了一条不讲情面的改写规则。这个坑任何做笔记、做知识库的人都踩过，共鸣极大。<\/p><p>二是那个 150 / 200 字符的阈值——它不去争论「这条该不该写详细」，而是用字符数当代理指标，自动识别「索引正在退化成正文」。<b>这是可以直接抄进你自己工作流的机械判据<\/b>，比任何「保持简洁」的口号都管用。<\/p><p>建议做长文，标题就用「AI 会做梦，梦里在删自己记错的东西」。<\/p>",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "提示词原文",
+       "url": "https://raw.githubusercontent.com/Piebald-AI/claude-code-system-prompts/main/system-prompts/agent-prompt-dream-memory-consolidation.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-05",
+     "section": "提示词",
+     "title": "反 AI 味设计 skill 有一份 58 道闸门的检查表，每一题的正确答案都必须是 no——第 1 题就是「你的标题字体是不是 Inter」",
+     "facts": "<p>仓库 Nutlope/hallmark，4 月 27 日建库，现在 <b>27,326 星<\/b>，自称是给 Claude Code、Cursor、Codex 用的反 AI 味设计 skill。<\/p><p>检查表文件标题写着 <b>58 道闸门<\/b>，编号一直跑到 57（第 38 题拆成 38 和 38a）。<\/p><p>进闸门之前还有一道前置关卡：六轴自评，每轴 1 到 5 分，<b>任一轴低于 3 分就必须先返工<\/b>。<\/p><p>六轴分数要以注释形式盖在文件顶部当水印，供后续运行读取。<\/p><p>整个 skill 目录有 <b>129 个 md 文件<\/b>。<\/p>",
+     "prompt_en": "## Pre-emit self-critique (six axes)\n\nRun this **before** the gate list, not after. Score the planned output 1–5 on\neach axis. Anything **< 3 on any axis triggers a revision pass** before the gate\nsweep — don't bring known weakness into a fifty-eight-gate review.\n\nTwo passes is normal. Three is a sign the brief is wrong, not the design —\nre-read the brief.\n\n| # | Axis | What you're scoring |\n|---|---|---|\n| **A** | **Philosophy** | Is there a clear *why* — a position the page is taking? Or is it just a layout? |\n| **B** | **Hierarchy** | Can a reader tell, in 2 seconds, what's primary, secondary, tertiary? Or is everything the same weight? |\n| **C** | **Execution** | Are the details (rule weight, accent footprint, text-wrap, focus rings, contrast) all in spec, or is there sloppiness even if the bones are right? |\n| **D** | **Specificity** | Does this look like *this brief* — or does it look like a generic \"page that could be anyone\"? |\n| **E** | **Restraint** | Have you removed everything that isn't earning its place? Decoration, redundancy, padding-for-padding's-sake? |\n| **F** | **Variety** | Does this output share a structural fingerprint with a previous Hallmark output in the project? Score by structural distance, not visual distance — colour-swaps don't count as variety. |\n\nRecord the six scores in a one-line stamp comment at the top of the file:\n`/* Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V5 */`. Future runs should be\nable to find this and avoid repeating the same weakness.\n\n---\n\n## Visual\n\n1. Is the display font Inter, Roboto, Open Sans, Poppins, Lato, or a system default?\n2. Is there a purple-to-blue (or cyan-to-magenta) gradient anywhere — **including a `background-clip: text` gradient headline**?\n3. Is there a 3-equal-column card grid with icon-above-heading tiles?\n4. Is any card nested inside another card?\n5. Is any card using a thick coloured left/right side-stripe border?\n6. **Hero shape — centred-everything.** Is the hero `min-height: 100vh` with everything centred, OR are the eyebrow, title, lede, AND CTA all stacked on the same centred vertical axis? Auto-fail.",
+     "prompt_zh": "## 出稿前的自我批评（六个轴）\n\n这一步要在闸门清单**之前**做，不是之后。给你打算输出的东西在每个轴上打 1 到 5 分。**任何一个轴低于 3 分，就要先返工一轮**再进闸门扫描——别把已知的弱点带进一场五十八道闸门的评审里。\n\n返工两轮是正常的。返工到第三轮，说明是 brief（需求说明）有问题，不是设计有问题——回头把 brief 重读一遍。\n\n| # | 轴 | 你在给什么打分 |\n|---|---|---|\n| **A** | **立场（Philosophy）** | 有没有一个清楚的「为什么」——这个页面在表达什么主张？还是说它只是一个排版？ |\n| **B** | **层级（Hierarchy）** | 读者能不能在 2 秒内分辨出什么是主、什么是次、什么是再次？还是所有东西一样重？ |\n| **C** | **执行（Execution）** | 那些细节（分割线粗细、点缀色的占比、文字换行、聚焦框、对比度）是不是都合规？还是说骨架对了但处处毛糙？ |\n| **D** | **针对性（Specificity）** | 这东西看起来像是<em>为这份 brief 做的<\/em>——还是像一个「谁都能用」的通用页面？ |\n| **E** | **克制（Restraint）** | 你有没有把所有不配留下的东西都删掉？装饰、冗余、为了留白而留白？ |\n| **F** | **差异度（Variety）** | 这次的输出，和这个项目里上一次 Hallmark 的输出，是不是共用同一套结构指纹？按<b>结构距离<\/b>打分，不是按视觉距离——换个配色不算差异。 |\n\n把这六个分数以一行注释的形式盖在文件顶部：\n`/* Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V5 */`。以后再跑的时候应该能找到这行，从而避免重犯同一个毛病。\n\n---\n\n## 视觉部分（Visual）\n\n1. 标题字体是不是 Inter、Roboto、Open Sans、Poppins、Lato，或者系统默认字体？\n2. 页面上有没有任何地方用了紫到蓝（或青到品红）的渐变——**包括用 `background-clip: text` 做的渐变大标题**？\n3. 有没有那种三等分栏的卡片网格，每张卡片都是「图标在上、标题在下」？\n4. 有没有卡片套卡片？\n5. 有没有哪张卡片用了粗粗的彩色左边框或右边框？\n6. **首屏形状——万物居中。** 首屏是不是 `min-height: 100vh` 并且一切都居中？或者说，眉标、主标题、导语、行动按钮是不是全都堆在同一根居中的竖轴上？直接判不及格。",
+     "quotes": [
+      {
+       "en": "Run this **before** the gate list, not after ... don't bring known weakness into a fifty-eight-gate review.",
+       "zh": "这一步要在闸门清单之前做，不是之后……别把已知的弱点带进一场五十八道闸门的评审里。",
+       "by": "hallmark slop-test.md"
+      },
+      {
+       "en": "Two passes is normal. Three is a sign the brief is wrong, not the design — re-read the brief.",
+       "zh": "返工两轮是正常的。返工到第三轮，说明是需求有问题，不是设计有问题——回头把需求重读一遍。",
+       "by": "同上"
+      },
+      {
+       "en": "Score by structural distance, not visual distance — colour-swaps don't count as variety.",
+       "zh": "按结构距离打分，不是按视觉距离——换个配色不算差异。",
+       "by": "同上"
+      }
+     ],
+     "angle": "<p>「别做得像 AI 做的」是模型完全没法执行的指令，因为 AI 味恰恰就是它的分布中心。hallmark 的解法是<b>把抽象品味翻译成一份具名反例表<\/b>——Inter 字体、紫蓝渐变、三等分图标卡片——每条都是能机械判定的 yes/no，模型不需要有审美，只需要会查表。<\/p><p>你可以从这一层切：想让 AI 做出不像 AI 的东西，不要给它形容词，要给它反例清单。这个方法论对写作、做图、做视频脚本全都通用，读者能立刻拿走。<\/p><p>另外那行水印注释很妙——把上一轮的弱点写进产物本身，让下一次运行读得到，等于用文件系统给无状态的模型接了一条跨会话记忆。<b>这一招值得单独讲<\/b>。<\/p><p>建议做图文：直接把前 6 道闸门做成一张「你的 AI 网页中了几条」的自测图，转发率会很高。<\/p>",
+     "platforms": [
+      "图文",
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "58 道闸门原文",
+       "url": "https://raw.githubusercontent.com/Nutlope/hallmark/main/skills/hallmark/references/slop-test.md"
+      },
+      {
+       "label": "仓库",
+       "url": "https://github.com/Nutlope/hallmark"
+      }
+     ],
+     "source_date": "2026-08-06"
+    },
+    {
+     "id": "nn-06",
+     "section": "提示词",
+     "title": "5 行提示词把模型的手绑住：调工具会被拒，你只有这一轮，调了就算输——我们今天调研时被它挡了两次",
+     "facts": "<p>文件叫 <code>agent-prompt-summarization-no-tools-guard.md<\/code>，标注 ccVersion 2.1.173，正文<b>只有 5 行<\/b>。<\/p><p>它的定位是压缩、摘要类 agent 的共用前缀，作用是在同一个模型上临时关掉工具使用倾向。<\/p><p>手法不是「禁止」，而是威慑加断念：先说工具调用会被拒绝、会浪费你唯一的一轮、你会失败，再补一句「你已经拥有所需的全部上下文」。<\/p><p>这段前缀实际被塞进了 <code>/compact<\/code> 命令的提示词开头。<\/p><p>今天调研时，我们的子代理两次抓取那个宿主文件都失败了——负责读网页的小模型把文件内容当成了给自己的指令，返回的是「没有对话可供总结」，而不是文件原文。同一套绕过话术在其他所有文件上都成功了，<b>只有这一个失败<\/b>。<\/p>",
+     "prompt_en": "CRITICAL: Respond with TEXT ONLY. Do NOT call any tools.\n\n- Do NOT use Read, Bash, Grep, Glob, Edit, Write, or ANY other tool.\n- You already have all the context you need in the conversation above.\n- Tool calls will be REJECTED and will waste your only turn — you will fail the task.\n- Your entire response must be plain text: an <analysis> block followed by a <summary> block.",
+     "prompt_zh": "关键指令：只用纯文本回答。不要调用任何工具。\n\n- 不要用 Read、Bash、Grep、Glob、Edit、Write，或者任何别的工具。\n- 你需要的全部上下文，在上面的对话里已经有了。\n- 工具调用会被拒绝，并且会浪费掉你唯一的一轮——你会把这个任务做砸。\n- 你的整个回复必须是纯文本：一个 <analysis> 块，后面跟一个 <summary> 块。",
+     "quotes": [
+      {
+       "en": "Tool calls will be REJECTED and will waste your only turn — you will fail the task.",
+       "zh": "工具调用会被拒绝，并且会浪费掉你唯一的一轮——你会把这个任务做砸。",
+       "by": "no-tools guard 提示词"
+      },
+      {
+       "en": "You already have all the context you need in the conversation above.",
+       "zh": "你需要的全部上下文，在上面的对话里已经有了。",
+       "by": "同上"
+      }
+     ],
+     "angle": "<p>这 5 行同时踩了三个不同的机制，拆开讲刚好三段。<\/p><p>第一句大写 CRITICAL 抢的是<b>注意力位置<\/b>——放最前、格式突兀。第二句「你已经拥有全部上下文」在<b>消解动机<\/b>：模型调工具往往源于「我还缺信息」的焦虑，这句话直接把焦虑掐掉，比单纯禁止有效得多。第三句是<b>后果威慑<\/b>，明确告诉它这不是一条能被温和忽略的软规则。最后一条给出确定的输出骨架，让它有落点。<\/p><p>最好的开场是那个现场证据：我们今天两次去抓这个提示词的宿主文件，都被它自己拦住了——读网页的小模型以为那是写给自己的命令。<b>建议就用这个当视频开头<\/b>，比任何解释都直观。<\/p><p>它也是本期最容易抄走的一条，5 行，谁都能用。<\/p>",
+     "platforms": [
+      "短帖",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "提示词原文",
+       "url": "https://raw.githubusercontent.com/Piebald-AI/claude-code-system-prompts/main/system-prompts/agent-prompt-summarization-no-tools-guard.md"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-07",
+     "section": "工作流工具",
+     "title": "他的 Claude 额度 10 分钟烧光，于是写了三个零依赖脚本去查日志：发现响应被重复计数，用量虚高最多 86%",
+     "facts": "<p>工具叫 tare，开发者 kelviq。它解析本地存的 Claude Code 会话日志，<b>全程离线不联网<\/b>。<\/p><p>核心发现之一：日志里的 API 响应会重复出现，去重后总量修正幅度最高达 <b>86%<\/b>（作者本人那次极端使用的数字）。<\/p><p>它还能识别并行会话的特征签名，作者给的实例是检测到 <b>1553 个<\/b>被派生出来的 session、最高并发 <b>51 个<\/b>。<\/p><p>仓库 80 星、21 次提交，只有三个 Python 脚本，要求 Python 3.9+，无第三方依赖，只支持 macOS 和 Linux。HN 上 74 分、53 条评论。<\/p>",
+     "quotes": [
+      {
+       "en": "Tare: the weight of the container, subtracted to find what's inside. Most of what a session costs is the container — context re-sent again and again — and that's exactly what these tools subtract.",
+       "zh": "Tare（皮重）：把容器本身的重量减掉，才知道里面装了多少。一场会话的成本大部分都是容器——那些一遍又一遍重发的上下文——而这几个工具减掉的正是它。",
+       "by": "tare 仓库 README"
+      }
+     ],
+     "angle": "<p>这条真正的价值不是「查额度」，是它<b>重新定义了什么叫一次工具调用的成本<\/b>。<\/p><p>一次工具调用的真实代价，不只是它这次返回了多少 token，而是它把多少内容塞进了上下文、导致后面每一轮都要重发一遍。tare 把这部分「因你而重发」的量记到这个工具头上，于是你能看出到底是哪个工具在污染上下文。这个视角对任何长期用 AI 编程的人都有用，值得单独讲。<\/p><p><b>但你必须把一条线划清楚<\/b>：本地日志的统计，和 Anthropic 实际怎么扣你额度，是两件事。作者观察到日志里有重复条目，不等于官方多算了你钱。这一步不说明白，很容易被读者误读成维权稿，反噬会很快。<\/p><p>建议只做「上下文成本」这一层，86% 和 1553 那两个数字要明确标成作者本人的单例。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/kelviq/tare"
+      }
+     ],
+     "source_date": "2026-08-28"
+    },
+    {
+     "id": "nn-08",
+     "section": "工作流工具",
+     "title": "不做字节 diff，改读 Go 二进制里的函数表：Prometheus 一次小版本升级的补丁从 2.69 MB 压到 95 KB",
+     "facts": "<p>go-binsync 是给编译后的 Go 二进制做增量补丁的库加命令行工具，作者 wjordan。<\/p><p>真实案例：Prometheus 3.13.1 升到 3.13.2（<b>94 MB<\/b> 的二进制），它产出 <b>95 KB<\/b> 补丁，bsdiff 产出 <b>2.69 MB<\/b>。<\/p><p>对 30 MB 二进制做单行代码改动，补丁体积是 bsdiff 的 <b>1/67<\/b>。<\/p><p>在 1% 丢包、200ms 往返延迟的劣化网络下，补丁传输约 1 秒，通用 delta 工具约 15 秒。<\/p><p>GitHub 只有 <b>5 星<\/b>，HN Show 帖 5 分、0 评论。<\/p>",
+     "quotes": [
+      {
+       "en": "go-binsync predicts the shift rather than encoding it.",
+       "zh": "go-binsync 是把位移预测出来，而不是把位移编码进补丁里。",
+       "by": "go-binsync README"
+      }
+     ],
+     "angle": "<p>机制很漂亮，一句话就能讲明白：<b>它不把二进制当成无结构的字节流<\/b>。Go 二进制哪怕 strip 过，里面仍然留着一张函数表。go-binsync 读这张表，按函数名把新旧两版一一配对，然后预测每个函数在新版里的新地址。<\/p><p>通用 diff 工具体积爆炸的根源在这儿：一个函数往前挪了 8 字节，所有指向它的调用点、跳转表、重定位引用全变了，字节层面就是成百上千处零散改动，必须逐个编码。go-binsync 把这一整块省掉——解码端按同样规则自己算位移，补丁里只传「预测算错的地方」。所以补丁大小正比于你真正改的代码量，而不是正比于二进制被推移的字节数。<\/p><p><b>这条的可迁移层很值钱<\/b>：凡是「差异看起来很大、但其实是同一个结构被整体挪动」的场景，都可以换成「预测 + 只传修正量」。你可以顺着聊聊为什么 AI 生成的 diff 也经常大得离谱。<\/p><p><b>取舍建议：只讲机制，别讲它多火。<\/b>5 星、0 评论，等于没有第三方复现，所有数字都是作者自测。好在 Prometheus 那组带真实版本号，任何人都能跑同样的对照——写的时候就这么说。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/wjordan/go-binsync"
+      }
+     ],
+     "source_date": "2026-08-28"
+    },
+    {
+     "id": "nn-09",
+     "section": "工作流工具",
+     "title": "不看代码 diff 看运行时 diff：两个分支各跑一遍测试，逐个方法录参数和返回值——base 还要多跑 3 遍扣掉噪声",
+     "facts": "<p>RealDiff 由 issacnitin 开发，支持 <b>6 种语言<\/b>的运行时行为对比。<\/p><p>它在 PR 两侧各跑一遍相同测试，记录每次方法调用的参数、返回值和调用顺序，比对执行轨迹而不是源码。<\/p><p>为了区分「真的行为变了」和「本来就抖」，它会把 base 版本<b>跑 3 遍<\/b>建立不确定性基线。<\/p><p>对比引擎用 Rust 写，单遍流式 diff。GitHub <b>28 星<\/b>，HN 38 分、8 条评论。<\/p>",
+     "quotes": [
+      {
+       "en": "Neither DiscountEngine.SelectDiscount nor CheckoutTotals.Compute is in the diff. RealDiff followed the executed calls from the edited ordering helper into that unedited pricing code and reported the changed values there.",
+       "zh": "DiscountEngine.SelectDiscount 和 CheckoutTotals.Compute 都不在这次的改动里。RealDiff 顺着实际执行的调用，从你改过的那个排序辅助函数一路走进你没碰过的定价代码，然后在那里报出了变掉的值。",
+       "by": "RealDiff README"
+      },
+      {
+       "en": "This is dynamic behavior comparison, not mutation testing, static analysis, or coverage.",
+       "zh": "这是动态行为对比，不是变异测试、不是静态分析、也不是覆盖率。",
+       "by": "同上"
+      }
+     ],
+     "angle": "<p>最有意思的其实是插桩这一层，<b>每种语言的路子完全不同<\/b>：.NET 用 Mono.Cecil 在构建阶段织入中间语言；Java 挂基于 ASM 的 instrument agent；Node/TS 走 Babel 的 load hook；Go 是稳定的语法树重写；Rust 用 syn/quote 重写并按 SHA-256 缓存；Python 3.12+ 直接用 PEP 669 的 sys.monitoring，进程一启动就挂上，代码一行都不用改。这一段本身就能做成一期「同一件事，六种语言六种解法」。<\/p><p>它宣称的价值在最后那步归因：能报出「你改的是排序辅助函数，但真正变了的是你根本没碰的定价代码」。<b>这正好是 AI 改代码最容易出事的地方<\/b>——改动看着很小，影响却跑到了别处。你可以从这个角度切，把它和 AI 编程绑在一起讲，比单讲工具有意思得多。<\/p><p><b>别暗示它开销小。<\/b>插桩后测试跑多久、base 跑 3 遍是不是要 4 倍时间、轨迹文件多大，README 里一个数字都没给。那个定价代码的例子也是作者构造的演示，不是真实事故。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "仓库",
+       "url": "https://github.com/issacnitin/RealDiff"
+      }
+     ],
+     "source_date": "2026-08-27"
+    },
+    {
+     "id": "nn-10",
+     "section": "小众科技",
+     "title": "抽查 18 个向量检索集群，12 个把 embedding 存成了 17 位小数——多出来的那 8 位一点信息都没有",
+     "facts": "<p>托管搜索服务商 Bonsai 的工程师 Matt Gross 8 月 27 日发文。他们抽了 <b>18 个<\/b>从沙盒到企业级的向量检索集群，其中 <b>12 个（67%）<\/b>有这个毛病。<\/p><p>每个浮点值平均白白多占约 <b>8 字节<\/b>。被撑大的 JSON 比「最短 float32 文本表示」大约 <b>1.8 倍<\/b>，比原始 float32 二进制大约 <b>5 倍<\/b>。<\/p><p>按 1000 万条 768 维向量算，改成正确文本格式能省回约 <b>65.8 GB<\/b>，改成二进制格式能省回约 <b>121.1 GB<\/b>。<\/p><p>作者据此推算全球范围内有 <b>20 PB 以上<\/b>的纯浪费存储。<\/p>",
+     "quotes": [
+      {
+       "en": "The added precision is just a side effect of floating point conversion (known as widening). It is not more accurate.",
+       "zh": "多出来的那些精度只是浮点转换的副作用（这个过程叫 widening，加宽）。它并没有变得更准。",
+       "by": "Bonsai 博客 Float Bloat"
+      },
+      {
+       "en": "If your stored vectors are seventeen digits long, look at your client because that's probably the problem.",
+       "zh": "如果你存进去的向量是十七位数字，去看你的客户端，问题多半在那儿。",
+       "by": "同上"
+      }
+     ],
+     "angle": "<p>根因很好讲：float32 的尾数是 24 位，<b>唯一确定一个 float32 值只需要 9 位有效数字<\/b>。一旦它被转成 float64，数值一点没变，但它现在落在一个精细得多的网格上，要在这个网格里唯一确定它就得写到 17 位。序列化器不知道「这个值本来只有 float32 的精度」，于是老老实实吐出全部 17 位——多出来的 8 位是转换的副作用，不携带任何信息。<\/p><p>修法就三条：按正确精度格式化（Python 里 <code>%.9g<\/code>）、干脆改用二进制载荷、或者别把已经对的数据再序列化一遍。诊断方法一句话——去看你存进去的向量，十七位数字就是有问题。<\/p><p><b>这条最适合做「一分钟自查」型短视频<\/b>，因为读者能当场打开自己的库看一眼。<\/p><p><b>但 20 PB 那个数字建议你别放标题。<\/b>Bonsai 是卖托管搜索的，「你的索引在白白变大」天然对他们有利；18 个集群是自家客户群不是随机样本，67% 不能外推；20 PB 是推算不是测量。机制本身一行 Python 就能自己验证，那部分完全站得住——把火力放在机制上。<\/p>",
+     "platforms": [
+      "短帖",
+      "视频",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "原文",
+       "url": "https://bonsai.io/blog/float-bloat/"
+      }
+     ],
+     "source_date": "2026-08-27"
+    },
+    {
+     "id": "nn-11",
+     "section": "反共识",
+     "title": "一家公司交出 71.3 万条员工 prompt：用了 8 个月、上过正式培训，「用得有多精」几乎没有进步",
+     "facts": "<p>论文 8 月 27 日提交 arXiv，59 页、4 图、8 表，作者 Hallman、Kowaleski、Puvvada、Schmidt。<\/p><p>数据是真实企业内部日志：<b>713,564 条<\/b>员工 prompt 及对应的模型回复。<\/p><p>覆盖近 <b>4,000 名<\/b>后台职能员工、<b>15 个<\/b>职能条线、2025 年内连续 <b>8 个月<\/b>。<\/p><p>发现之一：资深员工的使用精细度更高，且与其本职领域专长对齐。精细度最高的岗位集中在战略、数字创新和项目管理。<\/p><p>反直觉的那条：<b>无论是时间的自然积累还是正式培训，都没有带来持续的精细度提升。<\/b><\/p>",
+     "quotes": [
+      {
+       "en": "713,564 employee prompts and their corresponding large language model responses from nearly 4,000 back-office employees across 15 functional areas over eight months in 2025",
+       "zh": "2025 年内连续八个月，来自 15 个职能条线、近 4000 名后台员工的 713,564 条 prompt 及其对应的大模型回复。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "<p>这是本期我最推荐你做的一条，因为它<b>换了一种测量方式<\/b>。<\/p><p>企业现在评估 AI 落地，全靠问卷：你用没用、省了多少时间——全是自报，全不可信。这篇直接把 71 万条 prompt 本身当成因变量，构造一个「使用精细度」指标，于是能回答问卷永远回答不了的问题：<b>培训到底有没有用<\/b>。答案是没有。<\/p><p>更值钱的是这个动作可以复制。任何一家已经部署内部 AI 助手的公司，都躺着这份数据。同样的做法能拿去评估客服团队的能力分层、新人上手的真实曲线、哪个部门只是在把 AI 当搜索引擎用。<b>你可以从「你们公司的 prompt 日志就是一份没人读的体检报告」切进去<\/b>，这个角度国内几乎没人讲过。<\/p><p><b>取舍建议：主打「培训无效」这一条，别碰「资深员工更强」。<\/b>后者是常识，写了也是废话。同时要留一句：培训无效有可能是这家公司的培训质量问题，而不是培训本身无效——不留这句，稿子就站不住。<\/p><p>另外「精细度」是作者自建的构念，怎么定义决定了整个结论，发之前建议翻一下正文的测量方式。<\/p>",
+     "platforms": [
+      "长文",
+      "图文",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.27364"
+      }
+     ],
+     "source_date": "2026-08-27"
+    },
+    {
+     "id": "nn-12",
+     "section": "论文",
+     "title": "往 AI 助手里塞一个编造的病名，41 名放射科医生 44% 写进了诊断——但资历超过半年的 15 人，一个都没上钩",
+     "facts": "<p>研究者在 LLM 诊断助手的系统提示词里植入一个虚构疾病 <b>neurocadmiumatosis<\/b>，测医生会不会照单全收。<\/p><p>两个阶段共 <b>41 名<\/b>参与者，<b>18 人（44%）<\/b>把这个不存在的病写进了最终鉴别诊断。<\/p><p>分层看反差极大：训练期 6 个月及以下的低年资医生 26 人中有 18 人上钩（<b>69%<\/b>）；超过 6 个月的 15 人中<b>一个都没有<\/b>。<\/p><p>论文中文题可译作《借道的幻觉：LLM 辅助鉴别诊断中的二次传播》（Hallucination by proxy in LLM-assisted differential diagnosis）。<\/p>",
+     "quotes": [
+      {
+       "en": "18 of 41 participants (44%) incorporated neurocadmiumatosis into their final differential.",
+       "zh": "41 名参与者中有 18 人（44%）把 neurocadmiumatosis 写进了最终的鉴别诊断。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "<p>方法论比结论好。<b>它测的不是模型的幻觉率，是幻觉穿透人类审核层之后的净残留率<\/b>——这才是真正该担心的数字。所有「人在环路里」的说法，都默认这一层是有效的，这篇给出了它有多无效。<\/p><p>这套设计几乎可以原样搬到任何「AI 出建议、人做最终决策」的场景：法务合同审查里塞一条不存在的法条、代码审查里塞一个不存在的 CVE、财务复核里塞一个不存在的准则条款。<b>你完全可以自己做一次小规模复刻<\/b>，成本极低，做出来就是独家。<\/p><p><b>硬提醒<\/b>：这条的 arXiv 编号是 2608 段，但接口返回的 v1 提交时间是 7 月 22 日，两者对不上。发之前必须自己打开页面再核一遍日期，我这边标的是「日期待核」。另外 0% 那一格只有 15 人，统计上很脆弱，分组也是按训练时长而不是随机分配——<b>「资历超半年就免疫」这个说法不能写死<\/b>，只能说这批样本里是这样。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.24908"
+      }
+     ],
+     "source_date": "日期待核"
+    },
+    {
+     "id": "nn-13",
+     "section": "跨界机会",
+     "title": "在法国山区找圣诞树种植园：加了「专挖最像的负样本」这一步，PR-AUC 从 0.204 跳到 0.913",
+     "facts": "<p>论文 8 月 27 日提交 arXiv，研究区是法国 Morvan 地区，总面积 <b>87,309.4 公顷<\/b>。<\/p><p>圣诞树种植园在这片区域只占 <b>1.72%<\/b>（2017/2018 年）和 <b>2.04%<\/b>（2023 年），是典型的极端类别不平衡。<\/p><p>最佳模型 DeepLabV3 配 ResNet-34 编码器，2020 年测试集上 IoU 0.733、F1 0.846。<\/p><p>引入难负样本挖掘（Hard Negative Mining）后，准确率-召回率曲线下面积从 <b>0.204 升到 0.913<\/b>。<\/p><p>时间迁移测试：2017/2018 数据 IoU 0.751，2023 数据 0.691。<\/p>",
+     "quotes": [
+      {
+       "en": "Christmas tree plantations are economically relevant, yet a largely unexplored application domain in Remote Sensing (RS).",
+       "zh": "圣诞树种植园在经济上是有分量的，可它在遥感领域基本还是一片没人做过的应用空白。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "<p>可迁移的那一层非常清楚：<b>把稀有目标识别当成负样本工程问题，而不是正样本不足问题。<\/b><\/p><p>大多数人遇到 2% 占比的目标，第一反应是去标更多正样本。这篇反过来，专门去挖那些长得最像目标的背景——针叶林、幼龄林——喂给模型。0.204 涨到 0.913，提升几乎全部来自负样本这一侧。<\/p><p>这套思路搬到任何「针尖里找针」的场景都成立：卫星图找非法采矿点、监控找特定违章、风控找欺诈账户、质检找罕见缺陷。<b>一句话概括就是：你的瓶颈往往不是没见过目标，而是没见够「最像目标的非目标」。<\/b>这句话可以直接当标题。<\/p><p><b>建议只讲方法，别讲圣诞树。<\/b>圣诞树是个好钩子但撑不起一篇文章，真正有人愿意收藏的是那句方法论。另外提醒：这篇还在 IEEE JSTARS 的修改阶段，没过同行评审，0.204 那个基线是作者自设对照不是外部 SOTA，提升幅度有自证成分——不要写成「碾压」。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖",
+      "图文"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.27290"
+      }
+     ],
+     "source_date": "2026-08-27"
+    },
+    {
+     "id": "nn-14",
+     "section": "数据素材",
+     "title": "89% 的生物医学论文有大模型写作痕迹——讨论部分 68%，方法部分 32%，同一篇论文里分段暴露",
+     "facts": "<p>论文 8 月 11 日提交 arXiv，作者 Holzwarth、González-Márquez、Kobak。<\/p><p>方法不是检测 AI，而是追踪一批在 ChatGPT 发布后词频突然跳升的标记词（delves、exacerbating、invaluable 等），据报道共 <b>379 个<\/b>。<\/p><p>摘要结论：到 2025 年底，<b>89%<\/b> 的论文出现了 LLM 关联词汇的超额使用。<\/p><p>分段落看，写「讨论」段用 LLM 的概率（<b>68%<\/b>）是写「方法」段（<b>32%<\/b>）的两倍。<\/p><p>Nature 新闻转述的年度口径是：2024 年 52%、2025 全年 77%、2025 年 12 月约九成；语料为 PubMed Central 约 <b>119 万篇<\/b>英文论文（2017 到 2025 年）。<\/p>",
+     "quotes": [
+      {
+       "en": "by the end of 2025, 89% of papers show excess of LLM-associated vocabulary",
+       "zh": "到 2025 年底，89% 的论文出现了 LLM 关联词汇的超额使用。",
+       "by": "论文摘要"
+      }
+     ],
+     "angle": "<p>方法论才是这条的价值：<b>用外生冲击造一把无偏的尺子<\/b>。作者不去训练 AI 检测器（那必然有偏、必然被对抗），而是把 ChatGPT 发布当成一个明确的时间断点，用「词频突变」估计渗透率。<\/p><p>这套做法可以搬到任何想量化 AI 渗透、但拿不到标签的领域：客服工单、判决书、招聘 JD、电商详情页、政府公文。<b>只要你有一段冲击前的历史语料，就能反推冲击后的渗透曲线，而且不需要任何人承认自己用了 AI。<\/b>这一层比 89% 这个数字值钱得多。<\/p><p><b>取舍很重要，不注意会翻车。<\/b>第一，口径乱：摘要说讨论段 68%，有转述写成 78%；年度数字 Nature 给 52% / 77%，摘要给 89%（那是「年底」不是全年）。引用时必须写清是哪个口径。第二，「标记词超额」只能证明文风变了，<b>不等于 AI 代写<\/b>——把润色和代写混为一谈是这类研究的通病，你别跟着犯。第三，只覆盖英文论文，对非英语母语作者存在系统性偏向。<\/p><p>建议做成图文，把「讨论 68% / 方法 32%」这个分段对比做成一张图——它比总数更能说明问题：人们用 AI 写的是需要遣词的部分，不是需要事实的部分。<\/p>",
+     "platforms": [
+      "图文",
+      "长文"
+     ],
+     "links": [
+      {
+       "label": "论文",
+       "url": "https://arxiv.org/abs/2608.10715"
+      }
+     ],
+     "source_date": "2026-08-11"
+    },
+    {
+     "id": "nn-15",
+     "section": "行业痛点",
+     "title": "急诊医生把 AI 病历和自己写的并排一贴：我一行字的事它写了满屏，还把「收住院」写成了「回家」",
+     "facts": "<p>用户 thegenius 在 Student Doctor Network 急诊版发帖，说试用两款环境录音病历工具后很失望，即使开「简洁」模式输出仍然极度啰嗦。<\/p><p>他贴出自己的真实记录作对照，只有一行：右上腹痛转诊，检查显示胆囊炎，已与外科沟通，收住院。<\/p><p>更严重的是 AI 把处置写反了：<b>病人实际收住院，AI 写成出院。<\/b><\/p><p>帖子 <b>70 条回复、9269 次浏览<\/b>。<\/p><p>同论坛另有多位医生称这类工具是巨大的省时利器——争议点不是「AI 没用」，是<b>输出形态不对<\/b>。<\/p>",
+     "quotes": [
+      {
+       "en": "I generally think they are kind of crappy, in that they are extraordinarily verbose. Even in the \"concise\" mode.",
+       "zh": "我总体觉得这些东西挺烂的，就是啰嗦得离谱。哪怕开了「简洁」模式也一样。",
+       "by": "楼主 thegenius"
+      },
+      {
+       "en": "I just want the bare minimum documentation to bill for the work I did. Until a robot does that, I'm not touching it.",
+       "zh": "我只想要刚好够给我做的活开出账单的那点文书。机器人做不到这个之前，我不碰。",
+       "by": "回帖 TooMuchResearch"
+      }
+     ],
+     "angle": "<p>这个痛点对应的 AI 机会很具体：<b>输入是就诊环境录音 + 电子病历里已有的结构化字段<\/b>（生命体征、化验、下的医嘱、最终处置代码）；<b>输出不该是一篇完整病历，而该拆成两份<\/b>——一份满足计费要素的最小合规集，一份给同行看的 1 到 3 行交接摘要。<\/p><p>卡点不在语音识别，在「处置事实锚定」：<b>AI 绝不能从医患对话里猜病人是回家还是住院<\/b>，必须强制读病历系统里的实际处置字段并锁死，两者矛盾就直接拒绝生成。第二个卡点是可调压缩层——急诊要的是电报体，这恰恰是通用录音病历厂商统一输出长文本时丢掉的东西。<\/p><p><b>建议你从「AI 不是不会写，是不知道该写多短」这个角度切<\/b>，比骂产品高级，而且能直接引到「怎么给 AI 设定输出体量」这个所有人都用得上的话题。<\/p><p><b>提醒<\/b>：这是单方面体验，同论坛有大量正面评价，稿子里一定要保留分歧，别写成「医生集体嫌弃 AI」。另外这是 2025 年 6 月的帖子，不是新闻。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://forums.studentdoctor.net/threads/ai-tech-for-the-er.1510350/"
+      }
+     ],
+     "source_date": "2025-06-07"
+    },
+    {
+     "id": "nn-16",
+     "section": "行业痛点",
+     "title": "电工论坛版主集体下场：「30 年前 Mike Holt 就说过，网上 95% 的接地资料是错的」——AI 学的正是这 95%",
+     "facts": "<p>Mike Holt 论坛的接地与等电位版，用户 Russell Ensslin 贴出 AI 关于接地棒的长篇回答，开场白只有两个词：非常令人沮丧。<\/p><p>帖子引来罕见的<b>版主集体回复<\/b>，jim dungar、首席版主 tom baker、infinity、don_resqcapt19、ActionDave 全部下场，<b>20 多楼跨两页<\/b>。<\/p><p>tom baker 给出了最有价值的因果解释：这个题目的网络语料本身就是烂的，所以 AI 必然错。<\/p><p>楼主第二天又贴了另一家模型的回答说「稍微好一点」，没人买账。<\/p><p>有轻微异议：ActionDave 认为 AI 会变好。<\/p>",
+     "quotes": [
+      {
+       "en": "I do not believe any general AI is sufficiently setup to handle technical electrical questions. At present most AI is simply internet search engines that return popular topics and present them as fact even if it is nonsense. There is almost no fact checking performed.",
+       "zh": "我不认为有哪个通用 AI 被调教到能处理电气技术问题。眼下大多数 AI 不过是个搜索引擎，把热门话题捞回来，哪怕是胡说八道也当成事实端出来。几乎没有任何事实核查。",
+       "by": "版主 jim dungar"
+      },
+      {
+       "en": "Mike Holt said 30 years ago 95% of information on grounding is wrong.",
+       "zh": "Mike Holt 三十年前就说过，接地这个题目上 95% 的资料是错的。",
+       "by": "首席版主 tom baker"
+      }
+     ],
+     "angle": "<p>这条的机会特别干净，因为<b>它是语料白名单问题，不是模型能力问题<\/b>。<\/p><p>产品形态：做电气规范垂直问答，检索源硬性限定 NEC 条文、UL 白皮书、Mike Holt 培训教材，公开网页语料全部排除。输入是电工现场的口语提问，输出必须是三段式——<b>结论 + NEC 条款号 + 对常见错误说法的显式反驳<\/b>，检索不到就拒答。<\/p><p>卡点有两个：一是把 NEC 这种条款互相引用的文本切成可检索单元；二是要主动识别并标注那些流传最广的错误说法（比如「接地棒是用来泄放故障电流的」），因为通用模型恰恰会把它们当共识输出。持照电工和验收官愿意为「敢给条款号」的答案付费。<\/p><p><b>你可以从更大的角度切：一个领域的网络语料本身是脏的，AI 就必然错，而且错得非常自信。<\/b>接地只是最极端的例子，中医、法律、税务、装修全是同一个结构。这个框架比就事论事有传播力得多。<\/p><p>提醒：这帖几乎一边倒批评 AI，只有一人唱反调，写的时候保留这个反调。帖子是 2025 年 12 月的。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://forums.mikeholt.com/threads/chat-ask-ai.2590135/"
+      }
+     ],
+     "source_date": "2025-12-23"
+    },
+    {
+     "id": "nn-17",
+     "section": "行业痛点",
+     "title": "楼宇自控工程师用 AI 翻出十年前埋的雷：一个 60 华氏度的锁定点，既没画进界面也没告诉任何人",
+     "facts": "<p>HVAC-Talk 的「你们有多少人在用 AI」线程，楼主 vaengineer 讲了个正面案例：他把西门子 Desigo CC 的 PPCL 代码丢给模型，发现装机技师埋了一个 <b>60 华氏度<\/b>的室外温度锁定点，既没画进图形界面也没告诉任何人，导致房间早上太冷。<\/p><p>第 3 楼做 Niagara 培训的 cljohnson3rd 直接开火：每天都有人拿 AI 生成的程序来找他修，因为满屏报错。<\/p><p>第 16 楼 orion242 给出全帖最狠的判断。<\/p><p><b>37 回复、1.5K 浏览、13 人参与。<\/b><\/p><p>有明确异议：一位用户称用云端分析一年省下约 25 万美元授权费，但被追问第三方数据时以保密为由拒绝提供，该数字不可引用。<\/p>",
+     "quotes": [
+      {
+       "en": "I get asked every day on LinkedIn and even support where they've used Chat Gippity to create a program but it gives them all these errors",
+       "zh": "我每天在领英上、甚至在技术支持里都被问同一件事：他们拿 ChatGPT 生成了个程序，结果满屏都是报错。",
+       "by": "回帖 cljohnson3rd"
+      },
+      {
+       "en": "Too many are trying to use AI as a 25x multiplier allow them to do things they cannot already do. And AI is humiliating them. I find AI is good for a .25-.75x multiplier.",
+       "zh": "太多人想把 AI 当成 25 倍的放大器，指望它让自己做成本来就做不了的事。然后 AI 让他们出尽了洋相。我觉得 AI 顶多是个 0.25 到 0.75 倍的放大器。",
+       "by": "回帖 orion242"
+      }
+     ],
+     "angle": "<p>真正的痛点不是「写程序」，是<b>读懂十年前别人埋在私有格式里的逻辑<\/b>。楼主那个案例就是最好的说明：一个锁定点，不在任何界面上，写它的人早就走了。<\/p><p>产品形态：输入厂商私有工程文件（Tridium Niagara 的 .bog / px XML、西门子 PPCL、Distech 的图形程序截图），输出「这台设备到底在什么条件下会停机」的逐点逻辑说明，<b>并主动标出没出现在任何图形界面上的隐藏锁定点与联锁<\/b>。<\/p><p>卡点明确在格式解析层，不在推理层——PPCL 之所以能被读懂，是因为它基于 BASIC 而且手册公开。orion242 当场提的挑战题（一个站点里四个同名 VAV-15，分散在不同网段、不同品牌）目前没人能做。第一版可以只做 Niagara XML 加厂商文档的检索问答，把「现场翻代码找隐藏锁定点」从几小时压到几分钟。<\/p><p><b>那句 0.25 到 0.75 倍我建议你直接拿去当标题<\/b>，它是本期最锋利的一句反共识，而且出自一个正在用 AI 的人之口，不是外行。<\/p><p>提醒：正反双方在这帖里都很活跃，别包装成「行业一致抵制」。帖子是 2025 年 8 月的。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖",
+      "视频"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.hvac-talk.com/threads/using-ai-how-many-of-you-do-it.2286912/"
+      }
+     ],
+     "source_date": "2025-08-28"
+    },
+    {
+     "id": "nn-18",
+     "section": "行业痛点",
+     "title": "保险代理论坛围观一场翻车：AI 布道者被追问到最后，有人回他「我不确定你不是个机器人，说人话」",
+     "facts": "<p>用户 Eduardo57 在 Insurance Forums 发长文，列举几家大保险公司的 AI 提效数字，敦促独立代理别再用 2015 年的速度干活。<\/p><p>跟帖几乎全是打脸：Tahoe Ray 说那家公司今年的服务时效糟糕透顶；SF_Anon 说 carrier 内部省一小时、出单还是要两周；另一位用 <b>一个虚构产品名直接开讽<\/b>。<\/p><p>楼主在回帖里承认自己出过一本讲 AI 的书。<\/p><p>marindependent 给出了全帖最有用的一句具体诉求。<\/p><p>约 10 楼、跨 2 页，开帖 8 月 12 日。<\/p>",
+     "quotes": [
+      {
+       "en": "Dont reject the application on page five with information you had on page one.",
+       "zh": "别拿你在第一页就已经拿到的信息，到第五页才把我的投保申请拒掉。",
+       "by": "回帖 marindependent"
+      },
+      {
+       "en": "Also, Ed, I'm not convinced you are not an AI bot. Write like a real person, buddy.",
+       "zh": "还有，Ed，我不太确定你不是个 AI 机器人。像个真人那样说话，老兄。",
+       "by": "回帖 SF_Anon"
+      }
+     ],
+     "angle": "<p>marindependent 那句话本身就是一份产品需求书：<b>投单流程的早期不合格判定<\/b>。<\/p><p>输入是新业务申请的最小字段集（地址、险种、标的类型）加各家公司的核保指引文库；输出是在你填完第一页的时候就返回「这家公司在这个地址、这个标的上根本不承保」，并附上指引原文出处。<\/p><p>卡点不在模型，在把散在几百份 PDF、版本混乱、还经常改的核保指引持续抓取解析成可查的表。这也正是他抱怨的第二件事：内部文档里搜「核保指引」竟然搜不出核保指引。代理端和总代端都愿意为此付费，因为白填五页表的时间成本是实打实的。<\/p><p><b>这条我建议你反着写<\/b>：不写「保险业拥抱 AI」，写「一个 AI 布道帖是怎么被从业者一层层拆掉的」。楼主自述出过 AI 的书、开帖行文是标准的内容营销模板（数据罗列加三步行动号召），<b>这本身就是最好的素材<\/b>——它演示了从业者现在对 AI 话术的免疫力有多强。<\/p><p><b>引用时以回帖那一侧为主，别引楼主的数据<\/b>，那些数字都是转述，我没有独立核实。<\/p>",
+     "platforms": [
+      "长文",
+      "短帖"
+     ],
+     "links": [
+      {
+       "label": "原帖",
+       "url": "https://www.insurance-forums.com/community/threads/carriers-and-ai.118023/"
+      }
+     ],
+     "source_date": "2026-08-12"
+    }
+   ],
+   "pitfalls": [
+    "<b>今天 Reddit 全线打不开。<\/b>www.reddit.com 和 old.reddit.com 直连均被拦，套代理后 Reddit 返回 403「blocked by network security」。原计划的 r/smallbusiness、r/Construction、r/therapists、r/accounting 等 15 个板块一个都没进去，痛点区四条全部改用行业专业论坛与 Ask a Manager，引语均在页面上二次核对。这一点如果读者追问来源，照实说。",
+    "<b>产品营销嫌疑最重的是 nn-18（保险代理）。<\/b>楼主自述出版过面向保险代理的 AI 书籍，开帖行文是典型内容营销模板：数据罗列加三步行动号召——这正是他被质疑成机器人的原因。有价值的是回帖那一侧，引用请以 marindependent、SF_Anon 为主，别引楼主罗列的那些公司提效数字。",
+    "<b>nn-10（向量存储浪费 20 PB）发在托管搜索服务商自家博客上。<\/b>「你的索引在白白变大」天然对卖存储和检索的一方有利，有软性营销成分。18 个集群是自家客户群不是随机样本，67% 不能外推；20 PB 是作者推算不是测量。机制本身一行 Python 可自验，那部分站得住。",
+    "<b>作者自报、无第三方复现的有三条：nn-07、nn-08、nn-09。<\/b>tare 的 86%、1553 个 session、51 并发全部来自作者本人一次极端使用；go-binsync 只有 5 星、0 条评论，所有对比数字均为作者自测；RealDiff 28 星、8 条评论，README 里那个定价代码的例子是构造的演示，不是真实生产事故。这三条都只讲机制，不要拿数字当结论。",
+    "<b>nn-07 有一个必须划清的界线<\/b>：本地日志的统计口径，和 Anthropic 实际怎么扣额度，是两回事。作者观察到日志里 API 响应重复出现，未经官方确认，也不代表计费口径如此。不说清楚很容易被读成「Anthropic 多算你钱」的维权稿。",
+    "<b>nn-12（放射科幻觉）的日期存在矛盾<\/b>：arXiv 编号落在 2608 段，但接口返回的 v1 提交时间是 7 月 22 日。发布前必须自己打开页面再核一次，本期已标「日期待核」。另外 0% 那一格只有 15 人，统计极脆弱，分组是按训练时长而非随机分配，「资历超半年就免疫」不能写死。",
+    "<b>nn-14（89% 论文有 LLM 痕迹）口径极乱，最容易翻车。<\/b>摘要说讨论段 68%，有转述写成 78%；年度数字 Nature 给 2024 年 52%、2025 全年 77%，而摘要那个 89% 说的是「年底」不是全年。引用必须写明是哪个口径。更关键的是：「标记词超额」只能证明文风变了，不等于 AI 代写，把润色和代写混为一谈是这类研究的通病。",
+    "<b>本期痛点区三条是存量帖，不是今天的新闻。<\/b>nn-15 发于 2025 年 6 月、nn-16 发于 2025 年 12 月、nn-17 发于 2025 年 8 月，只有 nn-18 是本月的。写的时候不要用「最近」「这两天」这类措辞，直接给日期。",
+    "<b>提示词那六条里，有三条的日期无法确认。<\/b>nn-03、nn-04、nn-06 三个文件本身只标了 Claude Code 版本号（ccVersion 2.1.242 / 2.1.235 / 2.1.173），没有提交日期，仓库整体最近推送是 8 月 27 日。这三条一律标「日期待核」，不要反推成具体某天。",
+    "<b>三条论文均为未经同行评审的预印本：nn-11、nn-13、nn-14。<\/b>nn-13（圣诞树）已投 IEEE JSTARS 但仍在修改阶段，且 0.204 那个基线是作者自设对照而非外部 SOTA，提升幅度有自证成分。nn-11 的「使用精细度」是作者自建构念，怎么定义决定结论，引用前建议翻正文的测量方式。",
+    "<b>今天筛掉的另一条要提一句<\/b>：有人把 AWS Route 53 的 DNS 托管区挂载成 NFS 文件系统，改 DNS 变成往文件里写字符串，技术细节写得很具体，但整篇发布公告是仿 AWS 官方口吻的戏仿，可用性区域和 SLA 那几段明显是段子，原文也没给仓库地址和实现语言。当梗可以，别当工具推荐。"
    ]
   }
  ]
